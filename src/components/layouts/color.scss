@@ -1,0 +1,13 @@
+:root {
+  --color-primary-base: #5A147F;
+  --color-neutral-base: #4F4D53;
+}
+
+
+.color-primary-base {
+  color: var(--color-primary-base);
+}
+
+.color-neutral-base {
+  color: var(--color-neutral-base);
+}

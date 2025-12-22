@@ -1,0 +1,29 @@
+{
+  "name": "corner-stone-html-template",
+  "version": "1.0.0",
+  "description": "Corner Stone HTML Template for ThemeForest",
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "watch-css": "tailwindcss -i ./src/input.css -o ./css/style.css --watch",
+    "build-scss": "sass ./src/style.scss ./css/main.temp.css --style=compressed && postcss ./css/main.temp.css -o ./css/main.min.css && rm ./css/main.temp.css",
+    "watch-scss": "sass ./src/style.scss ./css/main.temp.css --style=compressed --watch & sleep 1 && postcss ./css/main.temp.css -o ./css/main.min.css --watch",
+    "dev": "concurrently \"npm run watch-css\" \"npm run watch-scss\" \"vite\"",
+    "build": "npm run build-css && npm run build-scss && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "html",
+    "template",
+    "themesforest"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "concurrently": "^8.2.2",
+    "postcss-cli": "^11.0.1",
+    "sass": "^1.77.0",
+    "tailwindcss": "^3.4.1",
+    "vite": "^7.2.6"
+  }
+}

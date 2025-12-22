@@ -1,0 +1,13 @@
+// Additional CSS styles
+// This file will be compiled to css/main.min.css
+
+// setup - @use must come before @tailwind
+@use "./components/layouts/color.scss" as *;
+@use "./components/layouts/font.scss" as *;
+@use "./components/tranding.scss" as *;
+
+// Tailwind base layer - includes reset styles and base element styles
+@tailwind base;
+
+// Tailwind utilities - allows using @apply directive in SCSS
+@tailwind utilities;

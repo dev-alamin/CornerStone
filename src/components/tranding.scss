@@ -1,0 +1,58 @@
+.corner__tranding {
+    @apply py-32; // Using Tailwind spacing (128px = py-32)
+}
+
+.corner__heading-title {
+    @apply mb-2; // Using Tailwind spacing (8px = mb-2)
+    color: #240F52;
+}
+
+.corner__heading-description {
+    @apply text-[22px] leading-[100%]; // Using Tailwind spacing and typography
+}
+
+.corner__heading {
+    @apply mb-16; // Using Tailwind spacing (64px = mb-16)
+}
+
+// Example: Using flex utilities
+.corner__flex-container {
+    @apply flex items-center justify-between gap-4; // Flex utilities with spacing
+}
+
+// Example: More spacing utilities
+.corner__spacing-example {
+    @apply p-6 m-4 space-y-4; // Padding, margin, and vertical spacing
+}
+
+.corner__content-ai {
+    background: #F4EFFE80;
+    border: 1px solid #D8C6FF;
+    border-radius: 24px;
+    padding: 32px 32px 0 32px;
+}
+
+.corner__content-ai-left {
+    @apply h-full flex flex-col justify-between; // Height 100%, flex column, space-between
+}
+
+// Utility class for display flex (Bootstrap-style)
+.d-flex {
+    @apply flex;
+}
+
+.corner__tab {
+    color: #03000A;
+}
+
+.corner__tab.active {
+    background: #D8C6FF;
+}
+
+.bg-white-gradient {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F9F7FE 100%);
+}
+
+.corner__overlay-video {
+    background: linear-gradient(256.56deg, rgba(3, 0, 10, 0) 28.99%, rgba(3, 0, 10, 0.4) 67.45%);
+}

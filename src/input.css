@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'UncutSans';
+    src: url('./fonts/UncutSans-Regular.woff2') format('woff2'),
+        url('./fonts/UncutSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer base {
+    :root {
+        --font-bricolage: 'Bricolage Grotesque', sans-serif;
+        --font-inter: 'Inter', sans-serif;
+        --font-uncutsans: 'UncutSans', sans-serif;
+        --color-primary: #D8C6FF;
+    }
+
+    body {
+        font-size: 16px;
+        line-height: 110%;
+        font-family: var(--font-inter);
+    }
+}
+
+@layer components {
+    .corner-gradiant-one {
+        background: linear-gradient(180deg, #03000A 30.65%, #5A147F 64.33%, #FFA41A 100%);
+    }
+
+    .container {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: calc(746px + 2rem);
+        }
+    }
+
+    @media (min-width: 1271px) {
+        .container {
+            max-width: calc(1240px + 2rem);
+        }
+    }
+
+    .text-one-color {
+        color: #9F97B0;
+    }
+
+    .corner__hero-top-title {
+        font-family: var(--font-uncutsans);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #9F97B0;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .corner__hero-title {
+        font-family: var(--font-bricolage);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+    }
+
+    .corner-btn-transparent {
+        @apply py-4 px-6 rounded-xl border font-uncutsans font-medium text-lg leading-[100%] transition-colors;
+        border-color: rgba(216, 198, 255, 0.4);
+    }
+
+    .corner-btn-transparent:hover {
+        @apply bg-white text-black;
+    }
+
+    .button-no-outline {
+        @apply py-4 px-6 rounded-lg font-uncutsans font-medium text-lg leading-[100%] tracking-normal transition-colors;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .button-no-outline:hover {
+        @apply bg-white text-black;
+    }
+
+    .corner-logo-slider-track {
+        will-change: transform;
+    }
+}
