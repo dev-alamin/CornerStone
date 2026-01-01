@@ -5,7 +5,7 @@ css/style.css
 .eslintrc.cjs
 .prettierrc
 .stylelintrc.cjs 
-.package.json
-.package-lock.json
-.postcss.config.js
-.tailwind.config.js
+package.json
+package-lock.json
+postcss.config.js
+tailwind.config.js
