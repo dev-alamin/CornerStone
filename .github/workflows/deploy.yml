@@ -7,17 +7,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
-steps:
-  - name: Checkout repo
-    uses: actions/checkout@v4
 
-  - name: Deploy Site to server
-    uses: appleboy/scp-action@v0.1.7
-    with: 
-      host: ${{ secrets.DO_HOST }}
-      username: ${{ secrets.DO_USER }}
-      key: ${{ secrets.DO_SSH_KEY }}
-      source: ./
-      target: ${{ secrets.DEPLOY_PATH }}
-      strip_components: 0
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Deploy site to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_USER }}
+          key: ${{ secrets.DO_SSH_KEY }}
+          source: ./
+          target: ${{ secrets.DEPLOY_PATH }}
+          strip_components: 1
