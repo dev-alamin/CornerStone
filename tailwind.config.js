@@ -14,6 +14,8 @@ module.exports = {
       },
       colors: {
         'primary': '#D8C6FF',
+        'primary-base': '#5A147F',
+        'neutral-base': '#4F4D53',
       },
     },
   },

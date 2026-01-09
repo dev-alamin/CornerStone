@@ -8,6 +8,5 @@
 
 // Tailwind base layer - includes reset styles and base element styles
 @tailwind base;
-
-// Tailwind utilities - allows using @apply directive in SCSS
 @tailwind utilities;
+@tailwind components;
