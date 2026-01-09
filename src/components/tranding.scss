@@ -53,6 +53,8 @@
     background: linear-gradient(180deg, #FFFFFF 0%, #F9F7FE 100%);
 }
 
+
+
 .color-primary-strong {
     background: #240F52;
 }
@@ -67,4 +69,53 @@
 
 .corner__overlay-video {
     background: linear-gradient(256.56deg, rgba(3, 0, 10, 0) 28.99%, rgba(3, 0, 10, 0.4) 67.45%);
+}
+
+// Accordion styles
+.corner__accordion {
+    @apply w-full;
+}
+
+.corner__accordion-item {
+    @apply w-full;
+}
+
+.corner__accordion-header {
+    @apply cursor-pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.corner__accordion-content {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.corner__accordion-item.active .corner__accordion-content {
+    opacity: 1;
+}
+
+.corner__accordion-icon {
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+
+    svg {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .accordion-icon-open,
+    .accordion-icon-close {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }

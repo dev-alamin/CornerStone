@@ -1,5 +1,3 @@
-console.log("Hello");
-
 export const initTabs = () => {
   const tabContainers = document.querySelectorAll(".corner__tabs");
   if (!tabContainers.length) return;
