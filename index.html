@@ -14,8 +14,31 @@
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 
-<body>
-    <section class="corner-gradiant-one pt-16">
+<body class="relative">
+
+    <header class="fixed w-full pl-[32px] pr-[32px] pt-[16px] pb-[16px]">
+        <div class="flex justify-between items-center">
+            <div class="logo max-w-[145px]">
+                <a href="index.html">
+                    <img src="./src/images/logo.svg" alt="Corner Stone Logo" />
+                </a>
+            </div>
+            <ul class="nav-menu flex gap-[24px] items-center text-white">
+                <li class="text-[16px] leading-[110%] hover:underline"><a href="#">Features</a></li>
+                <li class="text-[16px] leading-[110%] hover:underline"><a href="#">About Us</a></li>
+                <li class="text-[16px] leading-[110%] hover:underline"><a href="#">Pricing</a></li>
+                <li class="text-[16px] leading-[110%] hover:underline"><a href="#">Blog</a></li>
+                <li class="text-[16px] leading-[110%] hover:underline"><a href="#">Help Centre</a></li>
+                <li class="text-[16px] leading-[110%] hover:underline"><a href="#">Request a Demo</a></li>
+            </ul>
+            <div class="flex text-white gap-[8px]">
+                <a href="#" class="px-[24px] py-[12px] font-bricolage">Login / Signup</a>
+                <a href="#" class="px-[20px] py-[12px] border-[#D8C6FF66] border-[1px] rounded-[8px] text-[#D8C6FF] font-bricolage">Try for Free</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="corner-gradiant-one pt-[146px]">
         <div class="container">
             <div class="d-flex gap-[68px]">
                 <div class="corner-hero-content max-w-[56%]">
@@ -791,6 +814,84 @@
                 </div>
                 <div class="corner__content" id="tab2">Content 2</div>
             </div>
+        </div>
+    </section>
+
+    <section class="pt-[128px]">
+        <div class="container">
+            <h2 class="text-[64px] leading-[110%] font-bricolage font-bold text-[#240F52] mb-[64px]">Trusted
+                by Teams <br />
+                That Move Fast</h2>
+            <div class="flex gap-[16px]">
+                <div class="w-[32.5%] rounded-[16px] bg-[#D8C6FF]">
+                    <div class="relative">
+                        <img class="h-[372px] w-full object-cover rounded-tl-[16px] rounded-tr-[16px]"
+                            src="./src/images/team.png" alt="Trustpilot" />
+                        <h2
+                            class="absolute top-[32px] left-[32px] text-[76px] leading-[110%] font-bricolage font-bold text-white z-10 tracking-[-0.03px]">
+                            98%</h2>
+                        <div class="absolute bottom-0 left-0 w-full h-full opacity-50 rounded-tl-[16px] rounded-tr-[16px]"
+                            style="background: linear-gradient(180deg, rgba(216, 198, 255, 0) 53.08%, #D8C6FF 100%);">
+                        </div>
+                    </div>
+
+                    <div class="p-[32px]">
+                        <h3 class="text-[32px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[16px]">AI
+                            Accuracy</h3>
+                        <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">Your
+                            notes, tasks, and docs are auto-organized with near-perfect precision — no manual
+                            tagging needed.</p>
+                    </div>
+                </div>
+                <div class="w-[calc(67.5%-16px)] rounded-[16px]">
+                    <div class="flex gap-[16px] flex-wrap">
+                        <div
+                            class="w-[36.33%] bg-[#240F52] rounded-[16px] p-[10px] border-box flex flex-col justify-center items-center">
+                            <h2
+                                class="text-[76px] leading-[110%] font-bricolage font-bold text-[#D8C6FF] mb-[0] tracking-[-0.03px]">
+                                1M+</h2>
+                            <p class="text-[18px] leading-[100%] font-normal text-[#D8C6FF] opacity-70 font-uncutsans">
+                                Projects Built on
+                                Our Platform</p>
+                        </div>
+                        <div
+                            class="w-[calc(63.67%-16px)] bg-[#F9F7FE] rounded-[16px] p-[24px] border-box rounded-[16px] border-[1px] border-[#D8C6FF]">
+                            <p class="text-[#240F52] text-[32px] leading-[100%] font-normal font-bricolage mb-[137px]">
+                                "It feels like we doubled our team overnight — without hiring a single person."</p>
+
+                            <div>
+                                <h3 class="text-[32px] leading-[100%] font-bold font-bricolage text-[#240F52] mb-[0px]">
+                                    Abdullah Noman</h3>
+                                <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">
+                                    Founder at FramerLab</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-[16px] flex-wrap mt-[16px]">
+                        <div
+                            class="w-[calc(63.67%-16px)] bg-[#F9F7FE] rounded-[16px] p-[24px] border-box rounded-[16px] border-[1px] border-[#D8C6FF]">
+                            <h2 class="text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[13px]">
+                                98%</h2>
+                            <p
+                                class="text-[18px] leading-[100%] font-bold text-[#240F52] opacity-70 font-uncutsans mb-[8px]">
+                                Categorization Precision</p>
+                            <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">Your
+                                tasks, notes, and documents are instantly auto-organized by intelligent AI — with nearly
+                                perfect accuracy.</p>
+                        </div>
+                        <div
+                            class="w-[36.33%] bg-[#D8C6FF] rounded-[16px] p-[24px] border-box flex flex-col justify-center items-center">
+                            <h2 class="text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px]">
+                                60%</h2>
+                            <p class="text-[18px] leading-[100%] font-normal text-[#240F52] opacity-70 font-uncutsans">
+                                Projects Built on
+                                Our Platform</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
         </div>
     </section>
 
