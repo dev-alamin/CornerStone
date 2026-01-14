@@ -119,3 +119,10 @@
         left: 0;
     }
 }
+
+
+.corner-overlay-gradient{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.33%, rgba(0, 0, 0, 0.2) 67.55%);
+    backdrop-filter: blur(34px);
+    box-shadow: 0px 0px 94px 0px #D489431A inset;
+}
