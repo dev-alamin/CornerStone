@@ -17,6 +17,10 @@ module.exports = {
         'primary-base': '#5A147F',
         'neutral-base': '#4F4D53',
       },
+      screens: {
+        'nav': '1200px', // Custom breakpoint for navigation menu
+        'mobile': '600px', // Custom breakpoint for mobile devices
+      },
     },
   },
   plugins: [],
