@@ -121,8 +121,20 @@
 }
 
 
-.corner-overlay-gradient{
+.corner-overlay-gradient {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.33%, rgba(0, 0, 0, 0.2) 67.55%);
     backdrop-filter: blur(34px);
     box-shadow: 0px 0px 94px 0px #D489431A inset;
+}
+
+.smooth-scroll-link {
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+
+    &.active {
+        background: #D8C6FF;
+        color: #03000A;
+    }
 }
