@@ -397,6 +397,111 @@
     </section>
     <!-- Compare section ends  -->
 
+    <!-- Usecases Section  -->
+<section class="max-w-7xl mx-auto px-6 py-24" x-data="{ 
+    activeTeam: 'product',
+    activeFeature: 'ai',
+    useCases: {
+        product: {
+            label: 'For Product Teams',
+            icon: './src/images/icons/features-usecases/product.png',
+            features: {
+                ai: {
+                    title: 'AI That Understands You',
+                    desc: 'Instantly find tasks, notes, or people — even from past projects.',
+                    img: './src/images/features/dashboard.png'
+                },
+                automation: {
+                    title: 'Effortless Automation',
+                    desc: 'Automate roadmap updates and sprint handoffs without lifting a finger.',
+                    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200'
+                },
+                teamwork: {
+                    title: 'Teamwork That Clicks',
+                    desc: 'Keep every stakeholder aligned with live canvases and shared goals.',
+                    img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200'
+                },
+                search: {
+                    title: 'Search, Simplified',
+                    desc: 'Deep indexing for PRDs, specs, and historical decisions.',
+                    img: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200'
+                }
+            }
+        },
+        sales: { label: 'For Sales Teams', icon: './src/images/icons/features-usecases/sales.png', features: { ai: { title: 'Lead Intelligence', desc: 'Predictive lead scoring to focus on high-intent deals.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200' } } },
+        engineering: { label: 'For Engineering', icon: './src/images/icons/features-usecases/engineering.png', features: { ai: { title: 'Code Intelligence', desc: 'AI-driven task prioritization for dev cycles.', img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200' } } },
+        design: { label: 'For Designers', icon: './src/images/icons/features-usecases/design.png', features: { ai: { title: 'Asset Management', desc: 'Find any component or draft with visual search.', img: 'https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&q=80&w=1200' } } },
+        marketing: { label: 'For Marketing', icon: './src/images/icons/features-usecases/marketing.png', features: { ai: { title: 'Content Sorting', desc: 'Keep campaigns organized across every channel.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200' } } },
+        hr: { label: 'For HR Teams', icon: './src/images/icons/features-usecases/hr.png', features: { ai: { title: 'People Logic', desc: 'Streamline onboarding and team directories.', img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200' } } }
+    }
+}">
+    <div class="mb-20">
+        <span class="text-purple-600 text-sm font-semibold mb-4 block">Use Cases</span>
+        <h2 class="text-6xl font-bold text-[#2D1B54] mb-12">See Our Use Cases<br>in Different Teams</h2>
+        
+        <div class="flex flex-wrap gap-8 md:gap-14 border-b border-gray-100 pb-0">
+            <template x-for="(team, id) in useCases">
+                <button 
+                    @click="activeTeam = id; activeFeature = Object.keys(team.features)[0]"
+                    class="flex flex-col items-center gap-4 pb-6 transition-all relative group"
+                    :class="activeTeam === id ? 'text-[#2D1B54]' : 'text-gray-400 opacity-60 hover:opacity-100'">
+                    
+                    <img :src="team.icon" 
+                         class="w-14 h-14 object-contain transition-transform duration-300 group-hover:-translate-y-2 group-active:scale-90" 
+                         :alt="team.label">
+                    
+                    <span class="text-xs font-bold uppercase tracking-widest" x-text="id"></span>
+                    
+                    <div x-show="activeTeam === id" 
+                         class="absolute bottom-0 left-0 w-full h-1 bg-purple-500 rounded-t-full"
+                         x-transition:enter="transition ease-out duration-300"></div>
+                </button>
+            </template>
+        </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-16 min-h-[600px]">
+        
+        <div class="w-full lg:w-1/3 space-y-4">
+            <h3 class="text-4xl font-bold text-[#2D1B54] mb-8" x-text="useCases[activeTeam].label"></h3>
+            
+            <template x-for="(fData, fKey) in useCases[activeTeam].features">
+                <button 
+                    @click="activeFeature = fKey"
+                    :class="activeFeature === fKey ? 'bg-[#D9D1FF] text-[#2D1B54] border-purple-200' : 'bg-white text-gray-500 hover:bg-gray-50 border-transparent'"
+                    class="w-full text-left px-8 py-6 rounded-2xl border transition-all duration-300 shadow-sm flex items-center justify-between group">
+                    <div class="space-y-1">
+                        <span class="font-bold block text-lg" x-text="fData.title"></span>
+                        <p class="text-sm opacity-70" x-show="activeFeature === fKey" x-text="fData.desc" x-transition></p>
+                    </div>
+                    <span class="text-purple-600 font-bold transition-transform group-hover:translate-x-1" x-show="activeFeature === fKey">
+                        <img src="./src/images/icons/arrow-right-long.svg" alt="">
+                    </span>
+                </button>
+            </template>
+
+            <div class="pt-8">
+                <button class="bg-[#D9D1FF] text-[#2D1B54] px-10 py-4 rounded-2xl font-bold hover:shadow-lg hover:shadow-purple-500/10 transition-all active:scale-95">
+                    Get Started
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-2/3">
+            <div class="relative rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 bg-white p-3">
+                <img :src="useCases[activeTeam].features[activeFeature].img" 
+                     class="w-full h-auto rounded-[2rem]" 
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 translate-y-4"
+                     x-transition:enter-end="opacity-100 translate-y-0"
+                     :key="activeTeam + activeFeature">
+            </div>
+        </div>
+
+    </div>
+</section>
+    <!-- Usecase Section ends  -->
+     
     <div class="w-full sm:pt-[128px] pt-[80px]"
         style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);">
         <div class="container">
