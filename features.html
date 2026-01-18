@@ -75,13 +75,13 @@
                     Turn Complex Workflows Into Simple System
                 </h1>
 
-                <p class="text-xl md:text-2xl text-gray-600 max-w-2xl leading-relaxed">
+                <p class="text-xl md:text-[22px] text-gray-600 max-w-2xl leading-relaxed">
                     Build to save your time, grow MRR, and Keep customers. happy.
                 </p>
 
                 <div class="pt-4">
                     <button
-                        class="bg-[#D9D1FF] text-[#2D1B54] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#C8BDFF] transition-all transform hover:-translate-y-1 active:scale-95 shadow-sm">
+                        class="bg-[#D8C6FF] text-[#2D1B54] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#C8BDFF] transition-all transform hover:-translate-y-1 active:scale-95 shadow-sm">
                         Get Started
                     </button>
                 </div>
@@ -154,8 +154,8 @@
                 search: 'Search, Simplified'
             }">
                     <button @click="activeTab = key"
-                        :class="activeTab === key ? 'bg-[#D8C6FF] text-purple-700 border-[#D8C6FF] shadow-sm' : 'bg-white text-gray-500 border-gray-100 hover:bg-gray-50'"
-                        class="px-6 py-2 rounded-full font-medium text-sm border transition-all duration-300"
+                        :class="activeTab === key ? 'bg-[#D8C6FF] border-[#D8C6FF] shadow-sm' : 'bg-white border-[#D8C6FF] hover:bg-gray-50'"
+                        class="px-6 py-2 rounded-xl font-medium text-[#03000A] font-bricolage text-sm border transition-all duration-300"
                         x-text="label">
                     </button>
                 </template>
@@ -163,15 +163,15 @@
         </div>
 
         <div class="container grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="md:col-span-2 bg-[#F4EFFE80] rounded-[2.5rem] p-8 md:p-12 overflow-hidden border border-[#D8C6FF] flex flex-col md:flex-row items-center gap-12"
+            <div class="md:col-span-2 bg-[#F4EFFE80] rounded-[1.8rem] p-3 md:p-12 overflow-hidden border border-[#D8C6FF] flex flex-col md:flex-row items-center gap-12"
                 x-transition:enter="transition ease-out duration-500 delay-75"
                 x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
-                <div class="flex-1 space-y-6">
-                    <h4 class="text-3xl font-bold text-[#2D1B54]" x-text="content[activeTab].heroTitle"></h4>
-                    <p class="text-gray-500 leading-relaxed max-w-md" x-text="content[activeTab].heroDesc"></p>
+                <div class="p-4 md:p-6 flex-1 space-y-6">
+                    <h4 class="text-3xl font-bold text-[#2D1B54] font-bricolage" x-text="content[activeTab].heroTitle"></h4>
+                    <p class="text-gray-500 text-[18px] leading-relaxed font-uncutsans" x-text="content[activeTab].heroDesc"></p>
                     <button
-                        class="bg-white px-6 py-3 rounded-xl border border-gray-100 shadow-sm font-semibold text-[#2D1B54] flex items-center gap-2 hover:shadow-md transition-shadow">
-                        Request a Demo <span class="text-purple-500">→</span>
+                        class="px-6 py-3 rounded-xl border border-[#D8C6FF] shadow-sm font-semibold text-[#5A147F] flex items-center gap-2 hover:shadow-md transition-shadow">
+                        Request a Demo <span class="text-purple-500"><img src="./src/images/icons/right-arrow.svg" alt=""></span>
                     </button>
                 </div>
                 <div
@@ -181,34 +181,34 @@
                 </div>
             </div>
 
-            <div class="bg-[#F4EFFE80] rounded-[2.5rem] p-8 space-y-6 flex flex-col justify-between border border-[#D8C6FF]"
+            <div class="bg-[#F4EFFE80] rounded-[1.8rem] p-3 space-y-6 flex flex-col justify-between border border-[#D8C6FF]"
                 x-transition:enter="transition ease-out duration-500 delay-150"
                 x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
-                <div class="space-y-4">
-                    <h4 class="text-2xl font-bold text-[#2D1B54]" x-text="content[activeTab].card1Title"></h4>
-                    <p class="text-gray-500 text-sm leading-relaxed" x-text="content[activeTab].card1Desc"></p>
+                <div class="p-4 md:p-8 space-y-4">
+                    <h4 class="text-[32px] font-bold text-[#240F52] font-bricolage" x-text="content[activeTab].card1Title"></h4>
+                    <p class="text-gray-500 text-[18px] leading-relaxed font-uncutsans" x-text="content[activeTab].card1Desc"></p>
                 </div>
                 <div class="relative rounded-2xl overflow-hidden h-48 group">
                     <img :src="content[activeTab].card1Img" class="w-full h-full object-cover">
                     <div
                         class="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
-                        <span class="text-purple-600 font-bold">→</span>
+                       <img src="./src/images/icons/right-arrow.svg" alt="">
                     </div>
                 </div>
             </div>
 
-            <div class="bg-[#F4EFFE80] rounded-[2.5rem] p-8 space-y-6 flex flex-col justify-between border border-[#D8C6FF]"
+            <div class="bg-[#F4EFFE80] rounded-[1.8rem] p-3 space-y-6 flex flex-col justify-between border border-[#D8C6FF]"
                 x-transition:enter="transition ease-out duration-500 delay-300"
                 x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
-                <div class="space-y-4">
-                    <h4 class="text-2xl font-bold text-[#2D1B54]" x-text="content[activeTab].card2Title"></h4>
-                    <p class="text-gray-500 text-sm leading-relaxed" x-text="content[activeTab].card2Desc"></p>
+                <div class="p-4 md:p-8 space-y-4">
+                    <h4 class="text-[32px] font-bold text-[#240F52] font-bricolage" x-text="content[activeTab].card2Title"></h4>
+                    <p class="text-gray-500 text-[18px] leading-relaxed font-uncutsans" x-text="content[activeTab].card2Desc"></p>
                 </div>
                 <div class="relative rounded-2xl overflow-hidden h-48 group">
                     <img :src="content[activeTab].card2Img" class="w-full h-full object-cover">
                     <div
                         class="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
-                        <span class="text-purple-600 font-bold">→</span>
+                       <img src="./src/images/icons/right-arrow.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -220,26 +220,26 @@
         <div class="flex flex-col md:flex-row items-center justify-between gap-8">
 
             <div class="max-w-sm">
-                <h4 class="text-2xl font-bold text-[#2D1B54]">Compliance ready by</h4>
+                <h4 class="text-[32px] font-bold text-[#2D1B54] font-bricolage">Compliance ready by</h4>
             </div>
 
-            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            <div class="flex flex-wrap items-center justify-center gap-6">
 
                 <div class="group flex flex-col items-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/GDPR_Logo.svg"
-                        class="h-16 w-auto opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+                    <img src="./src/images/features/compliance-ready.png"
+                        class="h-32 w-auto"
                         alt="GFAML Ready">
                 </div>
 
                 <div class="group flex flex-col items-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/EU_General_Data_Protection_Regulation_logo.svg/1200px-EU_General_Data_Protection_Regulation_logo.svg.png"
-                        class="h-16 w-auto opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+                    <img src="./src/images/features/compliance-ready-2.png"
+                        class="h-32 w-auto"
                         alt="GDPR">
                 </div>
 
                 <div class="group flex flex-col items-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/AICPA_logo.svg/1280px-AICPA_logo.svg.png"
-                        class="h-14 w-auto opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+                    <img src="./src/images/features/compliance-ready-3.png"
+                        class="h-32 w-auto"
                         alt="SOC 2 Type II">
                 </div>
 
