@@ -71,7 +71,8 @@
     <section class="px-6 pt-32 pb-20 border-b-2 border-[#D8C6FF]">
         <div class="container mx-auto">
             <div class="max-w-4xl space-y-8">
-                <h1 class="text-6xl font-bold text-[#2D1B54] leading-[1.1] tracking-tight font-bricolage">
+                <h1
+                    class="text-[80px] transition delay-150 duration-300 ease-in-out font-bold text-[#2D1B54] leading-[1.1] tracking-tight font-bricolage">
                     Turn Complex Workflows Into Simple System
                 </h1>
 
@@ -81,7 +82,7 @@
 
                 <div class="pt-4">
                     <button
-                        class="bg-[#D8C6FF] text-[#2D1B54] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#C8BDFF] transition-all transform hover:-translate-y-1 active:scale-95 shadow-sm">
+                        class="bg-[#D8C6FF] text-[#2D1B54] px-8 py-4 rounded-xl text-lg hover:bg-[#C8BDFF] transition-all transform hover:-translate-y-1 active:scale-95 shadow-sm">
                         Get Started
                     </button>
                 </div>
@@ -142,8 +143,9 @@
 
         <div class="container mx-auto mb-16">
             <div class="max-w-3xl">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-4">Why Choose Us</h2>
-                <h3 class="text-5xl font-bold text-[#2D1B54] mb-6">Smarter Tools. <br /> Built Around You.</h3>
+                <h2 class="text-xs font-[400] uppercase tracking-widest text-purple-600 mb-4">Why Choose Us</h2>
+                <h3 class="text-6xl font-bold font-bricolage text-[#2D1B54]">Smarter Tools. <br /> Built Around You.</h3>
+                <p class="mb-12 text-xl font-light mt-4 text-neutral-base">Smarter Tools. Built Around You.</p>
             </div>
 
             <div class="flex flex-wrap gap-3">
@@ -280,15 +282,15 @@
             <div class="space-y-8 mb-16">
                 <div>
                     <span class="text-purple-600 text-sm font-semibold mb-2 block">Compare</span>
-                    <h2 class="text-6xl font-bold text-[#2D1B54]">Features Breakdown</h2>
+                    <h2 class="text-6xl font-bold font-bricolage text-[#2D1B54]">Features Breakdown</h2>
                 </div>
 
                 <div class="flex flex-wrap gap-3">
                     <template
                         x-for="(label, key) in {ai: 'AI That Understands You', automation: 'Effortless Automation', teamwork: 'Teamwork That Clicks', search: 'Search, Simplified'}">
                         <button @click="activeTab = key"
-                            :class="activeTab === key ? 'bg-[#D9D1FF] text-[#2D1B54] border-purple-200' : 'bg-gray-50 text-gray-500 border-gray-100 hover:bg-gray-100'"
-                            class="px-6 py-2 rounded-full font-medium text-sm border transition-all duration-300"
+                            :class="activeTab === key ? 'bg-[#D8C6FF] border-[#D8C6FF] shadow-sm' : 'bg-white border-[#D8C6FF] hover:bg-gray-50'"
+                            class="px-6 py-2 rounded-xl font-medium text-[#03000A] font-bricolage text-sm border transition-all duration-300"
                             x-text="label">
                         </button>
                     </template>
@@ -297,7 +299,7 @@
 
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 mb-32">
                 <div class="w-full lg:w-1/3 space-y-8">
-                    <h3 class="text-4xl font-bold text-[#2D1B54]" x-text="breakdown[activeTab].title"></h3>
+                    <h3 class="text-4xl font-bold font-bricolage text-[#2D1B54]" x-text="breakdown[activeTab].title"></h3>
                     <p class="text-gray-500 leading-relaxed">
                         Our key features that offers exclusive services help us to distinguish ourself!
                     </p>
@@ -312,24 +314,24 @@
                     </ul>
 
                     <button
-                        class="bg-[#D9D1FF] text-[#2D1B54] px-8 py-3 rounded-xl font-bold hover:bg-[#C8BDFF] transition-all transform hover:-translate-y-0.5 shadow-sm">
+                        class="bg-[#D8C6FF] text-[#2D1B54] px-8 py-4 rounded-xl text-lg hover:bg-[#C8BDFF] transition-all transform hover:-translate-y-1 active:scale-95 shadow-sm">
                         Get Started
                     </button>
                 </div>
 
                 <div class="w-full lg:w-2/3">
-                    <div class="rounded-3xl shadow-2xl overflow-hidden border border-gray-100/50 bg-white p-4"
+                    <div class="shadow-2xl overflow-hidden border border-gray-100/50"
                         x-transition:enter="transition ease-out duration-500"
                         x-transition:enter-start="opacity-0 translate-x-12"
                         x-transition:enter-end="opacity-100 translate-x-0">
-                        <img :src="breakdown[activeTab].img" class="w-full h-auto rounded-2xl" alt="Platform Interface">
+                        <img :src="breakdown[activeTab].img" class="w-full h-auto rounded-lg" alt="Platform Interface">
                     </div>
                 </div>
             </div>
 
             <div class="space-y-12">
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                    <h3 class="text-4xl font-bold text-[#2D1B54]">More Features to Power Your Day</h3>
+                    <h3 class="text-4xl font-bold text-[#2D1B54] font-bricolage">More Features to Power Your Day</h3>
                     <button
                         class="px-6 py-3 rounded-xl border border-[#D8C6FF] shadow-sm font-semibold text-[#5A147F] flex items-center gap-2 hover:shadow-md transition-shadow">
                         Request a Demo <span class="text-purple-500"><img src="./src/images/icons/right-arrow.svg"
@@ -345,7 +347,7 @@
                             <img src="./src/images/icons/audit-02.svg" alt="">
                         </div>
                         <div>
-                            <h5 class="font-bold text-xl text-[#2D1B54] mb-2">Smart Search</h5>
+                            <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">Smart Search</h5>
                             <p class="text-gray-500 text-sm leading-relaxed">Instantly find tasks, notes, or people —
                                 even
                                 from past projects.</p>
@@ -359,7 +361,7 @@
                             <img src="./src/images/icons/ai-idea.svg" alt="">
                         </div>
                         <div>
-                            <h5 class="font-bold text-xl text-[#2D1B54] mb-2">AI Summaries</h5>
+                            <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">AI Summaries</h5>
                             <p class="text-gray-500 text-sm leading-relaxed">Turn chaos into clarity with auto-generated
                                 recaps of meetings.</p>
                         </div>
@@ -372,7 +374,7 @@
                             <img src="./src/images/icons/file-cloud.svg" alt="">
                         </div>
                         <div>
-                            <h5 class="font-bold text-xl text-[#2D1B54] mb-2">Shared Docs</h5>
+                            <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">Shared Docs</h5>
                             <p class="text-gray-500 text-sm leading-relaxed">Collaborate live on documents that stay
                                 organized automatically.</p>
                         </div>
@@ -385,7 +387,7 @@
                             <img src="./src/images/icons/dashboard-circle-add.svg" alt="">
                         </div>
                         <div class="">
-                            <h5 class="font-bold text-xl text-[#2D1B54] mb-2">Custom Fields</h5>
+                            <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">Custom Fields</h5>
                             <p class="text-gray-500 text-sm leading-relaxed">Create structures that match your business
                                 —
                                 not the other way around.</p>
@@ -398,7 +400,7 @@
     <!-- Compare section ends  -->
 
     <!-- Usecases Section  -->
-<section class="max-w-7xl mx-auto px-6 py-24" x-data="{ 
+    <section class="max-w-7xl mx-auto px-6 py-24" x-data="{ 
     activeTeam: 'product',
     activeFeature: 'ai',
     useCases: {
@@ -435,73 +437,77 @@
         hr: { label: 'For HR Teams', icon: './src/images/icons/features-usecases/hr.png', features: { ai: { title: 'People Logic', desc: 'Streamline onboarding and team directories.', img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200' } } }
     }
 }">
-    <div class="mb-20">
-        <span class="text-purple-600 text-sm font-semibold mb-4 block">Use Cases</span>
-        <h2 class="text-6xl font-bold text-[#2D1B54] mb-12">See Our Use Cases<br>in Different Teams</h2>
-        
-        <div class="flex flex-wrap gap-8 md:gap-14 border-b border-gray-100 pb-0">
-            <template x-for="(team, id) in useCases">
-                <button 
-                    @click="activeTeam = id; activeFeature = Object.keys(team.features)[0]"
-                    class="flex flex-col items-center gap-4 pb-6 transition-all relative group"
-                    :class="activeTeam === id ? 'text-[#2D1B54]' : 'text-gray-400 opacity-60 hover:opacity-100'">
-                    
-                    <img :src="team.icon" 
-                         class="w-14 h-14 object-contain transition-transform duration-300 group-hover:-translate-y-2 group-active:scale-90" 
-                         :alt="team.label">
-                    
-                    <span class="text-xs font-bold uppercase tracking-widest" x-text="id"></span>
-                    
-                    <div x-show="activeTeam === id" 
-                         class="absolute bottom-0 left-0 w-full h-1 bg-purple-500 rounded-t-full"
-                         x-transition:enter="transition ease-out duration-300"></div>
-                </button>
-            </template>
-        </div>
-    </div>
+        <div class="mb-20">
+            <span class="text-purple-600 text-sm font-[400] mb-4 block">Use Cases</span>
+            <h2 class="text-6xl font-bold font-bricolage text-[#2D1B54]">See Our Use Cases<br>in Different Teams</h2>
+            <p class="mb-12 text-xl font-[400] mt-4 text-neutral-base">Made for everyone!</p>
 
-    <div class="flex flex-col lg:flex-row gap-16 min-h-[600px]">
-        
-        <div class="w-full lg:w-1/3 space-y-4">
-            <h3 class="text-4xl font-bold text-[#2D1B54] mb-8" x-text="useCases[activeTeam].label"></h3>
-            
-            <template x-for="(fData, fKey) in useCases[activeTeam].features">
-                <button 
-                    @click="activeFeature = fKey"
-                    :class="activeFeature === fKey ? 'bg-[#D9D1FF] text-[#2D1B54] border-purple-200' : 'bg-white text-gray-500 hover:bg-gray-50 border-transparent'"
-                    class="w-full text-left px-8 py-6 rounded-2xl border transition-all duration-300 shadow-sm flex items-center justify-between group">
-                    <div class="space-y-1">
-                        <span class="font-bold block text-lg" x-text="fData.title"></span>
-                        <p class="text-sm opacity-70" x-show="activeFeature === fKey" x-text="fData.desc" x-transition></p>
-                    </div>
-                    <span class="text-purple-600 font-bold transition-transform group-hover:translate-x-1" x-show="activeFeature === fKey">
-                        <img src="./src/images/icons/arrow-right-long.svg" alt="">
-                    </span>
-                </button>
-            </template>
+            <div class="flex md:flex-wrap items-end gap-8 md:gap-14 border-b border-gray-100 pb-0 overflow-x-auto no-scrollbar snap-x snap-proximity">
+                <template x-for="(team, id) in useCases">
+                    <button @click="activeTeam = id; activeFeature = Object.keys(team.features)[0]"
+                        class="flex flex-col items-center text-[22px] md:text-[16px] font-bricolage gap-4 pb-6 transition-all relative group shrink-0 snap-center">
 
-            <div class="pt-8">
-                <button class="bg-[#D9D1FF] text-[#2D1B54] px-10 py-4 rounded-2xl font-bold hover:shadow-lg hover:shadow-purple-500/10 transition-all active:scale-95">
-                    Get Started
-                </button>
+                        <img :src="team.icon"
+                            class="w-14 h-14 object-contain transition-transform duration-300 group-hover:-translate-y-2 group-active:scale-90"
+                            :alt="team.label">
+
+                        <span class="text-[22px] md:text-[16px] font-bold font-bricolage uppercase" x-text="id"></span>
+
+                        <div x-show="activeTeam === id"
+                            class="absolute bottom-0 left-0 w-full h-1 bg-purple-500 rounded-t-full"
+                            x-transition:enter="transition ease-out duration-300"></div>
+                    </button>
+                </template>
             </div>
         </div>
 
-        <div class="w-full lg:w-2/3">
-            <div class="relative rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 bg-white p-3">
-                <img :src="useCases[activeTeam].features[activeFeature].img" 
-                     class="w-full h-auto rounded-[2rem]" 
-                     x-transition:enter="transition ease-out duration-500"
-                     x-transition:enter-start="opacity-0 translate-y-4"
-                     x-transition:enter-end="opacity-100 translate-y-0"
-                     :key="activeTeam + activeFeature">
-            </div>
-        </div>
+        <div class="flex flex-col lg:flex-row gap-16 min-h-[600px]">
 
-    </div>
-</section>
+            <div class="w-full lg:w-1/3 flex flex-col min-h-full">
+                <h3 class="text-4xl font-bold text-[#2D1B54] mb-8" x-text="useCases[activeTeam].label"></h3>
+
+                <div class="space-y-4">
+                    <template x-for="(fData, fKey) in useCases[activeTeam].features">
+                        <div class="space-y-3">
+                            <button @click="activeFeature = fKey"
+                                :class="activeFeature === fKey ? 'bg-[#D9D1FF] text-[#2D1B54] border-purple-200' : 'bg-white text-gray-500 hover:bg-gray-50 border-[#D8C6FF]'"
+                                class="w-full text-left px-8 py-3 rounded-2xl border transition-all duration-300 shadow-sm flex items-center justify-between group">
+                                <span class="font-bold text-lg" x-text="fData.title"></span>
+                                <span class="text-purple-600 font-bold transition-transform group-hover:translate-x-1"
+                                    x-show="activeFeature === fKey">→</span>
+                            </button>
+
+                            <div x-show="activeFeature === fKey" x-transition:enter="transition ease-out duration-300"
+                                x-transition:enter-start="opacity-0 -translate-y-2"
+                                x-transition:enter-end="opacity-100 translate-y-0" class="px-8 pb-4">
+                                <p class="text-gray-500 text-base leading-relaxed" x-text="fData.desc"></p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <div class="mt-auto pt-12">
+                    <button
+                        class="bg-[#D9D1FF] text-[#2D1B54] w-full md:w-auto px-10 py-4 rounded-2xl font-bold hover:bg-[#C8BDFF] hover:shadow-lg hover:shadow-purple-500/10 transition-all active:scale-95">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-2/3">
+                <div
+                    class="relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100">
+                    <img :src="useCases[activeTeam].features[activeFeature].img" class="w-full h-auto rounded-lg"
+                        x-transition:enter="transition ease-out duration-500"
+                        x-transition:enter-start="opacity-0 translate-y-4"
+                        x-transition:enter-end="opacity-100 translate-y-0" :key="activeTeam + activeFeature">
+                </div>
+            </div>
+
+        </div>
+    </section>
     <!-- Usecase Section ends  -->
-     
+
     <div class="w-full sm:pt-[128px] pt-[80px]"
         style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);">
         <div class="container">
