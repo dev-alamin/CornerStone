@@ -2,3 +2,5 @@ node_modules/
 css/style.css
 .DS_Store
 *.log
+css/main.min.css
+css/main.min.css.map
