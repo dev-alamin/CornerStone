@@ -70,274 +70,335 @@
     </header>
     <!-- Header Section End -->
 
-<header class="pt-32 pb-16 px-6">
-    <div class="container mx-auto max-w-4xl">
-        <nav class="flex items-center gap-2 text-sm font-medium mb-8 text-gray-500">
-            <a href="/blog" class="hover:text-purple-600 transition-colors">Blogs</a>
-            <span>/</span>
-            <span class="text-purple-600 font-bold">Category</span>
-            <span>/</span>
-        </nav>
+    <div class="pt-20 pb-6 md:pt-32 md:pb-6">
+        <div class="container mx-auto">
+            <nav class="flex items-center gap-2 text-sm font-medium mb-8 text-gray-500">
+                <a href="/blog" class="hover:text-purple-600 transition-colors">Blogs</a>
+                <span>/</span>
+                <span class="text-purple-600 font-bold">Category</span>
+                <span>/</span>
+            </nav>
 
-        <h1 class="text-page-title md:text-7xl font-bold text-article-heading font-bricolage leading-[1.1] mb-10 tracking-tight">
-            How We Reduced Churn <br class="hidden md:block"> by 34% in 60 Days
-        </h1>
+            <h1
+                class="text-page-title md:text-7xl font-bold text-article-heading font-bricolage leading-[1.1] mb-4 tracking-tight">
+                How We Reduced Churn <br class="hidden md:block"> by 34% in 60 Days
+            </h1>
 
-        <div class="flex flex-wrap items-center gap-6 py-6 border-y border-gray-100">
-            <div class="flex items-center gap-2 text-sm text-gray-600 font-medium">
-                <img src="./src/images/icons/calendar.svg" class="w-4 h-4 opacity-60" alt="">
-                <span>May 26, 2025</span>
-            </div>
-            <div class="flex items-center gap-2 text-sm text-gray-600 font-medium border-l border-gray-200 pl-6">
-                <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center overflow-hidden">
-                    <img src="https://ui-avatars.com/api/?name=CS+Team&background=D9D1FF&color=2D1B54" alt="CornerStone Team">
+            <div class="flex flex-wrap items-center gap-6 py-4">
+                <div class="flex items-center gap-2 text-sm text-gray-600 font-medium">
+                    <img src="./src/images/icons/calendar-black.svg" class="w-4 h-4 opacity-60" alt="">
+                    <span>May 26, 2025</span>
                 </div>
-                <span>CornerStone Team</span>
-            </div>
-            <div class="flex items-center gap-2 border-l border-gray-200 pl-6">
-                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Retention</span>
-                <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">SaaS Growth</span>
+                <div class="flex items-center gap-2 text-sm text-gray-600 font-medium pl-6">
+                    <div class="w-6 h-6 rounded-full flex items-center justify-center overflow-hidden">
+                        <img src="./src/images/icons/user.svg" alt="CornerStone Team">
+                    </div>
+                    <span>CornerStone Team</span>
+                </div>
+                <div class="flex items-center gap-2 pl-6">
+                    <div class="w-6 h-6 rounded-full flex items-center justify-center overflow-hidden">
+                        <img src="./src/images/icons/elements.svg" alt="CornerStone Team">
+                    </div>
+                    <span
+                        class="bg-neutral-subtle text-gray-600 px-3 py-2 rounded-full text-xs font-bold uppercase tracking-wider">Retention</span>
+                    <span
+                        class="bg-neutral-subtle text-gray-600 px-3 py-2 rounded-full text-xs font-bold uppercase tracking-wider">SaaS
+                        Growth</span>
+                </div>
             </div>
         </div>
     </div>
-</header>
 
-<article class="px-6 pb-24">
-    <div class="container mx-auto max-w-4xl">
-        <div class="overflow-hidden border border-gray-100 shadow-sm mb-20">
-            <img src="./src/images/blog/blog-1.png" 
-                 class="w-full aspect-[16/9] object-cover" 
-                 alt="The Problem: Great Signups, Weak Retention">
-        </div>
+    <article class="pb-0 md:pb-32">
+        <div class="container mx-auto max-w-4xl">
+            <div class="overflow-hidden border-b-2 border-primary shadow-sm pb-12 mb-12">
+                <img src="./src/images/blog/blog-1.png" class="w-full aspect-[16/9] object-cover"
+                    alt="The Problem: Great Signups, Weak Retention">
+            </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
-            
-            <div class="lg:col-span-8 space-y-8">
-                <h2 class="text-4xl font-bold text-[#2D1B54] font-bricolage leading-tight tracking-tight">
-                    The Problem: Great Signups, <br> Weak Retention
-                </h2>
-                
-                <div class="text-lg text-gray-600 leading-relaxed space-y-6 font-uncutsans">
-                    <p>
-                        After launching on Product Hunt, thousands of users signed up for CornerStone — but many never stuck around. 
-                        We realized that having a great top-of-funnel wasn't enough if users didn't find value within their first session.
-                    </p>
-                    <p>
-                        Churn was sitting at 12% monthly, and most drop-offs happened within the first 5 days. 
-                        We knew we had to pivot our focus from acquisition to long-term stickiness.
-                    </p>
-                </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
 
-                <div class="bg-primary/10 p-10 border-l-4 border-primary relative mt-12 overflow-hidden">
-                    <div class="relative z-10">
-                        <div class="mb-6">
-                             <img src="./src/images/icons/quote.svg" class="w-10 h-10" alt="Quote">
+                <div class="lg:col-span-8 space-y-8">
+                    <h2 class="text-[64px] font-bold text-[#2D1B54] font-bricolage leading-tight tracking-tight">
+                        The Problem: Great Signups, <br> Weak Retention
+                    </h2>
+
+                    <div class="text-lg text-gray-600 leading-relaxed space-y-6 font-uncutsans">
+                        <p>
+                            After launching on Product Hunt, thousands of users signed up for CornerStone — but many
+                            never stuck around.
+                            We realized that having a great top-of-funnel wasn't enough if users didn't find value
+                            within their first session.
+                        </p>
+                        <p>
+                            Churn was sitting at 12% monthly, and most drop-offs happened within the first 5 days.
+                            We knew we had to pivot our focus from acquisition to long-term stickiness.
+                        </p>
+                    </div>
+
+                    <div class="bg-primary/10 p-10 border-l-4 border-primary relative mt-12 overflow-hidden">
+                        <div class="relative z-10">
+                            <div class="mb-6">
+                                <img src="./src/images/icons/quote.svg" class="w-10 h-10" alt="Quote">
+                            </div>
+                            <blockquote class="text-4xl text-[#2D1B54] font-bricolage leading-snug mb-4">
+                                "I loved the idea, but didn't know what to do once I signed up."
+                            </blockquote>
+                            <cite class="block not-italic">— Former user</cite>
                         </div>
-                        <blockquote class="text-4xl text-[#2D1B54] font-bricolage leading-snug mb-4">
-                            "I loved the idea, but didn't know what to do once I signed up."
-                        </blockquote>
-                        <cite class="block not-italic">— Former user</cite>
                     </div>
+
+                    <p class="font-neutral-base text-page-subtitle font-inter font-light">We weren’t just losing users — we were losing potential advocates.</p>
+
+                    <section class="py-12">
+                            <div class="space-y-6">
+                                <h2 class="text-[40px] font-bold text-[#2D1B54] font-bricolage tracking-tight">Step 1:
+                                    Talk to Churned Users</h2>
+                                <div class="text-lg text-gray-600 leading-relaxed font-uncutsans space-y-4">
+                                    <p>We started with what we had: feedback. We reached out to those who left to
+                                        understand the "why" behind the data.</p>
+                                    <ul class="space-y-3 list-none">
+                                        <li class="flex items-start gap-3">
+                                            <span class="text-purple-500 font-bold">•</span> 15 user interviews
+                                            conducted in 2 weeks
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="text-purple-500 font-bold">•</span> Most hadn't completed the
+                                            initial setup
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="text-purple-500 font-bold">•</span> Several were unaware of our
+                                            best features
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="text-purple-500 font-bold">•</span> Others just forgot to come
+                                            back
+                                        </li>
+                                    </ul>
+                                    <div
+                                        class="inline-block px-6 py-3 bg-purple-50 rounded-xl text-[#2D1B54] font-bold border border-purple-100 italic">
+                                        Takeaway: We didn't have a product problem. We had a clarity problem.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6">
+                                <h2 class="text-[40px] font-bold text-[#2D1B54] font-bricolage tracking-tight">Step 2:
+                                    Redesign the Onboarding Journey</h2>
+                                <div class="text-lg text-gray-600 leading-relaxed font-uncutsans space-y-6">
+                                    <p>We made one clear goal: <strong>Show value in under 2 minutes.</strong> We
+                                        stripped away the fluff and focused on the "Aha!" moment.</p>
+                                    <ul class="space-y-3 list-none">
+                                        <li class="flex items-start gap-3">
+                                            <span class="text-purple-500 font-bold">•</span> Introduced a simple 3-step
+                                            setup flow
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="text-purple-500 font-bold">•</span> Embedded product tours and
+                                            checklists
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="text-purple-500 font-bold">•</span> Added contextual tooltips,
+                                            not generic walkthroughs
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="inline-flex items-center gap-2 text-purple-600 font-bold group">
+                                        <span
+                                            class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 group-hover:bg-purple-600 group-hover:text-white transition-all">▶</span>
+                                        Video Demo: See the New Onboarding in Action
+                                    </a>
+                                    <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Result: 15%
+                                        drop in churn within 3 weeks.</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6">
+                                <h2 class="text-[40px] font-bold text-[#2D1B54] font-bricolage tracking-tight">Step 3:
+                                    Smart Lifecycle Emails</h2>
+                                <div class="text-lg text-gray-600 leading-relaxed font-uncutsans space-y-4">
+                                    <p>Instead of static welcome emails, we created behavior-triggered sequences that
+                                        respond to what users actually do:</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                                        <div class="p-5 border border-gray-100 rounded-2xl bg-white shadow-sm">
+                                            <p class="text-sm font-bold text-purple-600 mb-1">Didn't finish setup?</p>
+                                            <p class="text-gray-800">&rarr; Get a nudge</p>
+                                        </div>
+                                        <div class="p-5 border border-gray-100 rounded-2xl bg-white shadow-sm">
+                                            <p class="text-sm font-bold text-purple-600 mb-1">Invited a teammate?</p>
+                                            <p class="text-gray-800">&rarr; Get collaboration tips</p>
+                                        </div>
+                                    </div>
+                                    <p class="pt-4">Each email had one action, one value, and zero fluff.</p>
+                                    <div
+                                        class="bg-[#F8F9FF] p-8 rounded-3xl border border-indigo-50 grid grid-cols-3 gap-6 text-center">
+                                        <div>
+                                            <div class="text-2xl font-bold text-[#2D1B54]">↑ 61%</div>
+                                            <div class="text-xs uppercase font-bold text-gray-400">Open Rate</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-2xl font-bold text-[#2D1B54]">↑ 34%</div>
+                                            <div class="text-xs uppercase font-bold text-gray-400">CTR</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-2xl font-bold text-[#2D1B54]">↓ 9%</div>
+                                            <div class="text-xs uppercase font-bold text-gray-400">Inactive Churn</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6">
+                                <h2 class="text-[40px] font-bold text-[#2D1B54] font-bricolage tracking-tight">Step 4:
+                                    Automate Success Checkpoints</h2>
+                                <div class="text-lg text-gray-600 leading-relaxed font-uncutsans space-y-6">
+                                    <p>We set up internal milestones inside CornerStone to track user progress. When a
+                                        user stalled, we didn't wait for them to ask for help.</p>
+                                    <div class="bg-[#FAF8FF] p-10 border-l-4 border-primary relative mt-6">
+                                        <blockquote class="text-4xl text-[#2D1B54] font-bricolage leading-snug mb-4">
+                                            "It just knew when I needed help — and offered it right away."
+                                        </blockquote>
+                                        <cite class="block not-italic">— Product Manager, Early Adopter</cite>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-gray-100">
+
+                            <div class="pt-12 space-y-10">
+                                <h2
+                                    class="text-[40px] font-bold text-[#2D1B54] font-bricolage tracking-tight text-center">
+                                    The Results (After 60 Days)</h2>
+                                <div class="overflow-hidden rounded-[2rem] border border-gray-100 shadow-xl bg-white">
+                                    <table class="w-full text-left">
+                                        <thead class="bg-[#D9D1FF]/30">
+                                            <tr>
+                                                <th
+                                                    class="px-8 py-5 text-sm font-bold text-[#2D1B54] uppercase tracking-wider font-bricolage">
+                                                    Metric</th>
+                                                <th
+                                                    class="px-8 py-5 text-sm font-bold text-[#2D1B54] uppercase tracking-wider font-bricolage">
+                                                    Before</th>
+                                                <th
+                                                    class="px-8 py-5 text-sm font-bold text-[#2D1B54] uppercase tracking-wider font-bricolage">
+                                                    After</th>
+                                                <th
+                                                    class="px-8 py-5 text-sm font-bold text-[#2D1B54] uppercase tracking-wider font-bricolage">
+                                                    Change</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-50 font-uncutsans">
+                                            <tr class="hover:bg-gray-50 transition-colors">
+                                                <td class="px-8 py-6 font-bold text-gray-800">Monthly Churn</td>
+                                                <td class="px-8 py-6 text-gray-600">12%</td>
+                                                <td class="px-8 py-6 text-gray-600">7.9%</td>
+                                                <td class="px-8 py-6 text-green-600 font-bold">▼ 34%</td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50 transition-colors">
+                                                <td class="px-8 py-6 font-bold text-gray-800">Daily Active Users</td>
+                                                <td class="px-8 py-6 text-gray-600">1,800</td>
+                                                <td class="px-8 py-6 text-gray-600">2,470</td>
+                                                <td class="px-8 py-6 text-green-600 font-bold">▲ 37%</td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50 transition-colors">
+                                                <td class="px-8 py-6 font-bold text-gray-800">NPS Score</td>
+                                                <td class="px-8 py-6 text-gray-600">24</td>
+                                                <td class="px-8 py-6 text-gray-600">41</td>
+                                                <td class="px-8 py-6 text-green-600 font-bold">▲ +17 pts</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="bg-[#2D1B54] p-12 rounded-[2.5rem] text-white mt-8 md:mt-16">
+                                <h3 class="text-3xl font-bold font-bricolage mb-8">Key Takeaways</h3>
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 font-uncutsans">
+                                    <li class="space-y-2">
+                                        <span class="text-purple-300 font-bold text-xl">01</span>
+                                        <p class="text-gray-200">Onboarding isn't just a flow — it's your first
+                                            impression. Make it count.</p>
+                                    </li>
+                                    <li class="space-y-2">
+                                        <span class="text-purple-300 font-bold text-xl">02</span>
+                                        <p class="text-gray-200">Emails must match user behavior, not just arbitrary
+                                            time triggers.</p>
+                                    </li>
+                                    <li class="space-y-2">
+                                        <span class="text-purple-300 font-bold text-xl">03</span>
+                                        <p class="text-gray-200">Success checkpoints proactively help before users ask
+                                            for help.</p>
+                                    </li>
+                                    <li class="space-y-2">
+                                        <span class="text-purple-300 font-bold text-xl">04</span>
+                                        <p class="text-gray-200">Talking to churned users reveals the blind spots data
+                                            can't show.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                    </section>
+
+                    <section class="container mx-auto max-w-4xl px-6 py-24 border-t border-gray-100">
+                        <div class="space-y-12">
+                            <div class="space-y-4">
+                                <h2 class="text-[40px] font-bold text-[#2D1B54] font-bricolage">Want to Try It for
+                                    Yourself?</h2>
+                                <p class="text-lg text-gray-500 font-uncutsans">CornerStone makes it easy to track
+                                    onboarding, set milestones, and personalize automation — without code.</p>
+                                <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+                                    <button
+                                        class="px-10 py-4 text-primary-base border border-primary-base rounded-lg font-bold hover:bg-primary-base hover:text-white transition-all shadow-lg shadow-purple-200">
+                                        Start Free Trial
+                                    </button>
+                                    <button
+                                        class="px-10 py-4 text-purple-600 font-bold hover:text-purple-800 transition-colors">
+                                        Talk to Sales
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div
+                                class="shadow-sm md:p-16 max-w-3xl border border-gray-100 relative overflow-hidden text-center">
+                                <div class="relative z-10 space-y-6">
+                                    <div
+                                        class="w-20 h-20 bg-white rounded-3xl shadow-sm mx-auto flex items-center justify-center text-4xl">
+                                        📬</div>
+                                    <h3 class="text-3xl font-bold text-[#2D1B54] font-bricolage">Subscribe to Our
+                                        Newsletter</h3>
+                                    <p class="text-gray-500 font-uncutsans">Join 2,000+ SaaS builders receiving
+                                        founder-friendly growth playbooks.</p>
+
+                                    <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                                        <input type="email" placeholder="Your email here..."
+                                            class="flex-1 px-6 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
+                                        <button
+                                            class="px-8 py-4 bg-[#D9D1FF] text-[#2D1B54] rounded-2xl font-bold hover:bg-purple-200 transition-all">
+                                            Subscribe
+                                        </button>
+                                    </div>
+                                    <p class="text-xs text-gray-400 font-medium italic">By checking the box, you agree
+                                        that you acknowledge for weekly newsletter</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
 
-                <section class="px-6 py-12">
-    <div class="container mx-auto max-w-4xl space-y-24">
-        
-        <div class="space-y-6">
-            <h2 class="text-4xl font-bold text-[#2D1B54] font-bricolage tracking-tight">Step 1: Talk to Churned Users</h2>
-            <div class="text-lg text-gray-600 leading-relaxed font-uncutsans space-y-4">
-                <p>We started with what we had: feedback. We reached out to those who left to understand the "why" behind the data.</p>
-                <ul class="space-y-3 list-none">
-                    <li class="flex items-start gap-3">
-                        <span class="text-purple-500 font-bold">•</span> 15 user interviews conducted in 2 weeks
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-purple-500 font-bold">•</span> Most hadn't completed the initial setup
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-purple-500 font-bold">•</span> Several were unaware of our best features
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-purple-500 font-bold">•</span> Others just forgot to come back
-                    </li>
-                </ul>
-                <div class="inline-block px-6 py-3 bg-purple-50 rounded-xl text-[#2D1B54] font-bold border border-purple-100 italic">
-                    Takeaway: We didn't have a product problem. We had a clarity problem.
-                </div>
-            </div>
-        </div>
 
-        <div class="space-y-6">
-            <h2 class="text-4xl font-bold text-[#2D1B54] font-bricolage tracking-tight">Step 2: Redesign the Onboarding Journey</h2>
-            <div class="text-lg text-gray-600 leading-relaxed font-uncutsans space-y-6">
-                <p>We made one clear goal: <strong>Show value in under 2 minutes.</strong> We stripped away the fluff and focused on the "Aha!" moment.</p>
-                <ul class="space-y-3 list-none">
-                    <li class="flex items-start gap-3">
-                        <span class="text-purple-500 font-bold">•</span> Introduced a simple 3-step setup flow
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-purple-500 font-bold">•</span> Embedded product tours and checklists
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-purple-500 font-bold">•</span> Added contextual tooltips, not generic walkthroughs
-                    </li>
-                </ul>
-                <a href="#" class="inline-flex items-center gap-2 text-purple-600 font-bold group">
-                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 group-hover:bg-purple-600 group-hover:text-white transition-all">▶</span>
-                    Video Demo: See the New Onboarding in Action
-                </a>
-                <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Result: 15% drop in churn within 3 weeks.</p>
-            </div>
-        </div>
 
-        <div class="space-y-6">
-            <h2 class="text-4xl font-bold text-[#2D1B54] font-bricolage tracking-tight">Step 3: Smart Lifecycle Emails</h2>
-            <div class="text-lg text-gray-600 leading-relaxed font-uncutsans space-y-4">
-                <p>Instead of static welcome emails, we created behavior-triggered sequences that respond to what users actually do:</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                    <div class="p-5 border border-gray-100 rounded-2xl bg-white shadow-sm">
-                        <p class="text-sm font-bold text-purple-600 mb-1">Didn't finish setup?</p>
-                        <p class="text-gray-800">&rarr; Get a nudge</p>
+                <aside class="lg:col-span-4 lg:sticky lg:top-32 h-fit">
+                    <div class="bg-primary p-8 rounded-[2rem] shadow-sm">
+                        <h4 class="text-2xl font-bold text-[#2D1B54] font-bricolage mb-4 tracking-tight">TL;DR</h4>
+                        <p class="leading-relaxed font-bricolage text-[24px] text-neutral-strong mb-0">
+                            We cut our churn rate from 12% to 7.9% in just two months by revamping onboarding,
+                            automating success checkpoints, and sending better emails. In this post, we'll walk you
+                            through the 4 changes we made — and the results they delivered.
+                        </p>
                     </div>
-                    <div class="p-5 border border-gray-100 rounded-2xl bg-white shadow-sm">
-                        <p class="text-sm font-bold text-purple-600 mb-1">Invited a teammate?</p>
-                        <p class="text-gray-800">&rarr; Get collaboration tips</p>
-                    </div>
-                </div>
-                <p class="pt-4">Each email had one action, one value, and zero fluff.</p>
-                <div class="bg-[#F8F9FF] p-8 rounded-3xl border border-indigo-50 grid grid-cols-3 gap-6 text-center">
-                    <div><div class="text-2xl font-bold text-[#2D1B54]">↑ 61%</div><div class="text-xs uppercase font-bold text-gray-400">Open Rate</div></div>
-                    <div><div class="text-2xl font-bold text-[#2D1B54]">↑ 34%</div><div class="text-xs uppercase font-bold text-gray-400">CTR</div></div>
-                    <div><div class="text-2xl font-bold text-[#2D1B54]">↓ 9%</div><div class="text-xs uppercase font-bold text-gray-400">Inactive Churn</div></div>
-                </div>
+                </aside>
+
             </div>
         </div>
-
-        <div class="space-y-6">
-            <h2 class="text-4xl font-bold text-[#2D1B54] font-bricolage tracking-tight">Step 4: Automate Success Checkpoints</h2>
-            <div class="text-lg text-gray-600 leading-relaxed font-uncutsans space-y-6">
-                <p>We set up internal milestones inside CornerStone to track user progress. When a user stalled, we didn't wait for them to ask for help.</p>
-                <div class="bg-[#FAF8FF] p-10 border-l-4 border-primary relative mt-6">
-                    <blockquote class="text-4xl text-[#2D1B54] font-bricolage leading-snug mb-4">
-                        "It just knew when I needed help — and offered it right away."
-                    </blockquote>
-                    <cite class="block not-italic">— Product Manager, Early Adopter</cite>
-                </div>
-            </div>
-        </div>
-
-        <hr class="border-gray-100">
-
-        <div class="pt-12 space-y-10">
-            <h2 class="text-4xl font-bold text-[#2D1B54] font-bricolage tracking-tight text-center">The Results (After 60 Days)</h2>
-            <div class="overflow-hidden rounded-[2rem] border border-gray-100 shadow-xl bg-white">
-                <table class="w-full text-left">
-                    <thead class="bg-[#D9D1FF]/30">
-                        <tr>
-                            <th class="px-8 py-5 text-sm font-bold text-[#2D1B54] uppercase tracking-wider font-bricolage">Metric</th>
-                            <th class="px-8 py-5 text-sm font-bold text-[#2D1B54] uppercase tracking-wider font-bricolage">Before</th>
-                            <th class="px-8 py-5 text-sm font-bold text-[#2D1B54] uppercase tracking-wider font-bricolage">After</th>
-                            <th class="px-8 py-5 text-sm font-bold text-[#2D1B54] uppercase tracking-wider font-bricolage">Change</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-50 font-uncutsans">
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-8 py-6 font-bold text-gray-800">Monthly Churn</td>
-                            <td class="px-8 py-6 text-gray-600">12%</td>
-                            <td class="px-8 py-6 text-gray-600">7.9%</td>
-                            <td class="px-8 py-6 text-green-600 font-bold">▼ 34%</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-8 py-6 font-bold text-gray-800">Daily Active Users</td>
-                            <td class="px-8 py-6 text-gray-600">1,800</td>
-                            <td class="px-8 py-6 text-gray-600">2,470</td>
-                            <td class="px-8 py-6 text-green-600 font-bold">▲ 37%</td>
-                        </tr>
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="px-8 py-6 font-bold text-gray-800">NPS Score</td>
-                            <td class="px-8 py-6 text-gray-600">24</td>
-                            <td class="px-8 py-6 text-gray-600">41</td>
-                            <td class="px-8 py-6 text-green-600 font-bold">▲ +17 pts</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="bg-[#2D1B54] p-12 rounded-[2.5rem] text-white">
-            <h3 class="text-3xl font-bold font-bricolage mb-8">Key Takeaways</h3>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 font-uncutsans">
-                <li class="space-y-2">
-                    <span class="text-purple-300 font-bold text-xl">01</span>
-                    <p class="text-gray-200">Onboarding isn't just a flow — it's your first impression. Make it count.</p>
-                </li>
-                <li class="space-y-2">
-                    <span class="text-purple-300 font-bold text-xl">02</span>
-                    <p class="text-gray-200">Emails must match user behavior, not just arbitrary time triggers.</p>
-                </li>
-                <li class="space-y-2">
-                    <span class="text-purple-300 font-bold text-xl">03</span>
-                    <p class="text-gray-200">Success checkpoints proactively help before users ask for help.</p>
-                </li>
-                <li class="space-y-2">
-                    <span class="text-purple-300 font-bold text-xl">04</span>
-                    <p class="text-gray-200">Talking to churned users reveals the blind spots data can't show.</p>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="container mx-auto max-w-4xl px-6 py-24 border-t border-gray-100">
-    <div class="text-center space-y-12">
-        <div class="space-y-4">
-            <h2 class="text-4xl font-bold text-[#2D1B54] font-bricolage">Want to Try It for Yourself?</h2>
-            <p class="text-lg text-gray-500 font-uncutsans">CornerStone makes it easy to track onboarding, set milestones, and personalize automation — without code.</p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <button class="px-10 py-4 bg-purple-600 text-white rounded-full font-bold hover:bg-purple-700 transition-all shadow-lg shadow-purple-200">
-                    Start Free Trial
-                </button>
-                <button class="px-10 py-4 text-purple-600 font-bold hover:text-purple-800 transition-colors">
-                    Talk to Sales
-                </button>
-            </div>
-        </div>
-
-        <div class="bg-gray-50 rounded-[2.5rem] p-10 md:p-16 max-w-3xl mx-auto border border-gray-100 relative overflow-hidden text-center">
-            <div class="relative z-10 space-y-6">
-                <div class="w-20 h-20 bg-white rounded-3xl shadow-sm mx-auto flex items-center justify-center text-4xl">📬</div>
-                <h3 class="text-3xl font-bold text-[#2D1B54] font-bricolage">Subscribe to Our Newsletter</h3>
-                <p class="text-gray-500 font-uncutsans">Join 2,000+ SaaS builders receiving founder-friendly growth playbooks.</p>
-                
-                <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                    <input type="email" placeholder="Your email here..." class="flex-1 px-6 py-4 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all">
-                    <button class="px-8 py-4 bg-[#D9D1FF] text-[#2D1B54] rounded-2xl font-bold hover:bg-purple-200 transition-all">
-                        Subscribe
-                    </button>
-                </div>
-                <p class="text-xs text-gray-400 font-medium italic">By checking the box, you agree that you acknowledge for weekly newsletter</p>
-            </div>
-        </div>
-    </div>
-</section>
-            </div>
-
-            
-
-            <aside class="lg:col-span-4 lg:sticky lg:top-32 h-fit">
-                <div class="bg-primary p-8 rounded-[2rem] shadow-sm">
-                    <h4 class="text-2xl font-bold text-[#2D1B54] font-bricolage mb-4 tracking-tight">TL;DR</h4>
-                    <p class="leading-relaxed font-bricolage text-[24px] text-neutral-strong mb-0">
-                        We cut our churn rate from 12% to 7.9% in just two months by revamping onboarding, 
-                        automating success checkpoints, and sending better emails. In this post, we'll walk you 
-                        through the 4 changes we made — and the results they delivered.
-                    </p>
-                </div>
-            </aside>
-
-        </div>
-    </div>
-</article>
+    </article>
 
 
 
