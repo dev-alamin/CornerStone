@@ -68,25 +68,31 @@
         </div>
     </header>
 
-    <section class="max-w-5xl mx-auto px-6 py-24">
+    <section class="px-6 py-24">
+        <div class="container mx-auto">
         <div class="mb-20">
-            <span class="text-purple-600 text-sm font-semibold mb-4 block">Changelog</span>
-            <h2 class="text-6xl font-bold text-[#2D1B54] font-bricolage mb-6 tracking-tight">Improvements and
+            <span class="text-purple-600 text-lg mb-4 block font-uncutsans">Changelog</span>
+           <h1 class="text-4xl md:text-page-title font-bold text-[#240F52] leading-[1.1] tracking-tight font-bricolage">Improvements and
                 <br>Innovations
-            </h2>
-            <p class="text-gray-500 text-lg max-w-2xl font-uncutsans">
-                Track our journey of continuous improvements and innovation. CornerStone maintains a detailed record of
-                updates to ensure transparency.
+            </h1>
+             <p class="text-page-subtitle text-neutral-strong max-w-2xl leading-relaxed font-inter">
+                Track our journey of continuous improvements and innovation
+            </p>
+
+            <p class="mt-8 text-page-subtitle max-w-5xl text-neutral-base leading-relaxed font-inter">
+                Cornerstone maintains a detailed record of updates, improvements, 
+                and bug fixes to ensure transparency and enhance user experience
             </p>
         </div>
 
         <div class="relative space-y-24">
             <div class="absolute left-6 md:left-8 top-2 bottom-0 w-[2px] bg-purple-100"></div>
-
+            
+            <!-- single version entry begins here -->
             <div class="relative pl-16 md:pl-24 group">
                 <div
                     class="absolute left-0 top-0 w-12 h-12 md:w-16 md:h-16 bg-[#D9D1FF] rounded-2xl flex items-center justify-center z-10 shadow-sm transition-transform group-hover:scale-110">
-                    <img src="./src/images/icons/changelog-icon.svg" class="w-6 h-6" alt="Update Icon">
+                    <img src="./src/images/icons/database-sync.svg" class="w-6 h-6" alt="Update Icon">
                 </div>
 
                 <div
@@ -99,14 +105,14 @@
                     <div class="space-y-4">
                         <h4 class="text-lg font-bold text-[#2D1B54] uppercase tracking-wider">New Features</h4>
                         <ul class="space-y-3">
-                            <li class="flex gap-3 text-gray-600 leading-relaxed">
-                                <span class="text-purple-400 mt-1.5">•</span>
-                                <span><strong>Advanced Analytics Dashboard</strong> – Provides deeper insights into
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4"><strong>Advanced Analytics Dashboard</strong> – Provides deeper insights into
                                     sales performance, customer trends, and revenue forecasting.</span>
                             </li>
-                            <li class="flex gap-3 text-gray-600 leading-relaxed">
-                                <span class="text-purple-400 mt-1.5">•</span>
-                                <span><strong>Automated Customer Responses</strong> – AI-powered replies for faster and
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4"><strong>Automated Customer Responses</strong> – AI-powered replies for faster and
                                     more efficient customer engagement.</span>
                             </li>
                         </ul>
@@ -115,13 +121,13 @@
                     <div class="space-y-4">
                         <h4 class="text-lg font-bold text-[#2D1B54] uppercase tracking-wider">Improvements</h4>
                         <ul class="space-y-3">
-                            <li class="flex gap-3 text-gray-600 leading-relaxed">
-                                <span class="text-purple-400 mt-1.5">•</span>
-                                <span>Enhanced user interface for better navigation and workflow efficiency.</span>
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4">Enhanced user interface for better navigation and workflow efficiency.</span>
                             </li>
-                            <li class="flex gap-3 text-gray-600 leading-relaxed">
-                                <span class="text-purple-400 mt-1.5">•</span>
-                                <span>Optimized search functionality, improving results accuracy.</span>
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative relative">
+                                <span class="text-neutral-base absolute top-0 absolute top-0">•</span>
+                                <span class="pl-4">Optimized search functionality, improving results accuracy.</span>
                             </li>
                         </ul>
                     </div>
@@ -129,19 +135,21 @@
                     <div class="space-y-4">
                         <h4 class="text-lg font-bold text-[#2D1B54] uppercase tracking-wider">Bug Fixes</h4>
                         <ul class="space-y-3">
-                            <li class="flex gap-3 text-gray-600 leading-relaxed">
-                                <span class="text-purple-400 mt-1.5">•</span>
-                                <span>Resolved minor UI inconsistencies in the sales management module.</span>
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4">Resolved minor UI inconsistencies in the sales management module.</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+            <!-- single version entry ends here -->
 
+            <!-- single version entry begins here -->
             <div class="relative pl-16 md:pl-24 group">
                 <div
                     class="absolute left-0 top-0 w-12 h-12 md:w-16 md:h-16 bg-[#F4EFFE] rounded-2xl flex items-center justify-center z-10 shadow-sm transition-transform group-hover:scale-110">
-                    <img src="./src/images/icons/changelog-icon.svg" class="w-6 h-6 opacity-60" alt="Update Icon">
+                    <img src="./src/images/icons/database-sync.svg" class="w-6 h-6 opacity-60" alt="Update Icon">
                 </div>
 
                 <div
@@ -150,7 +158,106 @@
                     <span class="text-gray-400 font-medium font-uncutsans">March 2025</span>
                 </div>
 
-                <p class="text-gray-500 italic">Historical updates for transparency...</p>
+                <div class="grid grid-cols-1 gap-10">
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-[#2D1B54] uppercase tracking-wider">New Features</h4>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4"><strong>Advanced Analytics Dashboard</strong> – Provides deeper insights into
+                                    sales performance, customer trends, and revenue forecasting.</span>
+                            </li>
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4"><strong>Automated Customer Responses</strong> – AI-powered replies for faster and
+                                    more efficient customer engagement.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-[#2D1B54] uppercase tracking-wider">Improvements</h4>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4">Enhanced user interface for better navigation and workflow efficiency.</span>
+                            </li>
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4">Optimized search functionality, improving results accuracy.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-[#2D1B54] uppercase tracking-wider">Bug Fixes</h4>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4">Resolved minor UI inconsistencies in the sales management module.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- single version entry ends here -->
+
+             <!-- single version entry begins here -->
+            <div class="relative pl-16 md:pl-24 group">
+                <div
+                    class="absolute left-0 top-0 w-12 h-12 md:w-16 md:h-16 bg-[#F4EFFE] rounded-2xl flex items-center justify-center z-10 shadow-sm transition-transform group-hover:scale-110">
+                    <img src="./src/images/icons/database-sync.svg" class="w-6 h-6 opacity-60" alt="Update Icon">
+                </div>
+
+                <div
+                    class="flex flex-col md:flex-row md:items-center justify-between border-b border-gray-100 pb-4 mb-8">
+                    <h3 class="text-3xl font-bold text-[#2D1B54] font-bricolage opacity-70">Version 1.0</h3>
+                    <span class="text-gray-400 font-medium font-uncutsans">January 2025</span>
+                </div>
+
+                <div class="grid grid-cols-1 gap-10">
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-[#2D1B54] uppercase tracking-wider">New Features</h4>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4"><strong>Advanced Analytics Dashboard</strong> – Provides deeper insights into
+                                    sales performance, customer trends, and revenue forecasting.</span>
+                            </li>
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4"><strong>Automated Customer Responses</strong> – AI-powered replies for faster and
+                                    more efficient customer engagement.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-[#2D1B54] uppercase tracking-wider">Improvements</h4>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4">Enhanced user interface for better navigation and workflow efficiency.</span>
+                            </li>
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4">Optimized search functionality, improving results accuracy.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold text-[#2D1B54] uppercase tracking-wider">Bug Fixes</h4>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3 text-gray-600 leading-relaxed relative">
+                                <span class="text-neutral-base absolute top-0 ">•</span>
+                                <span class="pl-4">Resolved minor UI inconsistencies in the sales management module.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- single version entry ends here -->
             </div>
         </div>
     </section>
