@@ -671,12 +671,38 @@
 
                 </div>
 
-                <div class="corner-hero-image w-[44%] rounded-[24px] relative">
-                    <img class="rounded-[24px]" src="./src/images/hero/hero.webp" alt="Hero Image"
-                        class="w-full h-auto" />
-                    <div class="absolute bottom-0 left-0 w-full h-[303px] opacity-50 corner-overlay-gradient"></div>
-                </div>
+                <div class="corner-hero-image w-[44%] rounded-[40px] relative overflow-hidden aspect-[4/5]">
+                    <img
+                        src="./src/images/hero/hero.webp"
+                        alt="Hero Image"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
 
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent"></div>
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#eab308]/90 via-[#eab308]/40 to-transparent"></div>
+
+                    <div class="absolute bottom-10 left-10 right-10 text-white z-10">
+                        <div class="flex items-center gap-1 mb-6">
+                            <span class="text-[18px]">★</span>
+                            <span class="text-[18px]">★</span>
+                            <span class="text-[18px]">★</span>
+                            <span class="text-[18px]">★</span>
+                            <span class="text-[18px]">★</span>
+                        </div>
+
+                        <p class="text-[22px] md:text-[26px] leading-[1.2] mb-8 font-bricolage tracking-tight">
+                            “There's power in a single platform where you can do all your work.
+                            Notion is that single place.”
+                        </p>
+
+                        <div class="space-y-0.5">
+                            <p class="text-[20px] font-mediumfont-bricolage">Malena Smith</p>
+                            <p class="text-[14px] font-medium opacity-90 font-inter">Vice President, OpenAI</p>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
 
             <div class="flex flex-col justify-center">
