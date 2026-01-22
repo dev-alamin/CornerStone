@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner Stone - HTML Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body class="relative">
+
+    <main class="min-h-screen flex flex-col lg:flex-row font-uncutsans bg-white">
+    <section class="container w-full lg:w-[35%] flex flex-col p-8 md:p-12 lg:p-16 justify-between bg-white z-20">
+        <div class="flex items-center gap-2">
+            <img src="./src/images/logo-black.png" alt="Logo Ipsum" class="h-8">
+            <span class="ml-auto text-sm font-bold text-[#2D1B54] hover:underline cursor-pointer">Sign up</span>
+        </div>
+
+        <div class="max-w-md w-full mx-auto space-y-10 py-12 lg:py-0">
+            <header class="space-y-3">
+                <h1 class="text-[40px] font-bold font-bold text-[#240F52] leading-[1.1] tracking-tight font-bricolage">Login</h1>
+                <p class="text-page-subtitle text-neutral-base font-uncutsans">Enter your credentials below</p>
+            </header>
+
+            <form class="space-y-6" x-data="{ showPass: false }">
+                <div class="space-y-2">
+                    <label class="text-sm font-bold text-[#2D1B54] tracking-wide">Email Address</label>
+                    <input type="email" placeholder="yourname@domain.com" 
+                        class="w-full px-5 py-4 rounded-xl border border-primary focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all placeholder:text-gray-400">
+                </div>
+
+                <div class="space-y-2 relative">
+                    <label class="text-sm font-bold text-[#2D1B54] tracking-wide">Password</label>
+                    <input :type="showPass ? 'text' : 'password'" placeholder="Enter your password" 
+                        class="w-full px-5 py-4 rounded-xl border border-primary focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all placeholder:text-gray-400">
+                    <button type="button" @click="showPass = !showPass" class="absolute right-4 top-11 text-gray-400 hover:text-[#2D1B54]">
+                        <svg x-show="!showPass" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                        <svg x-show="showPass" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" /></svg>
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <label class="relative flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer">
+                        <div class="w-6 h-6 border-2 border-[#2D1B54] rounded-md peer-checked:bg-[#2D1B54] transition-all flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+
+                        <span class="text-sm font-medium text-[#2D1B54] pl-3">Remember me</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full bg-[#D9D1FF] hover:bg-[#c9befa] text-[#2D1B54] font-bold py-4 rounded-2xl transition-all shadow-sm">
+                    Login
+                </button>
+            </form>
+        </div>
+
+        <footer class="text-center space-y-4 pt-10">
+            <div class="flex justify-center gap-8 text-sm font-bold text-purple-600">
+                <a href="/terms" class="hover:underline">Website Terms</a>
+                <a href="/privacy" class="hover:underline">Privacy Policy</a>
+            </div>
+            <p class="text-xs text-gray-400 font-medium">©2025 Framer Lab — All Rights Reserved</p>
+        </footer>
+    </section>
+
+<section class="corner-gradiant-one flex container flex-col w-full lg:w-[65%] bg-[#080414] relative overflow-hidden p-8 md:p-20 md:pl-[16rem] min-h-[500px] lg:min-h-screen">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#2D1B54] via-transparent to-orange-500/20 opacity-50"></div>
+    
+    <div class="relative z-10 w-full max-w-3xl space-y-12 lg:space-y-16 lg:mb-32"> <div class="space-y-6 lg:space-y-8">
+            <div class="flex gap-1 text-orange-400">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <blockquote class="text-2xl lg:text-3xl font-medium text-white leading-snug max-w-lg lg:max-w-none">
+                “There's power in a single platform where you can do all your work. Notion is that single place.”
+            </blockquote>
+            <div class="flex gap-4">
+                <div class="border-4 border-gray-800 rounded-full">
+                    <img src="./src/images/login-user.png" class="w-12 h-12 rounded-full rounded-full" alt="User Photo">
+                </div>
+                <div>
+                    <p class="font-bold text-white">Malena Smith</p>
+                    <p class="text-sm text-gray-400">Vice President, OpenAI</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-0 right-0 mt-12 z-10 bg-white rounded-tl-2xl shadow-2xl overflow-hidden border-t border-l border-white/10 w-[70%] md:w-[80%]  transition-transform duration-500 translate-y-4 translate-x-4 lg:translate-y-2 lg:translate-x-2">
+        <img src="./src/images/login-dashboard.png" alt="Platform Dashboard" class="w-full h-auto block">
+    </div>
+</section>
+</main>
+
+
+    <!-- GSAP CDN -->
+    <script src="src/js/gsap.min.js"></script>
+    <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
