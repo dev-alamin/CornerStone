@@ -12,11 +12,15 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
 </head>
 
 <body class="relative">
 
-        <!-- Header Section Start -->
+    <!-- Header Section Start -->
     <header x-data="{ mobileMenuOpen: false, activeDropdown: null }"
         class="fixed w-full px-4 md:px-8 py-4 z-50 backdrop-blur-md">
         <div class="mx-auto flex justify-between items-center">
@@ -39,7 +43,8 @@
                                 <path d="m6 9 6 6 6-6" />
                             </svg>
                         </a>
-                        <div class="dropdown-menu absolute z-50 left-1/2 -translate-x-1/2 top-full mt-[-20px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 lg:w-[946px] w-full bg-white dark:bg-neutral-strong rounded-[20px] p-4 flex items-start md:gap-x-6 gap-y-6 border border-neutral-subtle dark:border-white/10 shadow-xl">
+                        <div
+                            class="dropdown-menu absolute z-50 left-1/2 -translate-x-1/2 top-full mt-[-20px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 lg:w-[946px] w-full bg-white dark:bg-neutral-strong rounded-[20px] p-4 flex items-start md:gap-x-6 gap-y-6 border border-neutral-subtle dark:border-white/10 shadow-xl">
 
                             <div class="flex-1 space-y-3">
                                 <ul class="space-y-2">
@@ -517,13 +522,13 @@
 
                 <div class="border-b border-white/5 pb-4">
                     <button @click="activeDropdown = activeDropdown === 'help' ? null : 'help'"
-                            class="flex justify-between items-center w-full text-white font-bricolage text-xl">
-                            Help Center
-                            <svg :class="activeDropdown === 'help' ? 'rotate-180' : ''"
-                                class="transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <path d="m6 9 6 6 6-6" />
-                            </svg>
+                        class="flex justify-between items-center w-full text-white font-bricolage text-xl">
+                        Help Center
+                        <svg :class="activeDropdown === 'help' ? 'rotate-180' : ''" class="transition-transform"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
                     </button>
                     <div x-show="activeDropdown === 'help'" x-collapse class="mt-4 grid grid-cols-1 gap-2">
                         <a href="help-knowledge-based.html"
@@ -535,13 +540,13 @@
 
                 <div class="border-b border-white/5 pb-4">
                     <button @click="activeDropdown = activeDropdown === 'blog' ? null : 'blog'"
-                            class="flex justify-between items-center w-full text-white font-bricolage text-xl">
-                            Blog
-                            <svg :class="activeDropdown === 'blog' ? 'rotate-180' : ''"
-                                class="transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <path d="m6 9 6 6 6-6" />
-                            </svg>
+                        class="flex justify-between items-center w-full text-white font-bricolage text-xl">
+                        Blog
+                        <svg :class="activeDropdown === 'blog' ? 'rotate-180' : ''" class="transition-transform"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
                     </button>
                     <div x-show="activeDropdown === 'blog'" x-collapse class="mt-4 grid grid-cols-1 gap-2">
                         <a href="blog.html"
@@ -567,12 +572,12 @@
     </header>
     <!-- Header Section End -->
 
-    <section class="corner-gradiant-one pt-[146px]">
-        <div class="container">
-            <div class="d-flex gap-[68px] pb-[128px]">
+    <section class="corner-gradiant-one pt-[80px] md:pt-[120px] lg:pt-[146px] px-4 md:px-0">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row gap-[40px] lg:gap-[68px] pb-[60px] lg:pb-[128px]">
 
-                <div class="corner-hero-content max-w-[56%]">
-                    <div class="corner__hero-top-title">
+                <div class="corner-hero-content w-full lg:max-w-[56%]">
+                    <div class="corner__hero-top-title flex items-center gap-2 mb-4">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12C1.25 6.06294 6.06294 1.25 12 1.25ZM12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75ZM12 12.165C12.2793 12.165 12.529 12.2719 12.7012 12.3613C12.8896 12.4592 13.0792 12.5874 13.2568 12.7227C13.6131 12.9939 13.9904 13.3436 14.3252 13.6758C14.6631 14.0111 14.9733 14.3445 15.1982 14.5928C15.3111 14.7173 15.4035 14.8213 15.4678 14.8945C15.4989 14.9301 15.5495 14.9889 15.5684 15.0107L15.5703 15.0127C15.8393 15.3275 15.8021 15.8012 15.4873 16.0703C15.1725 16.3393 14.6988 16.302 14.4297 15.9873L14.4248 15.9814L14.4082 15.9619C14.3929 15.9442 14.3695 15.9176 14.3398 15.8838C14.2802 15.8158 14.1935 15.7173 14.0869 15.5996C13.873 15.3635 13.5816 15.0508 13.2686 14.7402C12.9522 14.4263 12.6279 14.1294 12.3477 13.916C12.2071 13.809 12.0935 13.7359 12.0098 13.6924L12 13.6865L11.9902 13.6924C11.9065 13.7359 11.7929 13.809 11.6523 13.916C11.3721 14.1294 11.0478 14.4264 10.7314 14.7402C10.4184 15.0508 10.127 15.3635 9.91309 15.5996C9.8065 15.7173 9.7198 15.8158 9.66016 15.8838C9.6305 15.9176 9.6071 15.9442 9.5918 15.9619L9.5752 15.9814L9.57031 15.9873C9.30119 16.302 8.82752 16.3393 8.5127 16.0703C8.1979 15.8012 8.16068 15.3275 8.42969 15.0127L8.43262 15.0098L8.4375 15.0039L8.45801 14.9805C8.47537 14.9604 8.50016 14.9311 8.53223 14.8945C8.59646 14.8213 8.68895 14.7173 8.80176 14.5928C9.02677 14.3444 9.33771 14.0112 9.67578 13.6758C10.0105 13.3436 10.3869 12.9939 10.7432 12.7227C10.9208 12.5874 11.1104 12.4592 11.2988 12.3613C11.471 12.2719 11.7207 12.165 12 12.165ZM12 7.75C12.2791 7.75 12.529 7.85594 12.7012 7.94531C12.8895 8.04315 13.0792 8.17144 13.2568 8.30664C13.6132 8.57791 13.9903 8.9275 14.3252 9.25977C14.6632 9.59518 14.9733 9.92936 15.1982 10.1777C15.311 10.3022 15.4036 10.4063 15.4678 10.4795C15.499 10.5152 15.5496 10.574 15.5684 10.5957L15.5703 10.5977C15.8391 10.9125 15.8019 11.3852 15.4873 11.6543C15.1725 11.9234 14.6988 11.8871 14.4297 11.5723L14.4287 11.5713L14.4248 11.5664L14.4082 11.5459C14.3928 11.5281 14.3697 11.5018 14.3398 11.4678C14.2802 11.3998 14.1934 11.3022 14.0869 11.1846C13.873 10.9484 13.5817 10.6349 13.2686 10.3242C12.9523 10.0104 12.6279 9.71431 12.3477 9.50098C12.207 9.39391 12.0935 9.31986 12.0098 9.27637L12 9.27148L11.9902 9.27637C11.9065 9.31987 11.793 9.39389 11.6523 9.50098C11.3721 9.71432 11.0478 10.0104 10.7314 10.3242C10.4183 10.6349 10.1271 10.9484 9.91309 11.1846C9.80658 11.3022 9.71977 11.3998 9.66016 11.4678C9.63035 11.5018 9.60715 11.5281 9.5918 11.5459L9.5752 11.5664L9.57129 11.5713L9.57031 11.5723C9.30113 11.8869 8.82747 11.9234 8.5127 11.6543C8.19813 11.3852 8.16091 10.9124 8.42969 10.5977L8.43262 10.5947L8.4375 10.5879L8.45801 10.5645C8.47533 10.5444 8.50043 10.5158 8.53223 10.4795C8.59648 10.4062 8.68892 10.3013 8.80176 10.1768C9.02675 9.92838 9.33783 9.5951 9.67578 9.25977C10.0106 8.92759 10.3869 8.57782 10.7432 8.30664C10.9208 8.17142 11.1104 8.04316 11.2988 7.94531C11.471 7.85594 11.7209 7.75001 12 7.75Z"
@@ -580,17 +585,20 @@
                         </svg>
                         Trending on Framer
                     </div>
-                    <h1 class="corner__hero-title text-primary mb-[24px] text-[80px] leading-[110%]">
+                    <h1
+                        class="corner__hero-title text-primary mb-[24px] text-[40px] md:text-[60px] lg:text-[80px] leading-[110%]">
                         Launch, Grow & Scale Without the Chaos</h1>
-                    <p class="text-white font-inter font-normal pb-[64px] text-[22px] leading-[100%]">Your all-in-one AI
-                        assistant for
-                        organizing
-                        tasks, collaborating in real-time, and turning chaos into
-                        clarity — built for fast-moving SaaS teams.</p>
+                    <p
+                        class="text-white font-inter font-normal pb-[40px] lg:pb-[64px] text-[18px] lg:text-[22px] leading-[1.4] lg:leading-[100%]">
+                        Your all-in-one AI assistant for organizing tasks, collaborating in real-time, and turning chaos
+                        into clarity — built for fast-moving SaaS teams.
+                    </p>
 
-                    <div class="corner__hero-buttons flex gap-2 pb-[64px]">
-                        <a href="#" class="corner-btn-transparent text-primary transition-colors">Try for Free</a>
-                        <a href="#" class="button-no-outline transition-colors">Request a Demo</a>
+                    <div class="corner__hero-buttons flex flex-wrap gap-4 pb-[40px] lg:pb-[64px]">
+                        <a href="#"
+                            class="corner-btn-transparent text-primary transition-colors px-6 py-3 border border-primary/20 rounded-lg">Try
+                            for Free</a>
+                        <a href="#" class="button-no-outline transition-colors px-6 py-3">Request a Demo</a>
                     </div>
 
                     <div class="font-bricolage text-primary font-normal pb-[24px] text-[16px] leading-[100%]">
@@ -599,328 +607,1266 @@
 
                     <div class="corner-logo-slider overflow-hidden">
                         <div class="corner-logo-slider-track flex gap-8">
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <!-- Duplicate items for seamless loop -->
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
-                            <div class="corner-logo-slider-item flex-shrink-0">
-                                <img src="src/images/logo-slider/01.png" alt="Logo" class="h-8 w-auto opacity-60">
-                            </div>
+                            <div class="corner-logo-slider-item flex-shrink-0"><img src="src/images/logo-slider/01.png"
+                                    alt="Logo" class="h-6 md:h-8 w-auto opacity-60"></div>
+                            <div class="corner-logo-slider-item flex-shrink-0"><img src="src/images/logo-slider/01.png"
+                                    alt="Logo" class="h-6 md:h-8 w-auto opacity-60"></div>
+                            <div class="corner-logo-slider-item flex-shrink-0"><img src="src/images/logo-slider/01.png"
+                                    alt="Logo" class="h-6 md:h-8 w-auto opacity-60"></div>
+                            <div class="corner-logo-slider-item flex-shrink-0"><img src="src/images/logo-slider/01.png"
+                                    alt="Logo" class="h-6 md:h-8 w-auto opacity-60"></div>
+                            <div class="corner-logo-slider-item flex-shrink-0"><img src="src/images/logo-slider/01.png"
+                                    alt="Logo" class="h-6 md:h-8 w-auto opacity-60"></div>
                         </div>
                     </div>
-
                 </div>
 
-                <div class="corner-hero-image w-[44%] rounded-[40px] relative overflow-hidden aspect-[4/5]">
-                    <img
-                        src="./src/images/hero/hero.webp"
-                        alt="Hero Image"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-
+                <div
+                    class="corner-hero-image w-full lg:w-[44%] rounded-[24px] lg:rounded-[40px] relative overflow-hidden aspect-[4/5] md:aspect-[16/9] lg:aspect-[4/5]">
+                    <img src="./src/images/hero/hero.webp" alt="Hero Image"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#eab308]/90 via-[#eab308]/40 to-transparent">
+                    </div>
 
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#eab308]/90 via-[#eab308]/40 to-transparent"></div>
-
-                    <div class="absolute bottom-10 left-10 right-10 text-white z-10">
-                        <div class="flex items-center gap-1 mb-6">
-                            <span class="text-[18px]">★</span>
-                            <span class="text-[18px]">★</span>
-                            <span class="text-[18px]">★</span>
-                            <span class="text-[18px]">★</span>
-                            <span class="text-[18px]">★</span>
+                    <div class="absolute bottom-6 left-6 right-6 lg:bottom-10 lg:left-10 lg:right-10 text-white z-10">
+                        <div class="flex items-center gap-1 mb-4 lg:mb-6">
+                            <span class="text-[14px] lg:text-[18px]">★</span>
+                            <span class="text-[14px] lg:text-[18px]">★</span>
+                            <span class="text-[14px] lg:text-[18px]">★</span>
+                            <span class="text-[14px] lg:text-[18px]">★</span>
+                            <span class="text-[14px] lg:text-[18px]">★</span>
                         </div>
-
-                        <p class="text-[22px] md:text-[26px] leading-[1.2] mb-8 font-bricolage tracking-tight">
-                            “There's power in a single platform where you can do all your work.
-                            Notion is that single place.”
+                        <p
+                            class="text-[18px] md:text-[22px] lg:text-[26px] leading-[1.2] mb-6 lg:mb-8 font-bricolage tracking-tight">
+                            “There's power in a single platform where you can do all your work. Notion is that single
+                            place.”
                         </p>
-
                         <div class="space-y-0.5">
-                            <p class="text-[20px] font-mediumfont-bricolage">Malena Smith</p>
-                            <p class="text-[14px] font-medium opacity-90 font-inter">Vice President, OpenAI</p>
+                            <p class="text-[16px] lg:text-[20px] font-medium font-bricolage">Malena Smith</p>
+                            <p class="text-[12px] lg:text-[14px] font-medium opacity-90 font-inter">Vice President,
+                                OpenAI</p>
                         </div>
                     </div>
                 </div>
-                
             </div>
 
-            <div class="flex flex-col justify-center">
-                <img src="./src/images/hero/productday.png" alt="Scroll Down" class="mx-auto mb-[32px]" />
+            <div class="flex flex-col justify-center mt-12 lg:mt-0">
+                <img src="./src/images/hero/productday.png" alt="Product Day"
+                    class="mx-auto mb-[24px] lg:mb-[32px] max-w-[150px] md:max-w-none" />
                 <h2
-                    class="text-[64px] text-center font-bold leading-[110%] font-bricolage text-[#D8C6FF] tracking-[-3%] mb-[32px]">
-                    Your AI-Powered Workspace<br /> for Everything</h2>
-                <img src="./src/images/hero/feature-image.png" alt="Scroll Down"
-                    class="mx-auto rounded-tl-[16px] rounded-tr-[16px]" />
+                    class="text-[32px] md:text-[48px] lg:text-[64px] text-center font-bold leading-[110%] font-bricolage text-[#D8C6FF] tracking-[-3%] mb-[32px]">
+                    Your AI-Powered Workspace<br class="hidden md:block" /> for Everything
+                </h2>
+                <img src="./src/images/hero/feature-image.png" alt="Features"
+                    class="mx-auto rounded-tl-[16px] rounded-tr-[16px] w-full object-cover" />
             </div>
 
         </div>
     </section>
 
 
-    <section class="corner__tranding">
-        <div class="container">
-            <div class="corner__heading">
-                <p class="corner__heading-top color-primary-base mb-[24px] !text-[18px] leading-[100%] font-uncutsans">
-                    Trending on
-                    Framer</p>
-                <h2 class="corner__heading-title heading-two">Smarter Tools. <br />
-                    Built Around You.</h2>
-                <p class="corner__heading-description color-neutral-base">Smarter Tools. Built Around You.</p>
+    <section class="corner__tranding py-[60px] lg:py-[100px]" x-data="{ activeTab: 'tab1' }">
+        <div class="container mx-auto px-4">
+            <div class="corner__heading text-center lg:text-left mb-[40px] lg:mb-[64px]">
+                <p
+                    class="corner__heading-top color-primary-base mb-[16px] lg:mb-[24px] !text-[16px] lg:text-[18px] leading-[100%] font-uncutsans">
+                    Trending on Framer
+                </p>
+                <h2
+                    class="corner__heading-title text-[36px] md:text-[48px] lg:text-[64px] font-bold leading-[110%] font-bricolage mb-[16px]">
+                    Smarter Tools. <br class="hidden md:block" /> Built Around You.
+                </h2>
+                <p class="corner__heading-description color-neutral-base text-[16px] lg:text-[18px]">
+                    Efficiency redefined for modern teams.
+                </p>
             </div>
 
             <div class="corner__tabs">
-                <div class="corner__tranding-tab-list">
-                    <button
-                        class="corner__tab active pt-[12px] pb-[12px] pl-[20px] pr-[20px] border-[1px] rounded-[12px] border-primary text-[14px] leading-[110%] font-medium"
-                        data-target="tab1">AI That Understands You</button>
-                    <button
-                        class="corner__tab pt-[12px] pb-[12px] pl-[20px] pr-[20px] border-[1px] rounded-[12px] border-primary text-[14px] leading-[110%] font-medium"
-                        data-target="tab2">Effortless Automation</button>
-                    <button
-                        class="corner__tab pt-[12px] pb-[12px] pl-[20px] pr-[20px] border-[1px] rounded-[12px] border-primary text-[14px] leading-[110%] font-medium"
-                        data-target="tab3">Teamwork That Clicks</button>
-                    <button
-                        class="corner__tab pt-[12px] pb-[12px] pl-[20px] pr-[20px] border-[1px] rounded-[12px] border-primary text-[14px] leading-[110%] font-medium"
-                        data-target="tab4">Search, Simplified</button>
+                <div
+                    class="corner__tranding-tab-list flex overflow-x-auto lg:overflow-visible gap-3 pb-4 lg:pb-0 no-scrollbar">
+                    <template x-for="(tab, index) in [
+                    {id: 'tab1', label: 'AI That Understands You'},
+                    {id: 'tab2', label: 'Effortless Automation'},
+                    {id: 'tab3', label: 'Teamwork That Clicks'},
+                    {id: 'tab4', label: 'Search, Simplified'}
+                ]">
+                        <button @click="activeTab = tab.id"
+                            :class="activeTab === tab.id ? 'bg-primary text-neutral-strong border-primary' : 'border-[#D8C6FF] text-neutral-strong bg-transparent'"
+                            class="whitespace-nowrap pt-[12px] pb-[12px] pl-[20px] pr-[20px] border-[1px] rounded-[12px] text-[14px] leading-[110%] font-medium transition-all duration-300"
+                            x-text="tab.label">
+                        </button>
+                    </template>
                 </div>
 
                 <div class="corner__tranding-tab-list-content mt-[32px]">
-                    <div class="corner__content active" id="tab1">
-                        <div class="corner__content-ai flex flex-wrap justify-between gap-[64px]">
-                            <div class="corner__content-ai-left w-[35%] flex justify-between flex-col h-auto pb-[32px]">
-                                <div>
-                                    <h3 class="text-[40px] leading-[100%] font-bricolage font-bold mb-[8px]">AI That
-                                        Gets It
-                                        Right</h3>
-                                    <p
-                                        class="font-uncutsans text-[18px] leading-[100%] font-normal mb-[24px] opacity-70">
-                                        Tap into
-                                        AI-powered suggestions tailored to your team’s habits. Whether it’s writing,
-                                        organizing, or prioritizing — it just knows what to do next.</p>
-                                </div>
+                    <div x-show="activeTab === 'tab1'" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform translate-y-4">
+                        <div class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
+                            <div class="w-full lg:w-[35%] flex flex-col justify-center h-auto">
+                                <h3
+                                    class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]">
+                                    AI That Gets It Right</h3>
+                                <p
+                                    class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70">
+                                    Tap into AI-powered suggestions tailored to your team’s habits. Whether it’s
+                                    writing, organizing, or prioritizing — it just knows what to do next.
+                                </p>
                                 <a href="#"
-                                    class="btn-transparent flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary transition-bg transition-colors">
+                                    class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">
                                     Request a Demo
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
-                                            stroke-miterlimit="16" />
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" />
                                     </svg>
                                 </a>
                             </div>
-                            <div class="corner__content-ai-right w-[53%]">
-                                <img class="w-full h-auto" src="./src/images/tabs/tab01.webp" />
+                            <div class="w-full lg:w-[53%]">
+                                <img class="w-full h-auto rounded-[24px]" src="./src/images/tabs/tab01.webp"
+                                    alt="AI Feature" />
                             </div>
                         </div>
                     </div>
-                    <div class="corner__content" id="tab2">
-                        <div class="corner__content-ai flex flex-wrap justify-between gap-[64px]">
-                            <div class="corner__content-ai-left w-[35%] flex justify-between flex-col h-auto pb-[32px]">
-                                <div>
-                                    <h3 class="text-[40px] leading-[100%] font-bricolage font-bold mb-[8px]">Effortless
-                                        Automation</h3>
-                                    <p
-                                        class="font-uncutsans text-[18px] leading-[100%] font-normal mb-[24px] opacity-70">
-                                        Tap into
-                                        AI-powered suggestions tailored to your team’s habits. Whether it’s writing,
-                                        organizing, or prioritizing — it just knows what to do next.</p>
-                                </div>
+
+                    <div x-show="activeTab === 'tab2'" x-cloak x-transition:enter="transition ease-out duration-300">
+                        <div class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
+                            <div class="w-full lg:w-[35%] flex flex-col justify-center h-auto">
+                                <h3
+                                    class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]">
+                                    Effortless Automation</h3>
+                                <p
+                                    class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70">
+                                    Automate your workflows with zero effort. Let AI handle the repetitive tasks while
+                                    you focus on creativity.</p>
                                 <a href="#"
-                                    class="btn-transparent flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary transition-bg transition-colors">
-                                    Request a Demo
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
-                                            stroke-miterlimit="16" />
-                                    </svg>
-                                </a>
+                                    class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">Request
+                                    a Demo</a>
                             </div>
-                            <div class="corner__content-ai-right w-[53%]">
-                                <img class="w-full h-auto" src="./src/images/tabs/tab01.webp" />
-                            </div>
+                            <div class="w-full lg:w-[53%]"><img class="w-full h-auto rounded-[24px]"
+                                    src="./src/images/tabs/tab01.webp" /></div>
                         </div>
                     </div>
-                    <div class="corner__content" id="tab3">
-                        <div class="corner__content-ai flex flex-wrap justify-between gap-[64px]">
-                            <div class="corner__content-ai-left w-[35%] flex justify-between flex-col h-auto pb-[32px]">
-                                <div>
-                                    <h3 class="text-[40px] leading-[100%] font-bricolage font-bold mb-[8px]">Teamwork
-                                        That Clicks</h3>
-                                    <p
-                                        class="font-uncutsans text-[18px] leading-[100%] font-normal mb-[24px] opacity-70">
-                                        Tap into
-                                        AI-powered suggestions tailored to your team’s habits. Whether it’s writing,
-                                        organizing, or prioritizing — it just knows what to do next.</p>
-                                </div>
+
+                    <div x-show="activeTab === 'tab3'" x-cloak x-transition:enter="transition ease-out duration-300">
+                        <div class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
+                            <div class="w-full lg:w-[35%] flex flex-col justify-center h-auto">
+                                <h3
+                                    class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]">
+                                    Teamwork That Clicks</h3>
+                                <p
+                                    class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70">
+                                    Collaborate in real-time with tools designed for speed and clarity.</p>
                                 <a href="#"
-                                    class="btn-transparent flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary transition-bg transition-colors">
-                                    Request a Demo
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
-                                            stroke-miterlimit="16" />
-                                    </svg>
-                                </a>
+                                    class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">Request
+                                    a Demo</a>
                             </div>
-                            <div class="corner__content-ai-right w-[53%]">
-                                <img class="w-full h-auto" src="./src/images/tabs/tab01.webp" />
-                            </div>
+                            <div class="w-full lg:w-[53%]"><img class="w-full h-auto rounded-[24px]"
+                                    src="./src/images/tabs/tab01.webp" /></div>
                         </div>
                     </div>
-                    <div class="corner__content" id="tab4">
-                        <div class="corner__content-ai flex flex-wrap justify-between gap-[64px]">
-                            <div class="corner__content-ai-left w-[35%] flex justify-between flex-col h-auto pb-[32px]">
-                                <div>
-                                    <h3 class="text-[40px] leading-[100%] font-bricolage font-bold mb-[8px]">Search,
-                                        Simplified</h3>
-                                    <p
-                                        class="font-uncutsans text-[18px] leading-[100%] font-normal mb-[24px] opacity-70">
-                                        Tap into
-                                        AI-powered suggestions tailored to your team’s habits. Whether it’s writing,
-                                        organizing, or prioritizing — it just knows what to do next.</p>
-                                </div>
+
+                    <div x-show="activeTab === 'tab4'" x-cloak x-transition:enter="transition ease-out duration-300">
+                        <div class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
+                            <div class="w-full lg:w-[35%] flex flex-col justify-center h-auto">
+                                <h3
+                                    class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]">
+                                    Search, Simplified</h3>
+                                <p
+                                    class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70">
+                                    Find anything across your entire workspace in seconds with semantic search.</p>
                                 <a href="#"
-                                    class="btn-transparent flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary transition-bg transition-colors">
-                                    Request a Demo
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
-                                            stroke-miterlimit="16" />
-                                    </svg>
-                                </a>
+                                    class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">Request
+                                    a Demo</a>
                             </div>
-                            <div class="corner__content-ai-right w-[53%]">
-                                <img class="w-full h-auto" src="./src/images/tabs/tab01.webp" />
-                            </div>
+                            <div class="w-full lg:w-[53%]"><img class="w-full h-auto rounded-[24px]"
+                                    src="./src/images/tabs/tab01.webp" /></div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <div class="corner__tranding-bottom mt-[16px] flex justify-between gap-[16px]">
+            <div
+                class="corner__tranding-bottom mt-[40px] lg:mt-[16px] flex flex-col lg:flex-row justify-between gap-[16px]">
                 <div
-                    class="corner__tranding-card w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] pb-[10px]">
-                    <div class="corner__tranding-card-content p-[32px]">
-                        <h3 class="text-[32px] leading-[100%] font-bricolage font-bold mb-[8px] text-[#240F52]">
-                            Automation Made
-                            Simple</h3>
-                        <p class="font-uncutsans text-[18px] leading-[100%] font-normal mb-[32px] opacity-70">Turn
-                            repetitive routines into effortless flows. With easy-to-set rules and triggers, your
-                            processes run automatically in the background — no coding, no clutter, just saved time.</p>
+                    class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col">
+                    <div class="p-[20px] md:p-[32px]">
+                        <h3
+                            class="text-[26px] lg:text-[32px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">
+                            Automation Made Simple</h3>
+                        <p
+                            class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[32px] opacity-70">
+                            Turn repetitive routines into effortless flows with easy-to-set rules and triggers.</p>
                     </div>
-
-                    <img class="w-full h-[269px] object-cover block rounded-[16px]" src="./src/images/cards/card02.webp"
-                        alt="Automation Made Simple" />
-
-                    <a href="#" class="absolute bottom-[40px] right-[24px]">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <img class="w-full h-[200px] md:h-[269px] object-cover rounded-[16px] mt-auto"
+                        src="./src/images/cards/card02.webp" alt="Automation" />
+                    <a href="#" class="absolute bottom-[24px] right-[24px] hover:scale-110 transition-transform">
+                        <svg width="48" height="48" viewBox="0 0 56 56" fill="none">
                             <rect width="56" height="56" rx="28" fill="white" />
-                            <path d="M25 22L31 28L25 34" stroke="#5A147F" stroke-width="1.5" stroke-miterlimit="16" />
+                            <path d="M25 22L31 28L25 34" stroke="#5A147F" stroke-width="1.5" />
                         </svg>
                     </a>
-
-                    <a href="#" class="absolute bottom-0 right-0 h-full w-full 7.75Z"></a>
                 </div>
+
                 <div
-                    class="corner__tranding-card w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] pb-[10px]">
-                    <div class="corner__tranding-card-content p-[32px]">
-                        <h3 class="text-[32px] leading-[100%] font-bricolage font-bold mb-[8px] text-[#240F52]">
+                    class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col">
+                    <div class="p-[20px] md:p-[32px]">
+                        <h3
+                            class="text-[26px] lg:text-[32px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">
                             Security You Can Rely On</h3>
-                        <p class="font-uncutsans text-[18px] leading-[100%] font-normal mb-[32px] opacity-70">Data
-                            protection is built in from the start — with permissions, compliance, and encryption keeping
-                            your team safe and confident.</p>
+                        <p
+                            class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[32px] opacity-70">
+                            Data protection is built in from the start keeping your team safe and confident.</p>
                     </div>
-
-                    <img class="w-full h-[269px] object-cover block rounded-[16px]" src="./src/images/cards/card03.png"
-                        alt="Automation Made Simple" />
-
-                    <a href="#" class="absolute bottom-[40px] right-[24px]">
-                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <img class="w-full h-[200px] md:h-[269px] object-cover rounded-[16px] mt-auto"
+                        src="./src/images/cards/card03.png" alt="Security" />
+                    <a href="#" class="absolute bottom-[24px] right-[24px] hover:scale-110 transition-transform">
+                        <svg width="48" height="48" viewBox="0 0 56 56" fill="none">
                             <rect width="56" height="56" rx="28" fill="white" />
-                            <path d="M25 22L31 28L25 34" stroke="#5A147F" stroke-width="1.5" stroke-miterlimit="16" />
+                            <path d="M25 22L31 28L25 34" stroke="#5A147F" stroke-width="1.5" />
                         </svg>
                     </a>
-
-                    <a href="#" class="absolute bottom-0 right-0 h-full w-full 7.75Z"></a>
                 </div>
             </div>
-
         </div>
     </section>
 
 
-    <section class="corner__promo-section">
-        <div class="container">
-            <div class="corner__promo-heading flex justify-between items-center mb-[52px]">
-                <div class="corner__promo-heading-left w-[70%] text-[40px] leading-[100%] font-bricolage font-bold">
+    <section class="corner__promo-section py-[60px] lg:py-[100px]">
+        <div class="container mx-auto px-4">
+            <div
+                class="corner__promo-heading flex flex-col md:flex-row justify-between items-center gap-6 mb-[40px] lg:mb-[52px]">
+                <div
+                    class="corner__promo-heading-left w-full md:w-[70%] text-[32px] lg:text-[40px] leading-[110%] font-bricolage font-bold text-center md:text-left">
                     More Features to Power Your Day
                 </div>
-                <div class="corner__promo-heading-right w-[30%] flex justify-end">
+                <div class="corner__promo-heading-right w-full md:w-[30%] flex justify-center md:justify-end">
                     <a href="#"
-                        class="button-transparent px-[20px] py-[12px] rounded-[12px] border-[1px] border-primary text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary transition-bg transition-colors flex items-center justify-center gap-[10px] max-w-[220px]">
+                        class="button-transparent w-full md:w-auto px-[24px] py-[12px] rounded-[12px] border-[1px] border-primary text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-[10px]">
                         Request a Demo
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5"
+                                stroke-miterlimit="16" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="corner__promo-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[16px]">
+
+                <div
+                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
+                    <img class="w-[60px] lg:w-[80px] h-[60px] lg:h-[80px] object-contain mb-[40px] lg:mb-[128px]"
+                        src="./src/images/icons/audit-02.svg" alt="Smart Search" />
+                    <div class="mt-auto">
+                        <h3 class="text-[22px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">Smart
+                            Search</h3>
+                        <p class="font-uncutsans text-[14px] leading-[1.4] font-normal opacity-70">Find tasks, notes, or
+                            teammates instantly across all projects.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
+                    <img class="w-[60px] lg:w-[80px] h-[60px] lg:h-[80px] object-contain mb-[40px] lg:mb-[128px]"
+                        src="./src/images/icons/ai-idea.svg" alt="AI Summaries" />
+                    <div class="mt-auto">
+                        <h3 class="text-[22px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">AI
+                            Summaries</h3>
+                        <p class="font-uncutsans text-[14px] leading-[1.4] font-normal opacity-70">Get quick, clear
+                            recaps of meetings and updates.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
+                    <img class="w-[60px] lg:w-[80px] h-[60px] lg:h-[80px] object-contain mb-[40px] lg:mb-[128px]"
+                        src="./src/images/icons/file-cloud.svg" alt="Shared Docs" />
+                    <div class="mt-auto">
+                        <h3 class="text-[22px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">Shared
+                            Docs</h3>
+                        <p class="font-uncutsans text-[14px] leading-[1.4] font-normal opacity-70">Work together on live
+                            docs that stay synced automatically.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
+                    <img class="w-[60px] lg:w-[80px] h-[60px] lg:h-[80px] object-contain mb-[40px] lg:mb-[128px]"
+                        src="./src/images/icons/dashboard-circle-add.svg" alt="Custom Fields" />
+                    <div class="mt-auto">
+                        <h3 class="text-[22px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">Custom
+                            Fields</h3>
+                        <p class="font-uncutsans text-[14px] leading-[1.4] font-normal opacity-70">Adapt your workspace
+                            with fields built around your process.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="corner__testimonial my-[60px] lg:my-[128px] py-[60px] lg:pb-[128px] bg-white-gradient">
+        <div class="container mx-auto px-4">
+            <div class="corner__testimonial-content flex flex-col lg:flex-row gap-[24px] lg:gap-[16px]">
+
+                <div
+                    class="corner__testimonial-image w-full lg:w-[30%] relative rounded-[16px] overflow-hidden aspect-video lg:aspect-auto">
+                    <img class="w-full h-full object-cover lg:h-auto rounded-[16px]"
+                        src="./src/images/testimonial/client.webp" alt="Testimonial" />
+                    <button
+                        class="corner__testimonial-button absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#D8C6FF] rounded-[50px] px-[20px] py-[12px] flex items-center justify-center gap-[10px] text-[16px] lg:text-[18px] leading-[100%] font-medium text-[#03000A] hover:bg-primary hover:text-white transition-all w-[180px] lg:w-[215px] shadow-xl">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.62355 3.35132C4.85479 3.21713 5.13998 3.21617 5.3721 3.34882L19.3721 11.3488C19.6058 11.4824 19.75 11.7309 19.75 12C19.75 12.2691 19.6058 12.5177 19.3721 12.6512L5.3721 20.6512C5.13998 20.7838 4.85479 20.7829 4.62355 20.6487C4.39232 20.5145 4.25 20.2674 4.25 20V4C4.25 3.73265 4.39232 3.48551 4.62355 3.35132Z"
+                                fill="currentColor" />
+                        </svg>
+                        <span>Watch the Story</span>
+                    </button>
+                </div>
+
+                <div
+                    class="corner__testimonial-content w-full lg:w-[calc(70%-16px)] p-[24px] md:p-[40px] lg:p-[48px] rounded-[16px] bg-white text-[#240F52] relative flex flex-col justify-between min-h-[300px] lg:pb-[120px]">
+                    <div
+                        class="font-bricolage text-[22px] md:text-[28px] lg:text-[32px] leading-[1.3] lg:leading-[100%] font-normal mb-[32px]">
+                        “With this platform, we finally stopped juggling multiple tools. Now our projects, updates, and
+                        reports all live in one place — and the difference is incredible.
+                        <br class="hidden lg:block" /><br class="hidden lg:block" />
+                        Our team moves faster, meetings are more focused, and collaboration feels effortless.”
+                    </div>
+
+                    <div class="corner__user lg:absolute lg:bottom-[40px] lg:left-[48px] mt-6 lg:mt-0">
+                        <p
+                            class="font-bricolage text-[20px] lg:text-[24px] leading-[100%] font-semibold mb-[8px] text-[#5A147F]">
+                            Sophia Lee
+                        </p>
+                        <p class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] text-[#5A147F]">
+                            <span class="font-medium">Head of Operations at </span><strong
+                                class="font-bold">BrightFlow</strong>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="how-we-work my-[60px] lg:mb-[64px]">
+        <div class="container mx-auto px-4">
+            <div class="how-we-work-heading mb-[40px] lg:mb-[64px] text-center md:text-left">
+                <p
+                    class="font-bricolage text-[14px] lg:text-[16px] leading-[100%] font-semibold mb-[16px] lg:mb-[24px] text-[#5A147F]">
+                    4-step process
+                </p>
+                <h2
+                    class="font-bricolage text-[36px] md:text-[48px] lg:text-[64px] leading-[110%] font-bold mb-[12px] text-[#240F52]">
+                    From chaos to Clarity <br class="hidden md:block" /> in 4 simple steps
+                </h2>
+                <p class="color-neutral-base text-[18px] lg:text-[22px] leading-[100%] font-normal">Clarity in Minutes
+                </p>
+            </div>
+
+            <div class="how-we-work-steps flex flex-wrap lg:flex-nowrap gap-[30px] lg:gap-[40px]">
+
+                <div class="how-we-work-step w-full sm:w-[calc(50%-15px)] lg:w-1/4">
+                    <div
+                        class="how-we-work-step-number flex bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] w-[100px] relative gap-[8px] mb-[24px]">
+                        <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 1</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                                d="M5.64648 3.64648C5.84175 3.45122 6.15825 3.45122 6.35352 3.64648L10.3535 7.64648C10.5487 7.84175 10.5488 8.15827 10.3535 8.35352L6.35352 12.3535C6.15827 12.5488 5.84175 12.5487 5.64648 12.3535C5.45122 12.1583 5.45123 11.8417 5.64648 11.6465L9.29297 8L5.64648 4.35352C5.45123 4.15826 5.45124 3.84175 5.64648 3.64648Z"
+                                fill="#03000A" />
+                        </svg>
+                        <svg class="absolute top-[2px] right-[-15px] hidden lg:block" width="18" height="38"
+                            viewBox="0 0 18 38" fill="none">
+                            <path
+                                d="M15.6486 14.2003L1.75088 0.302637C1.10476 -0.343481 0 0.114125 0 1.02787V36.0756C0 36.9894 1.10476 37.447 1.75088 36.8009L15.6486 22.9032C18.0518 20.5 18.0518 16.6036 15.6486 14.2003Z"
+                                fill="#D8C6FF" />
+                        </svg>
+                    </div>
+                    <h3
+                        class="font-bricolage text-[18px] lg:text-[20px] leading-[120%] font-bold mb-[8px] text-[#240F52]">
+                        Capture Ideas</h3>
+                    <p class="font-uncutsans text-[15px] leading-[140%] font-normal text-[#000] opacity-70">Collect
+                        notes, tasks, and updates</p>
+                </div>
+
+                <div class="how-we-work-step w-full sm:w-[calc(50%-15px)] lg:w-1/4">
+                    <div
+                        class="how-we-work-step-number flex bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] w-[100px] relative gap-[8px] mb-[24px]">
+                        <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 2</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                                d="M5.64648 3.64648C5.84175 3.45122 6.15825 3.45122 6.35352 3.64648L10.3535 7.64648C10.5487 7.84175 10.5488 8.15827 10.3535 8.35352L6.35352 12.3535C6.15827 12.5488 5.84175 12.5487 5.64648 12.3535C5.45122 12.1583 5.45123 11.8417 5.64648 11.6465L9.29297 8L5.64648 4.35352C5.45123 4.15826 5.45124 3.84175 5.64648 3.64648Z"
+                                fill="#03000A" />
+                        </svg>
+                        <svg class="absolute top-[2px] right-[-15px] hidden lg:block" width="18" height="38"
+                            viewBox="0 0 18 38" fill="none">
+                            <path
+                                d="M15.6486 14.2003L1.75088 0.302637C1.10476 -0.343481 0 0.114125 0 1.02787V36.0756C0 36.9894 1.10476 37.447 1.75088 36.8009L15.6486 22.9032C18.0518 20.5 18.0518 16.6036 15.6486 14.2003Z"
+                                fill="#D8C6FF" />
+                        </svg>
+                    </div>
+                    <h3
+                        class="font-bricolage text-[18px] lg:text-[20px] leading-[120%] font-bold mb-[8px] text-[#240F52]">
+                        Let AI Organize It</h3>
+                    <p class="font-uncutsans text-[15px] leading-[140%] font-normal text-[#000] opacity-70">Sort and
+                        prioritize automatically</p>
+                </div>
+
+                <div class="how-we-work-step w-full sm:w-[calc(50%-15px)] lg:w-1/4">
+                    <div
+                        class="how-we-work-step-number flex bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] w-[100px] relative gap-[8px] mb-[24px]">
+                        <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 3</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path
+                                d="M5.64648 3.64648C5.84175 3.45122 6.15825 3.45122 6.35352 3.64648L10.3535 7.64648C10.5487 7.84175 10.5488 8.15827 10.3535 8.35352L6.35352 12.3535C6.15827 12.5488 5.84175 12.5487 5.64648 12.3535C5.45122 12.1583 5.45123 11.8417 5.64648 11.6465L9.29297 8L5.64648 4.35352C5.45123 4.15826 5.45124 3.84175 5.64648 3.64648Z"
+                                fill="#03000A" />
+                        </svg>
+                        <svg class="absolute top-[2px] right-[-15px] hidden lg:block" width="18" height="38"
+                            viewBox="0 0 18 38" fill="none">
+                            <path
+                                d="M15.6486 14.2003L1.75088 0.302637C1.10476 -0.343481 0 0.114125 0 1.02787V36.0756C0 36.9894 1.10476 37.447 1.75088 36.8009L15.6486 22.9032C18.0518 20.5 18.0518 16.6036 15.6486 14.2003Z"
+                                fill="#D8C6FF" />
+                        </svg>
+                    </div>
+                    <h3
+                        class="font-bricolage text-[18px] lg:text-[20px] leading-[120%] font-bold mb-[8px] text-[#240F52]">
+                        Collaborate in Real-Time</h3>
+                    <p class="font-uncutsans text-[15px] leading-[140%] font-normal text-[#000] opacity-70">Work
+                        together seamlessly</p>
+                </div>
+
+                <div class="how-we-work-step w-full sm:w-[calc(50%-15px)] lg:w-1/4">
+                    <div
+                        class="how-we-work-step-number flex bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] w-[104px] items-center justify-center relative gap-[8px] mb-[24px]">
+                        <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 4</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1.04102 10.0003C1.04102 14.9478 5.05185 18.9587 9.99935 18.9587C14.9468 18.9587 18.9577 14.9478 18.9577 10.0003C18.9577 5.05283 14.9468 1.04199 9.99935 1.04199C5.05185 1.04199 1.04102 5.05283 1.04102 10.0003ZM13.896 6.88615C14.2352 7.19698 14.2577 7.72447 13.9469 8.06364L9.36353 13.0636C9.21019 13.2311 8.99435 13.3287 8.76768 13.3337C8.54018 13.3387 8.32101 13.2504 8.16018 13.0895L6.07684 11.0062C5.75101 10.6812 5.75101 10.1528 6.07684 9.8278C6.40184 9.50197 6.93019 9.50197 7.25519 9.8278L8.72351 11.2953L12.7185 6.93701C13.0293 6.59785 13.5569 6.57532 13.896 6.88615Z"
+                                fill="#03000A" />
+                        </svg>
+                    </div>
+                    <h3
+                        class="font-bricolage text-[18px] lg:text-[20px] leading-[120%] font-bold mb-[8px] text-[#240F52]">
+                        Automate What Repeats</h3>
+                    <p class="font-uncutsans text-[15px] leading-[140%] font-normal text-[#000] opacity-70">Save hours
+                        by cutting repetition</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="corner__step-video mb-[64px]">
+        <div class="container mx-auto px-4">
+            <div class="corner__step-wrapper bg-cover bg-center pt-[40px] md:pt-[60px] lg:pt-[86px] px-[20px] md:px-[40px] lg:px-[64px] rounded-[24px] lg:rounded-[32px] overflow-hidden relative flex flex-col lg:flex-row justify-between"
+                style="background-image: url('./src/images/step-video/video.webp');">
+
+                <div
+                    class="corner__overlay-video absolute top-0 left-0 w-full h-full z-10 bg-black/40 lg:bg-transparent">
+                </div>
+
+                <div
+                    class="corner__step-wrapper-content z-20 relative w-full lg:w-[35%] xl:w-[26.5%] pb-[40px] lg:pb-[64px] text-center lg:text-left">
+                    <h3
+                        class="text-[32px] md:text-[40px] leading-[110%] lg:leading-[100%] font-bricolage font-bold text-white mb-[16px] lg:mb-[8px]">
+                        Built for People. Tuned for Speed.
+                    </h3>
+                    <p
+                        class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.5] lg:leading-[100%] font-medium text-white mb-[32px] opacity-90 lg:opacity-100">
+                        Our clean, human-first dashboard helps teams take action quickly. No steep learning curve, no
+                        wasted clicks — just insights and decisions.
+                    </p>
+
+                    <div class="flex justify-center lg:justify-start">
+                        <a href="#"
+                            class="button-transparent px-[24px] py-[14px] rounded-[50px] border-[1px] border-primary text-[16px] lg:text-[18px] leading-[100%] font-medium text-[#5A147F] bg-[#D8C6FF] hover:bg-white transition-all flex items-center justify-center gap-[10px] w-full sm:w-auto min-w-[220px]">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4.62355 3.35132C4.85479 3.21713 5.13998 3.21617 5.3721 3.34882L19.3721 11.3488C19.6058 11.4824 19.75 11.7309 19.75 12C19.75 12.2691 19.6058 12.5177 19.3721 12.6512L5.3721 20.6512C5.13998 20.7838 4.85479 20.7829 4.62355 20.6487C4.39232 20.5145 4.25 20.2674 4.25 20V4C4.25 3.73265 4.39232 3.48551 4.62355 3.35132Z"
+                                    fill="currentColor" />
+                            </svg>
+                            Watch How it Works
+                        </a>
+                    </div>
+                </div>
+
+                <div class="corner__step-wrapper-image w-full lg:w-[55%] xl:w-[60.5%] z-20 relative mt-auto">
+                    <img class="w-full h-auto object-contain translate-y-2 lg:translate-y-8"
+                        src="./src/images/step-video/ui-visual.png" alt="Step Video Visual" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-[100px] overflow-hidden">
+        <div class="container mx-auto px-4 mb-[60px] text-center">
+            <h2 class="text-[40px] md:text-[56px] font-bold font-bricolage leading-[1.1]">
+                Works with Your Favorite Tools
+            </h2>
+            <p class="text-[18px] mt-4">Connect With the Tools You Already Use</p>
+        </div>
+
+        <div class="marquee-mask container">
+
+            <div class="swiper tools-swiper !overflow-visible mb-6 md:mb-20">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-1.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-2.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-3.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-4.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-5.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-6.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-7.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-1.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-2.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-3.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-4.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-5.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-6.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-7.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-1.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-2.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-3.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-4.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-5.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-6.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-7.svg" class="w-18 h-18" alt="Tool 1">
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div dir="rtl" class="swiper tools-swiper-reverse !overflow-visible mt-6 md:mt-20">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-8.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-9.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-10.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-11.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-12.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-8.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-9.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-10.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-11.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-12.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-8.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-9.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-10.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-11.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-12.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-8.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-9.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-10.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-11.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-12.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-8.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-9.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-10.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-11.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide !w-auto">
+                        <div class="flex items-center gap-4 min-w-[120px]">
+                            <img src="./src/images/integration-logos/logo-12.svg" class="w-18 h-18" alt="Tool 7">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center mt-16">
+
+            <a href="#"
+                class="button-transparent w-full md:w-auto px-[24px] py-[12px] rounded-[12px] border-[1px] border-primary text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-[10px]">
+                Request a Demo
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="16" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <section class="pricing-plan py-[60px] lg:py-[128px] bg-[#D8C6FF]" x-data="{ plan: 'monthly' }">
+        <div class="container mx-auto px-4">
+            <h2
+                class="text-center text-[36px] md:text-[52px] lg:text-[64px] leading-[110%] tracking-[-0.03em] font-bricolage font-bold text-[#240F52] mb-[40px] lg:mb-[64px]">
+                Flexible Plans for <br class="hidden md:block" /> Every Stage
+            </h2>
+
+            <div class="corner__tabs mb-[40px]">
+                <div class="flex justify-center">
+                    <div class="bg-white rounded-[52px] p-[4px] flex items-center shadow-sm">
+                        <button @click="plan = 'monthly'"
+                            :class="plan === 'monthly' ? 'bg-[#5A147F] text-white' : 'text-[#240F52] hover:bg-gray-100'"
+                            class="px-[24px] py-[10px] rounded-[52px] text-[14px] leading-[110%] font-medium font-bricolage transition-all duration-300">
+                            Pay Monthly
+                        </button>
+                        <button @click="plan = 'yearly'"
+                            :class="plan === 'yearly' ? 'bg-[#5A147F] text-white' : 'text-[#240F52] hover:bg-gray-100'"
+                            class="px-[24px] py-[10px] rounded-[52px] text-[14px] leading-[110%] font-medium font-bricolage transition-all duration-300">
+                            Pay Yearly
+                            <!-- <span class="ml-1 text-[10px] opacity-80">(Save 20%)</span> -->
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+
+                <div
+                    class="corner__pricing-card p-[4px] bg-white rounded-[24px] relative flex flex-col h-full min-h-[650px] lg:pb-[100px]">
+                    <div class="p-[32px] rounded-[20px] bg-[#F9F7FE]">
+                        <h3 class="text-[28px] lg:text-[32px] font-bricolage font-bold text-[#240F52] mb-[24px]">Free
+                        </h3>
+                        <div class="flex items-baseline gap-[4px] mb-[8px]">
+                            <span class="text-[48px] lg:text-[52px] font-bold text-[#4B125E]">$0</span>
+                            <span class="text-[16px] font-bold text-[#240F52]">/ user</span>
+                        </div>
+                        <p class="opacity-70 text-[16px] lg:text-[18px]">Great for individuals and small teams getting
+                            started.</p>
+                    </div>
+                    <div class="p-[24px] lg:p-[32px] flex-grow">
+                        <h3 class="text-[18px] mb-[16px] text-[#240F52] font-bold font-bricolage">Includes:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-[16px] lg:text-[18px]"><img
+                                    src="./src/images/price/checkmark-circle.svg" class="mt-1" /> Up to 3 workspaces
+                            </li>
+                            <li class="flex items-start gap-3 text-[16px] lg:text-[18px]"><img
+                                    src="./src/images/price/checkmark-circle.svg" class="mt-1" /> AI-powered notes &
+                                summaries</li>
+                            <li class="flex items-start gap-3 text-[16px] lg:text-[18px]"><img
+                                    src="./src/images/price/checkmark-circle.svg" class="mt-1" /> Basic task management
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-[24px] mt-auto lg:absolute lg:bottom-0 lg:left-0 lg:w-full">
+                        <a href="#"
+                            class="block w-full text-center border-[1px] border-[#D8C6FF] rounded-[16px] py-[14px] font-semibold hover:bg-[#5A147F] hover:text-white transition-all">Start
+                            for Free</a>
+                        <p class="text-center opacity-60 text-[13px] mt-3 font-medium">No credit card required.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="corner__pricing-card p-[4px] bg-white rounded-[24px] relative flex flex-col h-full min-h-[650px] lg:pb-[100px] border-2 border-[#5A147F]/20 shadow-xl">
+                    <div class="p-[32px] rounded-[20px] bg-[#F9F7FE] relative">
+                        <div
+                            class="absolute -top-4 right-6 bg-[#5A147F] text-white text-[12px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">
+                            Recommended</div>
+                        <h3 class="text-[28px] lg:text-[32px] font-bricolage font-bold text-[#240F52] mb-[24px]">Pro
+                        </h3>
+                        <div class="flex items-baseline gap-[4px] mb-[8px]">
+                            <span class="text-[48px] lg:text-[52px] font-bold text-[#4B125E]"
+                                x-text="plan === 'monthly' ? '$15' : '$12'"></span>
+                            <span class="text-[16px] font-bold text-[#240F52]"
+                                x-text="plan === 'monthly' ? '/ user / month' : '/ user / year'"></span>
+                        </div>
+                        <p class="opacity-70 text-[16px] lg:text-[18px]">Perfect for growing teams that need more power.
+                        </p>
+                    </div>
+                    <div class="p-[24px] lg:p-[32px] flex-grow">
+                        <h3 class="text-[18px] mb-[16px] text-[#240F52] font-bold font-bricolage">Everything in Starter,
+                            plus:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-[16px] lg:text-[18px]"><img
+                                    src="./src/images/price/checkmark-circle.svg" class="mt-1" /> Full AI writing
+                                assistant</li>
+                            <li class="flex items-start gap-3 text-[16px] lg:text-[18px]"><img
+                                    src="./src/images/price/checkmark-circle.svg" class="mt-1" /> Unlimited automation
+                                flows</li>
+                            <li class="flex items-start gap-3 text-[16px] lg:text-[18px]"><img
+                                    src="./src/images/price/checkmark-circle.svg" class="mt-1" /> AI-powered search</li>
+                        </ul>
+                    </div>
+                    <div class="p-[24px] mt-auto lg:absolute lg:bottom-0 lg:left-0 lg:w-full">
+                        <a href="#"
+                            class="block w-full text-center bg-[#5A147F] text-white rounded-[16px] py-[14px] font-semibold hover:bg-[#240F52] transition-all">Unlock
+                            Full AI Power</a>
+                        <p class="text-center opacity-60 text-[13px] mt-3 font-medium">14-day free trial. Cancel
+                            anytime.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="corner__pricing-card p-[4px] bg-[#240F52] rounded-[24px] relative flex flex-col h-full min-h-[650px] lg:pb-[100px] text-white md:col-span-2 lg:col-span-1">
+                    <div class="p-[32px] rounded-[20px] bg-white/10">
+                        <h3 class="text-[28px] lg:text-[32px] font-bricolage font-bold mb-[24px]">Enterprise</h3>
+                        <div class="flex items-baseline gap-[4px] mb-[8px]">
+                            <span class="text-[48px] lg:text-[52px] font-bold text-[#D8C6FF]">Custom</span>
+                        </div>
+                        <p class="opacity-70 text-[16px] lg:text-[18px]">Built for high-scale and specialized security
+                            needs.</p>
+                    </div>
+                    <div class="p-[24px] lg:p-[32px] flex-grow">
+                        <h3 class="text-[18px] mb-[16px] font-bold font-bricolage">Priority features:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-[16px] lg:text-[18px] text-white/90"><img
+                                    src="./src/images/price/checkmark-circle-white.svg" class="mt-1" /> Dedicated
+                                support manager</li>
+                            <li class="flex items-start gap-3 text-[16px] lg:text-[18px] text-white/90"><img
+                                    src="./src/images/price/checkmark-circle-white.svg" class="mt-1" /> SSO & advanced
+                                security</li>
+                            <li class="flex items-start gap-3 text-[16px] lg:text-[18px] text-white/90"><img
+                                    src="./src/images/price/checkmark-circle-white.svg" class="mt-1" /> Custom contract
+                                & invoicing</li>
+                        </ul>
+                    </div>
+                    <div class="p-[24px] mt-auto lg:absolute lg:bottom-0 lg:left-0 lg:w-full">
+                        <a href="#"
+                            class="block w-full text-center bg-white text-[#240F52] rounded-[16px] py-[14px] font-semibold hover:bg-[#D8C6FF] transition-all">Let’s
+                            Talk</a>
+                        <p class="text-center opacity-60 text-[13px] mt-3 font-medium text-[#D8C6FF]">Tailored solutions
+                            for your org.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="pt-[60px] lg:pt-[128px] pb-[60px]">
+        <div class="container mx-auto px-4">
+            <h2
+                class="text-[36px] md:text-[52px] lg:text-[64px] leading-[110%] font-bricolage font-bold text-[#240F52] mb-[40px] lg:mb-[64px] text-center md:text-left">
+                Trusted by Teams <br class="hidden md:block" /> That Move Fast
+            </h2>
+
+            <div class="flex flex-col lg:flex-row gap-[16px]">
+
+                <div class="w-full lg:w-[32.5%] rounded-[16px] bg-[#D8C6FF] overflow-hidden">
+                    <div class="relative">
+                        <img class="h-[250px] md:h-[372px] w-full object-cover" src="./src/images/team.png"
+                            alt="Team collaborating" />
+                        <h2
+                            class="absolute top-[24px] left-[24px] lg:top-[32px] lg:left-[32px] text-[56px] lg:text-[76px] leading-[110%] font-bricolage font-bold text-white z-20 tracking-[-0.03px]">
+                            98%
+                        </h2>
+                        <div class="absolute bottom-0 left-0 w-full h-full opacity-60 z-10"
+                            style="background: linear-gradient(180deg, rgba(216, 198, 255, 0) 40%, #D8C6FF 100%);">
+                        </div>
+                    </div>
+
+                    <div class="p-[24px] lg:p-[32px] relative z-20">
+                        <h3
+                            class="text-[28px] lg:text-[32px] leading-[110%] font-bricolage font-bold text-[#240F52] mb-[16px]">
+                            AI Accuracy</h3>
+                        <p
+                            class="text-[16px] lg:text-[18px] leading-[1.4] font-normal text-[#000] opacity-70 font-uncutsans">
+                            Your notes, tasks, and docs are auto-organized with near-perfect precision — no manual
+                            tagging needed.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-[67.5%] flex flex-col gap-[16px]">
+
+                    <div class="flex flex-col md:flex-row gap-[16px]">
+                        <div
+                            class="w-full md:w-[36.33%] bg-[#240F52] rounded-[16px] p-[32px] flex flex-col justify-center items-center text-center">
+                            <h2
+                                class="text-[56px] lg:text-[76px] leading-[110%] font-bricolage font-bold text-[#D8C6FF] mb-2 tracking-[-0.03px]">
+                                1M+</h2>
+                            <p
+                                class="text-[16px] lg:text-[18px] leading-[1.2] font-normal text-[#D8C6FF] opacity-70 font-uncutsans">
+                                Projects Built on Our Platform
+                            </p>
+                        </div>
+
+                        <div
+                            class="w-full md:w-[63.67%] bg-[#F9F7FE] p-[24px] lg:p-[32px] rounded-[16px] border-[1px] border-[#D8C6FF] flex flex-col justify-between min-h-[250px]">
+                            <p
+                                class="text-[#240F52] text-[24px] lg:text-[32px] leading-[1.2] font-normal font-bricolage mb-8">
+                                "It feels like we doubled our team overnight — without hiring a single person."
+                            </p>
+                            <div>
+                                <h3 class="text-[20px] lg:text-[24px] font-bold font-bricolage text-[#240F52]">Abdullah
+                                    Noman</h3>
+                                <p class="text-[16px] lg:text-[18px] opacity-70 font-uncutsans">Founder at FramerLab</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-[16px]">
+                        <div
+                            class="w-full md:w-[63.67%] bg-[#F9F7FE] p-[24px] lg:p-[32px] rounded-[16px] border-[1px] border-[#D8C6FF]">
+                            <h2 class="text-[32px] lg:text-[40px] font-bricolage font-bold text-[#240F52] mb-3">98%</h2>
+                            <p class="text-[16px] lg:text-[18px] font-bold text-[#240F52] opacity-70 mb-2">
+                                Categorization Precision</p>
+                            <p class="text-[16px] lg:text-[18px] opacity-70 font-uncutsans">
+                                Your tasks, notes, and documents are instantly auto-organized by intelligent AI.
+                            </p>
+                        </div>
+
+                        <div
+                            class="w-full md:w-[36.33%] bg-[#D8C6FF] rounded-[16px] p-[32px] flex flex-col justify-center items-center text-center">
+                            <h2 class="text-[40px] lg:text-[48px] font-bricolage font-bold text-[#240F52] mb-2">60%</h2>
+                            <p class="text-[16px] lg:text-[18px] font-normal text-[#240F52] opacity-70 font-uncutsans">
+                                Faster Delivery Time
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="loved-by-teams py-[80px]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-[36px] lg:text-[48px] font-bold text-[#240F52] mb-[64px] font-bricolage">
+                Loved by Teams Worldwide
+            </h2>
+
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+
+                <div
+                    class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-8 flex flex-col items-center text-center justify-center min-h-[220px]">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center">
+                            <span class="text-white text-[10px]">🐧</span>
+                        </div>
+                        <span class="font-bold text-[#240F52] font-bricolage">Wally</span>
+                    </div>
+                    <p class="text-[#240F52] text-[18px] font-medium mb-6">Want a widget like this?</p>
+                    <button
+                        class="border border-gray-200 rounded-[8px] px-6 py-2 text-[14px] font-semibold text-[#240F52] hover:bg-gray-50 transition-colors">
+                        Import reviews
+                    </button>
+                </div>
+
+                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-18 h-18 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                            <span class="text-[14px] font-bold text-[#240F52] font-bricolage">Jakub</span>
+                        </div>
+                        <span class="text-[#00B67A]">★</span>
+                    </div>
+
+                    <div class="flex gap-1 mb-3">
+                        <template x-for="i in 4">
+                            <span class="text-orange-400 text-lg">★</span>
+                        </template>
+                        <span class="text-gray-200 text-lg">★</span>
+                    </div>
+
+                    <h4 class="font-bold text-[#240F52] mb-2 font-bricolage">Nice bank</h4>
+                    <p class="text-gray-600 text-[14px] leading-relaxed">
+                        Nice bank. Fast withdrawal and great support.
+                    </p>
+                </div>
+
+                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-18 h-18 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                            <span class="text-[14px] font-bold text-[#240F52] font-bricolage">Jakub</span>
+                        </div>
+                        <span class="text-[#00B67A]">★</span>
+                    </div>
+
+                    <div class="flex gap-1 mb-3">
+                        <template x-for="i in 4">
+                            <span class="text-orange-400 text-lg">★</span>
+                        </template>
+                        <span class="text-gray-200 text-lg">★</span>
+                    </div>
+
+                    <h4 class="font-bold text-[#240F52] mb-2 font-bricolage">Nice bank</h4>
+                    <p class="text-gray-600 text-[14px] leading-relaxed">
+                        Nice bank. Fast withdrawal and great support.
+                    </p>
+                </div>
+
+                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-18 h-18 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                👤</div>
+                            <span class="text-[14px] font-bold text-[#240F52] font-bricolage">Benedito Bernabe</span>
+                        </div>
+                        <span class="text-[#00B67A]">★</span>
+                    </div>
+                    <div class="flex gap-1 mb-3 text-orange-400">★★★★★</div>
+                    <h4 class="font-bold text-[#240F52] mb-2 font-bricolage">Olá eu gostaria de saber mais sobre o...
+                    </h4>
+                    <p class="text-gray-600 text-[14px] leading-relaxed">
+                        Olá eu gostaria de saber mais sobre o assunto. O processo foi muito simples e a equipe foi
+                        extremamente atenciosa em todos os passos.
+                    </p>
+                </div>
+
+                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-18 h-18 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                👤</div>
+                            <span class="text-[14px] font-bold text-[#240F52] font-bricolage">Benedito Bernabe</span>
+                        </div>
+                        <span class="text-[#00B67A]">★</span>
+                    </div>
+                    <div class="flex gap-1 mb-3 text-orange-400">★★★★★</div>
+                    <h4 class="font-bold text-[#240F52] mb-2 font-bricolage">Olá eu gostaria de saber mais sobre o...
+                    </h4>
+                    <p class="text-gray-600 text-[14px] leading-relaxed">
+                        Olá eu gostaria de saber mais sobre o assunto. O processo foi muito simples e a equipe foi
+                        extremamente atenciosa em todos os passos.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section Starts  -->
+    <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="{
+      activeId: 1,
+
+      items: [
+        {
+          id: 1,
+          title: 'What is your refund policy?',
+          content: 'We offer a 14-day money-back guarantee on all plans.'
+        },
+        {
+          id: 2,
+          title: 'How long does development take?',
+          content: 'Typical delivery time is 7–10 business days.'
+        },
+        {
+          id: 3,
+          title: 'Do you support WordPress plugins?',
+          content: 'Yes, we specialize in custom WordPress plugin development.'
+        },
+        {
+          id: 4,
+          title: 'Is support included?',
+          content: 'Email and ticket support is included for all paid plans.'
+        },
+        {
+          id: 5,
+          title: 'Can I request custom features?',
+          content: 'Absolutely. Custom features can be scoped and quoted.'
+        }
+      ],
+
+      toggle(id) {
+        this.activeId = this.activeId === id ? null : id
+      },
+
+      isOpen(id) {
+        return this.activeId === id
+      }
+    }">
+        <div class="container mx-auto max-w-3xl flex flex-col md:flex-row space-y-4">
+            <div
+                class="w-full md:w-[32.6%] flex flex-col sm:flex-row lg:flex-col sm:gap-[30px] gap-[48px] justify-between">
+                <div class="sm:w-[60%] w-full lg:w-full">
+                    <div
+                        class="text-[32px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px] sm:text-left text-center">
+                        Frequently Asked
+                        Questions
+                    </div>
+                    <p
+                        class="text-[18px] sm:text-left text-center font-uncutsans leading-[100%] font-normal text-[#000] opacity-70">
+                        Curious?
+                        Let’s Clear
+                        Things Up</p>
+                </div>
+                <div class="sm:w-[40%] w-full lg:w-full flex flex-col sm:text-left text-center">
+                    <h4 class="font-bold text-[18px] leading-[100%] font-bricolage text-[#240F52] mb-[4px]">Still
+                        have
+                        questions?</h4>
+                    <p class="text-[15px] leading-[100%] font-normal text-[#000] opacity-70 sm:mb-[0] mb-[16px]">
+                        We’ve got your back</p>
+                    <a href="#"
+                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] inline-flex items-center gap-[10px] text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[16px] sm:mb-[8px] mt-[16px] mx-auto sm:mx-0 lg:w-[220px]">
+                        <span class="text-[18px] leading-[100%] font-medium text-[#5A147F] font-uncutsans">Request
+                            Support</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
                                 stroke-miterlimit="16" />
@@ -928,912 +1874,180 @@
                     </a>
                 </div>
             </div>
-            <div class="corner__promo-content flex gap-[16px] mr-[-16px] flex-wrap">
-                <div
-                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[24px] px-[16px] w-[calc(25%-16px)]">
-                    <img class="w-[80px] h-[80px] object-contain" src="./src/images/icons/audit-02.svg"
-                        alt="More Features to Power Your Day" />
-                    <div class="corner__promo-content-item mt-[128px]">
-                        <h3 class="text-[22px] leading-[100%] font-bricolage font-bold mb-[8px] text-[#240F52]">Smart
-                            Search</h3>
-                        <p class="font-uncutsans text-[14px] leading-[100%] font-normal mb-[0px] opacity-70">Find tasks,
-                            notes, or teammates<br /> instantly across all projects.</p>
-                    </div>
-                </div>
-                <div
-                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[24px] px-[16px] w-[calc(25%-16px)]">
-                    <img class="w-[80px] h-[80px] object-contain" src="./src/images/icons/ai-idea.svg"
-                        alt="More Features to Power Your Day" />
-                    <div class="corner__promo-content-item mt-[128px]">
-                        <h3 class="text-[22px] leading-[100%] font-bricolage font-bold mb-[8px] text-[#240F52]">AI
-                            Summaries</h3>
-                        <p class="font-uncutsans text-[14px] leading-[100%] font-normal mb-[0px] opacity-70">Get quick,
-                            clear recaps of meetings and updates.</p>
-                    </div>
-                </div>
-                <div
-                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[24px] px-[16px] w-[calc(25%-16px)]">
-                    <img class="w-[80px] h-[80px] object-contain" src="./src/images/icons/file-cloud.svg"
-                        alt="More Features to Power Your Day" />
-                    <div class="corner__promo-content-item mt-[128px]">
-                        <h3 class="text-[22px] leading-[100%] font-bricolage font-bold mb-[8px] text-[#240F52]">Shared
-                            Docs</h3>
-                        <p class="font-uncutsans text-[14px] leading-[100%] font-normal mb-[0px] opacity-70">Work
-                            together on live docs that stay synced automatically.</p>
-                    </div>
-                </div>
-                <div
-                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[24px] px-[16px] w-[calc(25%-16px)]">
-                    <img class="w-[80px] h-[80px] object-contain" src="./src/images/icons/dashboard-circle-add.svg"
-                        alt="More Features to Power Your Day" />
-                    <div class="corner__promo-content-item mt-[128px]">
-                        <h3 class="text-[22px] leading-[100%] font-bricolage font-bold mb-[8px] text-[#240F52]">Custom
-                            Fields</h3>
-                        <p class="font-uncutsans text-[14px] leading-[100%] font-normal mb-[0px] opacity-70">Adapt your
-                            workspace with fields built around your process.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="corner__testimonial mt-[128px] mb-[128px] pb-[128px] bg-white-gradient">
-        <div class="container">
-            <div class="corner__testimonial-content flex gap-[16px]">
-                <div class="corner__testimonial-image w-[30%] relative rounded-[16px] overflow-hidden">
-                    <img class="w-full h-auto rounded-[16px]" src="./src/images/testimonial/client.webp"
-                        alt="Testimonial" />
-                    <button
-                        class="corner__testimonial-button absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-[#D8C6FF] rounded-[50px] px-[20px] py-[12px] flex items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#03000A] hover:bg-primary transition-bg transition-colors w-[215px]">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M4.62355 3.35132C4.85479 3.21713 5.13998 3.21617 5.3721 3.34882L19.3721 11.3488C19.6058 11.4824 19.75 11.7309 19.75 12C19.75 12.2691 19.6058 12.5177 19.3721 12.6512L5.3721 20.6512C5.13998 20.7838 4.85479 20.7829 4.62355 20.6487C4.39232 20.5145 4.25 20.2674 4.25 20V4C4.25 3.73265 4.39232 3.48551 4.62355 3.35132Z"
-                                fill="#5A147F" />
-                        </svg>
-                        <span>Watch the Story</span>
-                    </button>
-                </div>
-                <div
-                    class="corner__testimonial-content w-[calc(70%-16px)] p-[24px] rounded-[16px] bg-white text-[#240F52] relative pb-[100px]">
-                    <div class="font-bricolage text-[32px] leading-[100%] font-normal mb-[32px]">
-                        “With this platform, we finally stopped juggling multiple tools. Now our projects, updates, and
-                        reports all live in one place — and the difference is incredible.
-                        <br /><br />
-                        Our team moves faster, meetings are more focused, and collaboration feels effortless.”
+            <div class="w-full md:w-[58%]">
+                <template x-for="item in items" :key="item.id">
+                    <div class="rounded-xl mb-2 bg-white overflow-hidden transition-colors duration-300"
+                        :class="isOpen(item.id) ? 'border-[#D8C6FF]' : 'border-[#E5E7EB]'">
+
+                        <button type="button"
+                            class="flex w-full items-center justify-between px-6 py-5 text-left hover:bg-gray-50/40 transition-colors"
+                            @click="toggle(item.id)">
+
+                            <h3 class="text-[18px] font-semibold text-[#240F52] font-bricolage">
+                                <span x-text="item.title"></span>
+                            </h3>
+
+                            <span class="ml-4 flex h-6 w-6 shrink-0 items-center justify-center relative">
+                                <svg :class="isOpen(item.id) ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'"
+                                    class="absolute transition-all duration-300 transform" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
+                                        fill="#4B125E" />
+                                </svg>
+
+                                <svg :class="isOpen(item.id) ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'"
+                                    class="absolute transition-all duration-300 transform" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
+                                        fill="#4B125E" />
+                                </svg>
+                            </span>
+                        </button>
+
+                        <div x-show="isOpen(item.id)" x-collapse>
+                            <div x-show="isOpen(item.id)" x-transition:enter="transition opacity ease-out duration-300"
+                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                class="px-6 pb-6 text-[#4F4D53] leading-relaxed font-uncutsans">
+                                <p x-text="item.content"></p>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="corner__user absolute bottom-[24px] left-[24px]">
-                        <p class="font-bricolage text-[24px] leading-[100%] font-semibold mb-[8px] text-[#5A147F]">
-                            Sophia
-                            Lee</p>
-                        <p class="font-uncutsans text-[18px] leading-[100%] text-[#5A147F]">
-                            <span class="font-medium">Sophia Lee
-                                Head of
-                                Operations at </span><strong class="font-bold">BrightFlow</strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="how-we-work mb-[64px]">
-        <div class="container">
-            <div class="how-we-work-heading mb-[64px]">
-                <p class="font-bricolage text-[16px] leading-[100%] font-semibold mb-[24px] text-[#5A147F]">4-step
-                    process</p>
-                <h2 class="font-bricolage text-[64px] leading-[110%] font-bold mb-[8px] text-[#240F52]">From chaos to
-                    Clarity <br />
-                    in 4 simple steps
-                </h2>
-                <p class="color-neutral-base text-[22px] leading-[100%] font-normal">Clarity in Minutes</p>
-            </div>
-
-            <div class="how-we-work-steps flex gap-[40px]">
-                <div class="how-we-work-step w-[calc(25%-40px)]">
-                    <div
-                        class="how-we-work-step-number flex bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] w-[100px] relative flex gap-[8px] mb-[24px]">
-                        <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 1</span>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M5.64648 3.64648C5.84175 3.45122 6.15825 3.45122 6.35352 3.64648L10.3535 7.64648C10.5487 7.84175 10.5488 8.15827 10.3535 8.35352L6.35352 12.3535C6.15827 12.5488 5.84175 12.5487 5.64648 12.3535C5.45122 12.1583 5.45123 11.8417 5.64648 11.6465L9.29297 8L5.64648 4.35352C5.45123 4.15826 5.45124 3.84175 5.64648 3.64648Z"
-                                fill="#03000A" />
-                        </svg>
-
-                        <svg class="absolute top-[2px] right-[-15px]" width="18" height="38" viewBox="0 0 18 38"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M15.6486 14.2003L1.75088 0.302637C1.10476 -0.343481 0 0.114125 0 1.02787V36.0756C0 36.9894 1.10476 37.447 1.75088 36.8009L15.6486 22.9032C18.0518 20.5 18.0518 16.6036 15.6486 14.2003Z"
-                                fill="#D8C6FF" />
-                        </svg>
-                    </div>
-                    <h3 class="font-bricolage text-[18px] leading-[100%] font-bold mb-[8px] text-[#240F52]">Capture
-                        Ideas</h3>
-                    <p class="font-uncutsans text-[15px] leading-[100%] font-normal text-[#000] opacity-70">Collect
-                        notes, tasks, and updates</p>
-                </div>
-                <div class="how-we-work-step w-[calc(25%-40px)]">
-                    <div
-                        class="how-we-work-step-number flex bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] w-[100px] relative flex gap-[8px] mb-[24px]">
-                        <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 2</span>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M5.64648 3.64648C5.84175 3.45122 6.15825 3.45122 6.35352 3.64648L10.3535 7.64648C10.5487 7.84175 10.5488 8.15827 10.3535 8.35352L6.35352 12.3535C6.15827 12.5488 5.84175 12.5487 5.64648 12.3535C5.45122 12.1583 5.45123 11.8417 5.64648 11.6465L9.29297 8L5.64648 4.35352C5.45123 4.15826 5.45124 3.84175 5.64648 3.64648Z"
-                                fill="#03000A" />
-                        </svg>
-
-                        <svg class="absolute top-[2px] right-[-15px]" width="18" height="38" viewBox="0 0 18 38"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M15.6486 14.2003L1.75088 0.302637C1.10476 -0.343481 0 0.114125 0 1.02787V36.0756C0 36.9894 1.10476 37.447 1.75088 36.8009L15.6486 22.9032C18.0518 20.5 18.0518 16.6036 15.6486 14.2003Z"
-                                fill="#D8C6FF" />
-                        </svg>
-                    </div>
-                    <h3 class="font-bricolage text-[18px] leading-[100%] font-bold mb-[8px] text-[#240F52]">Let AI
-                        Organize It</h3>
-                    <p class="font-uncutsans text-[15px] leading-[100%] font-normal text-[#000] opacity-70">Sort and
-                        prioritize automatically</p>
-                </div>
-                <div class="how-we-work-step w-[calc(25%-40px)]">
-                    <div
-                        class="how-we-work-step-number flex bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] w-[100px] relative flex gap-[8px] mb-[24px]">
-                        <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 3</span>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M5.64648 3.64648C5.84175 3.45122 6.15825 3.45122 6.35352 3.64648L10.3535 7.64648C10.5487 7.84175 10.5488 8.15827 10.3535 8.35352L6.35352 12.3535C6.15827 12.5488 5.84175 12.5487 5.64648 12.3535C5.45122 12.1583 5.45123 11.8417 5.64648 11.6465L9.29297 8L5.64648 4.35352C5.45123 4.15826 5.45124 3.84175 5.64648 3.64648Z"
-                                fill="#03000A" />
-                        </svg>
-
-                        <svg class="absolute top-[2px] right-[-15px]" width="18" height="38" viewBox="0 0 18 38"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M15.6486 14.2003L1.75088 0.302637C1.10476 -0.343481 0 0.114125 0 1.02787V36.0756C0 36.9894 1.10476 37.447 1.75088 36.8009L15.6486 22.9032C18.0518 20.5 18.0518 16.6036 15.6486 14.2003Z"
-                                fill="#D8C6FF" />
-                        </svg>
-                    </div>
-                    <h3 class="font-bricolage text-[18px] leading-[100%] font-bold mb-[8px] text-[#240F52]">Collaborate
-                        in Real-Time</h3>
-                    <p class="font-uncutsans text-[15px] leading-[100%] font-normal text-[#000] opacity-70">Work
-                        together seamlessly</p>
-                </div>
-
-                <div class="how-we-work-step w-[calc(25%-40px)]">
-                    <div
-                        class="how-we-work-step-number flex bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] w-[104px] items-center justify-center relative flex gap-[8px] mb-[24px]">
-                        <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 4</span>
-
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M1.04102 10.0003C1.04102 14.9478 5.05185 18.9587 9.99935 18.9587C14.9468 18.9587 18.9577 14.9478 18.9577 10.0003C18.9577 5.05283 14.9468 1.04199 9.99935 1.04199C5.05185 1.04199 1.04102 5.05283 1.04102 10.0003ZM13.896 6.88615C14.2352 7.19698 14.2577 7.72447 13.9469 8.06364L9.36353 13.0636C9.21019 13.2311 8.99435 13.3287 8.76768 13.3337C8.54018 13.3387 8.32101 13.2504 8.16018 13.0895L6.07684 11.0062C5.75101 10.6812 5.75101 10.1528 6.07684 9.8278C6.40184 9.50197 6.93019 9.50197 7.25519 9.8278L8.72351 11.2953L12.7185 6.93701C13.0293 6.59785 13.5569 6.57532 13.896 6.88615Z"
-                                fill="#03000A" />
-                        </svg>
-
-
-                        <svg class="absolute top-[2px] right-[-15px]" width="18" height="38" viewBox="0 0 18 38"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M15.6486 14.2003L1.75088 0.302637C1.10476 -0.343481 0 0.114125 0 1.02787V36.0756C0 36.9894 1.10476 37.447 1.75088 36.8009L15.6486 22.9032C18.0518 20.5 18.0518 16.6036 15.6486 14.2003Z"
-                                fill="#D8C6FF" />
-                        </svg>
-                    </div>
-                    <h3 class="font-bricolage text-[18px] leading-[100%] font-bold mb-[8px] text-[#240F52]">Automate
-                        What Repeats</h3>
-                    <p class="font-uncutsans text-[15px] leading-[100%] font-normal text-[#000] opacity-70">Save hours
-                        by cutting repetition</p>
-                </div>
+                </template>
             </div>
 
         </div>
     </section>
 
-    <section class="corner__step-video mb-[64px]">
-        <div class="container">
-            <div class="corner__step-wrapper bg-cover bg-center pt-[86px] pl-[64px] pr-[64px] rounded-[32px] overflow-hidden relative flex justify-between"
-                style="background-image: url('./src/images/step-video/video.webp');">
-                <div class="corner__overlay-video absolute top-0 left-0 w-full h-full z-index-1"></div>
-                <div class="corner__step-wrapper-content z-index-2 relative w-[26.5%] pb-[64px]">
-                    <h3 class="text-[40px] leading-[100%] font-bricolage font-bold text-white mb-[8px]">Built for
-                        People. Tuned
-                        for Speed.</h3>
-                    <p class="font-uncutsans text-[18px] leading-[100%] font-medium text-white mb-[32px]">
-                        Our clean, human-first dashboard helps teams take action quickly. No steep learning curve, no
-                        wasted clicks — just insights and decisions that keep projects moving.
+    <!-- FAQ Section Ends -->
+
+    <footer class="w-full pt-[60px] lg:pt-[128px]"
+        style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
+        x-data="{ subscribed: false, email: '' }">
+
+        <div class="container mx-auto px-4">
+
+            <div
+                class="flex flex-col lg:flex-row justify-between pb-[60px] lg:pb-[128px] gap-[40px] lg:gap-[64px] items-center">
+
+                <div class="flex flex-col w-full lg:max-w-[38.8%] text-center lg:text-left">
+                    <h2 class="text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
+                        Ready to Launch Faster and Smarter?
+                    </h2>
+                    <p class="text-[15px] leading-[1.4] font-normal text-white opacity-70 mb-[30px]">
+                        Try it free. Cancel anytime. No credit card required.
                     </p>
-                    <a href="#"
-                        class="button-transparent px-[20px] py-[12px] rounded-[50px] border-[1px] border-primary text-[18px] leading-[100%] font-medium text-[#5A147F] bg-[#D8C6FF] hover:bg-white transition-bg transition-colors flex items-center justify-center gap-[10px] max-w-[250px]">
-
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M4.62355 3.35132C4.85479 3.21713 5.13998 3.21617 5.3721 3.34882L19.3721 11.3488C19.6058 11.4824 19.75 11.7309 19.75 12C19.75 12.2691 19.6058 12.5177 19.3721 12.6512L5.3721 20.6512C5.13998 20.7838 4.85479 20.7829 4.62355 20.6487C4.39232 20.5145 4.25 20.2674 4.25 20V4C4.25 3.73265 4.39232 3.48551 4.62355 3.35132Z"
-                                fill="#5A147F" />
-                        </svg>
-                        Watch How it Works
-                    </a>
-                </div>
-                <div class="corner__step-wrapper-image w-[60.5%] z-index-2 relative">
-                    <img class="w-full h-auto" src="./src/images/step-video/ui-visual.png" alt="Step Video" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="corner__brands-tools">
-        <div class="container">
-            <h2 class="text-center text-[40px] leading-[100%] font-bricolage font-bold mb-[16px] text-[#240F52]">Works
-                with Your Favorite Tools</h2>
-            <p class="text-center text-[18px] leading-[100%] font-normal text-[#000] opacity-70 mb-[64px]">Connect With
-                the Tools
-                You Already Use</p>
-        </div>
-    </section>
-
-    <section class="pricing-plan pt-[128px] pb-[128px] bg-[#D8C6FF]">
-        <div class="container">
-            <h2
-                class="text-center text-[64px] leading-[110%] tracking-[-0.03em] font-bricolage font-bold text-[#240F52] mb-[64px]">
-                Flexible
-                Plans for
-                <br />
-                Every Stage
-            </h2>
-            <div class="corner__tabs">
-                <div class="corner__tranding-tab-list flex justify-center mb-[15px]">
-                    <div class="corner__tranding-tab-list-item bg-white rounded-[52px] p-[2px]">
-                        <button
-                            class="corner__tab active px-[20px] py-[12px] rounded-[52px] text-[14px] leading-[110%] font-medium font-bricolage"
-                            data-target="tab1">Pay Monthly</button>
-                        <button
-                            class="corner__tab px-[20px] py-[12px] rounded-[52px] text-[14px] leading-[110%] font-medium font-bricolage"
-                            data-target="tab2">Pay Yearly</button>
-                    </div>
-                </div>
-                <div class="corner__content active" id="tab1">
-                    <div class="flex flex-wrap gap-[16px]">
-                        <div
-                            class="corner__pricing-card w-[calc(33.33%-16px)] p-[4px] bg-white rounded-[16px] relative pb-[90px]">
-                            <div class="corner__pricing-card-head p-[32px] rounded-[12px] bg-[#F9F7FE]">
-                                <h3
-                                    class="text-[32px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[32px]">
-                                    Free</h3>
-                                <div class="corner__price flex items-center gap-[8px] mb-[8px]">
-                                    <span class="text-[52px] leading-[100%] font-bold text-[#4B125E]">$0</span>
-                                    <span class="text-[18px] leading-[100%] font-bold text-[#240F52]">user /
-                                        month</span>
-                                </div>
-                                <p class="opacity-70 text-[18px] leading-[100%]">Great for individuals and small teams
-                                    getting started.</p>
-                            </div>
-                            <div class="py-[32px] px-[16px]">
-                                <h3 class="text-[18px] mb-[16px] text-[#240F52] font-bold font-bricolage">Includes:</h3>
-                                <ul>
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>Up to 3 workspaces</span>
-                                    </li>
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>AI-powered notes & smart<br /> summaries</span>
-                                    </li>
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>Basic task & project management</span>
-                                    </li>
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>5 automation flows</span>
-                                    </li>
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>1 GB secure storage</span>
-                                    </li>
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>Team access for up to 3 users</span>
-                                    </li>
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>Global support community</span>
-                                    </li>
-                                </ul>
-
-                                <div class="absolute bottom-0 left-0 w-full p-[16px]">
-                                    <a href="#"
-                                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] w-full block text-center rounded-[16px] py-[12px] px-[24px] hover:bg-primary transition-all mb-[8px]">Start
-                                        for Free</a>
-
-                                    <p class="text-center opacity-70 text-[15px] font-medium">No credit card
-                                        required.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="corner__pricing-card w-[calc(33.33%-16px)] p-[4px] bg-white rounded-[16px] relative pb-[90px]">
-                            <div class="corner__pricing-card-head p-[32px] rounded-[12px] bg-[#F9F7FE]">
-                                <h3
-                                    class="text-[32px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[32px] relative flex align-baseline">
-                                    Pro
-                                    <div class="absolute top-0 left-0 d-flex pl-[86px]">
-
-                                        <svg class="absolute left-[72px] top-[2px]" width="18" height="38"
-                                            viewBox="0 0 18 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M1.80259 14.2003L15.7003 0.302637C16.3464 -0.343481 17.4512 0.114125 17.4512 1.02787V36.0756C17.4512 36.9894 16.3464 37.447 15.7003 36.8009L1.8026 22.9032C-0.60063 20.5 -0.600634 16.6036 1.80259 14.2003Z"
-                                                fill="#D8C6FF" />
-                                        </svg>
-                                        <span
-                                            class="text-[14px] bg-[#D8C6FF] py-[12px] px-[8px] leading-[110%] rounded-tl-[6px] rounded-tr-[12px] rounded-br-[12px] rounded-bl-[6px]">Recommended</span>
-                                    </div>
-                                </h3>
-                                <div class="corner__price flex items-center gap-[8px] mb-[8px]">
-                                    <span class="text-[52px] leading-[100%] font-bold text-[#4B125E]">$15</span>
-                                    <span class="text-[18px] leading-[100%] font-bold text-[#240F52]">user /
-                                        month</span>
-                                </div>
-                                <p class="opacity-70 text-[18px] leading-[100%]">Perfect for growing teams that need
-                                    more power and control.</p>
-                            </div>
-                            <div class="py-[32px] px-[16px]">
-                                <h3 class="text-[18px] mb-[16px] text-[#240F52] font-bold font-bricolage">Everything in
-                                    Starter, plus:</h3>
-                                <ul>
-
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>Full AI writing assistant</span>
-                                    </li>
-
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>Unlimited automation flows</span>
-                                    </li>
-
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>100GB secure storage</span>
-                                    </li>
-
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>Integrations: Slack, Google,<br /> Microsoft, Zapier & more</span>
-                                    </li>
-
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>AI-powered search</span>
-                                    </li>
-
-                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle.svg" />
-                                        <span>Role-based permissions & controls</span>
-                                    </li>
-                                </ul>
-
-                                <div class="absolute bottom-0 left-0 w-full p-[16px]">
-                                    <a href="#"
-                                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] w-full block text-center rounded-[16px] py-[12px] px-[24px] hover:bg-white bg-primary transition-all mb-[8px]">Unlock
-                                        Full AI Power</a>
-
-                                    <p class="text-center opacity-70 text-[15px] font-medium">14-day free trial. Cancel
-                                        anytime.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="corner__pricing-card w-[calc(33.33%-16px)] p-[4px] color-primary-strong rounded-[16px] relative pb-[90px]">
-                            <div class="corner__pricing-card-head p-[32px] rounded-[12px] bg-[#F9F7FE]/10">
-                                <h3
-                                    class="text-[32px] leading-[100%] font-bricolage font-bold text-white mb-[32px] relative flex align-baseline">
-                                    Enterprise
-                                </h3>
-                                <div class="corner__price flex items-center gap-[8px] mb-[8px]">
-                                    <span class="text-[52px] leading-[100%] font-bold text-[#D8C6FF]">Custom</span>
-                                </div>
-                                <p class="opacity-70 text-white text-[18px] leading-[100%]">Built for larger
-                                    organizations with
-                                    high-scale and security needs.</p>
-                            </div>
-                            <div class="py-[32px] px-[16px]">
-                                <h3 class="text-[18px] mb-[16px] text-white font-bold font-bricolage">Everything in
-                                    Starter, plus:</h3>
-                                <ul>
-
-                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle-white.svg" />
-                                        <span>Full AI writing assistant</span>
-                                    </li>
-
-                                    <li class="flex gap-[16px] text-[18px] text-white  leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle-white.svg" />
-                                        <span>Unlimited automation flows</span>
-                                    </li>
-
-                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle-white.svg" />
-                                        <span>100GB secure storage</span>
-                                    </li>
-
-                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle-white.svg" />
-                                        <span>Integrations: Slack, Google,<br /> Microsoft, Zapier & more</span>
-                                    </li>
-
-                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle-white.svg" />
-                                        <span>AI-powered search</span>
-                                    </li>
-
-                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
-                                        <img src="./src/images/price/checkmark-circle-white.svg" />
-                                        <span>Role-based permissions & controls</span>
-                                    </li>
-                                </ul>
-
-                                <div class="absolute bottom-0 left-0 w-full p-[16px]">
-                                    <a href="#"
-                                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] w-full block text-center rounded-[16px] py-[12px] px-[24px] hover:bg-primary bg-white transition-all mb-[8px]">Let’s
-                                        Talk</a>
-
-                                    <p class="text-center opacity-70 color-primary-light text-[15px] font-medium ">
-                                        14-day
-                                        free trial. Cancel
-                                        anytime.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="corner__content" id="tab2">Content 2</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pt-[128px]">
-        <div class="container">
-            <h2 class="text-[64px] leading-[110%] font-bricolage font-bold text-[#240F52] mb-[64px]">Trusted
-                by Teams <br />
-                That Move Fast</h2>
-            <div class="flex gap-[16px]">
-                <div class="w-[32.5%] rounded-[16px] bg-[#D8C6FF]">
-                    <div class="relative">
-                        <img class="h-[372px] w-full object-cover rounded-tl-[16px] rounded-tr-[16px]"
-                            src="./src/images/team.png" alt="Trustpilot" />
-                        <h2
-                            class="absolute top-[32px] left-[32px] text-[76px] leading-[110%] font-bricolage font-bold text-white z-10 tracking-[-0.03px]">
-                            98%</h2>
-                        <div class="absolute bottom-0 left-0 w-full h-full opacity-50 rounded-tl-[16px] rounded-tr-[16px]"
-                            style="background: linear-gradient(180deg, rgba(216, 198, 255, 0) 53.08%, #D8C6FF 100%);">
-                        </div>
-                    </div>
-
-                    <div class="p-[32px]">
-                        <h3 class="text-[32px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[16px]">AI
-                            Accuracy</h3>
-                        <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">Your
-                            notes, tasks, and docs are auto-organized with near-perfect precision — no manual
-                            tagging needed.</p>
-                    </div>
-                </div>
-                <div class="w-[calc(67.5%-16px)] rounded-[16px]">
-                    <div class="flex gap-[16px] flex-wrap">
-                        <div
-                            class="w-[36.33%] bg-[#240F52] rounded-[16px] p-[10px] border-box flex flex-col justify-center items-center">
-                            <h2
-                                class="text-[76px] leading-[110%] font-bricolage font-bold text-[#D8C6FF] mb-[0] tracking-[-0.03px]">
-                                1M+</h2>
-                            <p class="text-[18px] leading-[100%] font-normal text-[#D8C6FF] opacity-70 font-uncutsans">
-                                Projects Built on
-                                Our Platform</p>
-                        </div>
-                        <div
-                            class="w-[calc(63.67%-16px)] bg-[#F9F7FE] rounded-[16px] p-[24px] border-box rounded-[16px] border-[1px] border-[#D8C6FF]">
-                            <p class="text-[#240F52] text-[32px] leading-[100%] font-normal font-bricolage mb-[137px]">
-                                "It feels like we doubled our team overnight — without hiring a single person."</p>
-
-                            <div>
-                                <h3 class="text-[32px] leading-[100%] font-bold font-bricolage text-[#240F52] mb-[0px]">
-                                    Abdullah Noman</h3>
-                                <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">
-                                    Founder at FramerLab</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex gap-[16px] flex-wrap mt-[16px]">
-                        <div
-                            class="w-[calc(63.67%-16px)] bg-[#F9F7FE] rounded-[16px] p-[24px] border-box rounded-[16px] border-[1px] border-[#D8C6FF]">
-                            <h2 class="text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[13px]">
-                                98%</h2>
-                            <p
-                                class="text-[18px] leading-[100%] font-bold text-[#240F52] opacity-70 font-uncutsans mb-[8px]">
-                                Categorization Precision</p>
-                            <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">Your
-                                tasks, notes, and documents are instantly auto-organized by intelligent AI — with nearly
-                                perfect accuracy.</p>
-                        </div>
-                        <div
-                            class="w-[36.33%] bg-[#D8C6FF] rounded-[16px] p-[24px] border-box flex flex-col justify-center items-center">
-                            <h2 class="text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px]">
-                                60%</h2>
-                            <p class="text-[18px] leading-[100%] font-normal text-[#240F52] opacity-70 font-uncutsans">
-                                Projects Built on
-                                Our Platform</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-    </section>
-
-    <section class="testimonial pt-[128px] pb-[128px]">
-        <div class="container">
-            <div class="flex justify-center">
-                <h2 class="text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] text-center mb-[60px]">
-                    Loved by Teams
-                    Around the Globe</h2>
-            </div>
-            <img class="w-full" src="./src/images/wally-review.png" alt="Testimonial" />
-        </div>
-    </section>
-
-    <section class="bg-[#F9F7FE] pt-[80px] pb-[80px]">
-        <div class="container">
-            <div class="flex justify-between">
-                <div class="w-[32.6%] flex flex-col gap-[30px] justify-between">
-                    <div>
-                        <div class="text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px]">
-                            Frequently Asked
-                            Questions
-                        </div>
-                        <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70">Curious? Let’s Clear
-                            Things Up</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-[18px] leading-[100%] font-bricolage text-[#240F52] mb-[4px]">Still
-                            have
-                            questions?</h4>
-                        <p class="text-[15px] leading-[100%] font-normal text-[#000] opacity-70">We’ve got your back</p>
+                    <div class="flex flex-col sm:flex-row gap-[16px] justify-center lg:justify-start">
                         <a href="#"
-                            class="btn border-[1px] border-[#D8C6FF] mt-[12px] inline-flex items-center gap-[10px] text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[8px] mt-[16px]">
-                            <span class="text-[18px] leading-[100%] font-medium text-[#5A147F] font-uncutsans">Request
-                                Support</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
-                                    stroke-miterlimit="16" />
-                            </svg>
+                            class="border-[1px] border-[#D8C6FF66] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium text-[#D8C6FF] hover:bg-[#D8C6FF66] transition-all text-center">
+                            Purchase Full Template
+                        </a>
+                        <a href="#"
+                            class="bg-white text-[#5A147F] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium hover:bg-[#D8C6FF] transition-all text-center">
+                            Try for Free
                         </a>
                     </div>
                 </div>
-                <div class="w-[58%]">
-                    <div class="corner__accordion">
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">What’s
-                                    included in the free plan?</span>
 
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">Can I
-                                    invite my team?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">Is it
-                                    secure?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">What
-                                    happens after the free trial?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">Does
-                                    this work outside the US?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="w-full pt-[128px]"
-        style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);">
-        <div class="container">
-
-            <div class="flex justify-between pb-[128px] gap-[64px] items-center">
-                <div class="flex flex-col max-w-[38.8%]">
-                    <div class="text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">Ready to
-                        Launch
-                        Faster and Smarter?</div>
-                    <div class="text-[15px] leading-[100%] font-normal text-white opacity-70 mb-[30px]">Try it free.
-                        Cancel
-                        anytime. No credit card required.</div>
-                    <div class="flex gap-[16px]">
-                        <a href="#"
-                            class="border-[1px] border-[#D8C6FF66] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans leading-[100%] font-medium text-[#D8C6FF] hover:bg-[#D8C6FF66] transition-all">Purchase
-                            Full Template</a>
-                        <a href="#" class="button-no-outline transition-colors">Try for Free</a>
-                    </div>
-                </div>
                 <div
-                    class="w-[calc(61.2%-64px)] bg-white rounded-[16px] pl-[0] pr-[24px] pt-[24px] pb-[24px] flex gap-[28px]">
-                    <img src="./src/images/icons/Icon.webp" alt="Ready to Launch" />
-                    <div class="flex flex-col">
-                        <h3 class="text-[18px] leading-[100%] font-bricolage font-bold text-[#000] mb-[16px]">Subscribe
-                            to Our
-                            Newsletter</h3>
-                        <form method="POST">
-                            <div class="flex mb-[20px] gap-[8px]">
-                                <input
-                                    class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[18px] font-uncutsans leading-[100%] font-medium placeholder:text-[#000] text-[#D8C6FF] w-[70.6%]"
-                                    type="email" name="email" placeholder="Your email here..." />
-                                <button
-                                    class="bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans leading-[100%] font-medium hover:bg-[#D8C6FF66] transition-all"
-                                    type="submit">Subscribe</button>
+                    class="w-full lg:w-[calc(61.2%-64px)] bg-white rounded-[24px] p-[24px] md:p-[32px] flex flex-col md:flex-row gap-[24px] items-start">
+                    <img src="./src/images/icons/Icon.webp" alt="Ready to Launch"
+                        class="w-[60px] h-[60px] object-contain" />
+
+                    <div class="flex flex-col w-full">
+                        <h3 class="text-[18px] leading-[110%] font-bricolage font-bold text-[#000] mb-[16px]">
+                            Subscribe to Our Newsletter
+                        </h3>
+
+                        <template x-if="!subscribed">
+                            <form @submit.prevent="subscribed = true">
+                                <div class="flex flex-col sm:flex-row mb-[20px] gap-[8px]">
+                                    <input x-model="email"
+                                        class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[16px] font-uncutsans text-[#240F52] w-full sm:w-[70%]"
+                                        type="email" required placeholder="Your email here..." />
+                                    <button
+                                        class="bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
+                                        type="submit">Subscribe</button>
+                                </div>
+                                <div class="checkbox">
+                                    <label for="policy-checkbox" class="flex gap-[10px] items-start cursor-pointer">
+                                        <input class="w-[18px] h-[18px] mt-1 accent-[#5A147F]" type="checkbox"
+                                            id="policy-checkbox" required />
+                                        <span
+                                            class="text-[13px] leading-[1.4] font-normal text-[#000] opacity-70 font-uncutsans">
+                                            By checking the box, you agree to receive our weekly newsletter and updates.
+                                        </span>
+                                    </label>
+                                </div>
+                            </form>
+                        </template>
+
+                        <template x-if="subscribed">
+                            <div class="bg-green-50 text-green-700 p-4 rounded-lg font-medium animate-pulse">
+                                Thanks for subscribing! Check your inbox soon.
                             </div>
-                            <div class="checkbox">
-                                <label for="policy-checkbox" class="flex gap-[8px] items-top">
-                                    <input class="w-[20px] h-[20px] relative top-[2px]" type="checkbox"
-                                        id="policy-checkbox" name="checkbox" />
-                                    <span
-                                        class="text-[15px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">By
-                                        checking the box, you agree that you acknowledge for weekly
-                                        newsletter</span>
-                                </label>
-                            </div>
+                        </template>
                     </div>
-                    </form>
                 </div>
             </div>
 
+            <div
+                class="flex flex-col md:flex-row justify-between gap-[40px] pb-[40px] border-b-[1px] border-[#D8C6FF66]">
+                <nav>
+                    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Features</a></li>
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">About Us</a></li>
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Pricing</a></li>
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Blog</a></li>
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Help Centre</a></li>
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Request Demo</a></li>
+                    </ul>
+                </nav>
 
-            <div class="flex justify-between gap-[50px] pb-[64px] border-b-[1px] border-[#D8C6FF]">
-                <ul class="flex gap-[56px]">
-                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage"
-                            href="#">Features</a></li>
-                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage" href="#">About
-                            Us</a></li>
-                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage"
-                            href="#">Pricing</a></li>
-                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage" href="#">Blog</a>
-                    </li>
-                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage" href="#">Help
-                            Centre</a></li>
-                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage" href="#">Request a
-                            Demo</a></li>
-                </ul>
-                <ul class="flex gap-[24px]">
-                    <li><a href="#">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_35_1241)">
-                                    <path
-                                        d="M12 0C5.37264 0 0 5.37264 0 12C0 17.6275 3.87456 22.3498 9.10128 23.6467V15.6672H6.62688V12H9.10128V10.4198C9.10128 6.33552 10.9498 4.4424 14.9597 4.4424C15.72 4.4424 17.0318 4.59168 17.5685 4.74048V8.06448C17.2853 8.03472 16.7933 8.01984 16.1822 8.01984C14.2147 8.01984 13.4544 8.76528 13.4544 10.703V12H17.3741L16.7006 15.6672H13.4544V23.9122C19.3963 23.1946 24.0005 18.1354 24.0005 12C24 5.37264 18.6274 0 12 0Z"
-                                        fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_35_1241">
-                                        <rect width="24" height="24" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </a></li>
-                    <li><a href="#">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M18.3263 1.9043H21.6998L14.3297 10.3278L23 21.7903H16.2112L10.894 14.8383L4.80995 21.7903H1.43443L9.31743 12.7804L1 1.9043H7.96111L12.7674 8.25863L18.3263 1.9043ZM17.1423 19.7711H19.0116L6.94539 3.81743H4.93946L17.1423 19.7711Z"
-                                    fill="white" />
-                            </svg>
-                        </a></li>
-                    <li><a href="#">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_35_1243)">
-                                    <path
-                                        d="M23.7609 7.1998C23.7609 7.1998 23.5266 5.54512 22.8047 4.81855C21.8906 3.8623 20.8688 3.85762 20.4 3.80137C17.0438 3.55762 12.0047 3.55762 12.0047 3.55762H11.9953C11.9953 3.55762 6.95625 3.55762 3.6 3.80137C3.13125 3.85762 2.10938 3.8623 1.19531 4.81855C0.473438 5.54512 0.24375 7.1998 0.24375 7.1998C0.24375 7.1998 0 9.14512 0 11.0857V12.9045C0 14.8451 0.239062 16.7904 0.239062 16.7904C0.239062 16.7904 0.473437 18.4451 1.19062 19.1717C2.10469 20.1279 3.30469 20.0951 3.83906 20.1982C5.76094 20.3811 12 20.4373 12 20.4373C12 20.4373 17.0438 20.4279 20.4 20.1889C20.8688 20.1326 21.8906 20.1279 22.8047 19.1717C23.5266 18.4451 23.7609 16.7904 23.7609 16.7904C23.7609 16.7904 24 14.8498 24 12.9045V11.0857C24 9.14512 23.7609 7.1998 23.7609 7.1998ZM9.52031 15.1123V8.36699L16.0031 11.7514L9.52031 15.1123Z"
-                                        fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_35_1243">
-                                        <rect width="24" height="24" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </a></li>
-                    <li><a href="#">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_35_1244)">
-                                    <path
-                                        d="M12 2.16094C15.2063 2.16094 15.5859 2.175 16.8469 2.23125C18.0188 2.28281 18.6516 2.47969 19.0734 2.64375C19.6313 2.85938 20.0344 3.12188 20.4516 3.53906C20.8734 3.96094 21.1313 4.35938 21.3469 4.91719C21.5109 5.33906 21.7078 5.97656 21.7594 7.14375C21.8156 8.40937 21.8297 8.78906 21.8297 11.9906C21.8297 15.1969 21.8156 15.5766 21.7594 16.8375C21.7078 18.0094 21.5109 18.6422 21.3469 19.0641C21.1313 19.6219 20.8687 20.025 20.4516 20.4422C20.0297 20.8641 19.6313 21.1219 19.0734 21.3375C18.6516 21.5016 18.0141 21.6984 16.8469 21.75C15.5813 21.8062 15.2016 21.8203 12 21.8203C8.79375 21.8203 8.41406 21.8062 7.15313 21.75C5.98125 21.6984 5.34844 21.5016 4.92656 21.3375C4.36875 21.1219 3.96563 20.8594 3.54844 20.4422C3.12656 20.0203 2.86875 19.6219 2.65313 19.0641C2.48906 18.6422 2.29219 18.0047 2.24063 16.8375C2.18438 15.5719 2.17031 15.1922 2.17031 11.9906C2.17031 8.78438 2.18438 8.40469 2.24063 7.14375C2.29219 5.97187 2.48906 5.33906 2.65313 4.91719C2.86875 4.35938 3.13125 3.95625 3.54844 3.53906C3.97031 3.11719 4.36875 2.85938 4.92656 2.64375C5.34844 2.47969 5.98594 2.28281 7.15313 2.23125C8.41406 2.175 8.79375 2.16094 12 2.16094ZM12 0C8.74219 0 8.33438 0.0140625 7.05469 0.0703125C5.77969 0.126563 4.90313 0.332812 4.14375 0.628125C3.35156 0.9375 2.68125 1.34531 2.01563 2.01562C1.34531 2.68125 0.9375 3.35156 0.628125 4.13906C0.332812 4.90313 0.126563 5.775 0.0703125 7.05C0.0140625 8.33437 0 8.74219 0 12C0 15.2578 0.0140625 15.6656 0.0703125 16.9453C0.126563 18.2203 0.332812 19.0969 0.628125 19.8563C0.9375 20.6484 1.34531 21.3188 2.01563 21.9844C2.68125 22.65 3.35156 23.0625 4.13906 23.3672C4.90313 23.6625 5.775 23.8687 7.05 23.925C8.32969 23.9812 8.7375 23.9953 11.9953 23.9953C15.2531 23.9953 15.6609 23.9812 16.9406 23.925C18.2156 23.8687 19.0922 23.6625 19.8516 23.3672C20.6391 23.0625 21.3094 22.65 21.975 21.9844C22.6406 21.3188 23.0531 20.6484 23.3578 19.8609C23.6531 19.0969 23.8594 18.225 23.9156 16.95C23.9719 15.6703 23.9859 15.2625 23.9859 12.0047C23.9859 8.74688 23.9719 8.33906 23.9156 7.05938C23.8594 5.78438 23.6531 4.90781 23.3578 4.14844C23.0625 3.35156 22.6547 2.68125 21.9844 2.01562C21.3188 1.35 20.6484 0.9375 19.8609 0.632812C19.0969 0.3375 18.225 0.13125 16.95 0.075C15.6656 0.0140625 15.2578 0 12 0Z"
-                                        fill="white" />
-                                    <path
-                                        d="M12 5.83594C8.59688 5.83594 5.83594 8.59688 5.83594 12C5.83594 15.4031 8.59688 18.1641 12 18.1641C15.4031 18.1641 18.1641 15.4031 18.1641 12C18.1641 8.59688 15.4031 5.83594 12 5.83594ZM12 15.9984C9.79219 15.9984 8.00156 14.2078 8.00156 12C8.00156 9.79219 9.79219 8.00156 12 8.00156C14.2078 8.00156 15.9984 9.79219 15.9984 12C15.9984 14.2078 14.2078 15.9984 12 15.9984Z"
-                                        fill="white" />
-                                    <path
-                                        d="M19.8469 5.59238C19.8469 6.38926 19.2 7.03145 18.4078 7.03145C17.6109 7.03145 16.9688 6.38457 16.9688 5.59238C16.9688 4.79551 17.6156 4.15332 18.4078 4.15332C19.2 4.15332 19.8469 4.8002 19.8469 5.59238Z"
-                                        fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_35_1244">
-                                        <rect width="24" height="24" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </a></li>
-                    <li><a href="#">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_35_1245)">
-                                    <path
-                                        d="M22.2234 0H1.77187C0.792187 0 0 0.773438 0 1.72969V22.2656C0 23.2219 0.792187 24 1.77187 24H22.2234C23.2031 24 24 23.2219 24 22.2703V1.72969C24 0.773438 23.2031 0 22.2234 0ZM7.12031 20.4516H3.55781V8.99531H7.12031V20.4516ZM5.33906 7.43438C4.19531 7.43438 3.27188 6.51094 3.27188 5.37187C3.27188 4.23281 4.19531 3.30937 5.33906 3.30937C6.47813 3.30937 7.40156 4.23281 7.40156 5.37187C7.40156 6.50625 6.47813 7.43438 5.33906 7.43438ZM20.4516 20.4516H16.8937V14.8828C16.8937 13.5562 16.8703 11.8453 15.0422 11.8453C13.1906 11.8453 12.9094 13.2937 12.9094 14.7891V20.4516H9.35625V8.99531H12.7687V10.5609H12.8156C13.2891 9.66094 14.4516 8.70938 16.1813 8.70938C19.7859 8.70938 20.4516 11.0813 20.4516 14.1656V20.4516Z"
-                                        fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_35_1245">
-                                        <rect width="24" height="24" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </a></li>
-                    <li><a href="#">
-
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_35_1246)">
-                                    <path
-                                        d="M17.0725 0H13.0278V16.3478C13.0278 18.2957 11.4722 19.8957 9.53626 19.8957C7.60034 19.8957 6.04469 18.2957 6.04469 16.3478C6.04469 14.4348 7.56577 12.8695 9.43257 12.8V8.69567C5.31872 8.7652 2 12.1391 2 16.3478C2 20.5913 5.38786 24 9.57085 24C13.7538 24 17.1416 20.5565 17.1416 16.3478V7.9652C18.6627 9.07827 20.5295 9.73913 22.5 9.77393V5.66957C19.4579 5.56522 17.0725 3.06087 17.0725 0Z"
-                                        fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_35_1246">
-                                        <rect width="24" height="24" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-
-                        </a>
+                <ul class="flex gap-[20px] justify-center md:justify-end">
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
                 </ul>
             </div>
 
-            <div class="pt-[64px] pb-[64px]">
-                <div class="flex justify-between items-center">
-                    <ul class="flex gap-[56px]">
-                        <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage"
+            <div class="py-[40px] lg:py-[64px]">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-[20px] text-center md:text-left">
+                    <ul class="flex gap-[32px] lg:gap-[56px]">
+                        <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
                                 href="#">Website Terms</a></li>
-                        <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage"
+                        <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
                                 href="#">Privacy Policy</a></li>
                     </ul>
-                    <p class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage">
+                    <p class="text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
                         ©2025 Framer Lab — All Rights Reserved
                     </p>
                 </div>
             </div>
 
-            <div class="footer-logo">
-                <img src="./src/images/big-logo.png" alt="Footer Logo" />
+            <div class="footer-logo relative mt-[-50px] overflow-hidden">
+                <img src="./src/images/big-logo.png" alt="Footer Logo" class="w-full h-auto object-cover" />
+
+                <div class="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none backdrop-blur-sm"
+                    style="mask-image: linear-gradient(to bottom, transparent, black 40%); -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%);">
+                </div>
             </div>
-
-
         </div>
+    </footer>
 
-    </div>
     </div>
 
     <!-- GSAP CDN -->

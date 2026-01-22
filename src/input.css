@@ -26,6 +26,34 @@
     }
 }
 
+/* Utility to hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* 3. The Designer's "Fade Edge" Mask */
+.marquee-mask {
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+        /* This is the secret for the marquee effect */
+
+        .tools-swiper .swiper-wrapper,
+        .tools-swiper-reverse .swiper-wrapper  {
+            -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+        }
+
 @layer components {
     .corner-gradiant-one {
         background: linear-gradient(180deg, #03000A 30.65%, #5A147F 64.33%, #FFA41A 100%);
