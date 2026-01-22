@@ -4,3 +4,4 @@ css/style.css
 *.log
 css/main.min.css
 css/main.min.css.map
+dist/

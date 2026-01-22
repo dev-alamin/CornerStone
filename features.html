@@ -16,46 +16,556 @@
 
 <body class="relative">
 
-    <header class="fixed w-full pl-[32px] pr-[32px] pt-[16px] pb-[16px] z-50">
-        <div class="flex justify-between items-center relative">
-            <div class="logo max-w-[145px]">
+    <!-- Header Section Start -->
+    <header x-data="{ mobileMenuOpen: false, activeDropdown: null }"
+        class="fixed w-full px-4 md:px-8 py-4 z-50 backdrop-blur-md">
+        <div class="mx-auto flex justify-between items-center">
+            <div class="logo max-w-[145px] shrink-0">
                 <a href="index.html">
                     <img src="./src/images/logo.svg" alt="Corner Stone Logo" />
                 </a>
             </div>
-            <div class="nav-menu-container">
-            <ul class="nav-menu font-bricolage flex gap-[24px] items-center text-white">
-                <li class="text-[16px] leading-[110%] hover:underline"><a href="features.html">Features</a></li>
-                <li class="text-[16px] leading-[110%] hover:underline"><a href="article-support.html">Support</a></li>
-                <li class="text-[16px] leading-[110%] hover:underline"><a href="blog-details.html">Blog D</a></li>
-                <li class="text-[16px] leading-[110%] hover:underline"><a href="blog.html">Blog</a></li>
-                <li class="text-[16px] leading-[110%] hover:underline"><a href="help-center.html">Help Centre</a></li>
-                <li class="text-[16px] leading-[110%] hover:underline"><a href="request-demo.html">Request a Demo</a></li>
-                <li class="text-[16px] leading-[110%] hover:underline"><a href="changelog.html">Changelog</a></li>
-                <li class="text-[16px] leading-[110%] hover:underline"><a href="team.html">Team</a></li>
-                <li class="text-[16px] leading-[110%] hover:underline"><a href="help-contact.html">Contact</a></li>
-                <li class="text-[16px] leading-[110%] hover:underline"><a href="help-knowledge-based.html">KB</a></li>
-            </ul>
-            </div>
-            <div class="flex gap-[40px] lg:gap-[8px]">
-                <div class="hidden mobile:flex gap-[8px]">
-                    <a href="#" class="px-[24px] py-[12px] font-bricolage">Login / Signup</a>
+
+            <nav class="hidden xl:flex items-center gap-[24px]">
+                <ul class="nav-menu font-bricolage flex gap-[24px] items-center text-white">
+                    <!-- Mega Menu -->
+                    <li class="group text-[16px] leading-[110%] hover:underline">
+                        <a href="team.html" class="flex items-center gap-1.5 py-4">
+                            Company
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="transition-transform duration-300 group-hover:rotate-180">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu absolute z-50 left-1/2 -translate-x-1/2 top-full mt-[-20px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 lg:w-[946px] w-full bg-white dark:bg-neutral-strong rounded-[20px] p-4 flex items-start md:gap-x-6 gap-y-6 border border-neutral-subtle dark:border-white/10 shadow-xl">
+
+                            <div class="flex-1 space-y-3">
+                                <ul class="space-y-2">
+                                    <li>
+                                        <a href="./ai-application-about.html"
+                                            class="flex items-start gap-2 p-4 relative group/item rounded-[10px] overflow-hidden">
+                                            <div
+                                                class="absolute inset-0 bg-primary/20 dark:bg-primary-base/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                            </div>
+
+                                            <div
+                                                class="mt-1 size-7 shrink-0 rounded-lg p-1 border border-neutral-subtle dark:border-white/10 flex items-center justify-center relative z-10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="stroke-neutral-base dark:stroke-primary">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                                </svg>
+                                            </div>
+                                            <div class="relative z-10">
+                                                <p
+                                                    class="font-bricolage text-[15px] font-medium text-neutral-base dark:text-white">
+                                                    About Us</p>
+                                                <p
+                                                    class="font-inter text-xs text-neutral-base/60 dark:text-neutral-multed">
+                                                    See how others are using NextSaaS</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./ai-application-team.html"
+                                            class="flex items-start gap-2 p-4 relative group/item rounded-[10px] overflow-hidden">
+                                            <div
+                                                class="absolute inset-0 bg-primary/20 dark:bg-primary-base/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                            </div>
+                                            <div
+                                                class="mt-1 size-7 shrink-0 rounded-lg p-1 border border-neutral-subtle dark:border-white/10 flex items-center justify-center relative z-10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="stroke-neutral-base dark:stroke-primary">
+                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                                    <circle cx="9" cy="7" r="4"></circle>
+                                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                                    <path d="M18 3.13a4 4 0 0 1 0 7.75"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="relative z-10">
+                                                <p
+                                                    class="font-bricolage text-[15px] font-medium text-neutral-base dark:text-white">
+                                                    Our Team</p>
+                                                <p
+                                                    class="font-inter text-xs text-neutral-base/60 dark:text-neutral-multed">
+                                                    Dynamic content solutions</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./ai-application-career.html"
+                                            class="flex items-start gap-2 p-4 relative group/item rounded-[10px] overflow-hidden">
+                                            <div
+                                                class="absolute inset-0 bg-primary/20 dark:bg-primary-base/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                            </div>
+                                            <div
+                                                class="mt-1 size-7 shrink-0 rounded-lg p-1 border border-neutral-subtle dark:border-white/10 flex items-center justify-center relative z-10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="stroke-neutral-base dark:stroke-primary">
+                                                    <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+                                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="relative z-10">
+                                                <p
+                                                    class="font-bricolage text-[15px] font-medium text-neutral-base dark:text-white">
+                                                    Career</p>
+                                                <p
+                                                    class="font-inter text-xs text-neutral-base/60 dark:text-neutral-multed">
+                                                    Join our team</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./ai-application-career.html"
+                                            class="flex items-start gap-2 p-4 relative group/item rounded-[10px] overflow-hidden">
+                                            <div
+                                                class="absolute inset-0 bg-primary/20 dark:bg-primary-base/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                            </div>
+                                            <div
+                                                class="mt-1 size-7 shrink-0 rounded-lg p-1 border border-neutral-subtle dark:border-white/10 flex items-center justify-center relative z-10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="stroke-neutral-base dark:stroke-primary">
+                                                    <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+                                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="relative z-10">
+                                                <p
+                                                    class="font-bricolage text-[15px] font-medium text-neutral-base dark:text-white">
+                                                    Career</p>
+                                                <p
+                                                    class="font-inter text-xs text-neutral-base/60 dark:text-neutral-multed">
+                                                    Join our team</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="flex-1 space-y-3">
+                                <ul class="space-y-2">
+                                    <li>
+                                        <a href="./ai-application-why-choose-us.html"
+                                            class="flex items-start gap-2 p-4 relative group/item rounded-[10px] overflow-hidden">
+                                            <div
+                                                class="absolute inset-0 bg-primary/20 dark:bg-primary-base/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                            </div>
+                                            <div
+                                                class="mt-1 size-7 shrink-0 rounded-lg p-1 border border-neutral-subtle dark:border-white/10 flex items-center justify-center relative z-10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="stroke-neutral-base dark:stroke-primary">
+                                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                                                    <path d="m9 12 2 2 4-4"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="relative z-10">
+                                                <p
+                                                    class="font-bricolage text-[15px] font-medium text-neutral-base dark:text-white">
+                                                    Why Choose Us</p>
+                                                <p
+                                                    class="font-inter text-xs text-neutral-base/60 dark:text-neutral-multed">
+                                                    Our unique selling points</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./ai-application-our-manifesto.html"
+                                            class="flex items-start gap-2 p-4 relative group/item rounded-[10px] overflow-hidden">
+                                            <div
+                                                class="absolute inset-0 bg-primary/20 dark:bg-primary-base/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                            </div>
+                                            <div
+                                                class="mt-1 size-7 shrink-0 rounded-lg p-1 border border-neutral-subtle dark:border-white/10 flex items-center justify-center relative z-10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="stroke-neutral-base dark:stroke-primary">
+                                                    <path
+                                                        d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20">
+                                                    </path>
+                                                    <path d="M8 7h6"></path>
+                                                    <path d="M8 11h8"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="relative z-10">
+                                                <p
+                                                    class="font-bricolage text-[15px] font-medium text-neutral-base dark:text-white">
+                                                    Our Manifesto</p>
+                                                <p
+                                                    class="font-inter text-xs text-neutral-base/60 dark:text-neutral-multed">
+                                                    Our values and principles</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./ai-application-testimonial.html"
+                                            class="flex items-start gap-2 p-4 relative group/item rounded-[10px] overflow-hidden">
+                                            <div
+                                                class="absolute inset-0 bg-primary/20 dark:bg-primary-base/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                            </div>
+                                            <div
+                                                class="mt-1 size-7 shrink-0 rounded-lg p-1 border border-neutral-subtle dark:border-white/10 flex items-center justify-center relative z-10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="stroke-neutral-base dark:stroke-primary">
+                                                    <path
+                                                        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
+                                                    </path>
+                                                    <path d="M8 9h8"></path>
+                                                    <path d="M8 13h6"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="relative z-10">
+                                                <p
+                                                    class="font-bricolage text-[15px] font-medium text-neutral-base dark:text-white">
+                                                    Testimonials</p>
+                                                <p
+                                                    class="font-inter text-xs text-neutral-base/60 dark:text-neutral-multed">
+                                                    What our customers say</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./ai-application-testimonial.html"
+                                            class="flex items-start gap-2 p-4 relative group/item rounded-[10px] overflow-hidden">
+                                            <div
+                                                class="absolute inset-0 bg-primary/20 dark:bg-primary-base/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                            </div>
+                                            <div
+                                                class="mt-1 size-7 shrink-0 rounded-lg p-1 border border-neutral-subtle dark:border-white/10 flex items-center justify-center relative z-10">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="stroke-neutral-base dark:stroke-primary">
+                                                    <path
+                                                        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
+                                                    </path>
+                                                    <path d="M8 9h8"></path>
+                                                    <path d="M8 13h6"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="relative z-10">
+                                                <p
+                                                    class="font-bricolage text-[15px] font-medium text-neutral-base dark:text-white">
+                                                    Testimonials</p>
+                                                <p
+                                                    class="font-inter text-xs text-neutral-base/60 dark:text-neutral-multed">
+                                                    What our customers say</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="flex-1">
+                                <div class="space-y-3">
+                                    <ul class="space-y-2">
+                                        <li>
+                                            <a href="./ai-application-services.html"
+                                                class="flex items-start gap-2 p-4 relative group/item rounded-[10px] overflow-hidden">
+                                                <div
+                                                    class="absolute inset-0 bg-primary/20 dark:bg-primary-base/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                                </div>
+                                                <div
+                                                    class="mt-1 size-7 shrink-0 rounded-lg p-1 border border-neutral-subtle dark:border-white/10 flex items-center justify-center relative z-10">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="stroke-neutral-base dark:stroke-primary">
+                                                        <path
+                                                            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                                        </path>
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="relative z-10">
+                                                    <p
+                                                        class="font-bricolage text-[15px] font-medium text-neutral-base dark:text-white">
+                                                        Services</p>
+                                                    <p
+                                                        class="font-inter text-xs text-neutral-base/60 dark:text-neutral-multed">
+                                                        Our specialized offerings</p>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="./ai-application-services.html"
+                                                class="flex items-start gap-2 p-4 relative group/item rounded-[10px] overflow-hidden">
+                                                <div
+                                                    class="absolute inset-0 bg-primary/20 dark:bg-primary-base/20 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                                                </div>
+                                                <div
+                                                    class="mt-1 size-7 shrink-0 rounded-lg p-1 border border-neutral-subtle dark:border-white/10 flex items-center justify-center relative z-10">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="stroke-neutral-base dark:stroke-primary">
+                                                        <path
+                                                            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                                                        </path>
+                                                        <circle cx="12" cy="12" r="3"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="relative z-10">
+                                                    <p
+                                                        class="font-bricolage text-[15px] font-medium text-neutral-base dark:text-white">
+                                                        Services</p>
+                                                    <p
+                                                        class="font-inter text-xs text-neutral-base/60 dark:text-neutral-multed">
+                                                        Our specialized offerings</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <p
+                                    class="px-3 pt-6 pb-2 font-inter text-xs font-semibold uppercase tracking-wider text-neutral-multed">
+                                    What’s new</p>
+
+                                <div class="relative group mt-1">
+                                    <figure class="overflow-hidden rounded-[14px] w-full min-h-[160px] relative">
+                                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+                                            alt="Product updates"
+                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-neutral-strong/80 to-transparent">
+                                        </div>
+
+                                        <div class="absolute inset-0 p-4 flex flex-col justify-end">
+                                            <p class="font-bricolage text-white font-medium">Product updates</p>
+                                            <p class="font-inter text-[11px] text-white/80 line-clamp-2 mb-3">Latest
+                                                features and improvements for your workflow.</p>
+
+                                            <a href="./ai-application-documentation.html"
+                                                class="bg-white hover:bg-primary transition-colors duration-300 rounded-full w-10 h-10 flex items-center justify-center self-end shadow-lg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="text-neutral-strong">
+                                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Mega Menu -->
+
+                    <li class="text-[16px] leading-[110%] hover:underline"><a class="flex items-center gap-1.5 py-4"
+                            href="features.html">Feature</a></li>
+
+                    <li class="text-[16px] leading-[110%] hover:underline"><a class="flex items-center gap-1.5 py-4"
+                            href="pricing.html">Pricing</a></li>
+
+                    <!-- Normal Dropdown menu -->
+                    <li class="group relative text-[16px] leading-[110%] hover:underline">
+                        <a class="flex items-center gap-1.5 py-4" href="help-center.html">
+                            Help Center
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="transition-transform duration-300 group-hover:rotate-180">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </a>
+
+                        <ul class="absolute left-0 top-full min-w-[200px] bg-white dark:bg-neutral-strong rounded-[12px] p-2 border border-neutral-subtle dark:border-white/10 shadow-xl 
+               opacity-0 pointer-events-none translate-y-2 
+               group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 
+               transition-all duration-300 z-50">
+                            <li>
+                                <a href="help-knowledge-based.html"
+                                    class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
+                                    Knowledgebase
+                                </a>
+                            </li>
+                            <li>
+                                <a href="help-center.html"
+                                    class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
+                                    Help Center
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Normal DropDown menu -->
+
+                    <!-- Normal Dropdown menu -->
+                    <li class="group relative text-[16px] leading-[110%] hover:underline">
+                        <a class="flex items-center gap-1.5 py-4" href="article-support.html">
+                            Blog
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="transition-transform duration-300 group-hover:rotate-180">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </a>
+
+                        <ul class="absolute left-0 top-full min-w-[200px] bg-white dark:bg-neutral-strong rounded-[12px] p-2 border border-neutral-subtle dark:border-white/10 shadow-xl 
+               opacity-0 pointer-events-none translate-y-2 
+               group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 
+               transition-all duration-300 z-50">
+                            <li>
+                                <a href="blog.html"
+                                    class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
+                                    Blog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="blog-details.html"
+                                    class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
+                                    Blog Details
+                                </a>
+                            </li>
+                            <li>
+                                <a href="changelog.html"
+                                    class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
+                                    Changelog
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Normal DropDown menu -->
+                    <li class="text-[16px] leading-[110%] hover:underline"><a class="flex items-center gap-1.5 py-4"
+                            href="request-demo.html">Request a demo</a></li>
+                    <li class="text-[16px] leading-[110%] hover:underline"><a class="flex items-center gap-1.5 py-4"
+                            href="help-contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex text-white gap-[8px]">
+                    <a href="#" class="px-[24px] py-[12px] font-bricolage text-[15px]">Login</a>
                     <a href="#"
-                        class="px-[20px] py-[12px] border-[#5A147F] border-[1px] rounded-[8px] text-[#5A147F] font-bricolage">Try
+                        class="px-[20px] py-[12px] border-[#D8C6FF66] border-[1px] rounded-[8px] text-[#D8C6FF] font-bricolage text-[15px] hover:bg-white/5 transition-colors">Try
                         for Free</a>
                 </div>
 
-                <button class="menu-toggle nav:hidden" type="button">
-                    <svg class="menu-icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 13L28 13" stroke="white" stroke-width="1.5" stroke-linejoin="round" />
-                        <path d="M12 20L28 20" stroke="white" stroke-width="1.5" stroke-linejoin="round" />
-                        <path d="M12 27L28 27" stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="xl:hidden p-2 focus:outline-none">
+                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+                    <svg x-cloak x-show="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                 </button>
             </div>
         </div>
+
+        <div x-cloak x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+            class="xl:hidden absolute top-full left-0 w-full bg-neutral-strong border-t border-white/10 h-screen overflow-y-auto pb-24">
+            <div class="p-6 space-y-4">
+                <div class="border-b border-white/5 pb-4">
+                    <button @click="activeDropdown = activeDropdown === 'features' ? null : 'features'"
+                        class="flex justify-between items-center w-full text-white font-bricolage text-xl">
+                        Features
+                        <svg :class="activeDropdown === 'features' ? 'rotate-180' : ''" class="transition-transform"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div x-show="activeDropdown === 'features'" x-collapse class="mt-4 grid grid-cols-1 gap-2">
+                        <a href="ai-application-about.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">About Us</a>
+                        <a href="ai-application-team.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Our Team</a>
+                        <a href="ai-application-career.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Career</a>
+                        <a href="ai-application-why-choose-us.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Why Choose Us</a>
+                        <a href="ai-application-our-manifesto.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Our Manifesto</a>
+                        <a href="ai-application-testimonial.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Testimonials</a>
+                        <a href="ai-application-services.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Services</a>
+                    </div>
+                </div>
+
+                <a href="team.html" class="block text-white font-bricolage text-xl">About Us</a>
+                <a href="pricing.html" class="block text-white font-bricolage text-xl">Pricing</a>
+
+                <div class="border-b border-white/5 pb-4">
+                    <button @click="activeDropdown = activeDropdown === 'help' ? null : 'help'"
+                            class="flex justify-between items-center w-full text-white font-bricolage text-xl">
+                            Help Center
+                            <svg :class="activeDropdown === 'help' ? 'rotate-180' : ''"
+                                class="transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                    </button>
+                    <div x-show="activeDropdown === 'help'" x-collapse class="mt-4 grid grid-cols-1 gap-2">
+                        <a href="help-knowledge-based.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Knowledgebase</a>
+                        <a href="help-center.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Help Center</a>
+                    </div>
+                </div>
+
+                <div class="border-b border-white/5 pb-4">
+                    <button @click="activeDropdown = activeDropdown === 'blog' ? null : 'blog'"
+                            class="flex justify-between items-center w-full text-white font-bricolage text-xl">
+                            Blog
+                            <svg :class="activeDropdown === 'blog' ? 'rotate-180' : ''"
+                                class="transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                    </button>
+                    <div x-show="activeDropdown === 'blog'" x-collapse class="mt-4 grid grid-cols-1 gap-2">
+                        <a href="blog.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Blog</a>
+                        <a href="blog-details.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Blog Details</a>
+                        <a href="changelog.html"
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-white/80">Changelog</a>
+                    </div>
+                </div>
+                <a href="request-demo.html" class="block text-white font-bricolage text-xl">Request a demo</a>
+                <a href="help-contact.html" class="block text-white font-bricolage text-xl">Contact</a>
+
+
+                <div class="flex text-white gap-[8px]">
+                    <a href="#" class="px-[24px] py-[12px] font-bricolage">Login / Signup</a>
+                    <a href="#"
+                        class="px-[20px] py-[12px] border-[#D8C6FF66] border-[1px] rounded-[8px] text-[#D8C6FF] font-bricolage">Try
+                        for Free</a>
+                </div>
+            </div>
+        </div>
     </header>
+    <!-- Header Section End -->
 
     <section class="px-6 pt-32 pb-20 border-b-2 border-[#D8C6FF]">
         <div class="container mx-auto">
@@ -133,7 +643,8 @@
         <div class="container mx-auto mb-16">
             <div class="max-w-3xl">
                 <h2 class="text-xs font-[400] uppercase tracking-widest text-purple-600 mb-4">Why Choose Us</h2>
-                <h3 class="text-6xl font-bold font-bricolage text-[#2D1B54]">Smarter Tools. <br /> Built Around You.</h3>
+                <h3 class="text-6xl font-bold font-bricolage text-[#2D1B54]">Smarter Tools. <br /> Built Around You.
+                </h3>
                 <p class="mb-12 text-xl font-light mt-4 text-neutral-base">Smarter Tools. Built Around You.</p>
             </div>
 
@@ -288,7 +799,8 @@
 
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 mb-32">
                 <div class="w-full lg:w-1/3 space-y-8">
-                    <h3 class="text-4xl font-bold font-bricolage text-[#2D1B54]" x-text="breakdown[activeTab].title"></h3>
+                    <h3 class="text-4xl font-bold font-bricolage text-[#2D1B54]" x-text="breakdown[activeTab].title">
+                    </h3>
                     <p class="text-gray-500 leading-relaxed">
                         Our key features that offers exclusive services help us to distinguish ourself!
                     </p>
@@ -426,76 +938,80 @@
         hr: { label: 'For HR Teams', icon: './src/images/icons/features-usecases/hr.png', features: { ai: { title: 'People Logic', desc: 'Streamline onboarding and team directories.', img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200' } } }
     }
 }">
-    <div class="container mx-auto">
-        <div class="mb-20">
-            <span class="text-purple-600 text-sm font-[400] mb-4 block">Use Cases</span>
-            <h2 class="text-6xl font-bold font-bricolage text-[#2D1B54]">See Our Use Cases<br>in Different Teams</h2>
-            <p class="mb-12 text-xl font-[400] mt-4 text-neutral-base">Made for everyone!</p>
+        <div class="container mx-auto">
+            <div class="mb-20">
+                <span class="text-purple-600 text-sm font-[400] mb-4 block">Use Cases</span>
+                <h2 class="text-6xl font-bold font-bricolage text-[#2D1B54]">See Our Use Cases<br>in Different Teams
+                </h2>
+                <p class="mb-12 text-xl font-[400] mt-4 text-neutral-base">Made for everyone!</p>
 
-            <div class="flex md:flex-wrap items-end gap-8 md:gap-14 border-b border-gray-100 pb-0 overflow-x-auto no-scrollbar snap-x snap-proximity">
-                <template x-for="(team, id) in useCases">
-                    <button @click="activeTeam = id; activeFeature = Object.keys(team.features)[0]"
-                        class="flex flex-col items-center text-[22px] md:text-[16px] font-bricolage gap-4 pb-6 transition-all relative group shrink-0 snap-center">
+                <div
+                    class="flex md:flex-wrap items-end gap-8 md:gap-14 border-b border-gray-100 pb-0 overflow-x-auto no-scrollbar snap-x snap-proximity">
+                    <template x-for="(team, id) in useCases">
+                        <button @click="activeTeam = id; activeFeature = Object.keys(team.features)[0]"
+                            class="flex flex-col items-center text-[22px] md:text-[16px] font-bricolage gap-4 pb-6 transition-all relative group shrink-0 snap-center">
 
-                        <img :src="team.icon"
-                            class="w-14 h-14 object-contain transition-transform duration-300 group-hover:-translate-y-2 group-active:scale-90"
-                            :alt="team.label">
+                            <img :src="team.icon"
+                                class="w-14 h-14 object-contain transition-transform duration-300 group-hover:-translate-y-2 group-active:scale-90"
+                                :alt="team.label">
 
-                        <span class="text-[22px] md:text-[16px] font-bold font-bricolage uppercase" x-text="id"></span>
+                            <span class="text-[22px] md:text-[16px] font-bold font-bricolage uppercase"
+                                x-text="id"></span>
 
-                        <div x-show="activeTeam === id"
-                            class="absolute bottom-0 left-0 w-full h-1 bg-purple-500 rounded-t-full"
-                            x-transition:enter="transition ease-out duration-300"></div>
-                    </button>
-                </template>
-            </div>
-        </div>
-
-        <div class="flex flex-col lg:flex-row gap-16 min-h-[600px]">
-
-            <div class="w-full lg:w-1/3 flex flex-col min-h-full">
-                <h3 class="text-4xl font-bold text-[#2D1B54] mb-8" x-text="useCases[activeTeam].label"></h3>
-
-                <div class="space-y-4">
-                    <template x-for="(fData, fKey) in useCases[activeTeam].features">
-                        <div class="space-y-3">
-                            <button @click="activeFeature = fKey"
-                                :class="activeFeature === fKey ? 'bg-[#D9D1FF] text-[#2D1B54] border-purple-200' : 'bg-white text-gray-500 hover:bg-gray-50 border-[#D8C6FF]'"
-                                class="w-full text-left px-8 py-3 rounded-2xl border transition-all duration-300 shadow-sm flex items-center justify-between group">
-                                <span class="font-bold text-lg" x-text="fData.title"></span>
-                                <span class="text-purple-600 font-bold transition-transform group-hover:translate-x-1"
-                                    x-show="activeFeature === fKey">→</span>
-                            </button>
-
-                            <div x-show="activeFeature === fKey" x-transition:enter="transition ease-out duration-300"
-                                x-transition:enter-start="opacity-0 -translate-y-2"
-                                x-transition:enter-end="opacity-100 translate-y-0" class="pb-4">
-                                <p class="text-gray-500 text-base leading-relaxed" x-text="fData.desc"></p>
-                            </div>
-                        </div>
+                            <div x-show="activeTeam === id"
+                                class="absolute bottom-0 left-0 w-full h-1 bg-purple-500 rounded-t-full"
+                                x-transition:enter="transition ease-out duration-300"></div>
+                        </button>
                     </template>
                 </div>
-
-                <div class="mt-auto pt-12">
-                    <button
-                        class="bg-[#D9D1FF] text-[#2D1B54] w-full md:w-auto px-10 py-4 rounded-2xl font-bold hover:bg-[#C8BDFF] hover:shadow-lg hover:shadow-purple-500/10 transition-all active:scale-95">
-                        Get Started
-                    </button>
-                </div>
             </div>
 
-            <div class="w-full lg:w-2/3">
-                <div
-                    class="relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100">
-                    <img :src="useCases[activeTeam].features[activeFeature].img" class="w-full h-auto rounded-lg"
-                        x-transition:enter="transition ease-out duration-500"
-                        x-transition:enter-start="opacity-0 translate-y-4"
-                        x-transition:enter-end="opacity-100 translate-y-0" :key="activeTeam + activeFeature">
-                </div>
-            </div>
+            <div class="flex flex-col lg:flex-row gap-16 min-h-[600px]">
 
+                <div class="w-full lg:w-1/3 flex flex-col min-h-full">
+                    <h3 class="text-4xl font-bold text-[#2D1B54] mb-8" x-text="useCases[activeTeam].label"></h3>
+
+                    <div class="space-y-4">
+                        <template x-for="(fData, fKey) in useCases[activeTeam].features">
+                            <div class="space-y-3">
+                                <button @click="activeFeature = fKey"
+                                    :class="activeFeature === fKey ? 'bg-[#D9D1FF] text-[#2D1B54] border-purple-200' : 'bg-white text-gray-500 hover:bg-gray-50 border-[#D8C6FF]'"
+                                    class="w-full text-left px-8 py-3 rounded-2xl border transition-all duration-300 shadow-sm flex items-center justify-between group">
+                                    <span class="font-bold text-lg" x-text="fData.title"></span>
+                                    <span
+                                        class="text-purple-600 font-bold transition-transform group-hover:translate-x-1"
+                                        x-show="activeFeature === fKey">→</span>
+                                </button>
+
+                                <div x-show="activeFeature === fKey"
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 -translate-y-2"
+                                    x-transition:enter-end="opacity-100 translate-y-0" class="pb-4">
+                                    <p class="text-gray-500 text-base leading-relaxed" x-text="fData.desc"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div class="mt-auto pt-12">
+                        <button
+                            class="bg-[#D9D1FF] text-[#2D1B54] w-full md:w-auto px-10 py-4 rounded-2xl font-bold hover:bg-[#C8BDFF] hover:shadow-lg hover:shadow-purple-500/10 transition-all active:scale-95">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-2/3">
+                    <div class="relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100">
+                        <img :src="useCases[activeTeam].features[activeFeature].img" class="w-full h-auto rounded-lg"
+                            x-transition:enter="transition ease-out duration-500"
+                            x-transition:enter-start="opacity-0 translate-y-4"
+                            x-transition:enter-end="opacity-100 translate-y-0" :key="activeTeam + activeFeature">
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
     </section>
     <!-- Usecase Section ends  -->
 
@@ -690,6 +1206,7 @@
 
     <!-- GSAP CDN -->
     <script src="src/js/gsap.min.js"></script>
+    <script src="dist/assets/index-BTrZjbAc.js"></script>
     <script type="module" src="src/main.js"></script>
 </body>
 
