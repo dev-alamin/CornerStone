@@ -78,12 +78,20 @@
         <div class="container">
             <div class="corner__tabs">
                 <div class="flex lg:flex-row flex-col lg:items-end justify-between sm:mb-[64px] mb-[20px]">
-                    <div>
-                        <h1
-                            class="text-[40px] sm:text-[64px] lg:text-[80px] leading-[110%] tracking-[-0.03em] font-bricolage font-semibold text-[#240F52] mb-[16px]">
+                    <div x-init="
+                        gsap.from('.reveal-text', {
+                            y: 30,
+                            opacity: 0,
+                            filter: 'blur(10px)',
+                            stagger: 0.2,
+                            duration: 1.2,
+                            ease: 'power3.out'
+                        })
+                    ">
+                        <h1 class="reveal-text text-[40px] sm:text-[64px] lg:text-[80px] leading-[110%] tracking-[-0.03em] font-bricolage font-semibold text-[#240F52] mb-[16px]">
                             Pricing
                         </h1>
-                        <p class="text-[22px] text-[#03000A] leading-[100%] font-inter lg:mb-0 sm:mb-[24px] mb-[16px]">
+                        <p class="reveal-text text-[22px] text-[#03000A] leading-[100%] font-inter lg:mb-0 sm:mb-[24px] mb-[16px]">
                             Get started for free, upgrade as you scale
                         </p>
                     </div>
@@ -295,10 +303,59 @@
         </div>
     </section>
 
-    <section class="bg-white py-[32px] sm:py-[64px]" x-data="pricingTable">
+    <section class="bg-white py-[32px] sm:py-[64px]" x-data="{
+        categories: [
+            {
+                title: 'Feature flags',
+                features: [
+                    { name: 'Type-safety', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Toolbar', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'CLI', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Company page', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Company segments', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Advanced targeting rules', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Environments', free: '3 environments', pro: 'Unlimited', ent: 'Unlimited' },
+                    { name: 'Gradual rollout', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Remote config', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Kill switch', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Stored attributes', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Flag history', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Local evaluation', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'OpenFeature', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Global network', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Add in bulk', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'AI flag cleanup', free: 'Coming soon', pro: 'Coming soon', ent: 'Coming soon' },
+                    { name: 'User permissions', free: 'Coming soon', pro: 'Coming soon', ent: 'Coming soon' }
+                ]
+            },
+            {
+                title: 'Beta release workflow',
+                features: [
+                    { name: 'Release stages', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Feedback volume', free: '50/mo feedback', pro: 'Unlimited', ent: 'Unlimited' },
+                    { name: 'Static feedback button', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'In-app surveys', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Customizable styling', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Adoption metrics', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Adoption strategies', free: 'tick', pro: 'tick', ent: 'tick' }
+                ]
+            },
+            {
+                title: 'Integrations',
+                features: [
+                    { name: 'Slack', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Microsoft Teams', free: 'tick', pro: 'tick', ent: 'tick' },
+                    { name: 'Discord', free: 'Coming soon', pro: 'tick', ent: 'tick' },
+                    { name: 'Jira', free: 'Coming soon', pro: 'tick', ent: 'tick' },
+                    { name: 'GitHub Actions', free: 'Coming soon', pro: 'tick', ent: 'tick' },
+                    { name: 'Webhooks', free: 'Coming soon', pro: 'Coming soon', ent: 'tick' }
+                ]
+            }
+        ]
+    }">
         <div class="container relative">
 
-            <div class="sticky top-0 z-[99] bg-white">
+            <div class="sticky top-[82px] z-[99] bg-white">
                 <div class="overflow-x-auto no-scrollbar">
                     <div class="flex gap-2 sm:gap-4 rounded-xl bg-primary min-w-[600px] sm:min-w-0 overflow-hidden">
                         <div
@@ -320,7 +377,7 @@
             <template x-for="(cat, index) in categories" :key="cat.title">
                 <div class="relative">
                     <div
-                        class="sticky top-[56px] sm:top-[76px] z-[30] bg-white/90 backdrop-blur-md border-b border-[#D8C6FF]">
+                        class="sticky top-[136px] z-[30] bg-white/90 backdrop-blur-md border-b border-[#D8C6FF]">
                         <h4
                             class="py-4 sm:py-6 px-4 text-[20px] sm:text-[28px] font-bold font-bricolage text-[#5A147F] flex items-center gap-3">
                             <span
@@ -383,134 +440,175 @@
         </div>
     </section>
 
-    <section class="bg-white py-8 sm:py-16 overflow-visible" id="comparison-section" x-data="{ 
-        activeTab: 0,
-        tabs: [
-            { name: 'Notion', icon: '/src/images/price/01.png', altLogo: './src/images/price/notionh.png' },
-            { name: 'Asana', icon: '/src/images/price/icon-02.png', altLogo: './src/images/price/icon-02.png' },
-            { name: 'ClickUp', icon: '/src/images/price/clickup.png', altLogo: './src/images/price/clickup.png' }
-        ],
-        points: [
-            { title: 'Dedicated solution, built for SaaS', desc: 'Not for every use case, just yours: Feature flagging for SaaS' },
-            { title: 'Advanced Targeting', desc: 'Detailed rule-based segments for precise rollouts' },
-            { title: 'Enterprise Security', desc: 'RBAC and audit logs built into the core platform' }
-        ]
-    }" x-init="
-        $nextTick(() => {
-            gsap.registerPlugin(ScrollTrigger);
-            
-            ScrollTrigger.matchMedia({
-                '(min-width: 1024px)': function() {
-                    let panels = gsap.utils.toArray('.project-panel');
-                    panels.forEach((panel, i) => {
-                        ScrollTrigger.create({
-                            trigger: panel,
-                            start: 'top 15%', // Adjusted to sit below the sticky tabs
-                            endTrigger: '#comparison-section',
-                            end: 'bottom 80%',
-                            pin: true,
-                            pinSpacing: false,
-                            scrub: true
-                        });
-                    });
-                }
-            });
-        });
-    ">
-        <div class="container">
-            <div class="sticky top-0 z-[100] bg-white pt-4 pb-4">
-                <h4 class="text-sm sm:text-lg font-uncutsans text-[#5A147F] italic mb-2">Compare</h4>
-                <h2 class="text-2xl sm:text-4xl font-bricolage font-bold text-[#240F52] mb-6">Logo Ipsum vs Alternatives
-                </h2>
+<div x-data="{ 
+    activeTab: 0,
+    tabs: [
+        { name: 'Notion', icon: '/src/images/price/01.png', altLogo: './src/images/price/notionh.png' },
+        { name: 'Asana', icon: '/src/images/price/icon-02.png', altLogo: '/src/images/price/icon-02.png' },
+        { name: 'ClickUp', icon: '/src/images/price/clickup.png', altLogo: '/src/images/price/clickup.png' }
+    ],
+    points: [
+        { title: 'Dedicated solution, built for SaaS', desc: 'Not for every use case, just yours: Feature flagging for SaaS' },
+        { title: 'Advanced Targeting', desc: 'Detailed rule-based segments for precise rollouts' },
+        { title: 'Enterprise Security', desc: 'RBAC and audit logs built into the core platform' }
+    ],
+    featureGroups: [
+        {
+            title: 'Usage Limitation',
+            features: [
+                { name: 'MTUs/User', col1: 'tick', col2: 'tick' },
+                { name: 'Accounts', col1: 'minus', col2: 'tick' },
+                { name: 'Devices', col1: 'minus', col2: 'tick' },
+                { name: 'Other identifiers', col1: 'minus', col2: 'tick' }
+            ]
+        },
+        {
+            title: 'Flagging Essentials',
+            features: [
+                { name: 'Targeting Rules', col1: 'tick', col2: 'tick' },
+                { name: 'Segments', col1: 'minus', col2: 'tick' },
+                { name: 'Environments', col1: 'minus', col2: 'tick' },
+                { name: 'Percentage Rollouts', col1: 'tick', col2: 'tick' },
+                { name: 'Release Kill Switch', col1: 'tick', col2: 'tick' }
+            ]
+        }
+    ]
+}">
 
-                <div class="flex flex-wrap sm:flex-nowrap gap-4 sm:gap-8 border-b border-[#D8C6FF]">
+    <section class="bg-white py-8 sm:py-16 overflow-visible" id="comparison-section" 
+        x-init="
+            $nextTick(() => {
+                gsap.registerPlugin(ScrollTrigger);
+                ScrollTrigger.matchMedia({
+                    '(min-width: 1024px)': function() {
+                        let panels = gsap.utils.toArray('.project-panel');
+                        panels.forEach((panel) => {
+                            ScrollTrigger.create({
+                                trigger: panel,
+                                start: 'top 22%', 
+                                endTrigger: '#comparison-section',
+                                end: 'bottom 85%',
+                                pin: true,
+                                pinSpacing: false,
+                                scrub: true
+                            });
+                        });
+                    }
+                });
+            });
+        "
+    >
+        <div class="container relative">
+            <div class="md:sticky top-[82px] z-50 bg-white pb-6">
+                <h4 class="text-sm sm:text-lg font-uncutsans text-[#5A147F] italic mb-2">Compare</h4>
+                <h2 class="text-2xl sm:text-4xl font-bricolage font-bold text-[#240F52] mb-6">Logo Ipsum vs Alternatives</h2>
+                
+                <div class="flex flex-wrap sm:flex-nowrap gap-4 sm:gap-8 border-b border-[#D8C6FF] mb-6">
                     <template x-for="(tab, index) in tabs" :key="index">
                         <button @click="activeTab = index"
                             class="flex-1 sm:flex-none text-center pb-4 transition-all border-b-2"
-                            :class="activeTab === index ? 'border-[#4B125E] opacity-100' : 'border-transparent opacity-50'">
+                            :class="activeTab === index ? 'border-[#4B125E] opacity-100' : 'border-transparent'">
                             <img :src="tab.icon" class="mb-2 mx-auto w-8 h-8 object-contain" />
                             <h4 class="text-base font-bold text-[#4B125E]" x-text="tab.name"></h4>
                         </button>
                     </template>
                 </div>
+
+                <div class="hidden lg:flex gap-16 items-center">
+                    <div class="w-[30%]"></div> 
+                    <div class="w-[70%] flex gap-6">
+                        <div class="flex-1 flex justify-center py-2">
+                            <img src="./src/images/price/lorem-logo.png" class="h-8 object-contain" alt="Us" />
+                        </div>
+                        <div class="flex-1 flex justify-center py-2 transition-all duration-500">
+                            <img :src="tabs[activeTab].altLogo" class="h-8 object-contain" :key="activeTab" />
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
-
-                <div class="w-full lg:w-[30%] lg:sticky lg:top-[220px] z-10 pt-10">
-                    <h2 class="text-[#240F52] text-3xl lg:text-[40px] font-bricolage font-bold mb-4 leading-tight">What
-                        makes us Different?</h2>
-                    <p class="text-base sm:text-lg text-[#4F4D53] font-inter">Our key features that offer exclusive
-                        services help us to distinguish ourselves!</p>
+                <div class="w-full lg:w-[30%] lg:sticky lg:top-[280px] z-10">
+                    <h2 class="text-[#240F52] text-3xl lg:text-[40px] font-bricolage font-bold mb-4 leading-tight">What makes us Different?</h2>
+                    <p class="text-base sm:text-lg text-[#4F4D53] font-inter">Our key features help us distinguish ourselves!</p>
                 </div>
 
-                <div class="w-full lg:w-[70%] pt-10">
-                    <template x-for="(p, i) in points" :key="i">
-                        <div class="project-panel bg-white mb-20">
-                            <div class="flex flex-col lg:flex-row gap-4 sm:gap-6">
-
-                                <div class="flex-1 p-2 border border-[#D8C6FF] rounded-[16px] bg-white shadow-xl">
-                                    <div class="p-4 sm:p-6 pl-[48px] sm:pl-[58px] relative">
-                                        <img class="absolute top-4 sm:top-6 left-4 sm:left-6 w-5"
-                                            src="./src/images/price/tick-02.svg" />
-                                        <h3 class="text-[18px] sm:text-[22px] font-bricolage font-bold text-[#03000A] mb-2"
-                                            x-text="p.title"></h3>
-                                        <p class="text-[14px] sm:text-[18px] text-[#4F4D53] font-inter" x-text="p.desc">
-                                        </p>
-                                    </div>
-                                    <img src="./src/images/price/rectangle.png" class="w-full rounded-[8px] mt-4" />
-                                </div>
-
-                                <div class="flex-1 p-2 border border-[#D8C6FF] rounded-[16px] bg-[#F9F7FE]">
-                                    <div class="p-4 sm:p-6 pl-[48px] sm:pl-[58px] relative">
-                                        <img class="absolute top-4 sm:top-6 left-4 sm:left-6 w-5"
-                                            src="./src/images/price/multiplication-sign.svg" />
-                                        <h3 class="text-[18px] sm:text-[22px] font-bricolage font-bold text-[#03000A] mb-2"
-                                            x-text="p.title"></h3>
-                                        <p class="text-[14px] sm:text-[18px] text-[#4F4D53] font-inter" x-text="p.desc">
-                                        </p>
-                                    </div>
-                                    <img src="./src/images/price/rectangle-01.png"
-                                        class="w-full rounded-[8px] mt-4 grayscale opacity-40" />
-                                </div>
-
-                            </div>
+<div class="w-full lg:w-[70%]">
+    <template x-for="(p, i) in points" :key="i">
+        <div class="project-panel bg-white mb-6 md:mb-20">
+            <div class="overflow-x-auto no-scrollbar pb-4">
+                
+                <div class="flex flex-row gap-4 lg:gap-6 min-w-[620px] lg:min-w-full">
+                    
+                    <div class="w-[300px] lg:w-full lg:flex-1 flex-shrink-0 flex flex-col gap-2">
+                        <div class="flex justify-center py-2 lg:hidden">
+                            <img src="./src/images/price/lorem-logo.png" class="h-8 object-contain" alt="Us" />
                         </div>
-                    </template>
-                    <div class="h-[30vh] hidden lg:block"></div>
-                </div>
+                        
+                        <div class="p-2 border border-[#D8C6FF] rounded-[16px] bg-white shadow-xl h-full">
+                            <div class="p-6 pl-[58px] relative">
+                                <img class="absolute top-6 left-6 w-5" src="./src/images/price/tick-02.svg" />
+                                <h3 class="text-xl font-bricolage font-bold text-[#03000A] mb-2" x-text="p.title"></h3>
+                                <p class="text-base text-[#4F4D53] font-inter" x-text="p.desc"></p>
+                            </div>
+                            <img src="./src/images/price/rectangle.png" class="w-full rounded-[8px] mt-2" />
+                        </div>
+                    </div>
 
+                    <div class="w-[300px] lg:w-full lg:flex-1 flex-shrink-0 flex flex-col gap-2">
+                        <div class="flex justify-center py-2 lg:hidden transition-all duration-500">
+                            <img :src="tabs[activeTab].altLogo" class="h-8 object-contain" :key="activeTab" />
+                        </div>
+
+                        <div class="p-2 border border-[#D8C6FF] rounded-[16px] bg-[#F9F7FE] h-full">
+                            <div class="p-6 pl-[58px] relative">
+                                <img class="absolute top-6 left-6 w-5" src="./src/images/price/multiplication-sign.svg" />
+                                <h3 class="text-xl font-bricolage font-bold text-[#03000A] mb-2" x-text="p.title"></h3>
+                                <p class="text-base text-[#4F4D53] font-inter" x-text="p.desc"></p>
+                            </div>
+                            <img src="./src/images/price/rectangle-01.png" class="w-full rounded-[8px] mt-2 grayscale opacity-40" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </template>
+</div>
             </div>
         </div>
     </section>
 
-
-    <section class="bg-white py-8 sm:py-16" x-data="additionalFeatures">
+    <section class="bg-white py-8 sm:py-16">
         <div class="container relative">
             <template x-for="(cat, index) in featureGroups" :key="cat.title">
                 <div class="relative mb-12 sm:mb-20">
-                    <div
-                        class="sticky top-[56px] sm:top-[76px] z-[30] bg-white/95 backdrop-blur-md border-b border-[#D8C6FF]">
-                        <h4 class="py-4 sm:py-6 px-4 text-2xl sm:text-3xl font-bold font-bricolage text-[#5A147F]"
-                            x-text="cat.title"></h4>
+                    <div class="sticky top-[82px] z-[30] bg-white/95 backdrop-blur-md border-b border-[#D8C6FF]">
+                        <div class="flex flex-col text-center justify-between md:flex-row items-center">
+                            <div class="w-full md:w-[30%]">
+                                <h4 class="py-4 sm:py-6 px-4 text-2xl sm:text-3xl font-bold font-bricolage text-[#5A147F]" x-text="cat.title"></h4>
+                            </div>
+                            <div class="w-[70%] flex gap-6">
+                                <div class="flex-1 flex justify-center py-2">
+                                    <img src="./src/images/price/lorem-logo.png" class="h-8 object-contain" alt="Us">
+                                </div>
+                                <div class="flex-1 flex justify-center py-2 transition-all duration-500">
+                                    <img :src="tabs[activeTab].altLogo" class="h-8 object-contain">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="overflow-x-auto">
                         <div class="min-w-[500px] sm:min-w-0">
                             <template x-for="f in cat.features" :key="f.name">
-                                <div
-                                    class="flex gap-2 sm:gap-4 border-b border-[#E6E5E6] items-center hover:bg-[#F9F7FE] transition-colors group">
-                                    <div class="w-[33%] px-3 sm:px-6 py-4 font-medium text-sm sm:text-lg font-inter text-[#03000A]"
-                                        x-text="f.name"></div>
-
+                                <div class="flex gap-2 sm:gap-4 border-b border-[#E6E5E6] items-center hover:bg-[#F9F7FE] transition-colors group">
+                                    <div class="w-[33%] px-3 sm:px-6 py-4 font-medium text-sm sm:text-lg font-inter text-[#03000A]" x-text="f.name"></div>
                                     <div class="w-[33%] px-3 sm:px-6 py-4 flex justify-center">
-                                        <img :src="f.col1 === 'tick' ? '/src/images/price/tick-02.svg' : '/src/images/price/minus-sign.svg'"
-                                            class="w-4 sm:w-auto transition-transform group-hover:scale-110" />
+                                        <img :src="f.col1 === 'tick' ? '/src/images/price/tick-02.svg' : '/src/images/price/minus-sign.svg'" class="w-4 sm:w-auto transition-transform group-hover:scale-110" />
                                     </div>
-
                                     <div class="w-[33%] px-3 sm:px-6 py-4 flex justify-center">
-                                        <img :src="f.col2 === 'tick' ? '/src/images/price/tick-02.svg' : '/src/images/price/minus-sign.svg'"
-                                            class="w-4 sm:w-auto transition-transform group-hover:scale-110" />
+                                        <img :src="f.col2 === 'tick' ? '/src/images/price/tick-02.svg' : '/src/images/price/minus-sign.svg'" class="w-4 sm:w-auto transition-transform group-hover:scale-110" />
                                     </div>
                                 </div>
                             </template>
@@ -520,6 +618,7 @@
             </template>
         </div>
     </section>
+</div>
 
     <footer class="w-full pt-[60px] lg:pt-[128px]"
         style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
@@ -648,113 +747,9 @@
 
     <!-- GSAP CDN -->
     <script src="src/js/gsap.min.js"></script>
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.data('pricingTable', () => ({
-                categories: [
-                    {
-                        title: 'Feature flags',
-                        features: [
-                            { name: 'Type-safety', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Toolbar', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'CLI', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Company page', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Company segments', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Advanced targeting rules', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Environments', free: '3 environments', pro: 'Unlimited', ent: 'Unlimited' },
-                            { name: 'Gradual rollout', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Remote config', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Kill switch', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Stored attributes', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Flag history', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Local evaluation', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'OpenFeature', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Global network', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Add in bulk', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'AI flag cleanup', free: 'Coming soon', pro: 'Coming soon', ent: 'Coming soon' },
-                            { name: 'User permissions', free: 'Coming soon', pro: 'Coming soon', ent: 'Coming soon' }
-                        ]
-                    },
-                    {
-                        title: 'Beta release workflow',
-                        features: [
-                            { name: 'Release stages', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Feedback volume', free: '50/mo feedback', pro: 'Unlimited', ent: 'Unlimited' },
-                            { name: 'Static feedback button', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'In-app surveys', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Customizable styling', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Adoption metrics', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Adoption strategies', free: 'tick', pro: 'tick', ent: 'tick' }
-                        ]
-                    },
-                    {
-                        title: 'Integrations',
-                        features: [
-                            { name: 'Slack', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Microsoft Teams', free: 'tick', pro: 'tick', ent: 'tick' },
-                            { name: 'Discord', free: 'Coming soon', pro: 'tick', ent: 'tick' },
-                            { name: 'Jira', free: 'Coming soon', pro: 'tick', ent: 'tick' },
-                            { name: 'GitHub Actions', free: 'Coming soon', pro: 'tick', ent: 'tick' },
-                            { name: 'Webhooks', free: 'Coming soon', pro: 'Coming soon', ent: 'tick' }
-                        ]
-                    }
-                ]
-            }))
-        });
-
-        document.addEventListener('alpine:init', () => {
-            Alpine.data('additionalFeatures', () => ({
-                featureGroups: [
-                    {
-                        title: 'Usage Limitation',
-                        features: [
-                            { name: 'MTUs/User', col1: 'tick', col2: 'tick' },
-                            { name: 'Accounts', col1: 'minus', col2: 'tick' },
-                            { name: 'Devices', col1: 'minus', col2: 'tick' },
-                            { name: 'Other identifiers', col1: 'minus', col2: 'tick' }
-                        ]
-                    },
-                    {
-                        title: 'Flagging Essentials',
-                        features: [
-                            { name: 'Targeting Rules', col1: 'tick', col2: 'tick' },
-                            { name: 'Segments', col1: 'minus', col2: 'tick' },
-                            { name: 'Environments', col1: 'minus', col2: 'tick' },
-                            { name: 'Percentage Rollouts', col1: 'tick', col2: 'tick' },
-                            { name: 'Release Kill Switch', col1: 'tick', col2: 'tick' }
-                        ]
-                    }
-                ]
-            }))
-        });
-    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        ScrollTrigger.matchMedia({
-            "(min-width: 1024px)": function () {
-                let panels = document.querySelectorAll('.stack-panel');
-
-                panels.forEach((panel, i) => {
-                    gsap.to(panel, {
-                        scrollTrigger: {
-                            trigger: panel,
-                            pin: true,           // Pins the card
-                            pinSpacing: false,   // Allows next card to overlap
-                            start: "top 20%",    // Adjust where it sticks
-                            endTrigger: "#comparison-area",
-                            end: "bottom 80%",
-                            scrub: 1
-                        }
-                    });
-                });
-            }
-        });
-    </script>
 
     <script type="module" src="src/main.js"></script>
 </body>
