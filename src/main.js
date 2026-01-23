@@ -27,7 +27,7 @@ new Swiper('.tools-swiper', {
         delay: 0,
         disableOnInteraction: false,
     },
-    slidesPerView: 6,
+    slidesPerView: 'auto',
 });
 
 new Swiper('.tools-swiper-reverse', {
@@ -39,7 +39,7 @@ new Swiper('.tools-swiper-reverse', {
         delay: 0,
         disableOnInteraction: false,
     },
-    slidesPerView: 7,
+    slidesPerView: 'auto',
 });
 
 // Pricing pageXOffset, Compare section 

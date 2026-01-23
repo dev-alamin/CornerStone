@@ -39,6 +39,15 @@
 [x-cloak] {
     display: none !important;
 }
+.group:hover div {
+    will-change: transform;
+}
+
+.tools-swiper .swiper-wrapper,
+.tools-swiper-reverse .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
 
 /* 3. The Designer's "Fade Edge" Mask */
 .marquee-mask {
