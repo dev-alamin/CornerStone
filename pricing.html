@@ -383,8 +383,7 @@
         </div>
     </section>
 
-    <section class="bg-white py-8 sm:py-16" 
-    x-data="{ 
+    <section class="bg-white py-8 sm:py-16 overflow-visible" id="comparison-section" x-data="{ 
         activeTab: 0,
         tabs: [
             { name: 'Notion', icon: '/src/images/price/01.png', altLogo: './src/images/price/notionh.png' },
@@ -393,227 +392,259 @@
         ],
         points: [
             { title: 'Dedicated solution, built for SaaS', desc: 'Not for every use case, just yours: Feature flagging for SaaS' },
-            { title: 'Dedicated solution, built for SaaS', desc: 'Not for every use case, just yours: Feature flagging for SaaS' },
-            { title: 'Dedicated solution, built for SaaS', desc: 'Not for every use case, just yours: Feature flagging for SaaS' }
+            { title: 'Advanced Targeting', desc: 'Detailed rule-based segments for precise rollouts' },
+            { title: 'Enterprise Security', desc: 'RBAC and audit logs built into the core platform' }
         ]
-    }">
-    <div class="container">
-        <h4 class="text-sm sm:text-lg font-uncutsans text-[#5A147F] italic mb-4">Compare</h4>
-        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bricolage font-bold text-[#240F52] mb-4">Logo Ipsum vs Alternatives</h2>
-        <p class="text-base sm:text-2xl font-inter text-[#4F4D53] mb-8 sm:mb-12">Compare with tools you like</p>
+    }" x-init="
+        $nextTick(() => {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            ScrollTrigger.matchMedia({
+                '(min-width: 1024px)': function() {
+                    let panels = gsap.utils.toArray('.project-panel');
+                    panels.forEach((panel, i) => {
+                        ScrollTrigger.create({
+                            trigger: panel,
+                            start: 'top 15%', // Adjusted to sit below the sticky tabs
+                            endTrigger: '#comparison-section',
+                            end: 'bottom 80%',
+                            pin: true,
+                            pinSpacing: false,
+                            scrub: true
+                        });
+                    });
+                }
+            });
+        });
+    ">
+        <div class="container">
+            <div class="sticky top-0 z-[100] bg-white pt-4 pb-4">
+                <h4 class="text-sm sm:text-lg font-uncutsans text-[#5A147F] italic mb-2">Compare</h4>
+                <h2 class="text-2xl sm:text-4xl font-bricolage font-bold text-[#240F52] mb-6">Logo Ipsum vs Alternatives
+                </h2>
 
-        <div class="flex flex-wrap sm:flex-nowrap gap-4 sm:gap-8 border-b border-[#D8C6FF] mb-8 sm:mb-16">
-            <template x-for="(tab, index) in tabs" :key="index">
-                <button 
-                    @click="activeTab = index"
-                    class="flex-1 sm:flex-none text-center pb-4 transition-all duration-300 border-b-2"
-                    :class="activeTab === index ? 'border-[#4B125E] opacity-100' : 'border-transparent opacity-50 hover:opacity-80'">
-                    <img :src="tab.icon" class="mb-2 sm:mb-4 mx-auto w-10 sm:w-auto h-10 object-contain" :alt="tab.name" />
-                    <h4 class="text-base sm:text-xl font-bricolage font-bold text-[#4B125E]" x-text="tab.name"></h4>
-                </button>
+                <div class="flex flex-wrap sm:flex-nowrap gap-4 sm:gap-8 border-b border-[#D8C6FF]">
+                    <template x-for="(tab, index) in tabs" :key="index">
+                        <button @click="activeTab = index"
+                            class="flex-1 sm:flex-none text-center pb-4 transition-all border-b-2"
+                            :class="activeTab === index ? 'border-[#4B125E] opacity-100' : 'border-transparent opacity-50'">
+                            <img :src="tab.icon" class="mb-2 mx-auto w-8 h-8 object-contain" />
+                            <h4 class="text-base font-bold text-[#4B125E]" x-text="tab.name"></h4>
+                        </button>
+                    </template>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+
+                <div class="w-full lg:w-[30%] lg:sticky lg:top-[220px] z-10 pt-10">
+                    <h2 class="text-[#240F52] text-3xl lg:text-[40px] font-bricolage font-bold mb-4 leading-tight">What
+                        makes us Different?</h2>
+                    <p class="text-base sm:text-lg text-[#4F4D53] font-inter">Our key features that offer exclusive
+                        services help us to distinguish ourselves!</p>
+                </div>
+
+                <div class="w-full lg:w-[70%] pt-10">
+                    <template x-for="(p, i) in points" :key="i">
+                        <div class="project-panel bg-white mb-20">
+                            <div class="flex flex-col lg:flex-row gap-4 sm:gap-6">
+
+                                <div class="flex-1 p-2 border border-[#D8C6FF] rounded-[16px] bg-white shadow-xl">
+                                    <div class="p-4 sm:p-6 pl-[48px] sm:pl-[58px] relative">
+                                        <img class="absolute top-4 sm:top-6 left-4 sm:left-6 w-5"
+                                            src="./src/images/price/tick-02.svg" />
+                                        <h3 class="text-[18px] sm:text-[22px] font-bricolage font-bold text-[#03000A] mb-2"
+                                            x-text="p.title"></h3>
+                                        <p class="text-[14px] sm:text-[18px] text-[#4F4D53] font-inter" x-text="p.desc">
+                                        </p>
+                                    </div>
+                                    <img src="./src/images/price/rectangle.png" class="w-full rounded-[8px] mt-4" />
+                                </div>
+
+                                <div class="flex-1 p-2 border border-[#D8C6FF] rounded-[16px] bg-[#F9F7FE]">
+                                    <div class="p-4 sm:p-6 pl-[48px] sm:pl-[58px] relative">
+                                        <img class="absolute top-4 sm:top-6 left-4 sm:left-6 w-5"
+                                            src="./src/images/price/multiplication-sign.svg" />
+                                        <h3 class="text-[18px] sm:text-[22px] font-bricolage font-bold text-[#03000A] mb-2"
+                                            x-text="p.title"></h3>
+                                        <p class="text-[14px] sm:text-[18px] text-[#4F4D53] font-inter" x-text="p.desc">
+                                        </p>
+                                    </div>
+                                    <img src="./src/images/price/rectangle-01.png"
+                                        class="w-full rounded-[8px] mt-4 grayscale opacity-40" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </template>
+                    <div class="h-[30vh] hidden lg:block"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-white py-8 sm:py-16" x-data="additionalFeatures">
+        <div class="container relative">
+            <template x-for="(cat, index) in featureGroups" :key="cat.title">
+                <div class="relative mb-12 sm:mb-20">
+                    <div
+                        class="sticky top-[56px] sm:top-[76px] z-[30] bg-white/95 backdrop-blur-md border-b border-[#D8C6FF]">
+                        <h4 class="py-4 sm:py-6 px-4 text-2xl sm:text-3xl font-bold font-bricolage text-[#5A147F]"
+                            x-text="cat.title"></h4>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <div class="min-w-[500px] sm:min-w-0">
+                            <template x-for="f in cat.features" :key="f.name">
+                                <div
+                                    class="flex gap-2 sm:gap-4 border-b border-[#E6E5E6] items-center hover:bg-[#F9F7FE] transition-colors group">
+                                    <div class="w-[33%] px-3 sm:px-6 py-4 font-medium text-sm sm:text-lg font-inter text-[#03000A]"
+                                        x-text="f.name"></div>
+
+                                    <div class="w-[33%] px-3 sm:px-6 py-4 flex justify-center">
+                                        <img :src="f.col1 === 'tick' ? '/src/images/price/tick-02.svg' : '/src/images/price/minus-sign.svg'"
+                                            class="w-4 sm:w-auto transition-transform group-hover:scale-110" />
+                                    </div>
+
+                                    <div class="w-[33%] px-3 sm:px-6 py-4 flex justify-center">
+                                        <img :src="f.col2 === 'tick' ? '/src/images/price/tick-02.svg' : '/src/images/price/minus-sign.svg'"
+                                            class="w-4 sm:w-auto transition-transform group-hover:scale-110" />
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
             </template>
         </div>
+    </section>
 
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
-            <div class="w-full lg:w-[28%]">
-                <h2 class="text-[#240F52] text-3xl sm:text-4xl lg:text-[40px] font-bricolage font-bold mb-2">What makes us Different?</h2>
-                <p class="text-base sm:text-lg text-[#4F4D53] font-inter">Our key features that offer exclusive services help us to distinguish ourselves!</p>
-            </div>
+    <footer class="w-full pt-[60px] lg:pt-[128px]"
+        style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
+        x-data="{ subscribed: false, email: '' }">
 
-            <div class="flex flex-col lg:flex-row gap-6 w-full">
-                
-                <div class="flex-1">
-                    <img src="./src/images/price/lorem-logo.png" class="mx-auto mb-6 h-8 sm:h-10 object-contain" alt="Our Logo" />
-                    <template x-for="p in points">
-                        <div class="p-2 border border-[#D8C6FF] rounded-2xl mb-6 last:mb-0">
-                            <div class="p-4 pl-12 sm:pl-14 relative">
-                                <img src="./src/images/price/tick-02.svg" class="absolute top-4 left-4 sm:left-6 w-4 sm:w-auto" />
-                                <h3 class="text-lg sm:text-xl font-bricolage font-bold text-[#03000A] mb-2" x-text="p.title"></h3>
-                                <p class="text-sm sm:text-lg text-[#4F4D53] font-inter" x-text="p.desc"></p>
-                            </div>
-                            <img src="./src/images/price/rectangle.png" class="w-full rounded-lg mt-4" />
-                        </div>
-                    </template>
+        <div class="container mx-auto px-4">
+
+            <div
+                class="flex flex-col lg:flex-row justify-between pb-[60px] lg:pb-[128px] gap-[40px] lg:gap-[64px] items-center">
+
+                <div class="flex flex-col w-full lg:max-w-[38.8%] text-center lg:text-left">
+                    <h2 class="text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
+                        Ready to Launch Faster and Smarter?
+                    </h2>
+                    <p class="text-[15px] leading-[1.4] font-normal text-white opacity-70 mb-[30px]">
+                        Try it free. Cancel anytime. No credit card required.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-[16px] justify-center lg:justify-start">
+                        <a href="#"
+                            class="border-[1px] border-[#D8C6FF66] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium text-[#D8C6FF] hover:bg-[#D8C6FF66] transition-all text-center">
+                            Purchase Full Template
+                        </a>
+                        <a href="#"
+                            class="bg-white text-[#5A147F] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium hover:bg-[#D8C6FF] transition-all text-center">
+                            Try for Free
+                        </a>
+                    </div>
                 </div>
 
-                <div class="flex-1">
-                    <img :src="tabs[activeTab].altLogo" class="mx-auto mb-6 h-8 sm:h-10 object-contain transition-all duration-500" />
-                    <template x-for="p in points">
-                        <div class="p-2 border border-[#D8C6FF] rounded-2xl mb-6 last:mb-0 bg-gray-50/30">
-                            <div class="p-4 pl-12 sm:pl-14 relative">
-                                <img src="./src/images/price/multiplication-sign.svg" class="absolute top-4 left-4 sm:left-6 w-4 sm:w-auto" />
-                                <h3 class="text-lg sm:text-xl font-bricolage font-bold text-[#03000A] mb-2" x-text="p.title"></h3>
-                                <p class="text-sm sm:text-lg text-[#4F4D53] font-inter" x-text="p.desc"></p>
-                            </div>
-                            <img src="./src/images/price/rectangle-01.png" class="w-full rounded-lg mt-4 grayscale opacity-80" />
-                        </div>
-                    </template>
-                </div>
+                <div
+                    class="w-full lg:w-[calc(61.2%-64px)] bg-white rounded-[24px] p-[24px] md:p-[32px] flex flex-col md:flex-row gap-[24px] items-start">
+                    <img src="./src/images/icons/Icon.webp" alt="Ready to Launch"
+                        class="w-[60px] h-[60px] object-contain" />
 
-            </div>
-        </div>
-    </div>
-</section>
+                    <div class="flex flex-col w-full">
+                        <h3 class="text-[18px] leading-[110%] font-bricolage font-bold text-[#000] mb-[16px]">
+                            Subscribe to Our Newsletter
+                        </h3>
 
-
-<section class="bg-white py-8 sm:py-16" x-data="additionalFeatures">
-    <div class="container relative">
-        <template x-for="(cat, index) in featureGroups" :key="cat.title">
-            <div class="relative mb-12 sm:mb-20">
-                <div class="sticky top-[56px] sm:top-[76px] z-[30] bg-white/95 backdrop-blur-md border-b border-[#D8C6FF]">
-                    <h4 class="py-4 sm:py-6 px-4 text-2xl sm:text-3xl font-bold font-bricolage text-[#5A147F]" 
-                        x-text="cat.title"></h4>
-                </div>
-                
-                <div class="overflow-x-auto">
-                    <div class="min-w-[500px] sm:min-w-0">
-                        <template x-for="f in cat.features" :key="f.name">
-                            <div class="flex gap-2 sm:gap-4 border-b border-[#E6E5E6] items-center hover:bg-[#F9F7FE] transition-colors group">
-                                <div class="w-[33%] px-3 sm:px-6 py-4 font-medium text-sm sm:text-lg font-inter text-[#03000A]" 
-                                     x-text="f.name"></div>
-                                
-                                <div class="w-[33%] px-3 sm:px-6 py-4 flex justify-center">
-                                    <img :src="f.col1 === 'tick' ? '/src/images/price/tick-02.svg' : '/src/images/price/minus-sign.svg'" 
-                                         class="w-4 sm:w-auto transition-transform group-hover:scale-110" />
+                        <template x-if="!subscribed">
+                            <form @submit.prevent="subscribed = true">
+                                <div class="flex flex-col sm:flex-row mb-[20px] gap-[8px]">
+                                    <input x-model="email"
+                                        class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[16px] font-uncutsans text-[#240F52] w-full sm:w-[70%]"
+                                        type="email" required placeholder="Your email here..." />
+                                    <button
+                                        class="bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
+                                        type="submit">Subscribe</button>
                                 </div>
-
-                                <div class="w-[33%] px-3 sm:px-6 py-4 flex justify-center">
-                                    <img :src="f.col2 === 'tick' ? '/src/images/price/tick-02.svg' : '/src/images/price/minus-sign.svg'" 
-                                         class="w-4 sm:w-auto transition-transform group-hover:scale-110" />
+                                <div class="checkbox">
+                                    <label for="policy-checkbox" class="flex gap-[10px] items-start cursor-pointer">
+                                        <input class="w-[18px] h-[18px] mt-1 accent-[#5A147F]" type="checkbox"
+                                            id="policy-checkbox" required />
+                                        <span
+                                            class="text-[13px] leading-[1.4] font-normal text-[#000] opacity-70 font-uncutsans">
+                                            By checking the box, you agree to receive our weekly newsletter and updates.
+                                        </span>
+                                    </label>
                                 </div>
+                            </form>
+                        </template>
+
+                        <template x-if="subscribed">
+                            <div class="bg-green-50 text-green-700 p-4 rounded-lg font-medium animate-pulse">
+                                Thanks for subscribing! Check your inbox soon.
                             </div>
                         </template>
                     </div>
                 </div>
             </div>
-        </template>
-    </div>
-</section>
-
-<footer class="w-full pt-[60px] lg:pt-[128px]"
-    style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
-    x-data="{ subscribed: false, email: '' }">
-
-    <div class="container mx-auto px-4">
-
-        <div
-            class="flex flex-col lg:flex-row justify-between pb-[60px] lg:pb-[128px] gap-[40px] lg:gap-[64px] items-center">
-
-            <div class="flex flex-col w-full lg:max-w-[38.8%] text-center lg:text-left">
-                <h2 class="text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
-                    Ready to Launch Faster and Smarter?
-                </h2>
-                <p class="text-[15px] leading-[1.4] font-normal text-white opacity-70 mb-[30px]">
-                    Try it free. Cancel anytime. No credit card required.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-[16px] justify-center lg:justify-start">
-                    <a href="#"
-                        class="border-[1px] border-[#D8C6FF66] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium text-[#D8C6FF] hover:bg-[#D8C6FF66] transition-all text-center">
-                        Purchase Full Template
-                    </a>
-                    <a href="#"
-                        class="bg-white text-[#5A147F] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium hover:bg-[#D8C6FF] transition-all text-center">
-                        Try for Free
-                    </a>
-                </div>
-            </div>
 
             <div
-                class="w-full lg:w-[calc(61.2%-64px)] bg-white rounded-[24px] p-[24px] md:p-[32px] flex flex-col md:flex-row gap-[24px] items-start">
-                <img src="./src/images/icons/Icon.webp" alt="Ready to Launch"
-                    class="w-[60px] h-[60px] object-contain" />
+                class="flex flex-col md:flex-row justify-between gap-[40px] pb-[40px] border-b-[1px] border-[#D8C6FF66]">
+                <nav>
+                    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Features</a></li>
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">About Us</a></li>
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Pricing</a></li>
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Blog</a></li>
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Help Centre</a></li>
+                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Request Demo</a></li>
+                    </ul>
+                </nav>
 
-                <div class="flex flex-col w-full">
-                    <h3 class="text-[18px] leading-[110%] font-bricolage font-bold text-[#000] mb-[16px]">
-                        Subscribe to Our Newsletter
-                    </h3>
+                <ul class="flex gap-[20px] justify-center md:justify-end">
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                </ul>
+            </div>
 
-                    <template x-if="!subscribed">
-                        <form @submit.prevent="subscribed = true">
-                            <div class="flex flex-col sm:flex-row mb-[20px] gap-[8px]">
-                                <input x-model="email"
-                                    class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[16px] font-uncutsans text-[#240F52] w-full sm:w-[70%]"
-                                    type="email" required placeholder="Your email here..." />
-                                <button
-                                    class="bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
-                                    type="submit">Subscribe</button>
-                            </div>
-                            <div class="checkbox">
-                                <label for="policy-checkbox" class="flex gap-[10px] items-start cursor-pointer">
-                                    <input class="w-[18px] h-[18px] mt-1 accent-[#5A147F]" type="checkbox"
-                                        id="policy-checkbox" required />
-                                    <span
-                                        class="text-[13px] leading-[1.4] font-normal text-[#000] opacity-70 font-uncutsans">
-                                        By checking the box, you agree to receive our weekly newsletter and updates.
-                                    </span>
-                                </label>
-                            </div>
-                        </form>
-                    </template>
+            <div class="py-[40px] lg:py-[64px]">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-[20px] text-center md:text-left">
+                    <ul class="flex gap-[32px] lg:gap-[56px]">
+                        <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
+                                href="#">Website Terms</a></li>
+                        <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
+                                href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
+                        ©2025 Framer Lab — All Rights Reserved
+                    </p>
+                </div>
+            </div>
 
-                    <template x-if="subscribed">
-                        <div class="bg-green-50 text-green-700 p-4 rounded-lg font-medium animate-pulse">
-                            Thanks for subscribing! Check your inbox soon.
-                        </div>
-                    </template>
+            <div class="footer-logo relative mt-[-50px] overflow-hidden">
+                <img src="./src/images/big-logo.png" alt="Footer Logo" class="w-full h-auto object-cover" />
+
+                <div class="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none backdrop-blur-sm"
+                    style="mask-image: linear-gradient(to bottom, transparent, black 40%); -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%);">
                 </div>
             </div>
         </div>
-
-        <div
-            class="flex flex-col md:flex-row justify-between gap-[40px] pb-[40px] border-b-[1px] border-[#D8C6FF66]">
-            <nav>
-                <ul class="grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
-                    <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                            href="#">Features</a></li>
-                    <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                            href="#">About Us</a></li>
-                    <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                            href="#">Pricing</a></li>
-                    <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                            href="#">Blog</a></li>
-                    <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                            href="#">Help Centre</a></li>
-                    <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                            href="#">Request Demo</a></li>
-                </ul>
-            </nav>
-
-            <ul class="flex gap-[20px] justify-center md:justify-end">
-                <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                            fill="white"></svg></a></li>
-                <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                            fill="white"></svg></a></li>
-                <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                            fill="white"></svg></a></li>
-                <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                            fill="white"></svg></a></li>
-            </ul>
-        </div>
-
-        <div class="py-[40px] lg:py-[64px]">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-[20px] text-center md:text-left">
-                <ul class="flex gap-[32px] lg:gap-[56px]">
-                    <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
-                            href="#">Website Terms</a></li>
-                    <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
-                            href="#">Privacy Policy</a></li>
-                </ul>
-                <p class="text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
-                    ©2025 Framer Lab — All Rights Reserved
-                </p>
-            </div>
-        </div>
-
-        <div class="footer-logo relative mt-[-50px] overflow-hidden">
-            <img src="./src/images/big-logo.png" alt="Footer Logo" class="w-full h-auto object-cover" />
-
-            <div class="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none backdrop-blur-sm"
-                style="mask-image: linear-gradient(to bottom, transparent, black 40%); -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%);">
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- GSAP CDN -->
     <script src="src/js/gsap.min.js"></script>
@@ -672,31 +703,59 @@
         });
 
         document.addEventListener('alpine:init', () => {
-    Alpine.data('additionalFeatures', () => ({
-        featureGroups: [
-            {
-                title: 'Usage Limitation',
-                features: [
-                    { name: 'MTUs/User', col1: 'tick', col2: 'tick' },
-                    { name: 'Accounts', col1: 'minus', col2: 'tick' },
-                    { name: 'Devices', col1: 'minus', col2: 'tick' },
-                    { name: 'Other identifiers', col1: 'minus', col2: 'tick' }
+            Alpine.data('additionalFeatures', () => ({
+                featureGroups: [
+                    {
+                        title: 'Usage Limitation',
+                        features: [
+                            { name: 'MTUs/User', col1: 'tick', col2: 'tick' },
+                            { name: 'Accounts', col1: 'minus', col2: 'tick' },
+                            { name: 'Devices', col1: 'minus', col2: 'tick' },
+                            { name: 'Other identifiers', col1: 'minus', col2: 'tick' }
+                        ]
+                    },
+                    {
+                        title: 'Flagging Essentials',
+                        features: [
+                            { name: 'Targeting Rules', col1: 'tick', col2: 'tick' },
+                            { name: 'Segments', col1: 'minus', col2: 'tick' },
+                            { name: 'Environments', col1: 'minus', col2: 'tick' },
+                            { name: 'Percentage Rollouts', col1: 'tick', col2: 'tick' },
+                            { name: 'Release Kill Switch', col1: 'tick', col2: 'tick' }
+                        ]
+                    }
                 ]
-            },
-            {
-                title: 'Flagging Essentials',
-                features: [
-                    { name: 'Targeting Rules', col1: 'tick', col2: 'tick' },
-                    { name: 'Segments', col1: 'minus', col2: 'tick' },
-                    { name: 'Environments', col1: 'minus', col2: 'tick' },
-                    { name: 'Percentage Rollouts', col1: 'tick', col2: 'tick' },
-                    { name: 'Release Kill Switch', col1: 'tick', col2: 'tick' }
-                ]
-            }
-        ]
-    }))
-});
+            }))
+        });
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        ScrollTrigger.matchMedia({
+            "(min-width: 1024px)": function () {
+                let panels = document.querySelectorAll('.stack-panel');
+
+                panels.forEach((panel, i) => {
+                    gsap.to(panel, {
+                        scrollTrigger: {
+                            trigger: panel,
+                            pin: true,           // Pins the card
+                            pinSpacing: false,   // Allows next card to overlap
+                            start: "top 20%",    // Adjust where it sticks
+                            endTrigger: "#comparison-area",
+                            end: "bottom 80%",
+                            scrub: 1
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
     <script type="module" src="src/main.js"></script>
 </body>
 
