@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corner Stone - HTML Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <style>
+        .smooth-scroll-link.active {
+            color: #5A147F !important;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body class="relative">
+
+    <header class="fixed w-full pl-[32px] pr-[32px] pt-[16px] pb-[16px] z-50 version-two">
+        <div class="flex justify-between items-center relative">
+            <div class="logo max-w-[145px]">
+                <a href="index.html">
+                    <img src="./src/images/logo-black.png" alt="Corner Stone Logo" />
+                </a>
+            </div>
+            <div class="nav-menu-container">
+                <ul
+                    class="nav-menu font-bricolage hidden nav:flex gap-[24px] items-center text-[#03000A] absolute nav:relative top-full left-0 w-full nav:w-auto bg-white nav:bg-transparent flex-col nav:flex-row p-[24px] nav:p-0 mt-[16px] nav:mt-0 shadow-lg nav:shadow-none z-50 rounded-[8px] nav:rounded-none">
+                    <li class="text-[16px] leading-[110%] hover:underline"><a class="text-[#03000A] nav:text-[#03000A]"
+                            href="#">Features</a></li>
+                    <li class="text-[16px] leading-[110%] hover:underline"><a class="text-[#03000A] nav:text-[#03000A]"
+                            href="#">About Us</a></li>
+                    <li class="text-[16px] leading-[110%] hover:underline"><a class="text-[#03000A] nav:text-[#03000A]"
+                            href="#">Pricing</a></li>
+                    <li class="text-[16px] leading-[110%] hover:underline"><a class="text-[#03000A] nav:text-[#03000A]"
+                            href="#">Blog</a></li>
+                    <li class="text-[16px] leading-[110%] hover:underline"><a class="text-[#03000A] nav:text-[#03000A]"
+                            href="#">Help Centre</a></li>
+                    <li class="text-[16px] leading-[110%] hover:underline"><a class="text-[#03000A] nav:text-[#03000A]"
+                            href="#">Request a Demo</a></li>
+                    <li
+                        class="mobile-menu-buttons mobile:hidden flex flex-col gap-[8px] w-full mt-[16px] pt-[16px] border-t border-[#E6E5E6]">
+                        <a href="#" class="px-[24px] py-[12px] font-bricolage text-[#03000A] text-center">Login /
+                            Signup</a>
+                        <a href="#"
+                            class="px-[20px] py-[12px] border-[#03000A] border-[1px] rounded-[8px] text-[#03000A] font-bricolage text-center">Try
+                            for Free</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex text-[#03000A] gap-[40px] lg:gap-[8px]">
+                <div class="hidden mobile:flex gap-[8px]">
+                    <a href="#" class="px-[24px] py-[12px] font-bricolage">Login / Signup</a>
+                    <a href="#"
+                        class="px-[20px] py-[12px] border-[#5A147F] border-[1px] rounded-[8px] text-[#5A147F] font-bricolage">Try
+                        for Free</a>
+                </div>
+
+                <button class="menu-toggle nav:hidden" type="button">
+                    <svg class="menu-icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 13L28 13" stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                        <path d="M12 20L28 20" stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                        <path d="M12 27L28 27" stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="pricing-plan pt-[146px] pb-[128px] bg-[#fff]">
+        <div class="container">
+
+            <div class="corner__tabs">
+
+                <div class="flex lg:flex-row flex-col lg:items-end justify-between sm:mb-[64px] mb-[20px]">
+
+                    <div>
+                        <h1
+                            class="text-[40px] sm:text-[64px] lg:text-[80px] leading-[110%] tracking-[-0.03em] font-bricolage font-semibold text-[#240F52] mb-[16px]">
+                            Pricing
+                        </h1>
+                        <p class="text-[22px] text-[#03000A] leading-[100%] font-inter lg:mb-0 sm:mb-[24px] mb-[16px]">
+                            Get started
+                            for free, upgrade as
+                            you
+                            scale</p>
+                    </div>
+
+                    <div
+                        class="corner__tranding-tab-list flex gap-[24px] lg:items-center items-start lg:justify-center lg:flex-row flex-col justify-start">
+                        <div
+                            class="corner__tranding-tab-list-item bg-white rounded-[52px] p-[2px] border-[1px] border-[#D8C6FF]">
+                            <button
+                                class="corner__tab active px-[20px] py-[12px] rounded-[52px] text-[14px] leading-[110%] font-medium font-bricolage"
+                                data-target="tab1">Pay Monthly</button>
+                            <button
+                                class="corner__tab px-[20px] py-[12px] rounded-[52px] text-[14px] leading-[110%] font-medium font-bricolage"
+                                data-target="tab2">Pay Yearly</button>
+                        </div>
+                        <div class="flex items-center gap-[8px] ml-auto lg:ml-0">
+
+                            <svg width="55" height="14" viewBox="0 0 55 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M53.718 5.85791C54.2802 4.58219 54.3062 4.39369 53.3333 4.04386C51.9773 3.5598 50.584 3.14011 49.1445 2.83262C42.9966 1.52473 36.6358 1.25432 30.1838 1.49862C27.6352 1.59504 25.0664 1.86034 22.5043 2.15107C21.1337 2.30665 19.7574 2.64533 18.4037 2.98712C15.0166 3.85145 11.6645 4.80641 8.51868 6.33315C7.40283 6.87508 6.1934 7.26932 5.01779 7.70907C4.71234 7.82662 4.35842 7.96614 4.10589 7.66999C4.14194 7.5605 4.14417 7.4055 4.21856 7.35848C5.08305 6.81072 5.94753 6.263 6.82893 5.738C9.01664 4.44786 11.2291 3.16925 13.4123 1.86215C13.7505 1.66325 14.0739 1.36837 14.2745 1.06072C14.4199 0.831337 14.4773 0.434594 14.342 0.252594C14.2068 0.0705937 13.7547 -0.0362434 13.4741 0.0111405C13.0086 0.0985954 12.5442 0.312882 12.1249 0.533359C10.7284 1.28615 9.33643 2.05591 7.95685 2.83145C5.79393 4.05143 3.64792 5.29417 1.49741 6.51992C0.836923 6.89536 0.164041 7.265 0.000698365 7.99869C0.629884 9.54793 2.0232 10.2946 3.7783 10.727C5.19636 11.0765 6.58173 11.5074 7.98852 11.8962C8.30528 11.9845 8.6457 12.0394 8.97935 12.0687C10.1438 12.1587 11.2484 12.3917 12.3002 12.7932C12.9641 13.0435 13.7092 13.1905 14.4295 13.326C14.7271 13.3831 15.0867 13.3056 15.4293 13.2872C15.3876 13.0894 15.4124 12.9375 15.3357 12.8943C14.6548 12.4577 14.001 11.9595 13.2389 11.6263C12.2391 11.1746 11.1997 10.7789 10.112 10.4869C8.80437 10.1444 7.72106 9.54237 6.69184 8.89874C6.72897 8.42567 7.11785 8.37676 7.44247 8.29044C9.79483 7.61952 12.1517 6.96557 14.4894 6.28038C18.3905 5.14316 22.3773 4.49174 26.3765 4.00958C27.1971 3.90946 28.0211 3.94468 28.8417 3.92629C30.5606 3.89607 32.283 3.91945 34.0064 3.82446C37.4004 3.63948 40.7617 3.61756 44.0554 4.15857C44.8512 4.29208 45.6887 4.29646 46.4857 4.39335C48.3726 4.62726 50.2269 4.94251 51.9978 5.51608C52.5457 5.69737 53.1453 5.74679 53.718 5.85791Z"
+                                    fill="#5A147F" />
+                            </svg>
+
+                            <span>Save 20%</span>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="corner__content active" id="tab1">
+                    <div class="flex flex-col lg:flex-row gap-[16px]">
+                        <div
+                            class="corner__pricing-card lg:w-[33.33%] w-full p-[4px] bg-white rounded-[16px] relative pb-[90px] border-[1px] border-[#D8C6FF]">
+                            <div class="corner__pricing-card-head p-[32px] rounded-[12px] bg-[#F9F7FE]">
+                                <h3
+                                    class="text-[24px] sm:text-[32px] leading-[100%] font-bricolage font-bold text-[#240F52] sm:mb-[32px] mb-[24px]">
+                                    Free</h3>
+                                <div class="corner__price flex items-center gap-[8px] mb-[8px]">
+                                    <span class="text-[52px] leading-[100%] font-bold text-[#4B125E]">$0</span>
+                                    <span class="text-[18px] leading-[100%] font-bold text-[#240F52]">user /
+                                        month</span>
+                                </div>
+                                <p class="opacity-70 text-[18px] leading-[100%] sm:max-w-[330px] max-w-full">Designed
+                                    for individuals
+                                    and early
+                                    teams getting started.</p>
+                            </div>
+                            <div class="pb-[66px] sm:pt-[66px] pt-[32px] px-[16px]">
+                                <h3 class="text-[18px] mb-[16px] text-[#240F52] font-bold font-bricolage">Includes:</h3>
+                                <ul>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Up to 3 workspaces</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>AI-powered notes & smart<br /> summaries</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Basic task & project management</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>5 automation flows</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>1 GB secure storage</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Team access for up to 3 users</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Global support community</span>
+                                    </li>
+                                </ul>
+
+                                <div class="absolute bottom-0 left-0 w-full px-[16px] py-[28px]">
+                                    <a href="#"
+                                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] w-full block text-center rounded-[16px] text-[#5A147F] py-[16px] px-[24px] hover:bg-primary transition-all mb-[8px]">Start
+                                        for Free</a>
+
+                                    <p class="text-center opacity-70 text-[15px] font-normal font-uncutsans">No credit
+                                        card
+                                        required.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="corner__pricing-card lg:w-[33.33%] w-full p-[4px] bg-white rounded-[16px] relative pb-[90px] border-[1px] border-[#D8C6FF]">
+                            <div class="corner__pricing-card-head p-[32px] rounded-[12px] bg-[#F9F7FE]">
+                                <h3
+                                    class="text-[32px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[32px] relative flex align-baseline">
+                                    Pro
+                                    <div class="absolute top-0 left-0 d-flex pl-[86px]">
+
+                                        <svg class="absolute left-[72px] top-[2px]" width="18" height="38"
+                                            viewBox="0 0 18 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.80259 14.2003L15.7003 0.302637C16.3464 -0.343481 17.4512 0.114125 17.4512 1.02787V36.0756C17.4512 36.9894 16.3464 37.447 15.7003 36.8009L1.8026 22.9032C-0.60063 20.5 -0.600634 16.6036 1.80259 14.2003Z"
+                                                fill="#D8C6FF" />
+                                        </svg>
+                                        <span
+                                            class="text-[14px] bg-[#D8C6FF] py-[12px] px-[8px] leading-[110%] rounded-tl-[6px] rounded-tr-[12px] rounded-br-[12px] rounded-bl-[6px]">Recommended</span>
+                                    </div>
+                                </h3>
+                                <div class="corner__price flex items-center gap-[8px] mb-[8px]">
+                                    <span
+                                        class="leading-[100%] font-bold text-[#4B125E] text-[40px] sm:text-[52px]">$15</span>
+                                    <span class="text-[18px] leading-[100%] font-bold text-[#240F52]">user /
+                                        month</span>
+                                </div>
+                                <p class="opacity-70 text-[18px] leading-[100%] max-w-[330px]">Perfect for growing teams
+                                    that need
+                                    more power and control.</p>
+                            </div>
+                            <div class="pb-[66px] sm:pt-[66px] pt-[32px] px-[16px]">
+                                <h3 class="text-[18px] mb-[16px] text-[#240F52] font-bold font-bricolage">Everything in
+                                    Starter, plus:</h3>
+                                <ul>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Full AI writing assistant</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Unlimited automation flows</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>100GB secure storage</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Integrations: Slack, Google,<br /> Microsoft, Zapier & more</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>AI-powered search</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Role-based permissions & controls</span>
+                                    </li>
+                                </ul>
+
+                                <div class="absolute bottom-0 left-0 w-full px-[16px] py-[28px]">
+                                    <a href="#"
+                                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] w-full block text-center rounded-[16px] text-[#5A147F] py-[16px] px-[24px] hover:bg-white bg-primary transition-all mb-[8px]">Unlock
+                                        Full AI Power</a>
+
+                                    <p class="text-center opacity-70 text-[15px] font-normal font-uncutsans">14-day free
+                                        trial. Cancel
+                                        anytime.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="corner__pricing-card lg:w-[calc(33.33%-16px)] w-full p-[4px] color-primary-strong rounded-[16px] relative pb-[90px]">
+                            <div class="corner__pricing-card-head p-[32px] rounded-[12px] bg-[#F9F7FE]/10">
+                                <h3
+                                    class="text-[24px] sm:text-[32px] leading-[100%] font-bricolage font-bold text-white sm:mb-[32px] mb-[24px] relative flex align-baseline">
+                                    Enterprise
+                                </h3>
+                                <div class="corner__price flex items-center gap-[8px] mb-[8px]">
+                                    <span
+                                        class="text-[40px] sm:text-[52px] leading-[100%] font-bold text-[#D8C6FF]">Custom</span>
+                                </div>
+                                <p class="opacity-70 text-white text-[18px] leading-[100%] max-w-[330px]">Built for
+                                    larger
+                                    organizations with
+                                    high-scale and security needs.</p>
+                            </div>
+                            <div class="py-[32px] px-[16px]">
+                                <h3 class="text-[18px] mb-[16px] text-white font-bold font-bricolage">Everything in
+                                    Starter, plus:</h3>
+                                <ul>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>Full AI writing assistant</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white  leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>Unlimited automation flows</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>100GB secure storage</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>Integrations: Slack, Google,<br /> Microsoft, Zapier & more</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>AI-powered search</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>Role-based permissions & controls</span>
+                                    </li>
+                                </ul>
+
+                                <div class="absolute bottom-0 left-0 w-full px-[16px] py-[28px]">
+                                    <a href="#"
+                                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] w-full block text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[8px]">Let’s
+                                        Talk</a>
+
+                                    <p
+                                        class="color-primary-light text-center opacity-70 text-[15px] font-normal font-uncutsans">
+                                        14-day
+                                        free trial. Cancel
+                                        anytime.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="corner__content" id="tab2">
+                    <div class="flex flex-col lg:flex-row gap-[16px]">
+                        <div
+                            class="corner__pricing-card lg:w-[33.33%] w-full p-[4px] bg-white rounded-[16px] relative pb-[90px] border-[1px] border-[#D8C6FF]">
+                            <div class="corner__pricing-card-head p-[32px] rounded-[12px] bg-[#F9F7FE]">
+                                <h3
+                                    class="text-[24px] sm:text-[32px] leading-[100%] font-bricolage font-bold text-[#240F52] sm:mb-[32px] mb-[24px]">
+                                    Free</h3>
+                                <div class="corner__price flex items-center gap-[8px] mb-[8px]">
+                                    <span class="text-[52px] leading-[100%] font-bold text-[#4B125E]">$0</span>
+                                    <span class="text-[18px] leading-[100%] font-bold text-[#240F52]">user /
+                                        month</span>
+                                </div>
+                                <p class="opacity-70 text-[18px] leading-[100%] sm:max-w-[330px] max-w-full">Designed
+                                    for individuals
+                                    and early
+                                    teams getting started.</p>
+                            </div>
+                            <div class="pb-[66px] sm:pt-[66px] pt-[32px] px-[16px]">
+                                <h3 class="text-[18px] mb-[16px] text-[#240F52] font-bold font-bricolage">Includes:</h3>
+                                <ul>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Up to 3 workspaces</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>AI-powered notes & smart<br /> summaries</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Basic task & project management</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>5 automation flows</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>1 GB secure storage</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Team access for up to 3 users</span>
+                                    </li>
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Global support community</span>
+                                    </li>
+                                </ul>
+
+                                <div class="absolute bottom-0 left-0 w-full px-[16px] py-[28px]">
+                                    <a href="#"
+                                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] w-full block text-center rounded-[16px] text-[#5A147F] py-[16px] px-[24px] hover:bg-primary transition-all mb-[8px]">Start
+                                        for Free</a>
+
+                                    <p class="text-center opacity-70 text-[15px] font-normal font-uncutsans">No credit
+                                        card
+                                        required.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="corner__pricing-card lg:w-[33.33%] w-full p-[4px] bg-white rounded-[16px] relative pb-[90px] border-[1px] border-[#D8C6FF]">
+                            <div class="corner__pricing-card-head p-[32px] rounded-[12px] bg-[#F9F7FE]">
+                                <h3
+                                    class="text-[32px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[32px] relative flex align-baseline">
+                                    Pro
+                                    <div class="absolute top-0 left-0 d-flex pl-[86px]">
+
+                                        <svg class="absolute left-[72px] top-[2px]" width="18" height="38"
+                                            viewBox="0 0 18 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.80259 14.2003L15.7003 0.302637C16.3464 -0.343481 17.4512 0.114125 17.4512 1.02787V36.0756C17.4512 36.9894 16.3464 37.447 15.7003 36.8009L1.8026 22.9032C-0.60063 20.5 -0.600634 16.6036 1.80259 14.2003Z"
+                                                fill="#D8C6FF" />
+                                        </svg>
+                                        <span
+                                            class="text-[14px] bg-[#D8C6FF] py-[12px] px-[8px] leading-[110%] rounded-tl-[6px] rounded-tr-[12px] rounded-br-[12px] rounded-bl-[6px]">Recommended</span>
+                                    </div>
+                                </h3>
+                                <div class="corner__price flex items-center gap-[8px] mb-[8px]">
+                                    <span
+                                        class="leading-[100%] font-bold text-[#4B125E] text-[40px] sm:text-[52px]">$15</span>
+                                    <span class="text-[18px] leading-[100%] font-bold text-[#240F52]">user /
+                                        month</span>
+                                </div>
+                                <p class="opacity-70 text-[18px] leading-[100%] max-w-[330px]">Perfect for growing teams
+                                    that need
+                                    more power and control.</p>
+                            </div>
+                            <div class="pb-[66px] sm:pt-[66px] pt-[32px] px-[16px]">
+                                <h3 class="text-[18px] mb-[16px] text-[#240F52] font-bold font-bricolage">Everything in
+                                    Starter, plus:</h3>
+                                <ul>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Full AI writing assistant</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Unlimited automation flows</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>100GB secure storage</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Integrations: Slack, Google,<br /> Microsoft, Zapier & more</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>AI-powered search</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle.svg" />
+                                        <span>Role-based permissions & controls</span>
+                                    </li>
+                                </ul>
+
+                                <div class="absolute bottom-0 left-0 w-full px-[16px] py-[28px]">
+                                    <a href="#"
+                                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] w-full block text-center rounded-[16px] text-[#5A147F] py-[16px] px-[24px] hover:bg-white bg-primary transition-all mb-[8px]">Unlock
+                                        Full AI Power</a>
+
+                                    <p class="text-center opacity-70 text-[15px] font-normal font-uncutsans">14-day free
+                                        trial. Cancel
+                                        anytime.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="corner__pricing-card lg:w-[calc(33.33%-16px)] w-full p-[4px] color-primary-strong rounded-[16px] relative pb-[90px]">
+                            <div class="corner__pricing-card-head p-[32px] rounded-[12px] bg-[#F9F7FE]/10">
+                                <h3
+                                    class="text-[24px] sm:text-[32px] leading-[100%] font-bricolage font-bold text-white sm:mb-[32px] mb-[24px] relative flex align-baseline">
+                                    Enterprise
+                                </h3>
+                                <div class="corner__price flex items-center gap-[8px] mb-[8px]">
+                                    <span
+                                        class="text-[40px] sm:text-[52px] leading-[100%] font-bold text-[#D8C6FF]">Custom</span>
+                                </div>
+                                <p class="opacity-70 text-white text-[18px] leading-[100%] max-w-[330px]">Built for
+                                    larger
+                                    organizations with
+                                    high-scale and security needs.</p>
+                            </div>
+                            <div class="py-[32px] px-[16px]">
+                                <h3 class="text-[18px] mb-[16px] text-white font-bold font-bricolage">Everything in
+                                    Starter, plus:</h3>
+                                <ul>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>Full AI writing assistant</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white  leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>Unlimited automation flows</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>100GB secure storage</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>Integrations: Slack, Google,<br /> Microsoft, Zapier & more</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>AI-powered search</span>
+                                    </li>
+
+                                    <li class="flex gap-[16px] text-[18px] text-white leading-[100%] mb-[12px]">
+                                        <img src="./src/images/price/checkmark-circle-white.svg" />
+                                        <span>Role-based permissions & controls</span>
+                                    </li>
+                                </ul>
+
+                                <div class="absolute bottom-0 left-0 w-full px-[16px] py-[28px]">
+                                    <a href="#"
+                                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] w-full block text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[8px]">Let’s
+                                        Talk</a>
+
+                                    <p
+                                        class="color-primary-light text-center opacity-70 text-[15px] font-normal font-uncutsans">
+                                        14-day
+                                        free trial. Cancel
+                                        anytime.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-white py-[32px] sm:py-[64px]">
+        <div class="container">
+            <div class="overflow-x-auto">
+                <div class="flex gap-2 sm:gap-4 bg-[#D8C6FFB2] rounded-lg min-w-[600px] sm:min-w-[800px]">
+                    <div
+                        class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[16px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A]">
+                        Feature</div>
+                    <div
+                        class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[16px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] text-center">
+                        Free</div>
+                    <div
+                        class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[16px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] text-center">
+                        Pro</div>
+                    <div
+                        class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[16px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] text-center">
+                        Enterprise</div>
+                </div>
+            </div>
+            <div class="pricing-item-list mb-[32px] sm:mb-[64px]">
+                <h4
+                    class="pt-[24px] sm:pt-[40px] px-[16px] pb-[12px] sm:pb-[16px] text-[24px] sm:text-[32px] leading-[100%] font-bold font-bricolage border-b-[1px] border-[#D8C6FF] mb-4">
+                    Feature
+                    flags</h4>
+                <div class="overflow-x-auto">
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Type-safety
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Toolbar
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            CLI
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Company page
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Company segments
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Advanced targeting rules
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Environments
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#4F4D53] font-inter text-center">
+                            3 environments
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#4F4D53] font-inter text-center">
+                            Unlimited environments
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#4F4D53] font-inter text-center">
+                            Unlimited environments
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Gradual rollout
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Remote config
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Kill switch
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Stored attributes
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Flag history
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Local evaluation
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            OpenFeature
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Global network
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Add in bulk
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            AI flag cleanup
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#B3B2B5] font-inter text-center">
+                            Coming soon
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#B3B2B5] font-inter text-center">
+                            Coming soon
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#B3B2B5] font-inter text-center">
+                            Coming soon
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            User permissions
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#B3B2B5] font-inter text-center">
+                            Coming soon
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#B3B2B5] font-inter text-center">
+                            Coming soon
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#B3B2B5] font-inter text-center">
+                            Coming soon
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-item-list mb-[32px] sm:mb-[64px]">
+                <h4
+                    class="pt-[24px] sm:pt-[40px] px-[16px] pb-[12px] sm:pb-[16px] text-[24px] sm:text-[32px] leading-[100%] font-bold font-bricolage border-b-[1px] border-[#D8C6FF] mb-4">
+                    Beta release workflow</h4>
+                <div class="overflow-x-auto">
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Release stages
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Feedback volume
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#4F4D53] font-inter text-center">
+                            50/mo feedback
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#4F4D53] font-inter text-center">
+                            Unlimited feedback
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#4F4D53] font-inter text-center">
+                            Unlimited feedback
+                        </div>
+                    </div>
+
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Static feedback button
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            In-app surveys
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Customizable styling
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Adoption metrics
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Adoption strategies
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Metric segments
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Localization support
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-item-list mb-[32px] sm:mb-[64px]">
+                <h4
+                    class="pt-[24px] sm:pt-[40px] px-[16px] pb-[12px] sm:pb-[16px] text-[24px] sm:text-[32px] leading-[100%] font-bold font-bricolage border-b-[1px] border-[#D8C6FF] mb-4">
+                    Integrations</h4>
+                <div class="overflow-x-auto">
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Release stages
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Slack
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            MCP
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[600px] sm:min-w-0">
+                        <div
+                            class="w-[25%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Warehouse
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#4F4D53] font-inter text-center">
+                            Not included
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#4F4D53] font-inter text-center">
+                            Included
+                        </div>
+                        <div
+                            class="w-[25%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] text-[14px] sm:text-[18px] leading-[20px] sm:leading-[28.8px] text-[#4F4D53] font-inter text-center">
+                            Warehouse (automated)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+    </section>
+
+    <section class="compare">
+        <div class="container">
+            <h4 class="text-[14px] sm:text-[18px] leading-[100%] font-uncutsans text-[#5A147F] italic mb-4 sm:mb-6">
+                Compare</h4>
+            <h2
+                class="text-[32px] sm:text-[48px] lg:text-[64px] leading-[110%] font-bricolage font-bold text-[#240F52] mb-4">
+                Logo Ipsum vs
+                Alternatives</h2>
+            <p class="text-[16px] sm:text-[22px] font-inter leading-[100%] mb-4 sm:mb-6 text-[#4F4D53]">Compare with
+                tools you like</p>
+
+            <div class="logo-tab">
+                <!-- Tab Buttons -->
+                <div
+                    class="logo-tab-buttons flex flex-wrap sm:flex-nowrap gap-4 sm:gap-8 border-b-[1px] border-[#D8C6FF] mb-[32px] sm:mb-[64px]">
+                    <button class="logo-tab-button text-center active flex-1 sm:flex-none" data-target="logo-content1">
+                        <img class="mb-2 sm:mb-4 mx-auto w-[40px] sm:w-auto" src="/src/images/price/01.png"
+                            alt="Logo Ipsum" />
+                        <h4
+                            class="text-[16px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#4B125E] pb-2 sm:pb-4 text-center">
+                            Notion</h4>
+                    </button>
+                    <button class="logo-tab-button flex-1 sm:flex-none" data-target="logo-content2">
+                        <img class="mb-2 sm:mb-4 mx-auto w-[40px] sm:w-auto" src="/src/images/price/icon-02.png"
+                            alt="Logo Ipsum" />
+                        <h4
+                            class="text-[16px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#4B125E] pb-2 sm:pb-4 text-center">
+                            Asana</h4>
+                    </button>
+                    <button class="logo-tab-button flex-1 sm:flex-none" data-target="logo-content2">
+                        <img class="mb-2 sm:mb-4 mx-auto w-[40px] sm:w-auto" src="/src/images/price/clickup.png"
+                            alt="Logo Ipsum" />
+                        <h4
+                            class="text-[16px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#4B125E] pb-2 sm:pb-4 text-center">
+                            ClickUp</h4>
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="logo-tab-content active" id="logo-content1">
+                    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
+
+                        <div class="w-full lg:w-[28%]">
+                            <h2
+                                class="text-[#240F52] text-[28px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold mb-[8px]">
+                                What
+                                makes us
+                                Different?</h2>
+                            <p
+                                class="text-[16px] sm:text-[18px] leading-[24px] sm:leading-[28px] text-[#4F4D53] font-inter mb-6 sm:mb-10">
+                                Our key features that
+                                offers
+                                exclusive services help
+                                us to distinguish ourself!</p>
+                        </div>
+
+                        <div class="flex flex-col lg:flex-row gap-4 sm:gap-6 w-full lg:-mr-6">
+
+                            <div class="flex flex-col w-full lg:w-[calc(50%-24px)]">
+                                <img class="mx-auto table mb-4 sm:mb-6 w-[120px] sm:w-auto"
+                                    src="./src/images/price/lorem-logo.png" />
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/tick-02.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/tick-02.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/tick-02.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col w-full lg:w-[calc(50%-24px)]">
+                                <img class="mx-auto table mb-4 sm:mb-6 w-[120px] sm:w-auto"
+                                    src="./src/images/price/notionh.png" />
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/multiplication-sign.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle-01.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/multiplication-sign.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle-01.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/multiplication-sign.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle-01.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="logo-tab-content" id="logo-content2">
+                    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
+
+                        <div class="w-full lg:w-[28%]">
+                            <h2
+                                class="text-[#240F52] text-[28px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold mb-[8px]">
+                                What
+                                makes us
+                                Different?</h2>
+                            <p
+                                class="text-[16px] sm:text-[18px] leading-[24px] sm:leading-[28px] text-[#4F4D53] font-inter mb-6 sm:mb-10">
+                                Our key features that
+                                offers
+                                exclusive services help
+                                us to distinguish ourself!</p>
+                        </div>
+
+                        <div class="flex flex-col lg:flex-row gap-4 sm:gap-6 w-full lg:-mr-6">
+
+                            <div class="flex flex-col w-full lg:w-[calc(50%-24px)]">
+                                <img class="mx-auto table mb-4 sm:mb-6 w-[120px] sm:w-auto"
+                                    src="./src/images/price/lorem-logo.png" />
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/tick-02.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/tick-02.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/tick-02.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col w-full lg:w-[calc(50%-24px)]">
+                                <img class="mx-auto table h-[24px] sm:h-[32px] mb-4 sm:mb-6"
+                                    src="./src/images/price/icon-02.png" />
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/multiplication-sign.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle-01.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/multiplication-sign.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle-01.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="dedicated-item p-2 border-[1px] border-[#D8C6FF] rounded-[16px] mb-[24px] sm:mb-[32px]">
+                                    <div class="relative">
+
+                                        <div class="p-3 sm:p-4 pl-[48px] sm:pl-[58px] relative">
+                                            <img class="absolute top-3 sm:top-4 left-4 sm:left-6 w-[16px] sm:w-auto"
+                                                src="./src/images/price/multiplication-sign.svg" />
+                                            <h3
+                                                class="text-[18px] sm:text-[22px] leading-[100%] font-bricolage font-bold text-[#03000A] mb-2">
+                                                Dedicated solution, built for SaaS</h3>
+                                            <p
+                                                class="text-[14px] sm:text-[18px] leading-[22px] sm:leading-[28px] text-[#4F4D53] font-inter">
+                                                Not for
+                                                every
+                                                use case, just yours: Feature flagging for SaaS</p>
+                                        </div>
+
+                                        <img src="./src/images/price/rectangle-01.png"
+                                            class="w-full  rounded-[8px] mt-[24px]" />
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="pricing-item-list mb-[32px] sm:mb-[64px]">
+                <h4
+                    class="pt-[24px] sm:pt-[40px] px-[16px] pb-[12px] sm:pb-[16px] text-[24px] sm:text-[32px] leading-[100%] font-bold font-bricolage border-b-[1px] border-[#D8C6FF] mb-4">
+                    Usage Limitation</h4>
+                <div class="overflow-x-auto">
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[500px] sm:min-w-0">
+                        <div
+                            class="w-[33%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            MTUs/User
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[500px] sm:min-w-0">
+                        <div
+                            class="w-[33%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Accounts
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/minus-sign.svg" />
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[500px] sm:min-w-0">
+                        <div
+                            class="w-[33%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Devices
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/minus-sign.svg" />
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[500px] sm:min-w-0">
+                        <div
+                            class="w-[33%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Other identifiers
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/minus-sign.svg" />
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pricing-item-list mb-[32px] sm:mb-[64px]">
+                <h4
+                    class="pt-[24px] sm:pt-[40px] px-[16px] pb-[12px] sm:pb-[16px] text-[24px] sm:text-[32px] leading-[100%] font-bold font-bricolage border-b-[1px] border-[#D8C6FF] mb-4">
+                    Flagging Essentials</h4>
+                <div class="overflow-x-auto">
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[500px] sm:min-w-0">
+                        <div
+                            class="w-[33%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Targeting Rules
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[500px] sm:min-w-0">
+                        <div
+                            class="w-[33%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Segments
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/minus-sign.svg" />
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[500px] sm:min-w-0">
+                        <div
+                            class="w-[33%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Environments
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/minus-sign.svg" />
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[500px] sm:min-w-0">
+                        <div
+                            class="w-[33%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Percentage Rollouts
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                    <div class="flex gap-2 sm:gap-4 border-b-[#E6E5E6] border-b-[1px] min-w-[500px] sm:min-w-0">
+                        <div
+                            class="w-[33%] min-w-[120px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px] font-medium text-[14px] sm:text-[18px] leading-[100%] font-inter text-[#03000A]">
+                            Release Kill Switch
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                        <div class="w-[33%] min-w-[100px] px-[12px] sm:px-[24px] py-[12px] sm:py-[16px]">
+                            <img class="mx-auto w-[16px] sm:w-auto" src="/src/images/price/tick-02.svg" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full sm:pt-[128px] pt-[80px]"
+        style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);">
+        <div class="container">
+
+            <div class="flex lg:flex-nowrap flex-wrap justify-between sm:pb-[128px] pb-[96px] gap-[64px] items-center">
+                <div class="flex flex-col lg:max-w-[38.8%] w-full">
+                    <div
+                        class="w-auto max-w-[350px] lg:text-[47px] sm:text-[36px] text-[32px] leading-[110%] font-bricolage font-bold text-white mb-[16px] text-center sm:text-left">
+                        Ready to
+                        Launch
+                        Faster and Smarter?</div>
+                    <div
+                        class="text-[15px] leading-[100%] font-normal text-white opacity-70 mb-[30px] text-center sm:text-left">
+                        Try it free.
+                        Cancel
+                        anytime. No credit card required.</div>
+                    <div class="flex flex-col sm:flex-row gap-[16px]">
+                        <a href="#"
+                            class="border-[1px] border-[#D8C6FF66] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans leading-[100%] font-medium text-[#D8C6FF] hover:bg-[#D8C6FF66] transition-all mx-auto sm:mx-0">Purchase
+                            Full Template</a>
+                        <a href="#" class="button-no-outline transition-colors mx-auto sm:mx-0">Try for Free</a>
+                    </div>
+                </div>
+                <div
+                    class="lg:w-[calc(61.2%-64px)] w-full bg-white rounded-[16px] pl-[0] pr-[24px] pt-[24px] pb-[24px] flex gap-[28px] sm:flex-row flex-col">
+                    <img src="./src/images/icons/Icon.webp" alt="Ready to Launch" />
+                    <div class="flex flex-col sm:pl-[0] pl-[16px]">
+                        <h3 class="text-[18px] leading-[100%] font-bricolage font-bold text-[#000] mb-[16px]">Subscribe
+                            to Our
+                            Newsletter</h3>
+                        <form method="POST">
+                            <div class="flex mb-[20px] gap-[8px]">
+                                <input
+                                    class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[18px] font-uncutsans leading-[100%] font-medium placeholder:text-[#000] text-[#D8C6FF] w-[70.6%]"
+                                    type="email" name="email" placeholder="Your email here..." />
+                                <button
+                                    class="bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans leading-[100%] font-medium hover:bg-[#D8C6FF66] transition-all"
+                                    type="submit">Subscribe</button>
+                            </div>
+                            <div class="checkbox">
+                                <label for="policy-checkbox" class="flex gap-[8px] items-top">
+                                    <input class="w-[20px] h-[20px] relative top-[-4px]" type="checkbox"
+                                        id="policy-checkbox" name="checkbox" />
+                                    <span
+                                        class="text-[15px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">By
+                                        checking the box, you agree that you acknowledge for weekly
+                                        newsletter</span>
+                                </label>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div
+                class="flex lg:flex-nowrap flex-wrap justify-between sm:gap-[80px] lg:gap-[50px] pb-[64px] border-b-[1px] border-[#D8C6FF]">
+                <ul
+                    class="flex flex-wrap lg:flex-nowrap sm:gap-[56px] justify-center sm:justify-start gap-[24px] pb-[80px] sm:pb-[0]">
+                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage"
+                            href="#">Features</a></li>
+                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage" href="#">About
+                            Us</a></li>
+                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage"
+                            href="#">Pricing</a></li>
+                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage" href="#">Blog</a>
+                    </li>
+                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage" href="#">Help
+                            Centre</a></li>
+                    <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage" href="#">Request a
+                            Demo</a></li>
+                </ul>
+                <ul class="flex mx-auto lg:mx-0 gap-[24px]">
+                    <li><a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_35_1241)">
+                                    <path
+                                        d="M12 0C5.37264 0 0 5.37264 0 12C0 17.6275 3.87456 22.3498 9.10128 23.6467V15.6672H6.62688V12H9.10128V10.4198C9.10128 6.33552 10.9498 4.4424 14.9597 4.4424C15.72 4.4424 17.0318 4.59168 17.5685 4.74048V8.06448C17.2853 8.03472 16.7933 8.01984 16.1822 8.01984C14.2147 8.01984 13.4544 8.76528 13.4544 10.703V12H17.3741L16.7006 15.6672H13.4544V23.9122C19.3963 23.1946 24.0005 18.1354 24.0005 12C24 5.37264 18.6274 0 12 0Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_35_1241">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a></li>
+                    <li><a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.3263 1.9043H21.6998L14.3297 10.3278L23 21.7903H16.2112L10.894 14.8383L4.80995 21.7903H1.43443L9.31743 12.7804L1 1.9043H7.96111L12.7674 8.25863L18.3263 1.9043ZM17.1423 19.7711H19.0116L6.94539 3.81743H4.93946L17.1423 19.7711Z"
+                                    fill="white" />
+                            </svg>
+                        </a></li>
+                    <li><a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_35_1243)">
+                                    <path
+                                        d="M23.7609 7.1998C23.7609 7.1998 23.5266 5.54512 22.8047 4.81855C21.8906 3.8623 20.8688 3.85762 20.4 3.80137C17.0438 3.55762 12.0047 3.55762 12.0047 3.55762H11.9953C11.9953 3.55762 6.95625 3.55762 3.6 3.80137C3.13125 3.85762 2.10938 3.8623 1.19531 4.81855C0.473438 5.54512 0.24375 7.1998 0.24375 7.1998C0.24375 7.1998 0 9.14512 0 11.0857V12.9045C0 14.8451 0.239062 16.7904 0.239062 16.7904C0.239062 16.7904 0.473437 18.4451 1.19062 19.1717C2.10469 20.1279 3.30469 20.0951 3.83906 20.1982C5.76094 20.3811 12 20.4373 12 20.4373C12 20.4373 17.0438 20.4279 20.4 20.1889C20.8688 20.1326 21.8906 20.1279 22.8047 19.1717C23.5266 18.4451 23.7609 16.7904 23.7609 16.7904C23.7609 16.7904 24 14.8498 24 12.9045V11.0857C24 9.14512 23.7609 7.1998 23.7609 7.1998ZM9.52031 15.1123V8.36699L16.0031 11.7514L9.52031 15.1123Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_35_1243">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a></li>
+                    <li><a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_35_1244)">
+                                    <path
+                                        d="M12 2.16094C15.2063 2.16094 15.5859 2.175 16.8469 2.23125C18.0188 2.28281 18.6516 2.47969 19.0734 2.64375C19.6313 2.85938 20.0344 3.12188 20.4516 3.53906C20.8734 3.96094 21.1313 4.35938 21.3469 4.91719C21.5109 5.33906 21.7078 5.97656 21.7594 7.14375C21.8156 8.40937 21.8297 8.78906 21.8297 11.9906C21.8297 15.1969 21.8156 15.5766 21.7594 16.8375C21.7078 18.0094 21.5109 18.6422 21.3469 19.0641C21.1313 19.6219 20.8687 20.025 20.4516 20.4422C20.0297 20.8641 19.6313 21.1219 19.0734 21.3375C18.6516 21.5016 18.0141 21.6984 16.8469 21.75C15.5813 21.8062 15.2016 21.8203 12 21.8203C8.79375 21.8203 8.41406 21.8062 7.15313 21.75C5.98125 21.6984 5.34844 21.5016 4.92656 21.3375C4.36875 21.1219 3.96563 20.8594 3.54844 20.4422C3.12656 20.0203 2.86875 19.6219 2.65313 19.0641C2.48906 18.6422 2.29219 18.0047 2.24063 16.8375C2.18438 15.5719 2.17031 15.1922 2.17031 11.9906C2.17031 8.78438 2.18438 8.40469 2.24063 7.14375C2.29219 5.97187 2.48906 5.33906 2.65313 4.91719C2.86875 4.35938 3.13125 3.95625 3.54844 3.53906C3.97031 3.11719 4.36875 2.85938 4.92656 2.64375C5.34844 2.47969 5.98594 2.28281 7.15313 2.23125C8.41406 2.175 8.79375 2.16094 12 2.16094ZM12 0C8.74219 0 8.33438 0.0140625 7.05469 0.0703125C5.77969 0.126563 4.90313 0.332812 4.14375 0.628125C3.35156 0.9375 2.68125 1.34531 2.01563 2.01562C1.34531 2.68125 0.9375 3.35156 0.628125 4.13906C0.332812 4.90313 0.126563 5.775 0.0703125 7.05C0.0140625 8.33437 0 8.74219 0 12C0 15.2578 0.0140625 15.6656 0.0703125 16.9453C0.126563 18.2203 0.332812 19.0969 0.628125 19.8563C0.9375 20.6484 1.34531 21.3188 2.01563 21.9844C2.68125 22.65 3.35156 23.0625 4.13906 23.3672C4.90313 23.6625 5.775 23.8687 7.05 23.925C8.32969 23.9812 8.7375 23.9953 11.9953 23.9953C15.2531 23.9953 15.6609 23.9812 16.9406 23.925C18.2156 23.8687 19.0922 23.6625 19.8516 23.3672C20.6391 23.0625 21.3094 22.65 21.975 21.9844C22.6406 21.3188 23.0531 20.6484 23.3578 19.8609C23.6531 19.0969 23.8594 18.225 23.9156 16.95C23.9719 15.6703 23.9859 15.2625 23.9859 12.0047C23.9859 8.74688 23.9719 8.33906 23.9156 7.05938C23.8594 5.78438 23.6531 4.90781 23.3578 4.14844C23.0625 3.35156 22.6547 2.68125 21.9844 2.01562C21.3188 1.35 20.6484 0.9375 19.8609 0.632812C19.0969 0.3375 18.225 0.13125 16.95 0.075C15.6656 0.0140625 15.2578 0 12 0Z"
+                                        fill="white" />
+                                    <path
+                                        d="M12 5.83594C8.59688 5.83594 5.83594 8.59688 5.83594 12C5.83594 15.4031 8.59688 18.1641 12 18.1641C15.4031 18.1641 18.1641 15.4031 18.1641 12C18.1641 8.59688 15.4031 5.83594 12 5.83594ZM12 15.9984C9.79219 15.9984 8.00156 14.2078 8.00156 12C8.00156 9.79219 9.79219 8.00156 12 8.00156C14.2078 8.00156 15.9984 9.79219 15.9984 12C15.9984 14.2078 14.2078 15.9984 12 15.9984Z"
+                                        fill="white" />
+                                    <path
+                                        d="M19.8469 5.59238C19.8469 6.38926 19.2 7.03145 18.4078 7.03145C17.6109 7.03145 16.9688 6.38457 16.9688 5.59238C16.9688 4.79551 17.6156 4.15332 18.4078 4.15332C19.2 4.15332 19.8469 4.8002 19.8469 5.59238Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_35_1244">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a></li>
+                    <li><a href="#">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_35_1245)">
+                                    <path
+                                        d="M22.2234 0H1.77187C0.792187 0 0 0.773438 0 1.72969V22.2656C0 23.2219 0.792187 24 1.77187 24H22.2234C23.2031 24 24 23.2219 24 22.2703V1.72969C24 0.773438 23.2031 0 22.2234 0ZM7.12031 20.4516H3.55781V8.99531H7.12031V20.4516ZM5.33906 7.43438C4.19531 7.43438 3.27188 6.51094 3.27188 5.37187C3.27188 4.23281 4.19531 3.30937 5.33906 3.30937C6.47813 3.30937 7.40156 4.23281 7.40156 5.37187C7.40156 6.50625 6.47813 7.43438 5.33906 7.43438ZM20.4516 20.4516H16.8937V14.8828C16.8937 13.5562 16.8703 11.8453 15.0422 11.8453C13.1906 11.8453 12.9094 13.2937 12.9094 14.7891V20.4516H9.35625V8.99531H12.7687V10.5609H12.8156C13.2891 9.66094 14.4516 8.70938 16.1813 8.70938C19.7859 8.70938 20.4516 11.0813 20.4516 14.1656V20.4516Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_35_1245">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a></li>
+                    <li><a href="#">
+
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_35_1246)">
+                                    <path
+                                        d="M17.0725 0H13.0278V16.3478C13.0278 18.2957 11.4722 19.8957 9.53626 19.8957C7.60034 19.8957 6.04469 18.2957 6.04469 16.3478C6.04469 14.4348 7.56577 12.8695 9.43257 12.8V8.69567C5.31872 8.7652 2 12.1391 2 16.3478C2 20.5913 5.38786 24 9.57085 24C13.7538 24 17.1416 20.5565 17.1416 16.3478V7.9652C18.6627 9.07827 20.5295 9.73913 22.5 9.77393V5.66957C19.4579 5.56522 17.0725 3.06087 17.0725 0Z"
+                                        fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_35_1246">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </a>
+                </ul>
+            </div>
+
+            <div class="pt-[64px] pb-[64px]">
+                <div class="flex justify-between items-center sm:flex-row flex-col gap-[24px] sm:gap-[0]">
+                    <ul class="flex gap-[56px]">
+                        <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage"
+                                href="#">Website Terms</a></li>
+                        <li><a class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage"
+                                href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-[16px] leading-[110%] font-normal text-[#fff] font-bricolage">
+                        ©2025 Framer Lab — All Rights Reserved
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-logo">
+                <img src="./src/images/big-logo.png" alt="Footer Logo" />
+            </div>
+
+
+        </div>
+
+    </div>
+    </div>
+
+    <!-- GSAP CDN -->
+    <script src="src/js/gsap.min.js"></script>
+    <script>
+        // Smooth scroll behavior with offset for fixed header
+        document.addEventListener("DOMContentLoaded", () => {
+            const smoothScrollLinks = document.querySelectorAll(".smooth-scroll-link");
+            const headerHeight = 80; // Approximate header height in pixels
+
+            smoothScrollLinks.forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute("href");
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // Highlight active section on scroll
+            const scrollSections = document.querySelectorAll(".scroll-section");
+            const navLinks = document.querySelectorAll(".smooth-scroll-link");
+
+            const highlightActiveSection = () => {
+                let currentSection = "";
+
+                scrollSections.forEach((section) => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const sectionHeight = section.offsetHeight;
+
+                    if (sectionTop <= headerHeight + 100 && sectionTop + sectionHeight > headerHeight + 100) {
+                        currentSection = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+
+                    if (link.getAttribute("href") === `#${currentSection}`) {
+                        link.classList.add("active");
+                    }
+                });
+            };
+
+            window.addEventListener("scroll", highlightActiveSection);
+            highlightActiveSection(); // Initial check
+        });
+    </script>
+    <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
