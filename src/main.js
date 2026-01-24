@@ -33,7 +33,7 @@ new Swiper('.tools-swiper', {
 new Swiper('.corner-logo-slider', {
     loop: true,
     spaceBetween: 30,
-    speed: 1000,
+    speed: 8000,
     freeMode: true,
     autoplay: {
         delay: 0,
