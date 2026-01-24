@@ -1,4 +1,4 @@
-import "../js/header.js";
+// import "../js/header.js";
 import Alpine from 'alpinejs'
 // import Swiper from 'swiper';
 // import 'swiper/css';
@@ -29,6 +29,19 @@ new Swiper('.tools-swiper', {
     },
     slidesPerView: 'auto',
 });
+
+new Swiper('.corner-logo-slider', {
+    loop: true,
+    spaceBetween: 30,
+    speed: 1000,
+    freeMode: true,
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+    },
+    slidesPerView: 'auto',
+});
+
 
 new Swiper('.tools-swiper-reverse', {
     loop: true,
