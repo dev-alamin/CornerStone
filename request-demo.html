@@ -39,7 +39,8 @@
                                 <path d="m6 9 6 6 6-6" />
                             </svg>
                         </a>
-                        <div class="dropdown-menu absolute z-50 left-1/2 -translate-x-1/2 top-full mt-[-20px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 lg:w-[946px] w-full bg-white dark:bg-neutral-strong rounded-[20px] p-4 flex items-start md:gap-x-6 gap-y-6 border border-neutral-subtle dark:border-white/10 shadow-xl">
+                        <div
+                            class="dropdown-menu absolute z-50 left-1/2 -translate-x-1/2 top-full mt-[-20px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 lg:w-[946px] w-full bg-white dark:bg-neutral-strong rounded-[20px] p-4 flex items-start md:gap-x-6 gap-y-6 border border-neutral-subtle dark:border-white/10 shadow-xl">
 
                             <div class="flex-1 space-y-3">
                                 <ul class="space-y-2">
@@ -517,13 +518,13 @@
 
                 <div class="border-b border-white/5 pb-4">
                     <button @click="activeDropdown = activeDropdown === 'help' ? null : 'help'"
-                            class="flex justify-between items-center w-full text-white font-bricolage text-xl">
-                            Help Center
-                            <svg :class="activeDropdown === 'help' ? 'rotate-180' : ''"
-                                class="transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <path d="m6 9 6 6 6-6" />
-                            </svg>
+                        class="flex justify-between items-center w-full text-white font-bricolage text-xl">
+                        Help Center
+                        <svg :class="activeDropdown === 'help' ? 'rotate-180' : ''" class="transition-transform"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
                     </button>
                     <div x-show="activeDropdown === 'help'" x-collapse class="mt-4 grid grid-cols-1 gap-2">
                         <a href="help-knowledge-based.html"
@@ -535,13 +536,13 @@
 
                 <div class="border-b border-white/5 pb-4">
                     <button @click="activeDropdown = activeDropdown === 'blog' ? null : 'blog'"
-                            class="flex justify-between items-center w-full text-white font-bricolage text-xl">
-                            Blog
-                            <svg :class="activeDropdown === 'blog' ? 'rotate-180' : ''"
-                                class="transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <path d="m6 9 6 6 6-6" />
-                            </svg>
+                        class="flex justify-between items-center w-full text-white font-bricolage text-xl">
+                        Blog
+                        <svg :class="activeDropdown === 'blog' ? 'rotate-180' : ''" class="transition-transform"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
                     </button>
                     <div x-show="activeDropdown === 'blog'" x-collapse class="mt-4 grid grid-cols-1 gap-2">
                         <a href="blog.html"
@@ -569,57 +570,180 @@
 
     <section class="corner-gradiant-one pt-[146px]">
         <div class="container">
-            <div class="d-flex gap-[68px] pb-[128px]">
+            <div class="md:flex md:gap-[68px] pb-[128px] relative">
 
-                <div class="w-[40.7%]">
-                    <h2 class="font-bold font-bricolage text-[32px] leading-[100%] mb-[24px] max-w-[404px] text-white">On your first 30 minute call,  you’ll learn how to:</h2>
+                <div class="md:w-1/2 md:sticky top-[100px] self-start">
+                    <h2 class="font-bold font-bricolage text-[32px] mb-[24px] max-w-[404px] text-white">On your first 30
+                        minute call, you’ll learn how to:</h2>
                     <ul class="flex gap-[8px] flex-col">
                         <li class="flex gap-[8px] flex-wrap">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 17.937 6.063 22.75 12 22.75C17.937 22.75 22.75 17.937 22.75 12C22.75 6.063 17.937 1.25 12 1.25C6.063 1.25 1.25 6.063 1.25 12ZM16.676 8.26299C17.083 8.63599 17.11 9.26898 16.737 9.67598L11.237 15.676C11.053 15.877 10.794 15.994 10.522 16C10.249 16.006 9.98599 15.9 9.79299 15.707L7.29299 13.207C6.90199 12.817 6.90199 12.183 7.29299 11.793C7.68299 11.402 8.31701 11.402 8.70701 11.793L10.469 13.554L15.263 8.32402C15.636 7.91702 16.269 7.88999 16.676 8.26299Z" fill="#D8C6FF"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.25 12C1.25 17.937 6.063 22.75 12 22.75C17.937 22.75 22.75 17.937 22.75 12C22.75 6.063 17.937 1.25 12 1.25C6.063 1.25 1.25 6.063 1.25 12ZM16.676 8.26299C17.083 8.63599 17.11 9.26898 16.737 9.67598L11.237 15.676C11.053 15.877 10.794 15.994 10.522 16C10.249 16.006 9.98599 15.9 9.79299 15.707L7.29299 13.207C6.90199 12.817 6.90199 12.183 7.29299 11.793C7.68299 11.402 8.31701 11.402 8.70701 11.793L10.469 13.554L15.263 8.32402C15.636 7.91702 16.269 7.88999 16.676 8.26299Z"
+                                    fill="#D8C6FF" />
                             </svg>
-                            <span class="font-medium text-[15px] text-[#4F4D53] opacity-70">Turn AI initiatives into impactful use cases</span>
+                            <span class="font-medium text-[15px] text-white/70 opacity-70">Turn AI initiatives into
+                                impactful use cases</span>
                         </li>
                         <li class="flex gap-[8px] flex-wrap">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 17.937 6.063 22.75 12 22.75C17.937 22.75 22.75 17.937 22.75 12C22.75 6.063 17.937 1.25 12 1.25C6.063 1.25 1.25 6.063 1.25 12ZM16.676 8.26299C17.083 8.63599 17.11 9.26898 16.737 9.67598L11.237 15.676C11.053 15.877 10.794 15.994 10.522 16C10.249 16.006 9.98599 15.9 9.79299 15.707L7.29299 13.207C6.90199 12.817 6.90199 12.183 7.29299 11.793C7.68299 11.402 8.31701 11.402 8.70701 11.793L10.469 13.554L15.263 8.32402C15.636 7.91702 16.269 7.88999 16.676 8.26299Z" fill="#D8C6FF"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.25 12C1.25 17.937 6.063 22.75 12 22.75C17.937 22.75 22.75 17.937 22.75 12C22.75 6.063 17.937 1.25 12 1.25C6.063 1.25 1.25 6.063 1.25 12ZM16.676 8.26299C17.083 8.63599 17.11 9.26898 16.737 9.67598L11.237 15.676C11.053 15.877 10.794 15.994 10.522 16C10.249 16.006 9.98599 15.9 9.79299 15.707L7.29299 13.207C6.90199 12.817 6.90199 12.183 7.29299 11.793C7.68299 11.402 8.31701 11.402 8.70701 11.793L10.469 13.554L15.263 8.32402C15.636 7.91702 16.269 7.88999 16.676 8.26299Z"
+                                    fill="#D8C6FF" />
                             </svg>
-                            <span class="font-medium text-[15px] text-[#4F4D53] opacity-70">Learn how similar companies innovate with AI</span>
+                            <span class="font-medium text-[15px] text-white/70 opacity-70">Learn how similar companies
+                                innovate with AI</span>
                         </li>
                         <li class="flex gap-[8px] flex-wrap">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.25 12C1.25 17.937 6.063 22.75 12 22.75C17.937 22.75 22.75 17.937 22.75 12C22.75 6.063 17.937 1.25 12 1.25C6.063 1.25 1.25 6.063 1.25 12ZM16.676 8.26299C17.083 8.63599 17.11 9.26898 16.737 9.67598L11.237 15.676C11.053 15.877 10.794 15.994 10.522 16C10.249 16.006 9.98599 15.9 9.79299 15.707L7.29299 13.207C6.90199 12.817 6.90199 12.183 7.29299 11.793C7.68299 11.402 8.31701 11.402 8.70701 11.793L10.469 13.554L15.263 8.32402C15.636 7.91702 16.269 7.88999 16.676 8.26299Z" fill="#D8C6FF"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.25 12C1.25 17.937 6.063 22.75 12 22.75C17.937 22.75 22.75 17.937 22.75 12C22.75 6.063 17.937 1.25 12 1.25C6.063 1.25 1.25 6.063 1.25 12ZM16.676 8.26299C17.083 8.63599 17.11 9.26898 16.737 9.67598L11.237 15.676C11.053 15.877 10.794 15.994 10.522 16C10.249 16.006 9.98599 15.9 9.79299 15.707L7.29299 13.207C6.90199 12.817 6.90199 12.183 7.29299 11.793C7.68299 11.402 8.31701 11.402 8.70701 11.793L10.469 13.554L15.263 8.32402C15.636 7.91702 16.269 7.88999 16.676 8.26299Z"
+                                    fill="#D8C6FF" />
                             </svg>
-                            <span class="font-medium text-[15px] text-[#4F4D53] opacity-70">Start your roadmap to AI transformation</span>
+                            <span class="font-medium text-[15px] text-white/70 opacity-70">Start your roadmap to AI
+                                transformation</span>
                         </li>
                     </ul>
 
                     <button class="flex gap-[16px] items-center mt-[32px] mb-[128px]">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="40" height="40" rx="20" fill="#D8C6FF"/>
-                            <path d="M14.8529 12.7928C15.0456 12.681 15.2833 12.6802 15.4767 12.7907L27.1434 19.4574C27.3381 19.5687 27.4583 19.7758 27.4583 20C27.4583 20.2243 27.3381 20.4314 27.1434 20.5427L15.4767 27.2094C15.2833 27.3199 15.0456 27.3191 14.8529 27.2073C14.6602 27.0955 14.5416 26.8895 14.5416 26.6667V13.3334C14.5416 13.1106 14.6602 12.9046 14.8529 12.7928Z" fill="#4B125E"/>
+                            <rect width="40" height="40" rx="20" fill="#D8C6FF" />
+                            <path
+                                d="M14.8529 12.7928C15.0456 12.681 15.2833 12.6802 15.4767 12.7907L27.1434 19.4574C27.3381 19.5687 27.4583 19.7758 27.4583 20C27.4583 20.2243 27.3381 20.4314 27.1434 20.5427L15.4767 27.2094C15.2833 27.3199 15.0456 27.3191 14.8529 27.2073C14.6602 27.0955 14.5416 26.8895 14.5416 26.6667V13.3334C14.5416 13.1106 14.6602 12.9046 14.8529 12.7928Z"
+                                fill="#4B125E" />
                         </svg>
-                        <span class="text-[18px] font-bold leading-[100%] text-white">How it Works</span>
+                        <span class="text-[18px] font-bold text-white">How it Works</span>
                     </button>
 
                     <div>
-                        <svg width="136" height="24" viewBox="0 0 136 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.825 21L8.15 13.4L2 9H9.6L12 1L14.4 9H22L15.85 13.4L18.175 21L12 16.3L5.825 21Z" fill="#FFA41A"/>
-                            <path d="M33.825 21L36.15 13.4L30 9H37.6L40 1L42.4 9H50L43.85 13.4L46.175 21L40 16.3L33.825 21Z" fill="#FFA41A"/>
-                            <path d="M61.825 21L64.15 13.4L58 9H65.6L68 1L70.4 9H78L71.85 13.4L74.175 21L68 16.3L61.825 21Z" fill="#FFA41A"/>
-                            <path d="M89.825 21L92.15 13.4L86 9H93.6L96 1L98.4 9H106L99.85 13.4L102.175 21L96 16.3L89.825 21Z" fill="#FFA41A"/>
-                            <path d="M117.825 21L120.15 13.4L114 9H121.6L124 1L126.4 9H134L127.85 13.4L130.175 21L124 16.3L117.825 21Z" fill="#FFA41A"/>
+                        <svg width="136" height="24" viewBox="0 0 136 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.825 21L8.15 13.4L2 9H9.6L12 1L14.4 9H22L15.85 13.4L18.175 21L12 16.3L5.825 21Z"
+                                fill="#FFA41A" />
+                            <path
+                                d="M33.825 21L36.15 13.4L30 9H37.6L40 1L42.4 9H50L43.85 13.4L46.175 21L40 16.3L33.825 21Z"
+                                fill="#FFA41A" />
+                            <path
+                                d="M61.825 21L64.15 13.4L58 9H65.6L68 1L70.4 9H78L71.85 13.4L74.175 21L68 16.3L61.825 21Z"
+                                fill="#FFA41A" />
+                            <path
+                                d="M89.825 21L92.15 13.4L86 9H93.6L96 1L98.4 9H106L99.85 13.4L102.175 21L96 16.3L89.825 21Z"
+                                fill="#FFA41A" />
+                            <path
+                                d="M117.825 21L120.15 13.4L114 9H121.6L124 1L126.4 9H134L127.85 13.4L130.175 21L124 16.3L117.825 21Z"
+                                fill="#FFA41A" />
                         </svg>
-                        <p class="text-[24px] leading-[100%] text-white mt-[16px]">“There’s power in a single platform where you can do all your work. Notion is that single place.”</p>
+                        <p class="text-[24px] text-white max-w-2xl mt-[16px]">“There’s power in a single platform where
+                            you can do all your work. Notion is that single place.”</p>
                         <div class="flex items-center mt-[32px] gap-[16px]">
-                            <img class="w-[48px] h-[48px] rounded-full" src="./src/images/about/image.png" alt="Abdullah Noman" />
+                            <img class="w-[48px] h-[48px] rounded-full" src="./src/images/about/image.png"
+                                alt="Abdullah Noman" />
                             <div>
-                                <h3 class="text-[22px] leading-[100%] font-bold text-white mb-[4px]">Malena Smith</h3>
-                                <p class="text-[15px] leading-[100%] text-white font-medium">Founder at FramerLab</p>
+                                <h3 class="text-[22px] font-bold text-white mb-[4px]">Malena Smith</h3>
+                                <p class="text-[15px] text-white font-medium">Founder at FramerLab</p>
                             </div>
                         </div>
                     </div>
 
+                </div>
+
+                <div class="md:w-1/2 mt-6 md:mt-0 bg-white rounded-xl shadow-2xl p-8 lg:p-12 text-gray-900">
+                    <h1 class="text-[40px] font-bold font-bricolage mb-4">Request a Demo</h1>
+                    <p class="text-gray-600 mb-8 font-uncutsans">Get help with pricing and plans, schedule a demo,
+                        explore use-cases for your team, and more.</p>
+
+                    <form class="space-y-6">
+                        <div>
+                            <h3 class="text-[22px] font-bold text-neutral-strong mb-4 font-bricolage">Personal Details
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex flex-col gap-1">
+                                    <label class="text-xs font-bold text-indigo-900 font-bricolage">First Name</label>
+                                    <input type="text" placeholder="e.g. John"
+                                        class="bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label class="text-xs font-bold text-indigo-900 font-bricolage">Last Name</label>
+                                    <input type="text" placeholder="e.g. Smith"
+                                        class="bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label class="text-xs font-bold text-indigo-900 font-bricolage">Country or
+                                        region*</label>
+                                    <input type="text" placeholder="United States"
+                                        class="bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label class="text-xs font-bold text-indigo-900 font-bricolage">Phone
+                                        number*</label>
+                                    <input type="tel" placeholder="+1 (555) 000-0000"
+                                        class="bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label class="text-xs font-bold text-indigo-900 font-bricolage">Work email*</label>
+                                    <input type="email" placeholder="john@businessname.com"
+                                        class="bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label class="text-xs font-bold text-indigo-900 font-bricolage">Job title*</label>
+                                    <input type="text" placeholder="Founder, CEO, etc."
+                                        class="bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-purple-500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-[22px] font-bold text-neutral-strong mb-4 font-bricolage">Company Details
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex flex-col gap-1">
+                                    <label class="text-xs font-bold text-indigo-900 font-bricolage">Company
+                                        name*</label>
+                                    <input type="text" placeholder="Enter company name"
+                                        class="bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label class="text-xs font-bold text-indigo-900 font-bricolage">Company
+                                        size*</label>
+                                    <select
+                                        class="bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-purple-500">
+                                        <option>Select</option>
+                                        <option>1-50</option>
+                                        <option>51-200</option>
+                                        <option>201+</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-[22px] font-bold text-neutral-strong mb-4">How we can help?</h3>
+                            <div class="space-y-4">
+                                <div class="flex flex-col gap-1">
+                                    <label class="text-xs font-bold text-indigo-900 font-bricolage">Reason for
+                                        contact*</label>
+                                    <select
+                                        class="bg-white border border-gray-200 rounded-md p-3 focus:ring-2 focus:ring-purple-500">
+                                        <option>Select</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label class="text-xs font-bold text-indigo-900 font-bricolage">Provide more
+                                        details*</label>
+                                    <textarea rows="4" placeholder="How are you looking to use it..."
+                                        class="bg-white border border-gray-200 rounded-md p-3 focus:ring-2 focus:ring-purple-500"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-primary-base hover:bg-primary-base text-primary font-bold py-3 px-10 rounded-lg transition-colors">
+                            Submit
+                        </button>
+                    </form>
                 </div>
 
             </div>
@@ -647,9 +771,9 @@
                     </div>
 
                     <div class="p-[32px]">
-                        <h3 class="text-[32px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[16px]">AI
+                        <h3 class="text-[32px] font-bricolage font-bold text-[#240F52] mb-[16px]">AI
                             Accuracy</h3>
-                        <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">Your
+                        <p class="text-[18px] font-normal text-[#000] opacity-70 font-uncutsans">Your
                             notes, tasks, and docs are auto-organized with near-perfect precision — no manual
                             tagging needed.</p>
                     </div>
@@ -661,19 +785,19 @@
                             <h2
                                 class="text-[76px] leading-[110%] font-bricolage font-bold text-[#D8C6FF] mb-[0] tracking-[-0.03px]">
                                 1M+</h2>
-                            <p class="text-[18px] leading-[100%] font-normal text-[#D8C6FF] opacity-70 font-uncutsans">
+                            <p class="text-[18px] font-normal text-[#D8C6FF] opacity-70 font-uncutsans">
                                 Projects Built on
                                 Our Platform</p>
                         </div>
                         <div
                             class="w-[calc(63.67%-16px)] bg-[#F9F7FE] rounded-[16px] p-[24px] border-box rounded-[16px] border-[1px] border-[#D8C6FF]">
-                            <p class="text-[#240F52] text-[32px] leading-[100%] font-normal font-bricolage mb-[137px]">
+                            <p class="text-[#240F52] text-[32px] font-normal font-bricolage mb-[137px]">
                                 "It feels like we doubled our team overnight — without hiring a single person."</p>
 
                             <div>
-                                <h3 class="text-[32px] leading-[100%] font-bold font-bricolage text-[#240F52] mb-[0px]">
+                                <h3 class="text-[32px] font-bold font-bricolage text-[#240F52] mb-[0px]">
                                     Abdullah Noman</h3>
-                                <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">
+                                <p class="text-[18px] font-normal text-[#000] opacity-70 font-uncutsans">
                                     Founder at FramerLab</p>
                             </div>
                         </div>
@@ -681,20 +805,19 @@
                     <div class="flex gap-[16px] flex-wrap mt-[16px]">
                         <div
                             class="w-[calc(63.67%-16px)] bg-[#F9F7FE] rounded-[16px] p-[24px] border-box rounded-[16px] border-[1px] border-[#D8C6FF]">
-                            <h2 class="text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[13px]">
+                            <h2 class="text-[40px] font-bricolage font-bold text-[#240F52] mb-[13px]">
                                 98%</h2>
-                            <p
-                                class="text-[18px] leading-[100%] font-bold text-[#240F52] opacity-70 font-uncutsans mb-[8px]">
+                            <p class="text-[18px] font-bold text-[#240F52] opacity-70 font-uncutsans mb-[8px]">
                                 Categorization Precision</p>
-                            <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70 font-uncutsans">Your
+                            <p class="text-[18px] font-normal text-[#000] opacity-70 font-uncutsans">Your
                                 tasks, notes, and documents are instantly auto-organized by intelligent AI — with nearly
                                 perfect accuracy.</p>
                         </div>
                         <div
                             class="w-[36.33%] bg-[#D8C6FF] rounded-[16px] p-[24px] border-box flex flex-col justify-center items-center">
-                            <h2 class="text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px]">
+                            <h2 class="text-[40px] font-bricolage font-bold text-[#240F52] mb-[8px]">
                                 60%</h2>
-                            <p class="text-[18px] leading-[100%] font-normal text-[#240F52] opacity-70 font-uncutsans">
+                            <p class="text-[18px] font-normal text-[#240F52] opacity-70 font-uncutsans">
                                 Projects Built on
                                 Our Platform</p>
                         </div>
@@ -706,188 +829,245 @@
         </div>
     </section>
 
-    <section class="testimonial pt-[128px] pb-[128px]">
-        <div class="container">
-            <div class="flex justify-center">
-                <h2 class="text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] text-center mb-[60px]">
-                    Loved by Teams
-                    Around the Globe</h2>
-            </div>
-            <img class="w-full" src="./src/images/wally-review.png" alt="Testimonial" />
-        </div>
-    </section>
+    <section class="loved-by-teams py-[80px]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-[36px] lg:text-[48px] font-bold text-[#240F52] mb-[64px] font-bricolage">
+                Loved by Teams Worldwide
+            </h2>
 
-    <section class="bg-[#F9F7FE] pt-[80px] pb-[80px]">
-        <div class="container">
-            <div class="flex justify-between">
-                <div class="w-[32.6%] flex flex-col gap-[30px] justify-between">
-                    <div>
-                        <div class="text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px]">
-                            Frequently Asked
-                            Questions
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+
+                <div
+                    class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-8 flex flex-col items-center text-center justify-center min-h-[220px]">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center">
+                            <span class="text-white text-[10px]">🐧</span>
                         </div>
-                        <p class="text-[18px] leading-[100%] font-normal text-[#000] opacity-70">Curious? Let’s Clear
-                            Things Up</p>
+                        <span class="font-bold text-[#240F52] font-bricolage">Wally</span>
                     </div>
-                    <div>
-                        <h4 class="font-bold text-[18px] leading-[100%] font-bricolage text-[#240F52] mb-[4px]">Still
-                            have
-                            questions?</h4>
-                        <p class="text-[15px] leading-[100%] font-normal text-[#000] opacity-70">We’ve got your back</p>
-                        <a href="#"
-                            class="btn border-[1px] border-[#D8C6FF] mt-[12px] inline-flex items-center gap-[10px] text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[8px] mt-[16px]">
-                            <span class="text-[18px] leading-[100%] font-medium text-[#5A147F] font-uncutsans">Request
-                                Support</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
-                                    stroke-miterlimit="16" />
-                            </svg>
-                        </a>
-                    </div>
+                    <p class="text-[#240F52] text-[18px] font-medium mb-6">Want a widget like this?</p>
+                    <button
+                        class="border border-gray-200 rounded-[8px] px-6 py-2 text-[14px] font-semibold text-[#240F52] hover:bg-gray-50 transition-colors">
+                        Import reviews
+                    </button>
                 </div>
-                <div class="w-[58%]">
-                    <div class="corner__accordion">
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">What’s
-                                    included in the free plan?</span>
 
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
+                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-18 h-18 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
                             </div>
+                            <span class="text-[14px] font-bold text-[#240F52] font-bricolage">Jakub</span>
                         </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">Can I
-                                    invite my team?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">Is it
-                                    secure?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">What
-                                    happens after the free trial?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">Does
-                                    this work outside the US?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
+                        <span class="text-[#00B67A]">★</span>
                     </div>
+
+                    <div class="flex gap-1 mb-3">
+                        <template x-for="i in 4">
+                            <span class="text-orange-400 text-lg">★</span>
+                        </template>
+                        <span class="text-gray-200 text-2xl">★</span>
+                    </div>
+
+                    <h4 class="font-bold text-[#240F52] mb-2 font-bricolage">Nice bank</h4>
+                    <p class="text-gray-600 text-[14px] leading-relaxed">
+                        Nice bank. Fast withdrawal and great support.
+                    </p>
                 </div>
+
+                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-18 h-18 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                            <span class="text-[14px] font-bold text-[#240F52] font-bricolage">Jakub</span>
+                        </div>
+                        <span class="text-[#00B67A]">★</span>
+                    </div>
+
+                    <div class="flex gap-1 mb-3">
+                        <template x-for="i in 4">
+                            <span class="text-orange-400 text-lg">★</span>
+                        </template>
+                        <span class="text-gray-200 text-2xl">★</span>
+                    </div>
+
+                    <h4 class="font-bold text-[#240F52] mb-2 font-bricolage">Nice bank</h4>
+                    <p class="text-gray-600 text-[14px] leading-relaxed">
+                        Nice bank. Fast withdrawal and great support.
+                    </p>
+                </div>
+
+                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-18 h-18 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                👤</div>
+                            <span class="text-[14px] font-bold text-[#240F52] font-bricolage">Benedito Bernabe</span>
+                        </div>
+                        <span class="text-[#00B67A]">★</span>
+                    </div>
+                    <div class="flex gap-1 mb-3 text-orange-400 text-2xl">★★★★★</div>
+                    <h4 class="font-bold text-[#240F52] mb-2 font-bricolage">Olá eu gostaria de saber mais sobre o...
+                    </h4>
+                    <p class="text-gray-600 text-[14px] leading-relaxed">
+                        Olá eu gostaria de saber mais sobre o assunto. O processo foi muito simples e a equipe foi
+                        extremamente atenciosa em todos os passos.
+                    </p>
+                </div>
+
+                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-18 h-18 rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+                                👤</div>
+                            <span class="text-[14px] font-bold text-[#240F52] font-bricolage">Benedito Bernabe</span>
+                        </div>
+                        <span class="text-[#00B67A]">★</span>
+                    </div>
+                    <div class="flex gap-1 mb-3 text-orange-400 text-2xl">★★★★★</div>
+                    <h4 class="font-bold text-[#240F52] mb-2 font-bricolage">Olá eu gostaria de saber mais sobre o...
+                    </h4>
+                    <p class="text-gray-600 text-[14px] leading-relaxed">
+                        Olá eu gostaria de saber mais sobre o assunto. O processo foi muito simples e a equipe foi
+                        extremamente atenciosa em todos os passos.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <!-- FAQ Section Starts  -->
+    <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="{
+      activeId: 1,
+
+      items: [
+        {
+          id: 1,
+          title: 'What is your refund policy?',
+          content: 'We offer a 14-day money-back guarantee on all plans.'
+        },
+        {
+          id: 2,
+          title: 'How long does development take?',
+          content: 'Typical delivery time is 7–10 business days.'
+        },
+        {
+          id: 3,
+          title: 'Do you support WordPress plugins?',
+          content: 'Yes, we specialize in custom WordPress plugin development.'
+        },
+        {
+          id: 4,
+          title: 'Is support included?',
+          content: 'Email and ticket support is included for all paid plans.'
+        },
+        {
+          id: 5,
+          title: 'Can I request custom features?',
+          content: 'Absolutely. Custom features can be scoped and quoted.'
+        }
+      ],
+
+      toggle(id) {
+        this.activeId = this.activeId === id ? null : id
+      },
+
+      isOpen(id) {
+        return this.activeId === id
+      }
+    }">
+        <div class="container mx-auto max-w-3xl flex flex-col md:flex-row space-y-4">
+            <div
+                class="w-full md:w-[32.6%] flex flex-col sm:flex-row lg:flex-col sm:gap-[30px] gap-[48px] justify-between">
+                <div class="sm:w-[60%] w-full lg:w-full">
+                    <div
+                        class="text-[32px] sm:text-[36px] lg:text-[40px] font-bricolage font-bold text-[#240F52] mb-[8px] sm:text-left text-center">
+                        Frequently Asked
+                        Questions
+                    </div>
+                    <p class="text-[18px] sm:text-left text-center font-uncutsans font-normal text-[#000] opacity-70">
+                        Curious?
+                        Let’s Clear
+                        Things Up</p>
+                </div>
+                <div class="sm:w-[40%] w-full lg:w-full flex flex-col sm:text-left text-center">
+                    <h4 class="font-bold text-[18px] font-bricolage text-[#240F52] mb-[4px]">Still
+                        have
+                        questions?</h4>
+                    <p class="text-[15px] font-normal text-[#000] opacity-70 sm:mb-[0] mb-[16px]">
+                        We’ve got your back</p>
+                    <a href="#"
+                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] inline-flex items-center gap-[10px] text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[16px] sm:mb-[8px] mt-[16px] mx-auto sm:mx-0 lg:w-[220px]">
+                        <span class="text-[18px] font-medium text-[#5A147F] font-uncutsans">Request
+                            Support</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
+                                stroke-miterlimit="16" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full md:w-[58%]">
+                <template x-for="item in items" :key="item.id">
+                    <div class="rounded-xl mb-2 bg-white overflow-hidden transition-colors duration-300"
+                        :class="isOpen(item.id) ? 'border-[#D8C6FF]' : 'border-[#E5E7EB]'">
+
+                        <button type="button"
+                            class="flex w-full items-center justify-between px-6 py-5 text-left hover:bg-gray-50/40 transition-colors"
+                            @click="toggle(item.id)">
+
+                            <h3 class="text-[18px] font-semibold text-[#240F52] font-bricolage">
+                                <span x-text="item.title"></span>
+                            </h3>
+
+                            <span class="ml-4 flex h-6 w-6 shrink-0 items-center justify-center relative">
+                                <svg :class="isOpen(item.id) ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'"
+                                    class="absolute transition-all duration-300 transform" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
+                                        fill="#4B125E" />
+                                </svg>
+
+                                <svg :class="isOpen(item.id) ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'"
+                                    class="absolute transition-all duration-300 transform" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
+                                        fill="#4B125E" />
+                                </svg>
+                            </span>
+                        </button>
+
+                        <div x-show="isOpen(item.id)" x-collapse>
+                            <div x-show="isOpen(item.id)" x-transition:enter="transition opacity ease-out duration-300"
+                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                class="px-6 pb-6 text-[#4F4D53] leading-relaxed font-uncutsans">
+                                <p x-text="item.content"></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </template>
+            </div>
+
+        </div>
+    </section>
+    <!-- FAQ Section Ends -->
 
     <footer class="w-full pt-[60px] md:pt-[128px]"
         style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
