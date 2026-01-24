@@ -1789,92 +1789,60 @@
         </div>
     </section>
 
-    <section class="pt-[60px] lg:pt-[128px] pb-[60px]">
-        <div class="container mx-auto px-4">
-            <h2
-                class="text-[36px] md:text-[52px] lg:text-[64px] leading-[110%] font-bricolage font-bold text-[#240F52] mb-[40px] lg:mb-[64px] text-center md:text-left">
-                Trusted by Teams <br class="hidden md:block" /> That Move Fast
-            </h2>
+<section class="trusted-section py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-bold mb-12 font-bricolage">
+            Trusted by Teams That Move Fast
+        </h2>
 
-            <div class="flex flex-col lg:flex-row gap-[16px]">
-
-                <div class="w-full lg:w-[32.5%] rounded-[16px] bg-[#D8C6FF] overflow-hidden">
-                    <div class="relative">
-                        <img class="h-[250px] md:h-[372px] w-full object-cover" src="./src/images/team.png"
-                            alt="Team collaborating" />
-                        <h2
-                            class="absolute top-[24px] left-[24px] lg:top-[32px] lg:left-[32px] text-[56px] lg:text-[76px] leading-[110%] font-bricolage font-bold text-white z-20 tracking-[-0.03px]">
-                            98%
-                        </h2>
-                        <div class="absolute bottom-0 left-0 w-full h-full opacity-60 z-10"
-                            style="background: linear-gradient(180deg, rgba(216, 198, 255, 0) 40%, #D8C6FF 100%);">
-                        </div>
-                    </div>
-
-                    <div class="p-[24px] lg:p-[32px] relative z-20">
-                        <h3
-                            class="text-[28px] lg:text-[32px] leading-[110%] font-bricolage font-bold text-[#240F52] mb-[16px]">
-                            AI Accuracy</h3>
-                        <p
-                            class="text-[16px] lg:text-[18px] leading-[1.4] font-normal text-[#000] opacity-70 font-uncutsans">
-                            Your notes, tasks, and docs are auto-organized with near-perfect precision — no manual
-                            tagging needed.
-                        </p>
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+            
+            <div class="md:col-span-4 flex flex-col bg-[#D8C6FF] rounded-[24px] overflow-hidden min-h-[450px] md:min-h-[580px]">
+                <div class="relative flex-grow">
+                    <img src="./src/images/team.png" class="absolute inset-0 w-full h-full object-cover" alt="Team">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#D8C6FF] via-transparent to-transparent"></div>
+                    <span class="absolute top-8 left-8 text-6xl font-bold font-bricolage">98%</span>
                 </div>
-
-                <div class="w-full lg:w-[67.5%] flex flex-col gap-[16px]">
-
-                    <div class="flex flex-col md:flex-row gap-[16px]">
-                        <div
-                            class="w-full md:w-[36.33%] bg-[#240F52] rounded-[16px] p-[32px] flex flex-col justify-center items-center text-center">
-                            <h2
-                                class="text-[56px] lg:text-[76px] leading-[110%] font-bricolage font-bold text-[#D8C6FF] mb-2 tracking-[-0.03px]">
-                                1M+</h2>
-                            <p
-                                class="text-[16px] lg:text-[18px] leading-[1.2] font-normal text-[#D8C6FF] opacity-70 font-uncutsans">
-                                Projects Built on Our Platform
-                            </p>
-                        </div>
-
-                        <div
-                            class="w-full md:w-[63.67%] bg-[#F9F7FE] p-[24px] lg:p-[32px] rounded-[16px] border-[1px] border-[#D8C6FF] flex flex-col justify-between min-h-[250px]">
-                            <p
-                                class="text-[#240F52] text-[24px] lg:text-[32px] leading-[1.2] font-normal font-bricolage mb-8">
-                                "It feels like we doubled our team overnight — without hiring a single person."
-                            </p>
-                            <div>
-                                <h3 class="text-[20px] lg:text-[24px] font-bold font-bricolage text-[#240F52]">Abdullah
-                                    Noman</h3>
-                                <p class="text-[16px] lg:text-[18px] opacity-70 font-uncutsans">Founder at FramerLab</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col md:flex-row gap-[16px]">
-                        <div
-                            class="w-full md:w-[63.67%] bg-[#F9F7FE] p-[24px] lg:p-[32px] rounded-[16px] border-[1px] border-[#D8C6FF]">
-                            <h2 class="text-[32px] lg:text-[40px] font-bricolage font-bold text-[#240F52] mb-3">98%</h2>
-                            <p class="text-[16px] lg:text-[18px] font-bold text-[#240F52] opacity-70 mb-2">
-                                Categorization Precision</p>
-                            <p class="text-[16px] lg:text-[18px] opacity-70 font-uncutsans">
-                                Your tasks, notes, and documents are instantly auto-organized by intelligent AI.
-                            </p>
-                        </div>
-
-                        <div
-                            class="w-full md:w-[36.33%] bg-[#D8C6FF] rounded-[16px] p-[32px] flex flex-col justify-center items-center text-center">
-                            <h2 class="text-[40px] lg:text-[48px] font-bricolage font-bold text-[#240F52] mb-2">60%</h2>
-                            <p class="text-[16px] lg:text-[18px] font-normal text-[#240F52] opacity-70 font-uncutsans">
-                                Faster Delivery Time
-                            </p>
-                        </div>
-                    </div>
-
+                <div class="p-8 pt-4">
+                    <h3 class="text-2xl font-bold mb-4">AI Accuracy</h3>
+                    <p class="text-[18px] leading-relaxed">
+                        Tasks, notes, and docs are auto-organized with near-perfect precision — no manual tagging required.
+                    </p>
                 </div>
             </div>
+
+            <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-12 gap-6">
+                
+                <div class="md:col-span-4 bg-article-heading text-white p-10 rounded-[24px] flex flex-col items-center justify-center text-center">
+                    <span class="text-5xl md:text-[76px] font-bold mb-2">1M+</span>
+                    <p class="text-lg tracking-widest font-bricolage leading-tight font-bold">Projects Built on <br> Our Platform</p>
+                </div>
+
+                <div class="md:col-span-8 bg-[#F9F7FE] border border-[#D8C6FF] p-10 rounded-[24px] flex flex-col justify-between">
+                    <p class="md:text-2xl text-[18px] leading-snug font-bricolage md:pr-[8rem]">
+                        "It feels like we doubled our team overnight — without adding headcount."
+                    </p>
+                    <div class="mt-6">
+                        <p class="font-bold text-[18px] font-bricolage">Abdullah Noman</p>
+                        <p class="text-gray-400 font-uncutsans text-[18px]">Founder at FramerLab</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-8 bg-[#F9F7FE] border border-[#D8C6FF] p-8 rounded-[24px] flex flex-col justify-center">
+                    <span class="text-[40px] font-bold block mb-4">98%</span>
+                    <h4 class="font-bold text-[18px] mb-2 uppercase tracking-wide font-bricolage">Categorization Precision</h4>
+                    <p class="text-gray-500 font-uncutsans text-[18px]">Your tasks, notes, and documents are instantly auto-organized by intelligent AI.</p>
+                </div>
+
+                <div class="md:col-span-4 bg-primary p-8 rounded-[24px] flex flex-col items-center justify-center text-center">
+                    <span class="text-[40px] font-bold mb-2">60%</span>
+                    <p class="text-[18px] font-bold text-[18px] tracking-tighter font-bricolage">Less Time Wasted</p>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="loved-by-teams py-[80px]">
         <div class="container mx-auto px-4">
@@ -2039,8 +2007,8 @@
     }">
         <div class="container mx-auto max-w-3xl flex flex-col md:flex-row space-y-4">
             <div
-                class="w-full md:w-[32.6%] flex flex-col sm:flex-row lg:flex-col sm:gap-[30px] gap-[48px] justify-between">
-                <div class="sm:w-[60%] w-full lg:w-full">
+                class="w-full md:w-[32.6%] flex flex-col md:flex-row lg:flex-col sm:gap-[30px] gap-[48px] justify-between">
+                <div class="md:w-[60%] w-full w-full">
                     <div
                         class="text-[32px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px] sm:text-left text-center">
                         Frequently Asked
@@ -2052,7 +2020,7 @@
                         Let’s Clear
                         Things Up</p>
                 </div>
-                <div class="sm:w-[40%] w-full lg:w-full flex flex-col sm:text-left text-center">
+                <div class="md:w-[40%] w-full w-full flex flex-col sm:text-left text-center">
                     <h4 class="font-bold text-[18px] leading-[100%] font-bricolage text-[#240F52] mb-[4px]">Still
                         have
                         questions?</h4>
