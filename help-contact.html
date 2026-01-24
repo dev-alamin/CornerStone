@@ -793,183 +793,125 @@
     </section>
 
 
-    <section class="bg-[#F9F7FE] pt-[80px] pb-[80px]">
-        <div class="container">
-            <div class="flex flex-col lg:flex-row justify-between gap-[80px] sm:gap-[100px] lg:gap-[0]">
-                <div
-                    class="w-full lg:w-[32.6%] flex flex-col sm:flex-row lg:flex-col sm:gap-[30px] gap-[48px] justify-between">
-                    <div class="sm:w-[60%] w-full lg:w-full">
-                        <div
-                            class="text-[32px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px] sm:text-left text-center">
-                            Frequently Asked
-                            Questions
-                        </div>
-                        <p
-                            class="text-[18px] sm:text-left text-center font-uncutsans leading-[100%] font-normal text-[#000] opacity-70">
-                            Curious?
-                            Let’s Clear
-                            Things Up</p>
+    <!-- FAQ Section Starts  -->
+    <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="{
+      activeId: 1,
+
+      items: [
+        {
+          id: 1,
+          title: 'What is your refund policy?',
+          content: 'We offer a 14-day money-back guarantee on all plans.'
+        },
+        {
+          id: 2,
+          title: 'How long does development take?',
+          content: 'Typical delivery time is 7–10 business days.'
+        },
+        {
+          id: 3,
+          title: 'Do you support WordPress plugins?',
+          content: 'Yes, we specialize in custom WordPress plugin development.'
+        },
+        {
+          id: 4,
+          title: 'Is support included?',
+          content: 'Email and ticket support is included for all paid plans.'
+        },
+        {
+          id: 5,
+          title: 'Can I request custom features?',
+          content: 'Absolutely. Custom features can be scoped and quoted.'
+        }
+      ],
+
+      toggle(id) {
+        this.activeId = this.activeId === id ? null : id
+      },
+
+      isOpen(id) {
+        return this.activeId === id
+      }
+    }">
+        <div class="container mx-auto max-w-3xl flex flex-col md:flex-row space-y-4">
+            <div
+                class="w-full md:w-[32.6%] flex flex-col md:flex-row lg:flex-col sm:gap-[30px] gap-[48px] justify-between">
+                <div class="md:w-[60%] w-full w-full">
+                    <div
+                        class="text-[32px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px] sm:text-left text-center">
+                        Frequently Asked
+                        Questions
                     </div>
-                    <div class="sm:w-[40%] w-full lg:w-full flex flex-col sm:text-left text-center">
-                        <h4 class="font-bold text-[18px] leading-[100%] font-bricolage text-[#240F52] mb-[4px]">Still
-                            have
-                            questions?</h4>
-                        <p class="text-[15px] leading-[100%] font-normal text-[#000] opacity-70 sm:mb-[0] mb-[16px]">
-                            We’ve got your back</p>
-                        <a href="#"
-                            class="btn border-[1px] border-[#D8C6FF] mt-[12px] inline-flex items-center gap-[10px] text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[16px] sm:mb-[8px] mt-[16px] mx-auto sm:mx-0 lg:w-[220px]">
-                            <span class="text-[18px] leading-[100%] font-medium text-[#5A147F] font-uncutsans">Request
-                                Support</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
-                                    stroke-miterlimit="16" />
-                            </svg>
-                        </a>
-                    </div>
+                    <p
+                        class="text-[18px] sm:text-left text-center font-uncutsans leading-[100%] font-normal text-[#000] opacity-70">
+                        Curious?
+                        Let’s Clear
+                        Things Up</p>
                 </div>
-                <div class="w-full lg:w-[58%]">
-                    <div class="corner__accordion">
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">What’s
-                                    included in the free plan?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">Can I
-                                    invite my team?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">Is it
-                                    secure?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">What
-                                    happens after the free trial?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="corner__accordion-item bg-white rounded-[12px] px-[32px] py-[24px] mb-[4px]">
-                            <button
-                                class="corner__accordion-header flex justify-between items-center w-full text-left gap-[12px]">
-                                <span class="text-[18px] leading-[100%] font-bricolage font-bold text-[#240F52]">Does
-                                    this work outside the US?</span>
-
-                                <div class="corner__accordion-icon transition-transform">
-                                    <svg class="accordion-icon-open" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                    <svg class="accordion-icon-close" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                            fill="#4B125E" />
-                                    </svg>
-                                </div>
-                            </button>
-                            <div class="corner__accordion-content overflow-hidden">
-                                <div class="pt-[12px] text-[15px] leading-[100%] font-normal text-[#000] opacity-70">
-                                    Get full access to core features, up to 3 projects, and AI-assisted notes.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="md:w-[40%] w-full w-full flex flex-col sm:text-left text-center">
+                    <h4 class="font-bold text-[18px] leading-[100%] font-bricolage text-[#240F52] mb-[4px]">Still
+                        have
+                        questions?</h4>
+                    <p class="text-[15px] leading-[100%] font-normal text-[#000] opacity-70 sm:mb-[0] mb-[16px]">
+                        We’ve got your back</p>
+                    <a href="#"
+                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] inline-flex items-center gap-[10px] text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[16px] sm:mb-[8px] mt-[16px] mx-auto sm:mx-0 lg:w-[220px]">
+                        <span class="text-[18px] leading-[100%] font-medium text-[#5A147F] font-uncutsans">Request
+                            Support</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
+                                stroke-miterlimit="16" />
+                        </svg>
+                    </a>
                 </div>
             </div>
+
+            <div class="w-full md:w-[58%]">
+                <template x-for="item in items" :key="item.id">
+                    <div class="rounded-xl mb-2 bg-white overflow-hidden transition-colors duration-300"
+                        :class="isOpen(item.id) ? 'border-[#D8C6FF]' : 'border-[#E5E7EB]'">
+
+                        <button type="button"
+                            class="flex w-full items-center justify-between px-6 py-5 text-left hover:bg-gray-50/40 transition-colors"
+                            @click="toggle(item.id)">
+
+                            <h3 class="text-[18px] font-semibold text-[#240F52] font-bricolage">
+                                <span x-text="item.title"></span>
+                            </h3>
+
+                            <span class="ml-4 flex h-6 w-6 shrink-0 items-center justify-center relative">
+                                <svg :class="isOpen(item.id) ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'"
+                                    class="absolute transition-all duration-300 transform" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
+                                        fill="#4B125E" />
+                                </svg>
+
+                                <svg :class="isOpen(item.id) ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'"
+                                    class="absolute transition-all duration-300 transform" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
+                                        fill="#4B125E" />
+                                </svg>
+                            </span>
+                        </button>
+
+                        <div x-show="isOpen(item.id)" x-collapse>
+                            <div x-show="isOpen(item.id)" x-transition:enter="transition opacity ease-out duration-300"
+                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                class="px-6 pb-6 text-[#4F4D53] leading-relaxed font-uncutsans">
+                                <p x-text="item.content"></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </template>
+            </div>
+
         </div>
     </section>
+    <!-- FAQ Section Ends -->
 
     <footer class="w-full pt-[60px] md:pt-[128px]"
         style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
