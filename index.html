@@ -829,168 +829,111 @@
     </section>
 
 
-    <section class="corner__tranding py-[60px] lg:py-[100px]" x-data="{ activeTab: 'tab1' }">
-        <div class="container mx-auto px-4">
-            <div class="corner__heading text-center lg:text-left mb-[40px] lg:mb-[64px]">
-                <p
-                    class="corner__heading-top color-primary-base mb-[16px] lg:mb-[24px] !text-[16px] lg:text-[18px] leading-[100%] font-uncutsans">
-                    Trending on Framer
-                </p>
-                <h2
-                    class="corner__heading-title text-[36px] md:text-[48px] lg:text-[64px] font-bold leading-[110%] font-bricolage mb-[16px]">
-                    Smarter Tools. <br class="hidden md:block" /> Built Around You.
-                </h2>
-                <p class="corner__heading-description color-neutral-base text-[16px] lg:text-[18px]">
-                    Efficiency redefined for modern teams.
-                </p>
+   <section class="corner__tranding py-[60px] lg:py-[100px]" 
+    x-data="{ 
+        activeTab: 'tab1',
+        tabs: [
+            {
+                id: 'tab1', 
+                label: 'AI That Understands You', 
+                title: 'AI That Gets It Right', 
+                desc: 'Tap into AI-powered suggestions tailored to your team’s habits. Whether it’s writing, organizing, or prioritizing — it just knows what to do next.',
+                img: './src/images/tabs/tab01.webp'
+            },
+            {
+                id: 'tab2', 
+                label: 'Effortless Automation', 
+                title: 'Effortless Automation', 
+                desc: 'Automate your workflows with zero effort. Let AI handle the repetitive tasks while you focus on creativity.',
+                img: './src/images/tabs/tab01.webp'
+            },
+            {
+                id: 'tab3', 
+                label: 'Teamwork That Clicks', 
+                title: 'Teamwork That Clicks', 
+                desc: 'Collaborate in real-time with tools designed for speed and clarity.',
+                img: './src/images/tabs/tab01.webp'
+            },
+            {
+                id: 'tab4', 
+                label: 'Search, Simplified', 
+                title: 'Search, Simplified', 
+                desc: 'Find anything across your entire workspace in seconds with semantic search.',
+                img: './src/images/tabs/tab01.webp'
+            }
+        ]
+    }">
+    <div class="container mx-auto px-4">
+        <div class="corner__heading text-center lg:text-left mb-[40px] lg:mb-[64px]">
+            <p class="color-primary-base mb-[16px] lg:mb-[24px] text-[16px] lg:text-[18px] leading-[100%] font-uncutsans">
+                Trending on Framer
+            </p>
+            <h2 class="text-[36px] md:text-[48px] lg:text-[64px] font-bold leading-[110%] font-bricolage mb-[16px]">
+                Smarter Tools. <br class="hidden md:block" /> Built Around You.
+            </h2>
+            <p class="color-neutral-base text-[16px] lg:text-[18px]">Efficiency redefined for modern teams.</p>
+        </div>
+
+        <div class="corner__tabs">
+            <div class="corner__tranding-tab-list flex overflow-x-auto lg:overflow-visible gap-3 pb-4 lg:pb-0 no-scrollbar">
+                <template x-for="tab in tabs" :key="tab.id">
+                    <button @click="activeTab = tab.id"
+                        :class="activeTab === tab.id ? 'bg-primary text-neutral-strong border-primary' : 'border-[#D8C6FF] text-neutral-strong bg-transparent'"
+                        class="whitespace-nowrap py-[12px] px-[20px] border-[1px] rounded-[12px] text-[14px] leading-[110%] font-medium transition-all duration-300"
+                        x-text="tab.label">
+                    </button>
+                </template>
             </div>
 
-            <div class="corner__tabs">
-                <div
-                    class="corner__tranding-tab-list flex overflow-x-auto lg:overflow-visible gap-3 pb-4 lg:pb-0 no-scrollbar">
-                    <template x-for="(tab, index) in [
-                    {id: 'tab1', label: 'AI That Understands You'},
-                    {id: 'tab2', label: 'Effortless Automation'},
-                    {id: 'tab3', label: 'Teamwork That Clicks'},
-                    {id: 'tab4', label: 'Search, Simplified'}
-                ]">
-                        <button @click="activeTab = tab.id"
-                            :class="activeTab === tab.id ? 'bg-primary text-neutral-strong border-primary' : 'border-[#D8C6FF] text-neutral-strong bg-transparent'"
-                            class="whitespace-nowrap pt-[12px] pb-[12px] pl-[20px] pr-[20px] border-[1px] rounded-[12px] text-[14px] leading-[110%] font-medium transition-all duration-300"
-                            x-text="tab.label">
-                        </button>
-                    </template>
+            <div class="corner__tranding-tab-list-content mt-[32px]">
+                <template x-for="tab in tabs" :key="tab.id">
+                    <div x-show="activeTab === tab.id" 
+                         x-transition:enter="transition ease-out duration-300"
+                         x-transition:enter-start="opacity-0 transform translate-y-4"
+                         class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
+                        
+                        <div class="w-full lg:w-[35%] flex flex-col justify-center">
+                            <h3 class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]" x-text="tab.title"></h3>
+                            <p class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70" x-text="tab.desc"></p>
+                            <a href="#" class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">
+                                Request a Demo
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" /></svg>
+                            </a>
+                        </div>
+
+                        <div class="w-full lg:w-[53%]">
+                            <img class="w-full h-auto rounded-[24px] object-cover aspect-video lg:aspect-auto" :src="tab.img" :alt="tab.title" />
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div class="corner__tranding-bottom mt-[40px] lg:mt-[16px] flex flex-col lg:flex-row justify-between gap-[16px]">
+            <div class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col group cursor-pointer" @click="activeTab = 'tab2'">
+                <div class="p-[20px] md:p-[32px]">
+                    <h3 class="text-[26px] lg:text-[32px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">Automation Made Simple</h3>
+                    <p class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[32px] opacity-70">Turn repetitive routines into effortless flows.</p>
                 </div>
-
-                <div class="corner__tranding-tab-list-content mt-[32px]">
-                    <div x-show="activeTab === 'tab1'" x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="opacity-0 transform translate-y-4">
-                        <div class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
-                            <div class="w-full lg:w-[35%] flex flex-col justify-center h-auto">
-                                <h3
-                                    class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]">
-                                    AI That Gets It Right</h3>
-                                <p
-                                    class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70">
-                                    Tap into AI-powered suggestions tailored to your team’s habits. Whether it’s
-                                    writing, organizing, or prioritizing — it just knows what to do next.
-                                </p>
-                                <a href="#"
-                                    class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">
-                                    Request a Demo
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                        <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" />
-                                    </svg>
-                                </a>
-                            </div>
-                            <div class="w-full lg:w-[53%]">
-                                <img class="w-full h-auto rounded-[24px]" src="./src/images/tabs/tab01.webp"
-                                    alt="AI Feature" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div x-show="activeTab === 'tab2'" x-cloak x-transition:enter="transition ease-out duration-300">
-                        <div class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
-                            <div class="w-full lg:w-[35%] flex flex-col justify-center h-auto">
-                                <h3
-                                    class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]">
-                                    Effortless Automation</h3>
-                                <p
-                                    class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70">
-                                    Automate your workflows with zero effort. Let AI handle the repetitive tasks while
-                                    you focus on creativity.</p>
-                                <a href="#"
-                                    class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">Request
-                                    a Demo</a>
-                            </div>
-                            <div class="w-full lg:w-[53%]"><img class="w-full h-auto rounded-[24px]"
-                                    src="./src/images/tabs/tab01.webp" /></div>
-                        </div>
-                    </div>
-
-                    <div x-show="activeTab === 'tab3'" x-cloak x-transition:enter="transition ease-out duration-300">
-                        <div class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
-                            <div class="w-full lg:w-[35%] flex flex-col justify-center h-auto">
-                                <h3
-                                    class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]">
-                                    Teamwork That Clicks</h3>
-                                <p
-                                    class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70">
-                                    Collaborate in real-time with tools designed for speed and clarity.</p>
-                                <a href="#"
-                                    class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">Request
-                                    a Demo</a>
-                            </div>
-                            <div class="w-full lg:w-[53%]"><img class="w-full h-auto rounded-[24px]"
-                                    src="./src/images/tabs/tab01.webp" /></div>
-                        </div>
-                    </div>
-
-                    <div x-show="activeTab === 'tab4'" x-cloak x-transition:enter="transition ease-out duration-300">
-                        <div class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
-                            <div class="w-full lg:w-[35%] flex flex-col justify-center h-auto">
-                                <h3
-                                    class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]">
-                                    Search, Simplified</h3>
-                                <p
-                                    class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70">
-                                    Find anything across your entire workspace in seconds with semantic search.</p>
-                                <a href="#"
-                                    class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">Request
-                                    a Demo</a>
-                            </div>
-                            <div class="w-full lg:w-[53%]"><img class="w-full h-auto rounded-[24px]"
-                                    src="./src/images/tabs/tab01.webp" /></div>
-                        </div>
-                    </div>
+                <img class="w-full h-[200px] md:h-[269px] object-cover rounded-[16px] mt-auto" src="./src/images/cards/card02.webp" alt="Automation" />
+                <div class="absolute bottom-[24px] right-[24px] group-hover:scale-110 transition-transform bg-white rounded-full p-3 shadow-lg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="#5A147F" stroke-width="2" /></svg>
                 </div>
             </div>
 
-            <div
-                class="corner__tranding-bottom mt-[40px] lg:mt-[16px] flex flex-col lg:flex-row justify-between gap-[16px]">
-                <div
-                    class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col">
-                    <div class="p-[20px] md:p-[32px]">
-                        <h3
-                            class="text-[26px] lg:text-[32px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">
-                            Automation Made Simple</h3>
-                        <p
-                            class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[32px] opacity-70">
-                            Turn repetitive routines into effortless flows with easy-to-set rules and triggers.</p>
-                    </div>
-                    <img class="w-full h-[200px] md:h-[269px] object-cover rounded-[16px] mt-auto"
-                        src="./src/images/cards/card02.webp" alt="Automation" />
-                    <a href="#" class="absolute bottom-[24px] right-[24px] hover:scale-110 transition-transform">
-                        <svg width="48" height="48" viewBox="0 0 56 56" fill="none">
-                            <rect width="56" height="56" rx="28" fill="white" />
-                            <path d="M25 22L31 28L25 34" stroke="#5A147F" stroke-width="1.5" />
-                        </svg>
-                    </a>
+            <div class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col group cursor-pointer" @click="activeTab = 'tab4'">
+                <div class="p-[20px] md:p-[32px]">
+                    <h3 class="text-[26px] lg:text-[32px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">Security You Can Rely On</h3>
+                    <p class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[32px] opacity-70">Data protection is built in from the start.</p>
                 </div>
-
-                <div
-                    class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col">
-                    <div class="p-[20px] md:p-[32px]">
-                        <h3
-                            class="text-[26px] lg:text-[32px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">
-                            Security You Can Rely On</h3>
-                        <p
-                            class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[32px] opacity-70">
-                            Data protection is built in from the start keeping your team safe and confident.</p>
-                    </div>
-                    <img class="w-full h-[200px] md:h-[269px] object-cover rounded-[16px] mt-auto"
-                        src="./src/images/cards/card03.png" alt="Security" />
-                    <a href="#" class="absolute bottom-[24px] right-[24px] hover:scale-110 transition-transform">
-                        <svg width="48" height="48" viewBox="0 0 56 56" fill="none">
-                            <rect width="56" height="56" rx="28" fill="white" />
-                            <path d="M25 22L31 28L25 34" stroke="#5A147F" stroke-width="1.5" />
-                        </svg>
-                    </a>
+                <img class="w-full h-[200px] md:h-[269px] object-cover rounded-[16px] mt-auto" src="./src/images/cards/card03.png" alt="Security" />
+                <div class="absolute bottom-[24px] right-[24px] group-hover:scale-110 transition-transform bg-white rounded-full p-3 shadow-lg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="#5A147F" stroke-width="2" /></svg>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
     <section class="corner__promo-section py-[60px] lg:py-[100px]">
