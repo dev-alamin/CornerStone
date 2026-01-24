@@ -1228,58 +1228,6 @@
 
     <!-- GSAP CDN -->
     <script src="src/js/gsap.min.js"></script>
-    <script>
-        // Smooth scroll behavior with offset for fixed header
-        document.addEventListener("DOMContentLoaded", () => {
-            const smoothScrollLinks = document.querySelectorAll(".smooth-scroll-link");
-            const headerHeight = 80; // Approximate header height in pixels
-
-            smoothScrollLinks.forEach((link) => {
-                link.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute("href");
-                    const targetElement = document.querySelector(targetId);
-
-                    if (targetElement) {
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: "smooth"
-                        });
-                    }
-                });
-            });
-
-            // Highlight active section on scroll
-            const scrollSections = document.querySelectorAll(".scroll-section");
-            const navLinks = document.querySelectorAll(".smooth-scroll-link");
-
-            const highlightActiveSection = () => {
-                let currentSection = "";
-
-                scrollSections.forEach((section) => {
-                    const sectionTop = section.getBoundingClientRect().top;
-                    const sectionHeight = section.offsetHeight;
-
-                    if (sectionTop <= headerHeight + 100 && sectionTop + sectionHeight > headerHeight + 100) {
-                        currentSection = section.getAttribute("id");
-                    }
-                });
-
-                navLinks.forEach((link) => {
-                    link.classList.remove("active");
-
-                    if (link.getAttribute("href") === `#${currentSection}`) {
-                        link.classList.add("active");
-                    }
-                });
-            };
-
-            window.addEventListener("scroll", highlightActiveSection);
-            highlightActiveSection(); // Initial check
-        });
-    </script>
     <script type="module" src="src/main.js"></script>
 </body>
 
