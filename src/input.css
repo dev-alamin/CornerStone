@@ -67,6 +67,84 @@
     visibility: visible;
 }
 
+/* --- 1. Base Mechanics (Hidden Filter) --- */
+.goo-filter {
+    position: absolute;
+    visibility: hidden;
+    width: 0; height: 0;
+}
+
+/* --- 2. Base Button Structure --- */
+.corner-blob-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+.blob-container {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    filter: url('#goo');
+}
+
+.blob-drop {
+    position: absolute;
+    top: 100%;
+    width: 40%; /* Slightly wider for better coverage */
+    height: 100%;
+    border-radius: 100%;
+    transform: scale(1);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.corner-blob-btn:hover .blob-drop {
+    transform: translateY(-100%) scale(2);
+}
+
+/* Staggered entry */
+.blob-drop:nth-child(1) { left: -10%; transition-delay: 0s; }
+.blob-drop:nth-child(2) { left: 30%; transition-delay: 0.05s; }
+.blob-drop:nth-child(3) { left: 70%; transition-delay: 0.1s; }
+
+
+/* --- 3. Style A: "Try for Free" (The Light Fill) --- */
+.btn-light-fill {
+    border: 1px solid rgba(216, 198, 255, 0.4);
+    border-radius: 10px; /* Pill shape */
+    color: #D8C6FF;
+}
+
+.btn-light-fill .blob-drop {
+    background: #D8C6FF; /* White liquid */
+}
+
+.btn-light-fill:hover {
+    color: #240F52; /* Dark text on white background */
+    border-color: #D8C6FF;
+}
+
+
+/* --- 4. Style B: "Request a Demo" (The Purple Fill) --- */
+.btn-purple-fill {
+    border: 1px solid #D8C6FF;
+    border-radius: 10px; /* Rectangular shape */
+    color: #5A147F;
+    background: white; 
+}
+
+.btn-purple-fill .blob-drop {
+    background: #5A147F; /* Purple liquid */
+}
+
+.btn-purple-fill:hover {
+    color: #FFFFFF; /* White text on purple background */
+}
+
 .animate-ripple-1 {
     animation: ripple-effect 3s infinite;
 }
@@ -85,6 +163,11 @@
 }
 
 /* 3. The Designer's "Fade Edge" Mask */
+.hero-logo-marquee-mask {
+    mask-image: linear-gradient(to right, transparent, #5A147F 15%, #5A147F 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #5A147F 15%, #5A147F 85%, transparent);
+}
+
 .marquee-mask {
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);

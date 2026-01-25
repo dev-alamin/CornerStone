@@ -20,6 +20,18 @@
 
 <body class="relative">
 
+    <!-- global button svg  -->
+    <svg class="absolute invisible w-0 h-0" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                    result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+
     <!-- Header Section Start -->
     <header x-data="{ mobileMenuOpen: false, activeDropdown: null }"
         class="fixed w-full px-4 md:px-8 py-4 z-50 backdrop-blur-md">
@@ -485,10 +497,17 @@
 
             <div class="flex items-center gap-3 md:gap-6">
                 <div class="hidden md:flex text-white gap-[8px]">
-                    <a href="#" class="px-[24px] py-[12px] font-bricolage text-[15px]">Login</a>
-                    <a href="#"
-                        class="px-[20px] py-[12px] border-[#D8C6FF66] border-[1px] rounded-[8px] text-[#D8C6FF] font-bricolage text-[15px] hover:bg-white/5 transition-colors">Try
-                        for Free</a>
+                    <a href="#" class="px-[24px] py-[12px] font-bricolage text-[15px] md:text-[16px]">Login/Signup</a>
+
+                    <a href="#" class="corner-blob-btn btn-light-fill px-8 py-[10px] font-medium font-bricolage">
+                        <span class="relative z-10">Try for Free</span>
+                        <span class="blob-container">
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                        </span>
+                    </a>
+
                 </div>
 
                 <button @click="mobileMenuOpen = !mobileMenuOpen" class="xl:hidden p-2 focus:outline-none">
@@ -620,18 +639,25 @@
 
                     <div class="corner__hero-buttons flex flex-wrap gap-4 pb-[40px] lg:pb-[64px]">
 
-                        <a href="#"
-                            class="corner-btn-transparent text-primary transition-colors px-6 py-3 border border-primary/20 rounded-lg">Try
-                            for Free</a>
+                        <a href="#" class="corner-blob-btn btn-light-fill px-8 py-[12px] font-medium font-bricolage">
+                            <span class="relative z-10">Try for Free</span>
+                            <span class="blob-container">
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                            </span>
+                        </a>
+
                         <a href="#" class="button-no-outline transition-colors px-6 py-3">Request a Demo</a>
 
                     </div>
 
-                    <div class="font-bricolage text-primary font-normal pb-[24px] text-[16px] leading-[100%]">
+                    <div
+                        class="reveal-type font-bricolage text-primary font-normal pb-[24px] text-[16px] leading-[100%]">
                         Trusted by fast-moving teams worldwide
                     </div>
 
-                    <div class="swiper corner-logo-slider overflow-hidden">
+                    <div class="swiper corner-logo-slider overflow-hidden hero-logo-marquee-mask">
                         <div class="swiper-wrapper flex gap-8">
                             <div class="swiper-slide !w-auto">
                                 <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
@@ -642,7 +668,35 @@
 
                             <div class="swiper-slide !w-auto">
                                 <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
+                                    <img src="src/images/logo-slider/02.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/03.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/04.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/05.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/06.svg" alt="Logo"
                                         class="h-6 md:h-8 w-auto opacity-60">
                                 </div>
                             </div>
@@ -656,7 +710,35 @@
 
                             <div class="swiper-slide !w-auto">
                                 <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
+                                    <img src="src/images/logo-slider/02.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/03.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/04.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/05.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/06.svg" alt="Logo"
                                         class="h-6 md:h-8 w-auto opacity-60">
                                 </div>
                             </div>
@@ -670,7 +752,35 @@
 
                             <div class="swiper-slide !w-auto">
                                 <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
+                                    <img src="src/images/logo-slider/02.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/03.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/04.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/05.svg" alt="Logo"
+                                        class="h-6 md:h-8 w-auto opacity-60">
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide !w-auto">
+                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
+                                    <img src="src/images/logo-slider/06.svg" alt="Logo"
                                         class="h-6 md:h-8 w-auto opacity-60">
                                 </div>
                             </div>
@@ -684,94 +794,40 @@
 
                             <div class="swiper-slide !w-auto">
                                 <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
+                                    <img src="src/images/logo-slider/02.svg" alt="Logo"
                                         class="h-6 md:h-8 w-auto opacity-60">
                                 </div>
                             </div>
 
                             <div class="swiper-slide !w-auto">
                                 <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
+                                    <img src="src/images/logo-slider/03.svg" alt="Logo"
                                         class="h-6 md:h-8 w-auto opacity-60">
                                 </div>
                             </div>
 
                             <div class="swiper-slide !w-auto">
                                 <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
+                                    <img src="src/images/logo-slider/04.svg" alt="Logo"
                                         class="h-6 md:h-8 w-auto opacity-60">
                                 </div>
                             </div>
 
                             <div class="swiper-slide !w-auto">
                                 <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
+                                    <img src="src/images/logo-slider/05.svg" alt="Logo"
                                         class="h-6 md:h-8 w-auto opacity-60">
                                 </div>
                             </div>
 
                             <div class="swiper-slide !w-auto">
                                 <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
+                                    <img src="src/images/logo-slider/06.svg" alt="Logo"
                                         class="h-6 md:h-8 w-auto opacity-60">
                                 </div>
                             </div>
 
-                            <div class="swiper-slide !w-auto">
-                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
-                                        class="h-6 md:h-8 w-auto opacity-60">
-                                </div>
-                            </div>
 
-                            <div class="swiper-slide !w-auto">
-                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
-                                        class="h-6 md:h-8 w-auto opacity-60">
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide !w-auto">
-                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
-                                        class="h-6 md:h-8 w-auto opacity-60">
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide !w-auto">
-                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
-                                        class="h-6 md:h-8 w-auto opacity-60">
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide !w-auto">
-                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
-                                        class="h-6 md:h-8 w-auto opacity-60">
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide !w-auto">
-                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
-                                        class="h-6 md:h-8 w-auto opacity-60">
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide !w-auto">
-                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
-                                        class="h-6 md:h-8 w-auto opacity-60">
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide !w-auto">
-                                <div class="flex items-center gap-3 md:gap-6 md:min-w-[120px]">
-                                    <img src="src/images/logo-slider/01.png" alt="Logo"
-                                        class="h-6 md:h-8 w-auto opacity-60">
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -779,7 +835,8 @@
                 <div
                     class="corner-hero-image parallax-container w-full lg:w-[44%] rounded-[24px] lg:rounded-[40px] relative overflow-hidden aspect-[4/5] md:aspect-[16/9] lg:aspect-[4/5] bg-black">
 
-                    <div class="parallax-layer absolute inset-0 w-[110%] h-[110%] -left-[5%] -top-[5%]">
+                    <div
+                        class="corner__image-reveal corner__image-magnetic-animation parallax-layer absolute inset-0 w-[110%] h-[110%] -left-[5%] -top-[5%]">
                         <img src="./src/images/hero/hero.webp" alt="Hero Image"
                             class="w-full h-full object-cover opacity-80" />
 
@@ -818,7 +875,7 @@
                 <img src="./src/images/hero/productday.png" alt="Product Day"
                     class="mx-auto mb-[24px] lg:mb-[32px] max-w-[150px] md:max-w-none" />
                 <h2
-                    class="text-[32px] md:text-[48px] lg:text-[64px] text-center font-bold leading-[110%] font-bricolage text-[#D8C6FF] tracking-[-3%] mb-[32px]">
+                    class="reveal-type text-[32px] md:text-[48px] lg:text-[64px] text-center font-bold leading-[110%] font-bricolage text-[#D8C6FF] tracking-[-3%] mb-[32px]">
                     Your AI-Powered Workspace<br class="hidden md:block" /> for Everything
                 </h2>
                 <img src="./src/images/hero/feature-image.png" alt="Features"
@@ -868,13 +925,15 @@
                     class="color-primary-base mb-[16px] lg:mb-[24px] text-[16px] lg:text-[18px] leading-[100%] font-uncutsans">
                     Trending on Framer
                 </p>
-                <h2 class="text-[36px] md:text-[48px] lg:text-[64px] font-bold leading-[110%] font-bricolage mb-[16px]">
+                <h2
+                    class="reveal-type text-[36px] md:text-[48px] lg:text-[64px] font-bold leading-[110%] font-bricolage mb-[16px]">
                     Smarter Tools. <br class="hidden md:block" /> Built Around You.
                 </h2>
-                <p class="color-neutral-base text-[16px] lg:text-[18px]">Efficiency redefined for modern teams.</p>
+                <p class="color-neutral-base text-[16px] lg:text-page-subtitle">Efficiency redefined for modern teams.
+                </p>
             </div>
 
-            <div class="corner__tabs">
+            <div class="reveal-grid corner__tabs">
                 <div
                     class="corner__tranding-tab-list flex overflow-x-auto lg:overflow-visible gap-3 pb-4 lg:pb-0 no-scrollbar">
                     <template x-for="tab in tabs" :key="tab.id">
@@ -886,7 +945,7 @@
                     </template>
                 </div>
 
-                <div class="corner__tranding-tab-list-content mt-[32px]">
+                <div class="reveal-card corner__tranding-tab-list-content mt-[32px]">
                     <template x-for="tab in tabs" :key="tab.id">
                         <div x-show="activeTab === tab.id" x-transition:enter="transition ease-out duration-300"
                             x-transition:enter-start="opacity-0 transform translate-y-4"
@@ -897,12 +956,22 @@
                                     x-text="tab.title"></h3>
                                 <p class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70"
                                     x-text="tab.desc"></p>
+
                                 <a href="#"
-                                    class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">
-                                    Request a Demo
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                        <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" />
-                                    </svg>
+                                    class="corner-blob-btn btn-purple-fill px-6 py-3 text-lg font-medium w-full md:w-fit">
+                                    <span class="relative z-10 flex items-center gap-2">
+                                        Request a Demo
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor">
+                                            <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <span class="blob-container">
+                                        <span class="blob-drop"></span>
+                                        <span class="blob-drop"></span>
+                                        <span class="blob-drop"></span>
+                                    </span>
                                 </a>
                             </div>
 
@@ -916,8 +985,8 @@
             </div>
 
             <div
-                class="corner__tranding-bottom mt-[40px] lg:mt-[16px] flex flex-col lg:flex-row justify-between gap-[16px]">
-                <div class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col group cursor-pointer"
+                class="reveal-grid corner__tranding-bottom mt-[40px] lg:mt-[16px] flex flex-col lg:flex-row justify-between gap-[16px]">
+                <div class="reveal-card w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col group cursor-pointer"
                     @click="activeTab = 'tab2'">
                     <div class="p-[20px] md:p-[32px]">
                         <h3
@@ -937,7 +1006,7 @@
                     </div>
                 </div>
 
-                <div class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col group cursor-pointer"
+                <div class="reveal-card w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col group cursor-pointer"
                     @click="activeTab = 'tab4'">
                     <div class="p-[20px] md:p-[32px]">
                         <h3
@@ -966,25 +1035,31 @@
             <div
                 class="corner__promo-heading flex flex-col md:flex-row justify-between items-center gap-6 mb-[40px] lg:mb-[52px]">
                 <div
-                    class="corner__promo-heading-left w-full md:w-[70%] text-[32px] lg:text-[40px] leading-[110%] font-bricolage font-bold text-center md:text-left">
+                    class="reveal-type corner__promo-heading-left w-full md:w-[70%] text-[32px] lg:text-[40px] leading-[110%] font-bricolage font-bold text-center md:text-left">
                     More Features to Power Your Day
                 </div>
                 <div class="corner__promo-heading-right w-full md:w-[30%] flex justify-center md:justify-end">
-                    <a href="#"
-                        class="button-transparent w-full md:w-auto px-[24px] py-[12px] rounded-[12px] border-[1px] border-primary text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-[10px]">
-                        Request a Demo
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5"
-                                stroke-miterlimit="16" />
-                        </svg>
+                    <a href="#" class="corner-blob-btn btn-purple-fill px-6 py-3 font-medium text-lg w-full md:w-fit">
+                        <span class="relative z-10 flex items-center gap-2">
+                            Request a Demo
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="blob-container">
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                        </span>
                     </a>
                 </div>
             </div>
 
-            <div class="corner__promo-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[16px]">
+            <div class="reveal-grid corner__promo-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[16px]">
 
                 <div
-                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
+                    class="reveal-card corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
                     <img class="w-[60px] lg:w-[80px] h-[60px] lg:h-[80px] object-contain mb-[40px] lg:mb-[128px]"
                         src="./src/images/icons/audit-02.svg" alt="Smart Search" />
                     <div class="mt-auto">
@@ -996,7 +1071,7 @@
                 </div>
 
                 <div
-                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
+                    class="reveal-card corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
                     <img class="w-[60px] lg:w-[80px] h-[60px] lg:h-[80px] object-contain mb-[40px] lg:mb-[128px]"
                         src="./src/images/icons/ai-idea.svg" alt="AI Summaries" />
                     <div class="mt-auto">
@@ -1008,7 +1083,7 @@
                 </div>
 
                 <div
-                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
+                    class="reveal-card corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
                     <img class="w-[60px] lg:w-[80px] h-[60px] lg:h-[80px] object-contain mb-[40px] lg:mb-[128px]"
                         src="./src/images/icons/file-cloud.svg" alt="Shared Docs" />
                     <div class="mt-auto">
@@ -1020,7 +1095,7 @@
                 </div>
 
                 <div
-                    class="corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
+                    class="reveal-card corner__promo-content-item bg-[#F9F7FE] rounded-[16px] py-[32px] px-[24px] flex flex-col h-full">
                     <img class="w-[60px] lg:w-[80px] h-[60px] lg:h-[80px] object-contain mb-[40px] lg:mb-[128px]"
                         src="./src/images/icons/dashboard-circle-add.svg" alt="Custom Fields" />
                     <div class="mt-auto">
@@ -1041,7 +1116,7 @@
             <div class="corner__testimonial-content flex flex-col lg:flex-row gap-[24px] lg:gap-[16px]">
 
                 <div
-                    class="corner__testimonial-image w-full min-h-[550px] lg:w-[30%] relative rounded-[16px] overflow-hidden aspect-video lg:aspect-auto">
+                    class="corner__testimonial-image corner__image-reveal corner__image-magnetic-animation w-full min-h-[550px] lg:w-[30%] relative rounded-[16px] overflow-hidden aspect-video lg:aspect-auto">
                     <img class="w-full h-full object-cover lg:h-auto rounded-[16px]"
                         src="./src/images/testimonial/client.webp" alt="Testimonial" />
 
@@ -1066,7 +1141,7 @@
                     class="corner__testimonial-content-box w-full lg:w-[calc(70%-16px)] p-[24px] md:p-[40px] lg:p-[48px] rounded-[16px] bg-white text-[#240F52] relative flex flex-col justify-between min-h-[300px] lg:pb-[120px]">
 
                     <div
-                        class="font-bricolage text-[22px] md:text-[28px] lg:text-[32px] leading-[1.3] lg:leading-[100%] font-normal mb-[32px] reveal-item">
+                        class="reveal-type font-bricolage text-[22px] md:text-[28px] lg:text-[32px] leading-[1.3] lg:leading-[100%] font-normal mb-[32px] reveal-item">
                         “With this platform, we finally stopped juggling multiple tools. Now our projects, updates, and
                         reports all live in one place — and the difference is incredible.
                         <br class="hidden lg:block" /><br class="hidden lg:block" />
@@ -1212,7 +1287,8 @@
 
                 <div
                     class="corner__step-wrapper-content z-20 relative w-full md:w-[25%] pb-24 md:pb-[30px] text-center lg:text-left">
-                    <h3 class="reveal-type text-[24px] md:text-[40px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
+                    <h3
+                        class="reveal-type text-[24px] md:text-[40px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
                         Built for People. Tuned for Speed.
                     </h3>
                     <p
@@ -1230,8 +1306,8 @@
                             <div class="absolute inset-0 rounded-[50px] bg-[#D8C6FF] animate-ripple-2 -z-10"></div>
                             <div class="absolute inset-0 rounded-[50px] bg-[#D8C6FF] animate-ripple-3 -z-10"></div>
 
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                class="relative z-10">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="relative z-10">
                                 <path
                                     d="M4.62355 3.35132C4.85479 3.21713 5.13998 3.21617 5.3721 3.34882L19.3721 11.3488C19.6058 11.4824 19.75 11.7309 19.75 12C19.75 12.2691 19.6058 12.5177 19.3721 12.6512L5.3721 20.6512C5.13998 20.7838 4.85479 20.7829 4.62355 20.6487C4.39232 20.5145 4.25 20.2674 4.25 20V4C4.25 3.73265 4.39232 3.48551 4.62355 3.35132Z"
                                     fill="currentColor" />
@@ -1250,14 +1326,16 @@
 
                 <template x-teleport="body">
                     <div x-show="isOpen"
-                        class="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" x-cloak>
+                        class="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+                        x-cloak>
                         <div @click.away="isOpen = false"
                             class="relative w-full max-w-4xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl">
                             <button @click="isOpen = false"
                                 class="absolute top-4 right-4 z-10 text-white bg-black/50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-black transition-colors">&times;</button>
                             <template x-if="isOpen">
-                                <iframe class="w-full h-full" :src="'https://www.youtube.com/embed/' + videoId + '?autoplay=1'"
-                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe class="w-full h-full"
+                                    :src="'https://www.youtube.com/embed/' + videoId + '?autoplay=1'" frameborder="0"
+                                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             </template>
                         </div>
                     </div>
@@ -1268,7 +1346,7 @@
 
     <section class="py-[100px] overflow-hidden">
         <div class="container mx-auto px-4 mb-[60px] text-center">
-            <h2 class="text-[40px] md:text-[56px] font-bold font-bricolage leading-[1.1]">
+            <h2 class="reveal-type text-[40px] md:text-[56px] font-bold font-bricolage leading-[1.1]">
                 Works with Your Favorite Tools
             </h2>
             <p class="text-[18px] mt-4">Connect With the Tools You Already Use</p>
@@ -1656,14 +1734,20 @@
             </div>
         </div>
 
-        <div class="container justify-center mt-16">
+        <div class="container justify-center mt-16 !mx-auto text-center">
 
-            <a href="#"
-                class="button-transparent w-full mx-auto md:w-fit px-[24px] py-[12px] rounded-[12px] border-[1px] border-primary text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-[10px]">
-                Request a Demo
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="16" />
-                </svg>
+            <a href="#" class="corner-blob-btn btn-purple-fill px-6 py-3 font-medium w-full md:w-fit">
+                <span class="relative z-10 flex items-center gap-2">
+                    Request a Demo
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </span>
+                <span class="blob-container">
+                    <span class="blob-drop"></span>
+                    <span class="blob-drop"></span>
+                    <span class="blob-drop"></span>
+                </span>
             </a>
         </div>
     </section>
@@ -1877,14 +1961,15 @@
 
     <section class="loved-by-teams py-[80px]">
         <div class="container mx-auto px-4">
-            <h2 class="text-center text-[36px] lg:text-[48px] font-bold text-[#240F52] mb-[64px] font-bricolage">
+            <h2
+                class="reveal-type text-center text-[36px] lg:text-[48px] font-bold text-[#240F52] mb-[64px] font-bricolage">
                 Loved by Teams Worldwide
             </h2>
 
-            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            <div class="reveal-grid columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
 
                 <div
-                    class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-8 flex flex-col items-center text-center justify-center min-h-[220px]">
+                    class="reveal-card break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-8 flex flex-col items-center text-center justify-center min-h-[220px]">
                     <div class="flex items-center gap-2 mb-4">
                         <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center">
                             <span class="text-white text-[10px]">🐧</span>
@@ -1898,7 +1983,8 @@
                     </button>
                 </div>
 
-                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                <div
+                    class="reveal-card break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
                     <div class="flex justify-between items-start mb-4">
                         <div class="flex items-center gap-3">
                             <div
@@ -1926,7 +2012,8 @@
                     </p>
                 </div>
 
-                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                <div
+                    class="reveal-card break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
                     <div class="flex justify-between items-start mb-4">
                         <div class="flex items-center gap-3">
                             <div
@@ -1954,7 +2041,8 @@
                     </p>
                 </div>
 
-                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                <div
+                    class="reveal-card break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
                     <div class="flex justify-between items-start mb-4">
                         <div class="flex items-center gap-3">
                             <div
@@ -1973,7 +2061,8 @@
                     </p>
                 </div>
 
-                <div class="break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
+                <div
+                    class="reveal-card break-inside-avoid bg-white border border-[#D8C6FF] rounded-[16px] p-6 shadow-sm">
                     <div class="flex justify-between items-start mb-4">
                         <div class="flex items-center gap-3">
                             <div
@@ -1999,79 +2088,58 @@
     <!-- FAQ Section Starts  -->
     <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="{
       activeId: 1,
-
       items: [
-        {
-          id: 1,
-          title: 'What is your refund policy?',
-          content: 'We offer a 14-day money-back guarantee on all plans.'
-        },
-        {
-          id: 2,
-          title: 'How long does development take?',
-          content: 'Typical delivery time is 7–10 business days.'
-        },
-        {
-          id: 3,
-          title: 'Do you support WordPress plugins?',
-          content: 'Yes, we specialize in custom WordPress plugin development.'
-        },
-        {
-          id: 4,
-          title: 'Is support included?',
-          content: 'Email and ticket support is included for all paid plans.'
-        },
-        {
-          id: 5,
-          title: 'Can I request custom features?',
-          content: 'Absolutely. Custom features can be scoped and quoted.'
-        }
+        { id: 1, title: 'What is your refund policy?', content: 'We offer a 14-day money-back guarantee on all plans.' },
+        { id: 2, title: 'How long does development take?', content: 'Typical delivery time is 7–10 business days.' },
+        { id: 3, title: 'Do you support WordPress plugins?', content: 'Yes, we specialize in custom WordPress plugin development.' },
+        { id: 4, title: 'Is support included?', content: 'Email and ticket support is included for all paid plans.' },
+        { id: 5, title: 'Can I request custom features?', content: 'Absolutely. Custom features can be scoped and quoted.' }
       ],
-
-      toggle(id) {
-        this.activeId = this.activeId === id ? null : id
-      },
-
-      isOpen(id) {
-        return this.activeId === id
-      }
+      toggle(id) { this.activeId = this.activeId === id ? null : id },
+      isOpen(id) { return this.activeId === id }
     }">
-        <div class="container mx-auto max-w-3xl flex flex-col md:flex-row space-y-4">
-            <div
-                class="w-full md:w-[32.6%] flex flex-col md:flex-row lg:flex-col sm:gap-[30px] gap-[48px] justify-between">
-                <div class="md:w-[60%] w-full w-full">
-                    <div
-                        class="text-[32px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px] sm:text-left text-center">
-                        Frequently Asked
-                        Questions
-                    </div>
-                    <p
-                        class="text-[18px] sm:text-left text-center font-uncutsans leading-[100%] font-normal text-[#000] opacity-70">
-                        Curious?
-                        Let’s Clear
-                        Things Up</p>
+
+        <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+
+            <div class="md:col-span-4 flex flex-col gap-10 text-center md:text-left">
+                <div>
+                    <h2
+                        class="reveal-type text-[32px] sm:text-[36px] lg:text-[40px] leading-tight font-bricolage font-bold text-[#240F52] mb-3">
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="text-lg font-uncutsans text-black/70">
+                        Curious? Let’s Clear Things Up
+                    </p>
                 </div>
-                <div class="md:w-[40%] w-full w-full flex flex-col sm:text-left text-center">
-                    <h4 class="font-bold text-[18px] leading-[100%] font-bricolage text-[#240F52] mb-[4px]">Still
-                        have
-                        questions?</h4>
-                    <p class="text-[15px] leading-[100%] font-normal text-[#000] opacity-70 sm:mb-[0] mb-[16px]">
-                        We’ve got your back</p>
-                    <a href="#"
-                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] inline-flex items-center gap-[10px] text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[16px] sm:mb-[8px] mt-[16px] mx-auto sm:mx-0 lg:w-[220px]">
-                        <span class="text-[18px] leading-[100%] font-medium text-[#5A147F] font-uncutsans">Request
-                            Support</span>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
-                                stroke-miterlimit="16" />
-                        </svg>
+
+                <div>
+                    <h4 class="reveal-type font-bold text-lg font-bricolage text-[#240F52] mb-1">
+                        Still have questions?
+                    </h4>
+                    <p class="text-[15px] text-black/70 mb-6">
+                        We’ve got your back
+                    </p>
+
+                    <a href="#" class="corner-blob-btn btn-purple-fill px-6 py-3 font-medium w-full md:w-fit">
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            Request Support
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="blob-container">
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                        </span>
                     </a>
                 </div>
             </div>
 
-            <div class="w-full md:w-[58%]">
+            <div class="md:col-span-8 reveal-faq-list">
                 <template x-for="item in items" :key="item.id">
-                    <div class="rounded-xl mb-2 bg-white overflow-hidden transition-colors duration-300"
+                    <div class="faq-item rounded-xl mb-2 bg-white overflow-hidden transition-colors duration-300"
                         :class="isOpen(item.id) ? 'border-[#D8C6FF]' : 'border-[#E5E7EB]'">
 
                         <button type="button"
@@ -2116,6 +2184,7 @@
     </section>
     <!-- FAQ Section Ends -->
 
+    <!-- Footer Starts Here -->
     <footer class="w-full pt-[60px] md:pt-[128px]"
         style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
         x-data="{ subscribed: false, email: '' }">
@@ -2126,17 +2195,24 @@
                 class="flex flex-col lg:flex-row justify-between pb-[60px] lg:pb-[128px] gap-[40px] lg:gap-[64px] items-center">
 
                 <div class="flex flex-col w-full lg:max-w-[38.8%] text-center lg:text-left">
-                    <h2 class="text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
+                    <h2
+                        class="reveal-type text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
                         Ready to Launch Faster and Smarter?
                     </h2>
                     <p class="text-[15px] leading-[1.4] font-normal text-white opacity-70 mb-[30px]">
                         Try it free. Cancel anytime. No credit card required.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-[16px] justify-center lg:justify-start">
-                        <a href="#"
-                            class="border-[1px] border-[#D8C6FF66] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium text-[#D8C6FF] hover:bg-[#D8C6FF66] transition-all text-center">
-                            Purchase Full Template
+
+                        <a href="#" class="corner-blob-btn btn-light-fill px-8 py-[10px] font-medium font-bricolage">
+                            <span class="relative z-10">Purchase Full Template</span>
+                            <span class="blob-container">
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                            </span>
                         </a>
+
                         <a href="#"
                             class="bg-white text-[#5A147F] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium hover:bg-[#D8C6FF] transition-all text-center">
                             Try for Free
@@ -2146,7 +2222,7 @@
 
                 <div
                     class="w-full lg:w-[calc(61.2%-64px)] bg-white rounded-[24px] p-[24px] md:p-[32px] flex flex-col md:flex-row gap-[24px] items-start">
-                    <img src="./src/images/icons/Icon.webp" alt="Ready to Launch"
+                    <img src="./src/images/icons/icon-letter.png" alt="Ready to Launch"
                         class="md:w-[200px] md:h-auto object-contain mx-auto" />
 
                     <div class="flex flex-col w-full">
@@ -2161,8 +2237,16 @@
                                         class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[16px] font-uncutsans text-[#240F52] w-full sm:w-[70%]"
                                         type="email" required placeholder="Your email here..." />
                                     <button
-                                        class="bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
-                                        type="submit">Subscribe</button>
+                                        class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans !font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
+                                        type="submit">
+                                        <span class="relative z-10">Subscribe</span>
+                                        <span class="blob-container">
+                                            <span class="blob-drop"></span>
+                                            <span class="blob-drop"></span>
+                                            <span class="blob-drop"></span>
+                                        </span>
+                                    </button>
+
                                 </div>
                                 <div class="checkbox">
                                     <label for="policy-checkbox" class="flex gap-[10px] items-start cursor-pointer">
@@ -2189,18 +2273,25 @@
             <div
                 class="flex flex-col md:flex-row justify-between gap-[40px] pb-[40px] border-b-[1px] border-[#D8C6FF66]">
                 <nav>
-                    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                    <ul
+                        class="reveal-grid grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">Features</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">About Us</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">Pricing</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">Blog</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">Help Centre</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">Request Demo</a></li>
                     </ul>
                 </nav>
@@ -2219,13 +2310,15 @@
 
             <div class="py-[40px] lg:py-[64px]">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-[20px] text-center md:text-left">
-                    <ul class="flex gap-[32px] lg:gap-[56px]">
-                        <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
+                    <ul class="reveal-grid flex gap-[32px] lg:gap-[56px]">
+                        <li class="reveal-card"><a
+                                class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
                                 href="#">Website Terms</a></li>
-                        <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
                                 href="#">Privacy Policy</a></li>
                     </ul>
-                    <p class="text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
+                    <p class="reveal-type text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
                         ©2025 Framer Lab — All Rights Reserved
                     </p>
                 </div>
@@ -2240,217 +2333,15 @@
             </div>
         </div>
     </footer>
-
-    </div>
+    <!-- Footer Ends Here -->
 
     <!-- GSAP CDN -->
     <!-- <script src="src/js/gsap.min.js"></script> -->
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+
     <script type="module" src="src/main.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            gsap.registerPlugin(ScrollTrigger);
-
-            // 1. Hero Content Entrance
-            const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
-
-            tl.from(".corner__hero-top-title", { opacity: 0, y: 20, delay: 0.2 })
-                .from(".corner__hero-title", { opacity: 0, y: 30 }, "-=0.7")
-                .from(".corner-hero-content p", { opacity: 0, y: 20 }, "-=0.7")
-                .from(".corner__hero-buttons", { opacity: 0, y: 20 }, "-=0.7")
-
-            // 2. The "Dashboard Reveal" Scroll Effect
-            // This makes the feature image grow as the user scrolls into it
-            gsap.fromTo(".feature-image-container",
-                {
-                    y: 100,
-                    scale: 0.9,
-                    opacity: 0.5
-                },
-                {
-                    y: 0,
-                    scale: 1,
-                    opacity: 1,
-                    scrollTrigger: {
-                        trigger: ".feature-image-container",
-                        start: "top 90%", // Starts when the top of the image hits 90% of viewport
-                        end: "top 50%",   // Finishes when it hits the middle
-                        scrub: 1,         // Smoothly ties animation to scroll speed
-                    }
-                }
-            );
-        });
-
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Reveal Quote Text
-        gsap.from(".reveal-text", {
-            scrollTrigger: {
-                trigger: ".testimonial-text-box",
-                start: "top 80%",
-            },
-            duration: 1.5,
-            y: 100,
-            opacity: 0,
-            skewY: 7, // Makes it look like it's unfolding
-            ease: "power4.out",
-        });
-
-        // Fade in Author slightly after
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Target the reveal-item classes inside your content box
-        gsap.from(".corner__testimonial-content-box .reveal-item", {
-            scrollTrigger: {
-                trigger: ".corner__testimonial-content-box",
-                start: "top 80%", // Starts when the box enters view
-            },
-            opacity: 0,
-            y: 40,             // Slides up 40px
-            duration: 1.2,     // Slow reveal
-            stagger: 0.3,      // Quote first, then Sophia Lee
-            ease: "power2.out"
-        });
-
-        // 1. Mouse Parallax Animation
-        const container = document.querySelector('.parallax-container');
-        const layer = document.querySelector('.parallax-layer');
-
-        container.addEventListener('mousemove', (e) => {
-            const { width, height } = container.getBoundingClientRect();
-            const moveX = (e.clientX - width / 2) / width * 20; // 20px max movement
-            const moveY = (e.clientY - height / 2) / height * 20;
-
-            gsap.to(layer, {
-                x: moveX,
-                y: moveY,
-                duration: 0.8,
-                ease: "power2.out"
-            });
-        });
-
-        container.addEventListener('mouseleave', () => {
-            gsap.to(layer, { x: 0, y: 0, duration: 1, ease: "power2.out" });
-        });
-
-        // 2. Text Reveal on Page Load
-        const heroTl = gsap.timeline({ delay: 0.5 });
-
-        heroTl.from(".hero-star-reveal span", {
-            y: 20,
-            opacity: 0,
-            stagger: 0.1,
-            ease: "back.out(1.7)"
-        })
-            .from(".hero-quote-reveal", {
-                y: 50,
-                opacity: 0,
-                skewY: 3,
-                duration: 1.2,
-                ease: "power4.out"
-            }, "-=0.5")
-            .to(".hero-author-reveal", {
-                y: 0,
-                opacity: 1,
-                duration: 0.8,
-                ease: "power2.out"
-            }, "-=0.8");
-
-        // Trusted by team section animations
-        document.addEventListener('DOMContentLoaded', () => {
-            gsap.registerPlugin(ScrollTrigger);
-
-            // --- 1. GLOBAL HEADINGS (.reveal-type) ---
-            const headings = document.querySelectorAll('.reveal-type');
-            headings.forEach((heading) => {
-                const originalHTML = heading.innerHTML;
-                const formattedHTML = originalHTML.split(/(\s+|<br.*?>)/).map(part => {
-                    if (part.trim() === '' || part.includes('<br')) return part;
-                    return `<span class="inline-block overflow-hidden pb-2 -mb-2">
-                        <span class="word inline-block translate-y-[120%]">${part}</span>
-                    </span>`;
-                }).join('');
-                heading.innerHTML = formattedHTML;
-                heading.style.visibility = 'visible';
-
-                gsap.to(heading.querySelectorAll('.word'), {
-                    y: 0,
-                    duration: 0.8,
-                    stagger: 0.08,
-                    ease: 'power4.out',
-                    scrollTrigger: {
-                        trigger: heading,
-                        start: 'top 90%',
-                        toggleActions: 'restart none restart none',
-                    }
-                });
-            });
-
-            // --- 2. GLOBAL STAGGERED GRIDS (.reveal-grid) ---
-            const grids = document.querySelectorAll('.reveal-grid');
-            grids.forEach((grid) => {
-                gsap.from(grid.querySelectorAll('.reveal-card'), {
-                    y: 60,
-                    opacity: 0,
-                    duration: 1.2,
-                    stagger: 0.25,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: grid,
-                        start: "top 80%",
-                        toggleActions: "restart none restart none"
-                    }
-                });
-            });
-
-            // --- 3. GLOBAL COUNTER-UP (.counter-up) ---
-            const counters = document.querySelectorAll('.counter-up');
-            counters.forEach((counter) => {
-                const targetValue = parseFloat(counter.innerText);
-                const suffix = counter.innerText.replace(/[0-9.]/g, ''); // Extract %, +, M, etc.
-
-                // Reset text to 0 initially
-                counter.innerText = "0" + suffix;
-
-                gsap.to(counter, {
-                    innerText: targetValue,
-                    duration: 2,
-                    snap: { innerText: 1 }, // Steps by 1 (or 0.1 for decimals)
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: counter,
-                        start: "top 90%",
-                        toggleActions: "restart none restart none",
-                    },
-                    onUpdate: function () {
-                        // Keep the suffix (%, M, +) during the count
-                        counter.innerText = Math.ceil(this.targets()[0].innerText) + suffix;
-                    }
-                });
-            });
-
-            // --- 4. GLOBAL BUTTON REVEAL (.reveal-button) ---
-            const buttons = document.querySelectorAll('.reveal-button');
-            buttons.forEach((btn) => {
-                gsap.from(btn, {
-                    y: 30,              // Rise up from below
-                    opacity: 0,
-                    scale: 0.8,         // Start slightly smaller
-                    duration: 2,
-                    ease: "back.out(1.7)", // The "Spring" effect
-                    scrollTrigger: {
-                        trigger: btn,
-                        start: "top 95%", // Trigger as soon as it nears the screen
-                        toggleActions: "restart none restart none"
-                    }
-                });
-            });
-
-        });
-    </script>
 </body>
 
 </html>

@@ -1,15 +1,17 @@
 // import "../js/header.js";
 import Alpine from 'alpinejs'
+import { collapse } from '@alpinejs/collapse';
 // import Swiper from 'swiper';
 // import 'swiper/css';
-// import gsap from "gsap";
 import { initAccordion } from "./scripts/accordion.js";
 import { initLogoSlider } from "./scripts/infiniteslider.js";
 import { initTabs, initLogoTabs } from "./scripts/tab.js";
+import CornerAnimation from './scripts/animation.js';
 
 
-window.Alpine = Alpine
-Alpine.start()
+window.Alpine = Alpine;
+Alpine.plugin(collapse);
+Alpine.start();
 
 document.addEventListener("DOMContentLoaded", () => {
     initLogoSlider();
@@ -17,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     initLogoTabs();
     initAccordion();
 });
+
+window.onload = () => {
+    CornerAnimation();
+}
 
 new Swiper('.tools-swiper', {
     loop: true,
@@ -53,27 +59,4 @@ new Swiper('.tools-swiper-reverse', {
         disableOnInteraction: false,
     },
     slidesPerView: 'auto',
-});
-
-// Pricing pageXOffset, Compare section 
-gsap.registerPlugin(ScrollTrigger);
-
-ScrollTrigger.matchMedia({
-    "(min-width: 1024px)": function () {
-        let panels = document.querySelectorAll('.stack-panel');
-
-        panels.forEach((panel, i) => {
-            gsap.to(panel, {
-                scrollTrigger: {
-                    trigger: panel,
-                    pin: true,           // Pins the card
-                    pinSpacing: false,   // Allows next card to overlap
-                    start: "top 20%",    // Adjust where it sticks
-                    endTrigger: "#comparison-area",
-                    end: "bottom 80%",
-                    scrub: 1
-                }
-            });
-        });
-    }
 });
