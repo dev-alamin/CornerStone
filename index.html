@@ -399,7 +399,7 @@
                opacity-0 pointer-events-none translate-y-2 
                group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 
                transition-all duration-300 z-50">
-               <li>
+                            <li>
                                 <a href="article-support.html"
                                     class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
                                     Article Support
@@ -611,9 +611,9 @@
                     </div>
                     <h1
                         class="corner__hero-title text-primary mb-[24px] text-[40px] md:text-[60px] lg:text-[80px] leading-[110%]">
-                        Launch, Grow & <br class="hidden md:block"> Scale Without the <br class="hidden md:block"> Chaos</h1>
-                    <p
-                        class="text-white font-inter font-normal pb-[40px] lg:pb-[64px] text-[18px] lg:text-[22px]">
+                        Launch, Grow & <br class="hidden md:block"> Scale Without the <br class="hidden md:block"> Chaos
+                    </h1>
+                    <p class="text-white font-inter font-normal pb-[40px] lg:pb-[64px] text-[18px] lg:text-[22px]">
                         Your all-in-one AI assistant for organizing tasks, collaborating in real-time, and turning chaos
                         into clarity — built for fast-moving SaaS teams.
                     </p>
@@ -829,8 +829,7 @@
     </section>
 
 
-   <section class="corner__tranding py-[60px] lg:py-[100px]" 
-    x-data="{ 
+    <section class="corner__tranding py-[60px] lg:py-[100px]" x-data="{ 
         activeTab: 'tab1',
         tabs: [
             {
@@ -863,77 +862,103 @@
             }
         ]
     }">
-    <div class="container mx-auto px-4">
-        <div class="corner__heading text-center lg:text-left mb-[40px] lg:mb-[64px]">
-            <p class="color-primary-base mb-[16px] lg:mb-[24px] text-[16px] lg:text-[18px] leading-[100%] font-uncutsans">
-                Trending on Framer
-            </p>
-            <h2 class="text-[36px] md:text-[48px] lg:text-[64px] font-bold leading-[110%] font-bricolage mb-[16px]">
-                Smarter Tools. <br class="hidden md:block" /> Built Around You.
-            </h2>
-            <p class="color-neutral-base text-[16px] lg:text-[18px]">Efficiency redefined for modern teams.</p>
-        </div>
-
-        <div class="corner__tabs">
-            <div class="corner__tranding-tab-list flex overflow-x-auto lg:overflow-visible gap-3 pb-4 lg:pb-0 no-scrollbar">
-                <template x-for="tab in tabs" :key="tab.id">
-                    <button @click="activeTab = tab.id"
-                        :class="activeTab === tab.id ? 'bg-primary text-neutral-strong border-primary' : 'border-[#D8C6FF] text-neutral-strong bg-transparent'"
-                        class="whitespace-nowrap py-[12px] px-[20px] border-[1px] rounded-[12px] text-[14px] leading-[110%] font-medium transition-all duration-300"
-                        x-text="tab.label">
-                    </button>
-                </template>
+        <div class="container mx-auto px-4">
+            <div class="corner__heading text-center lg:text-left mb-[40px] lg:mb-[64px]">
+                <p
+                    class="color-primary-base mb-[16px] lg:mb-[24px] text-[16px] lg:text-[18px] leading-[100%] font-uncutsans">
+                    Trending on Framer
+                </p>
+                <h2 class="text-[36px] md:text-[48px] lg:text-[64px] font-bold leading-[110%] font-bricolage mb-[16px]">
+                    Smarter Tools. <br class="hidden md:block" /> Built Around You.
+                </h2>
+                <p class="color-neutral-base text-[16px] lg:text-[18px]">Efficiency redefined for modern teams.</p>
             </div>
 
-            <div class="corner__tranding-tab-list-content mt-[32px]">
-                <template x-for="tab in tabs" :key="tab.id">
-                    <div x-show="activeTab === tab.id" 
-                         x-transition:enter="transition ease-out duration-300"
-                         x-transition:enter-start="opacity-0 transform translate-y-4"
-                         class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
-                        
-                        <div class="w-full lg:w-[35%] flex flex-col justify-center">
-                            <h3 class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]" x-text="tab.title"></h3>
-                            <p class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70" x-text="tab.desc"></p>
-                            <a href="#" class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">
-                                Request a Demo
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" /></svg>
-                            </a>
-                        </div>
+            <div class="corner__tabs">
+                <div
+                    class="corner__tranding-tab-list flex overflow-x-auto lg:overflow-visible gap-3 pb-4 lg:pb-0 no-scrollbar">
+                    <template x-for="tab in tabs" :key="tab.id">
+                        <button @click="activeTab = tab.id"
+                            :class="activeTab === tab.id ? 'bg-primary text-neutral-strong border-primary' : 'border-[#D8C6FF] text-neutral-strong bg-transparent'"
+                            class="whitespace-nowrap py-[12px] px-[20px] border-[1px] rounded-[12px] text-[14px] leading-[110%] font-medium transition-all duration-300"
+                            x-text="tab.label">
+                        </button>
+                    </template>
+                </div>
 
-                        <div class="w-full lg:w-[53%]">
-                            <img class="w-full h-auto rounded-[24px] object-cover aspect-video lg:aspect-auto" :src="tab.img" :alt="tab.title" />
+                <div class="corner__tranding-tab-list-content mt-[32px]">
+                    <template x-for="tab in tabs" :key="tab.id">
+                        <div x-show="activeTab === tab.id" x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform translate-y-4"
+                            class="flex flex-col lg:flex-row justify-between gap-[32px] lg:gap-[64px]">
+
+                            <div class="w-full lg:w-[35%] flex flex-col justify-center">
+                                <h3 class="text-[30px] lg:text-[40px] leading-[110%] font-bricolage font-bold mb-[12px]"
+                                    x-text="tab.title"></h3>
+                                <p class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[24px] opacity-70"
+                                    x-text="tab.desc"></p>
+                                <a href="#"
+                                    class="flex border-primary border-[1px] rounded-[12px] px-[20px] py-[12px] w-full md:max-w-[220px] bg-white items-center justify-center gap-[10px] text-[18px] leading-[100%] font-medium text-[#5A147F] hover:bg-primary/10 transition-colors">
+                                    Request a Demo
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9.00005 6L15 12L9 18" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="w-full lg:w-[53%]">
+                                <img class="w-full h-auto rounded-[24px] object-cover aspect-video lg:aspect-auto"
+                                    :src="tab.img" :alt="tab.title" />
+                            </div>
                         </div>
+                    </template>
+                </div>
+            </div>
+
+            <div
+                class="corner__tranding-bottom mt-[40px] lg:mt-[16px] flex flex-col lg:flex-row justify-between gap-[16px]">
+                <div class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col group cursor-pointer"
+                    @click="activeTab = 'tab2'">
+                    <div class="p-[20px] md:p-[32px]">
+                        <h3
+                            class="text-[26px] lg:text-[32px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">
+                            Automation Made Simple</h3>
+                        <p
+                            class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[32px] opacity-70">
+                            Turn repetitive routines into effortless flows.</p>
                     </div>
-                </template>
+                    <img class="w-full h-[200px] md:h-[269px] object-cover rounded-[16px] mt-auto"
+                        src="./src/images/cards/card02.webp" alt="Automation" />
+                    <div
+                        class="absolute bottom-[24px] right-[24px] group-hover:scale-110 transition-transform bg-white rounded-full p-3 shadow-lg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="#5A147F" stroke-width="2" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col group cursor-pointer"
+                    @click="activeTab = 'tab4'">
+                    <div class="p-[20px] md:p-[32px]">
+                        <h3
+                            class="text-[26px] lg:text-[32px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">
+                            Security You Can Rely On</h3>
+                        <p
+                            class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[32px] opacity-70">
+                            Data protection is built in from the start.</p>
+                    </div>
+                    <img class="w-full h-[200px] md:h-[269px] object-cover rounded-[16px] mt-auto"
+                        src="./src/images/cards/card03.png" alt="Security" />
+                    <div
+                        class="absolute bottom-[24px] right-[24px] group-hover:scale-110 transition-transform bg-white rounded-full p-3 shadow-lg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="#5A147F" stroke-width="2" />
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="corner__tranding-bottom mt-[40px] lg:mt-[16px] flex flex-col lg:flex-row justify-between gap-[16px]">
-            <div class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col group cursor-pointer" @click="activeTab = 'tab2'">
-                <div class="p-[20px] md:p-[32px]">
-                    <h3 class="text-[26px] lg:text-[32px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">Automation Made Simple</h3>
-                    <p class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[32px] opacity-70">Turn repetitive routines into effortless flows.</p>
-                </div>
-                <img class="w-full h-[200px] md:h-[269px] object-cover rounded-[16px] mt-auto" src="./src/images/cards/card02.webp" alt="Automation" />
-                <div class="absolute bottom-[24px] right-[24px] group-hover:scale-110 transition-transform bg-white rounded-full p-3 shadow-lg">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="#5A147F" stroke-width="2" /></svg>
-                </div>
-            </div>
-
-            <div class="w-full lg:w-[calc(50%-8px)] rounded-[24px] border-[1px] border-[#D8C6FF] relative bg-[#F4EFFE80] p-[8px] flex flex-col group cursor-pointer" @click="activeTab = 'tab4'">
-                <div class="p-[20px] md:p-[32px]">
-                    <h3 class="text-[26px] lg:text-[32px] leading-[110%] font-bricolage font-bold mb-[8px] text-[#240F52]">Security You Can Rely On</h3>
-                    <p class="font-uncutsans text-[16px] lg:text-[18px] leading-[1.4] font-normal mb-[32px] opacity-70">Data protection is built in from the start.</p>
-                </div>
-                <img class="w-full h-[200px] md:h-[269px] object-cover rounded-[16px] mt-auto" src="./src/images/cards/card03.png" alt="Security" />
-                <div class="absolute bottom-[24px] right-[24px] group-hover:scale-110 transition-transform bg-white rounded-full p-3 shadow-lg">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="#5A147F" stroke-width="2" /></svg>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 
     <section class="corner__promo-section py-[60px] lg:py-[100px]">
@@ -1086,15 +1111,15 @@
                     4-step process
                 </p>
                 <h2
-                    class="font-bricolage text-[36px] md:text-[48px] lg:text-[64px] leading-[110%] font-bold mb-[12px] text-[#240F52]">
+                    class="reveal-type font-bricolage text-[36px] md:text-[48px] lg:text-[64px] leading-[110%] font-bold mb-[12px] text-[#240F52]">
                     From chaos to Clarity <br class="hidden md:block" /> in 4 simple steps
                 </h2>
                 <p class="text-neutral-500 text-[18px] lg:text-[22px] leading-[100%] font-normal">Clarity in Minutes</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] lg:gap-[40px]">
+            <div class="reveal-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] lg:gap-[40px]">
 
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="reveal-card flex flex-col items-center md:items-start text-center md:text-left">
                     <div
                         class="relative bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] flex items-center gap-[8px] mb-[24px] w-fit">
                         <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 1</span>
@@ -1115,7 +1140,7 @@
                     <p class="font-uncutsans text-[15px] text-black/70">Collect notes, tasks, and updates</p>
                 </div>
 
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="reveal-card flex flex-col items-center md:items-start text-center md:text-left">
                     <div
                         class="relative bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] flex items-center gap-[8px] mb-[24px] w-fit">
                         <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 2</span>
@@ -1136,7 +1161,7 @@
                     <p class="font-uncutsans text-[15px] text-black/70">Sort and prioritize automatically</p>
                 </div>
 
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="reveal-card flex flex-col items-center md:items-start text-center md:text-left">
                     <div
                         class="relative bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] flex items-center gap-[8px] mb-[24px] w-fit">
                         <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 3</span>
@@ -1157,7 +1182,7 @@
                     <p class="font-uncutsans text-[15px] text-black/70">Work together seamlessly</p>
                 </div>
 
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="reveal-card flex flex-col items-center md:items-start text-center md:text-left">
                     <div
                         class="bg-[#D8C6FF] rounded-tl-[12px] rounded-br-[6px] rounded-bl-[12px] rounded-tr-[6px] px-[16px] py-[12px] flex items-center gap-[8px] mb-[24px] w-fit">
                         <span class="text-[14px] leading-[110%] font-medium text-[#03000A]">Step 4</span>
@@ -1175,7 +1200,7 @@
         </div>
     </section>
 
-    <section class="corner__step-video mb-[64px]">
+    <section class="corner__step-video mb-[64px]" x-data="{ isOpen: false, videoId: 'tHvdkhD0Qv8' }">
         <div class="container mx-auto px-4">
             <div class="corner__step-wrapper bg-cover bg-center pt-[30px] md:pt-[60px] lg:pt-[86px] px-[20px] md:px-[40px] lg:px-[64px] rounded-[24px] lg:rounded-[32px] overflow-hidden relative flex flex-col lg:flex-row justify-between"
                 style="background-image: url('./src/images/step-video/video.webp');">
@@ -1187,7 +1212,7 @@
 
                 <div
                     class="corner__step-wrapper-content z-20 relative w-full md:w-[25%] pb-24 md:pb-[30px] text-center lg:text-left">
-                    <h3 class="text-[24px] md:text-[40px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
+                    <h3 class="reveal-type text-[24px] md:text-[40px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
                         Built for People. Tuned for Speed.
                     </h3>
                     <p
@@ -1197,13 +1222,23 @@
                     </p>
 
                     <div class="flex justify-center lg:justify-start md:mt-20">
-                        <a href="#"
-                            class="button-transparent px-[24px] py-[14px] rounded-[50px] border-[1px] border-transparent text-[16px] lg:text-[18px] font-medium text-[#5A147F] bg-[#D8C6FF] hover:bg-white transition-all flex items-center justify-center gap-[10px] w-full font-bricolage font-bold text-neutral-strong sm:w-auto">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M7 6L17 12L7 18V6Z" />
+
+                        <button @click="isOpen = true"
+                            class="corner__testimonial-button relative bg-[#D8C6FF] rounded-[50px] px-[20px] py-[12px] flex items-center justify-center gap-[10px] text-[16px] lg:text-[18px] leading-[100%] font-medium text-[#03000A] hover:bg-primary hover:text-white transition-all w-[180px] lg:w-[250px] shadow-xl group">
+
+                            <div class="absolute inset-0 rounded-[50px] bg-[#D8C6FF] animate-ripple-1 -z-10"></div>
+                            <div class="absolute inset-0 rounded-[50px] bg-[#D8C6FF] animate-ripple-2 -z-10"></div>
+                            <div class="absolute inset-0 rounded-[50px] bg-[#D8C6FF] animate-ripple-3 -z-10"></div>
+
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="relative z-10">
+                                <path
+                                    d="M4.62355 3.35132C4.85479 3.21713 5.13998 3.21617 5.3721 3.34882L19.3721 11.3488C19.6058 11.4824 19.75 11.7309 19.75 12C19.75 12.2691 19.6058 12.5177 19.3721 12.6512L5.3721 20.6512C5.13998 20.7838 4.85479 20.7829 4.62355 20.6487C4.39232 20.5145 4.25 20.2674 4.25 20V4C4.25 3.73265 4.39232 3.48551 4.62355 3.35132Z"
+                                    fill="currentColor" />
                             </svg>
-                            Watch How it Works
-                        </a>
+                            <span class="relative z-10">Watch How it Works</span>
+                        </button>
+
                     </div>
                 </div>
 
@@ -1212,6 +1247,21 @@
                     <img class="w-full h-auto object-contain translate-y-2 lg:translate-y-8"
                         src="./src/images/step-video/ui-visual.png" alt="Dashboard Interface" />
                 </div>
+
+                <template x-teleport="body">
+                    <div x-show="isOpen"
+                        class="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" x-cloak>
+                        <div @click.away="isOpen = false"
+                            class="relative w-full max-w-4xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl">
+                            <button @click="isOpen = false"
+                                class="absolute top-4 right-4 z-10 text-white bg-black/50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-black transition-colors">&times;</button>
+                            <template x-if="isOpen">
+                                <iframe class="w-full h-full" :src="'https://www.youtube.com/embed/' + videoId + '?autoplay=1'"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </template>
+                        </div>
+                    </div>
+                </template>
             </div>
         </div>
     </section>
@@ -1621,7 +1671,7 @@
     <section class="pricing-plan py-[60px] lg:py-[128px] bg-[#D8C6FF]" x-data="{ plan: 'monthly' }">
         <div class="container mx-auto px-4">
             <h2
-                class="text-center text-[36px] md:text-[52px] lg:text-[64px] leading-[110%] tracking-[-0.03em] font-bricolage font-bold text-[#240F52] mb-[40px] lg:mb-[64px]">
+                class="reveal-type text-center text-[36px] md:text-[52px] lg:text-[64px] leading-[110%] tracking-[-0.03em] font-bricolage font-bold text-[#240F52] mb-[40px] lg:mb-[64px]">
                 Flexible Plans for <br class="hidden md:block" /> Every Stage
             </h2>
 
@@ -1643,10 +1693,10 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+            <div class="reveal-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
 
                 <div
-                    class="corner__pricing-card p-[4px] bg-white rounded-[24px] relative flex flex-col h-full min-h-[650px] lg:pb-[100px]">
+                    class="reveal-card corner__pricing-card p-[4px] bg-white rounded-[24px] relative flex flex-col h-full min-h-[650px] lg:pb-[100px]">
                     <div class="p-[32px] rounded-[20px] bg-[#F9F7FE]">
                         <h3 class="text-[28px] lg:text-[32px] font-bricolage font-bold text-[#240F52] mb-[24px]">Free
                         </h3>
@@ -1680,7 +1730,7 @@
                 </div>
 
                 <div
-                    class="corner__pricing-card p-[4px] bg-white rounded-[24px] relative flex flex-col h-full min-h-[650px] lg:pb-[100px] border-2 border-[#5A147F]/20 shadow-xl">
+                    class="reveal-card corner__pricing-card p-[4px] bg-white rounded-[24px] relative flex flex-col h-full min-h-[650px] lg:pb-[100px] border-2 border-[#5A147F]/20 shadow-xl">
                     <div class="p-[32px] rounded-[20px] bg-[#F9F7FE] relative">
                         <div
                             class="absolute -top-4 right-6 bg-[#5A147F] text-white text-[12px] px-4 py-1.5 rounded-full font-bold uppercase tracking-wider">
@@ -1720,7 +1770,7 @@
                 </div>
 
                 <div
-                    class="corner__pricing-card p-[4px] bg-[#240F52] rounded-[24px] relative flex flex-col h-full min-h-[650px] lg:pb-[100px] text-white md:col-span-2 lg:col-span-1">
+                    class="reveal-card corner__pricing-card p-[4px] bg-[#240F52] rounded-[24px] relative flex flex-col h-full min-h-[650px] lg:pb-[100px] text-white md:col-span-2 lg:col-span-1">
                     <div class="p-[32px] rounded-[20px] bg-white/10">
                         <h3 class="text-[28px] lg:text-[32px] font-bricolage font-bold mb-[24px]">Enterprise</h3>
                         <div class="flex items-baseline gap-[4px] mb-[8px]">
@@ -1756,60 +1806,74 @@
         </div>
     </section>
 
-<section class="trusted-section py-20 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-4xl md:text-6xl font-bold mb-12 font-bricolage">
-            Trusted by Teams <br class="hidden md:block"> That Move Fast
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-            
-            <div class="md:col-span-4 flex flex-col bg-[#D8C6FF] rounded-[24px] overflow-hidden min-h-[450px] md:min-h-[580px]">
-                <div class="relative flex-grow">
-                    <img src="./src/images/team.png" class="absolute inset-0 w-full h-full object-cover" alt="Team">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#D8C6FF] via-transparent to-transparent"></div>
-                    <span class="absolute top-8 left-8 text-6xl font-bold font-bricolage">98%</span>
-                </div>
-                <div class="p-8 pt-4">
-                    <h3 class="text-2xl font-bold mb-4">AI Accuracy</h3>
-                    <p class="text-[18px] leading-relaxed">
-                        Tasks, notes, and docs are auto-organized with near-perfect precision — no manual tagging required.
-                    </p>
-                </div>
+    <section class="trusted-section py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="overflow-hidden">
+                <h2
+                    class="reveal-type text-4xl md:text-6xl font-bold font-bricolage text-[#240F52] mb-[64px] leading-[1.1] max-w-[900px]">
+                    Trusted by Teams <br class="hidden md:block"> That Move Fast
+                </h2>
             </div>
 
-            <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-12 gap-6">
-                
-                <div class="md:col-span-4 bg-article-heading text-white p-10 rounded-[24px] flex flex-col items-center justify-center text-center">
-                    <span class="text-5xl md:text-[76px] font-bold mb-2">1M+</span>
-                    <p class="text-lg tracking-widest font-bricolage leading-tight font-bold">Projects Built on <br> Our Platform</p>
-                </div>
+            <div class="reveal-grid grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
 
-                <div class="md:col-span-8 bg-[#F9F7FE] border border-[#D8C6FF] p-10 rounded-[24px] flex flex-col justify-between">
-                    <p class="md:text-2xl text-[18px] leading-snug font-bricolage md:pr-[8rem]">
-                        "It feels like we doubled our team overnight — without adding headcount."
-                    </p>
-                    <div class="mt-6">
-                        <p class="font-bold text-[18px] font-bricolage">Abdullah Noman</p>
-                        <p class="text-gray-400 font-uncutsans text-[18px]">Founder at FramerLab</p>
+                <div
+                    class="reveal-card-left md:col-span-4 flex flex-col bg-[#D8C6FF] rounded-[24px] overflow-hidden min-h-[450px] md:min-h-[580px] shadow-sm">
+                    <div class="relative flex-grow">
+                        <img src="./src/images/team.png" class="absolute inset-0 w-full h-full object-cover" alt="Team">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#D8C6FF] via-transparent to-transparent">
+                        </div>
+                        <span
+                            class="counter-up absolute top-8 left-8 text-6xl font-bold font-bricolage text-[#240F52]">98%</span>
+                    </div>
+                    <div class="p-8 pt-4">
+                        <h3 class="text-2xl font-bold mb-4 text-[#240F52]">AI Accuracy</h3>
+                        <p class="text-[18px] leading-relaxed text-[#240F52]/80">
+                            Tasks, notes, and docs are auto-organized with near-perfect precision.
+                        </p>
                     </div>
                 </div>
 
-                <div class="md:col-span-8 bg-[#F9F7FE] border border-[#D8C6FF] p-8 rounded-[24px] flex flex-col justify-center">
-                    <span class="text-[40px] font-bold block mb-4 font-bricolage">98%</span>
-                    <h4 class="font-bold text-[18px] mb-2 uppercase tracking-wide font-bricolage">Categorization Precision</h4>
-                    <p class="text-gray-500 font-uncutsans text-[18px]">Your tasks, notes, and documents are instantly auto-organized by intelligent AI.</p>
-                </div>
+                <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-12 gap-6">
 
-                <div class="md:col-span-4 bg-primary p-8 rounded-[24px] flex flex-col items-center justify-center text-center">
-                    <span class="text-[40px] font-bold mb-2 font-bricolage">60%</span>
-                    <p class="text-[18px] font-bold text-[18px] tracking-tighter font-bricolage">Less Time Wasted</p>
+                    <div
+                        class="reveal-card md:col-span-4 bg-[#240F52] text-white p-10 rounded-[24px] flex flex-col items-center justify-center text-center">
+                        <span class="text-5xl md:text-[76px] font-bold mb-2">1M+</span>
+                        <p class="text-lg tracking-widest font-bricolage leading-tight font-bold">Projects Built on <br>
+                            Our Platform</p>
+                    </div>
+
+                    <div
+                        class="reveal-card md:col-span-8 bg-[#F9F7FE] border border-[#D8C6FF] p-10 rounded-[24px] flex flex-col justify-between">
+                        <p class="md:text-2xl text-[18px] leading-snug font-bricolage md:pr-[8rem] text-[#240F52]">
+                            "It feels like we doubled our team overnight — without adding headcount."
+                        </p>
+                        <div class="mt-6">
+                            <p class="font-bold text-[18px] font-bricolage text-[#240F52]">Abdullah Noman</p>
+                            <p class="text-gray-400 font-uncutsans text-[18px]">Founder at FramerLab</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="reveal-card md:col-span-8 bg-[#F9F7FE] border border-[#D8C6FF] p-8 rounded-[24px] flex flex-col justify-center">
+                        <span
+                            class="counter-up text-[40px] font-bold block mb-4 font-bricolage text-[#240F52]">98%</span>
+                        <h4 class="font-bold text-[18px] mb-2 uppercase tracking-wide font-bricolage text-[#240F52]">
+                            Categorization Precision</h4>
+                        <p class="text-gray-500 font-uncutsans text-[18px]">Your tasks, notes, and documents are
+                            instantly auto-organized by intelligent AI.</p>
+                    </div>
+
+                    <div
+                        class="reveal-card md:col-span-4 bg-[#D8C6FF] p-8 rounded-[24px] flex flex-col items-center justify-center text-center">
+                        <span class="counter-up text-[40px] font-bold mb-2 font-bricolage text-[#240F52]">60%</span>
+                        <p class="text-[18px] font-bold tracking-tighter font-bricolage text-[#240F52]">Less Time Wasted
+                        </p>
+                    </div>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="loved-by-teams py-[80px]">
         <div class="container mx-auto px-4">
@@ -2180,7 +2244,7 @@
     </div>
 
     <!-- GSAP CDN -->
-    <script src="src/js/gsap.min.js"></script>
+    <!-- <script src="src/js/gsap.min.js"></script> -->
     <script type="module" src="src/main.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -2294,6 +2358,98 @@
                 duration: 0.8,
                 ease: "power2.out"
             }, "-=0.8");
+
+        // Trusted by team section animations
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // --- 1. GLOBAL HEADINGS (.reveal-type) ---
+            const headings = document.querySelectorAll('.reveal-type');
+            headings.forEach((heading) => {
+                const originalHTML = heading.innerHTML;
+                const formattedHTML = originalHTML.split(/(\s+|<br.*?>)/).map(part => {
+                    if (part.trim() === '' || part.includes('<br')) return part;
+                    return `<span class="inline-block overflow-hidden pb-2 -mb-2">
+                        <span class="word inline-block translate-y-[120%]">${part}</span>
+                    </span>`;
+                }).join('');
+                heading.innerHTML = formattedHTML;
+                heading.style.visibility = 'visible';
+
+                gsap.to(heading.querySelectorAll('.word'), {
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.08,
+                    ease: 'power4.out',
+                    scrollTrigger: {
+                        trigger: heading,
+                        start: 'top 90%',
+                        toggleActions: 'restart none restart none',
+                    }
+                });
+            });
+
+            // --- 2. GLOBAL STAGGERED GRIDS (.reveal-grid) ---
+            const grids = document.querySelectorAll('.reveal-grid');
+            grids.forEach((grid) => {
+                gsap.from(grid.querySelectorAll('.reveal-card'), {
+                    y: 60,
+                    opacity: 0,
+                    duration: 1.2,
+                    stagger: 0.25,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: grid,
+                        start: "top 80%",
+                        toggleActions: "restart none restart none"
+                    }
+                });
+            });
+
+            // --- 3. GLOBAL COUNTER-UP (.counter-up) ---
+            const counters = document.querySelectorAll('.counter-up');
+            counters.forEach((counter) => {
+                const targetValue = parseFloat(counter.innerText);
+                const suffix = counter.innerText.replace(/[0-9.]/g, ''); // Extract %, +, M, etc.
+
+                // Reset text to 0 initially
+                counter.innerText = "0" + suffix;
+
+                gsap.to(counter, {
+                    innerText: targetValue,
+                    duration: 2,
+                    snap: { innerText: 1 }, // Steps by 1 (or 0.1 for decimals)
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: counter,
+                        start: "top 90%",
+                        toggleActions: "restart none restart none",
+                    },
+                    onUpdate: function () {
+                        // Keep the suffix (%, M, +) during the count
+                        counter.innerText = Math.ceil(this.targets()[0].innerText) + suffix;
+                    }
+                });
+            });
+
+            // --- 4. GLOBAL BUTTON REVEAL (.reveal-button) ---
+            const buttons = document.querySelectorAll('.reveal-button');
+            buttons.forEach((btn) => {
+                gsap.from(btn, {
+                    y: 30,              // Rise up from below
+                    opacity: 0,
+                    scale: 0.8,         // Start slightly smaller
+                    duration: 2,
+                    ease: "back.out(1.7)", // The "Spring" effect
+                    scrollTrigger: {
+                        trigger: btn,
+                        start: "top 95%", // Trigger as soon as it nears the screen
+                        toggleActions: "restart none restart none"
+                    }
+                });
+            });
+
+        });
     </script>
 </body>
 
