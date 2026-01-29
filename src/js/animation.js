@@ -260,7 +260,7 @@ export const initGSAPAnimations = () => {
 
     lists.forEach((list) => {
         const items = list.querySelectorAll('li');
-        
+
         gsap.from(items, {
             scrollTrigger: {
                 trigger: list,
@@ -275,7 +275,7 @@ export const initGSAPAnimations = () => {
             ease: "expo.out",
             clearProps: "all" // Cleans up styles after animation
         });
-        
+
         // Bonus: Animate the dots separately for a "Pop" effect
         const dots = list.querySelectorAll('span:first-child');
         gsap.from(dots, {
@@ -306,26 +306,48 @@ export const initGSAPAnimations = () => {
 
     // Stack Card Anim 
     // 3. Find all stacking wrappers on the page
-        const wrappers = document.querySelectorAll('.gsap-pin-wrapper');
+    const wrappers = document.querySelectorAll('.gsap-pin-wrapper');
 
-        wrappers.forEach((wrapper) => {
-            const panels = wrapper.querySelectorAll('.gsap-pin-panel');
-            
-            ScrollTrigger.matchMedia({
-                "(min-width: 1024px)": function() {
-                    panels.forEach((panel) => {
-                        ScrollTrigger.create({
-                            trigger: panel,
-                            start: "top 22%", // Adjust based on your header height
-                            endTrigger: wrapper,
-                            end: "bottom 85%",
-                            pin: true,
-                            pinSpacing: false,
-                            scrub: true,
-                            invalidateOnRefresh: true
-                        });
+    wrappers.forEach((wrapper) => {
+        const panels = wrapper.querySelectorAll('.gsap-pin-panel');
+
+        ScrollTrigger.matchMedia({
+            "(min-width: 1024px)": function () {
+                panels.forEach((panel) => {
+                    ScrollTrigger.create({
+                        trigger: panel,
+                        start: "top 22%", // Adjust based on your header height
+                        endTrigger: wrapper,
+                        end: "bottom 85%",
+                        pin: true,
+                        pinSpacing: false,
+                        scrub: true,
+                        invalidateOnRefresh: true
                     });
-                }
-            });
+                });
+            }
         });
+    });
+
+    // Select all paragraphs inside the animated aside or any element with .reveal-text
+    const paragraphs = document.querySelectorAll('.reveal-text p');
+
+    paragraphs.forEach((p) => {
+        // 1. Split text into lines
+        const split = new SplitText(p, { type: "lines", linesClass: "overflow-hidden" });
+
+        // 2. Animate each line from below the 'mask'
+        gsap.from(split.lines, {
+            y: 40,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power4.out",
+            stagger: 0.1, // Creates the 'wave' effect between lines
+            scrollTrigger: {
+                trigger: p,
+                start: "top 85%", // Starts when the paragraph enters the bottom 15% of screen
+                toggleActions: "restart none restart none", // Plays once
+            }
+        });
+    });
 }
