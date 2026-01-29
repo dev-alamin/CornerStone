@@ -58,6 +58,10 @@
         opacity: 0;
     }
 }
+/* Add this to your main CSS file */
+.ease-expo {
+    transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
+}
 
 /* Prevents a flash of unstyled content */
 /* .reveal-type {

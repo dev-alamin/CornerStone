@@ -1,9 +1,22 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from 'gsap/SplitText';
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export const initGSAPAnimations = () => {
-    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1.5,               // How long it takes to "catch up" to your scroll
+    effects: true,             // Allows data-speed="1.2" on HTML elements
+    smoothTouch: 0.1,           // Adds a tiny bit of smoothing to mobile touch
+    normalizeScroll: false,
+    ignoreMobileResize: true,
+    });
+
     // 1. Hero Content Entrance with ScrollTrigger
     const tl = gsap.timeline({
         scrollTrigger: {
@@ -94,7 +107,7 @@ export const initGSAPAnimations = () => {
         gsap.from(split.chars, {
             scrollTrigger: {
                 trigger: heading,
-                start: 'top 80%', // Starts when heading is 85% from top of viewport
+                start: 'top 90%', // Starts when heading is 85% from top of viewport
                 end: 'bottom center',
                 toggleActions: 'restart none restart none',
             },

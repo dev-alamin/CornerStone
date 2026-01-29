@@ -67,5 +67,3 @@ window.onload = function () {
     if (!preloader) return;
     preloader.style.display = 'none';
 };
-
-
