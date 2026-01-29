@@ -2,8 +2,8 @@ import Alpine from 'alpinejs'
 import { collapse } from '@alpinejs/collapse';
 import {initGSAPAnimations} from './js/animation.js';
 
-// import Swiper from 'swiper';
-// import 'swiper/css';
+import Swiper from 'swiper';
+import 'swiper/css';
 // import 'swiper/css/navigation';
 
 import { initAccordion } from "./scripts/accordion.js";

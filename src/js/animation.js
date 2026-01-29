@@ -3,6 +3,10 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from 'gsap/SplitText';
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
+gsap.config({
+    nullTargetWarn: false,
+});
+
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export const initGSAPAnimations = () => {
@@ -248,6 +252,39 @@ export const initGSAPAnimations = () => {
                 ease: "elastic.out(1, 0.3)",
                 duration: 1.5
             });
+        });
+    });
+
+    // List item anim 
+    const lists = document.querySelectorAll('.reveal-list');
+
+    lists.forEach((list) => {
+        const items = list.querySelectorAll('li');
+        
+        gsap.from(items, {
+            scrollTrigger: {
+                trigger: list,
+                start: "top 85%", // Starts when the list is 85% from the top
+                toggleActions: "restart none restart none"
+            },
+            y: 30,
+            opacity: 0,
+            blur: 10,
+            stagger: 0.25, // Delay between each item
+            duration: 1,
+            ease: "expo.out",
+            clearProps: "all" // Cleans up styles after animation
+        });
+        
+        // Bonus: Animate the dots separately for a "Pop" effect
+        const dots = list.querySelectorAll('span:first-child');
+        gsap.from(dots, {
+            scrollTrigger: { trigger: list, start: "top 85%" },
+            scale: 0,
+            rotation: 90,
+            stagger: 0.15,
+            duration: 0.6,
+            ease: "back.out(2)"
         });
     });
 
