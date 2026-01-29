@@ -16,6 +16,78 @@
 
 <body class="relative">
 
+    <!-- global button svg  -->
+    <svg class="absolute invisible w-0 h-0" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                    result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+    <!-- global button ends  -->
+
+    <!-- Preloader Start -->
+    <div x-data="{ loaded: false, removed: false }" x-init="
+    window.addEventListener('load', () => {
+      setTimeout(() => loaded = true, 400)
+      setTimeout(() => removed = true, 2800)
+    })
+  " x-show="!removed" x-transition.opacity.duration.500ms id="preloader"
+        class="fixed inset-0 z-[9999] flex items-center justify-center bg-neutral-strong overflow-hidden pointer-events-none font-uncutsans">
+
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-[600px] h-[600px] rounded-full blur-[120px] bg-gradient-to-tr from-primary/40 via-primary/10 to-transparent
+             transition-all duration-[1600ms] ease-out"
+                :class="loaded ? 'scale-150 opacity-0' : 'scale-100 opacity-40'"></div>
+        </div>
+
+        <div class="absolute inset-0">
+            <template x-for="(panel, i) in [0,1,2,3]" :key="i">
+                <div class="absolute w-1/2 h-1/2 bg-neutral-strong border border-white/5
+               transition-transform duration-[1300ms] ease-[cubic-bezier(0.85,0,0.15,1)]" :class="[
+          i === 0 && (loaded ? '-translate-x-full -translate-y-full' : 'top-0 left-0'),
+          i === 1 && (loaded ? 'translate-x-full -translate-y-full' : 'top-0 right-0'),
+          i === 2 && (loaded ? '-translate-x-full translate-y-full' : 'bottom-0 left-0'),
+          i === 3 && (loaded ? 'translate-x-full translate-y-full' : 'bottom-0 right-0')
+        ]"></div>
+            </template>
+        </div>
+
+        <div class="relative z-10 flex flex-col items-center">
+
+            <h1
+                class="flex text-neutral-subtle font-bricolage text-5xl md:text-[84px] font-bold tracking-tight leading-none overflow-hidden">
+                <template x-for="(char, i) in 'Cornerstone'.split('')" :key="i">
+                    <span class="inline-block transition-all duration-700 ease-in-out"
+                        :class="loaded ? 'opacity-0 -translate-y-8 blur-md' : 'opacity-100 translate-y-0 blur-0'"
+                        :style="loaded ? `transition-delay: ${i * 40}ms` : ''">
+                        <span :class="i >= 6 ? 'text-primary' : ''" x-text="char"></span>
+                    </span>
+                </template>
+            </h1>
+
+            <div class="mt-4 h-[1px] bg-primary transition-all duration-700 ease-in-out"
+                :class="loaded ? 'w-0 opacity-0' : 'w-32 opacity-100'" :style="loaded ? 'transition-delay: 100ms' : ''">
+            </div>
+
+            <p class="mt-6 text-primary text-[11px] uppercase tracking-[0.7em]
+             transition-all duration-500 ease-in-out"
+                :class="loaded ? 'opacity-0 translate-y-4 blur-sm' : 'opacity-100 translate-y-0 blur-0'"
+                :style="loaded ? 'transition-delay: 0ms' : ''">
+                Digital Excellence
+            </p>
+        </div>
+
+        <div class="absolute w-3 h-3 rotate-45 border border-primary/50
+           animate-[pulse_1.2s_ease-in-out_infinite]
+           transition-all duration-500" :class="loaded ? 'scale-0 opacity-0' : 'scale-100 opacity-100'"></div>
+
+    </div>
+    <!-- Preloader End -->
+
     <!-- Header Section Start -->
     <header x-data="{ mobileMenuOpen: false, activeDropdown: null }"
         class="fixed w-full px-4 md:px-8 py-4 z-50 backdrop-blur-md">
@@ -39,7 +111,8 @@
                                 <path d="m6 9 6 6 6-6" />
                             </svg>
                         </a>
-                        <div class="dropdown-menu absolute z-50 left-1/2 -translate-x-1/2 top-full mt-[-20px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 lg:w-[946px] w-full bg-white dark:bg-neutral-strong rounded-[20px] p-4 flex items-start md:gap-x-6 gap-y-6 border border-neutral-subtle dark:border-white/10 shadow-xl">
+                        <div
+                            class="dropdown-menu absolute z-50 left-1/2 -translate-x-1/2 top-full mt-[-20px] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0 lg:w-[946px] w-full bg-white dark:bg-neutral-strong rounded-[20px] p-4 flex items-start md:gap-x-6 gap-y-6 border border-neutral-subtle dark:border-white/10 shadow-xl">
 
                             <div class="flex-1 space-y-3">
                                 <ul class="space-y-2">
@@ -395,15 +468,39 @@
                group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 
                transition-all duration-300 z-50">
                             <li>
+                                <a href="article-support.html"
+                                    class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
+                                    Article Support
+                                </a>
+                            </li>
+                            <li>
                                 <a href="help-knowledge-based.html"
                                     class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
                                     Knowledgebase
                                 </a>
                             </li>
                             <li>
-                                <a href="help-center.html"
+                                <a href="help-contact.html"
                                     class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
-                                    Help Center
+                                    Help Contact
+                                </a>
+                            </li>
+                            <li>
+                                <a href="legals.html"
+                                    class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
+                                    Terms & Conditions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="login.html"
+                                    class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
+                                    Login
+                                </a>
+                            </li>
+                            <li>
+                                <a href="signup.html"
+                                    class="block px-4 py-3 text-neutral-base dark:text-white hover:bg-primary/10 rounded-[8px] transition-colors">
+                                    Sign Up
                                 </a>
                             </li>
                         </ul>
@@ -454,12 +551,19 @@
                 </ul>
             </nav>
 
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3 md:gap-6">
                 <div class="hidden md:flex text-white gap-[8px]">
-                    <a href="#" class="px-[24px] py-[12px] font-bricolage text-[15px]">Login</a>
-                    <a href="#"
-                        class="px-[20px] py-[12px] border-[#D8C6FF66] border-[1px] rounded-[8px] text-[#D8C6FF] font-bricolage text-[15px] hover:bg-white/5 transition-colors">Try
-                        for Free</a>
+                    <a href="#" class="px-[24px] py-[12px] font-bricolage text-[15px] md:text-[16px]">Login/Signup</a>
+
+                    <a href="#" class="corner-blob-btn btn-light-fill px-8 py-[10px] font-medium font-bricolage">
+                        <span class="relative z-10">Try for Free</span>
+                        <span class="blob-container">
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                        </span>
+                    </a>
+
                 </div>
 
                 <button @click="mobileMenuOpen = !mobileMenuOpen" class="xl:hidden p-2 focus:outline-none">
@@ -517,13 +621,13 @@
 
                 <div class="border-b border-white/5 pb-4">
                     <button @click="activeDropdown = activeDropdown === 'help' ? null : 'help'"
-                            class="flex justify-between items-center w-full text-white font-bricolage text-xl">
-                            Help Center
-                            <svg :class="activeDropdown === 'help' ? 'rotate-180' : ''"
-                                class="transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <path d="m6 9 6 6 6-6" />
-                            </svg>
+                        class="flex justify-between items-center w-full text-white font-bricolage text-xl">
+                        Help Center
+                        <svg :class="activeDropdown === 'help' ? 'rotate-180' : ''" class="transition-transform"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
                     </button>
                     <div x-show="activeDropdown === 'help'" x-collapse class="mt-4 grid grid-cols-1 gap-2">
                         <a href="help-knowledge-based.html"
@@ -535,13 +639,13 @@
 
                 <div class="border-b border-white/5 pb-4">
                     <button @click="activeDropdown = activeDropdown === 'blog' ? null : 'blog'"
-                            class="flex justify-between items-center w-full text-white font-bricolage text-xl">
-                            Blog
-                            <svg :class="activeDropdown === 'blog' ? 'rotate-180' : ''"
-                                class="transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2">
-                                <path d="m6 9 6 6 6-6" />
-                            </svg>
+                        class="flex justify-between items-center w-full text-white font-bricolage text-xl">
+                        Blog
+                        <svg :class="activeDropdown === 'blog' ? 'rotate-180' : ''" class="transition-transform"
+                            width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
                     </button>
                     <div x-show="activeDropdown === 'blog'" x-collapse class="mt-4 grid grid-cols-1 gap-2">
                         <a href="blog.html"
@@ -567,479 +671,527 @@
     </header>
     <!-- Header Section End -->
 
-    <section class="corner-gradiant-one pt-[136px] sm:pt-[178px] pb-[64px]">
-        <div class="container">
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
 
-            <div class="flex justify-between flex-col xl:flex-row gap-[114px] sm:gap-[82px]">
-                <div class="mx-auto xl:mx-0 sm:w-[440px] w-full">
-                    <h2
-                        class="text-[36px] sm:text-[54px] xl:text-[64px] leading-[110%] font-bricolage tracking-[-0.03px] font-bold text-white mb-[16px] text-left sm:text-center xl:text-left">
-                        Get in Touch</h2>
-                    <p
-                        class="font-normal text-[#FFFFFFB2] xl:text-[#D8C6FFB2] text-[22px] leading-[100%] mb-[40px] sm:mb-[64px] font-uncutsans text-left sm:text-center xl:text-left">
-                        We’ll help you find the perfect plan, no matter business size.
-                    </p>
-                    <div class="flex flex-col sm:flex-row xl:flex-col gap-[64px]">
-                        <div class="sm:mb-[64px] text-left sm:text-center xl:text-left">
-                            <svg class="mb-[16px] sm:mx-auto xl:mx-0" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M5.31726 1.28657C5.88395 1.40369 6.33524 1.78443 6.61564 2.28746L7.50885 3.88991C7.83786 4.48011 8.11473 4.9768 8.29554 5.40857C8.48735 5.86658 8.60126 6.31824 8.54919 6.8176C8.49711 7.31696 8.29246 7.7354 8.01029 8.14399C7.74428 8.52917 7.37088 8.95804 6.92718 9.46767L5.61417 10.9759C5.37889 11.2461 5.26124 11.3812 5.25049 11.5501C5.23974 11.719 5.33616 11.8633 5.529 12.1518C7.17259 14.6109 9.38773 16.8268 11.8488 18.4718C12.1374 18.6647 12.2816 18.7611 12.4505 18.7503C12.6194 18.7396 12.7546 18.6219 13.0248 18.3866L14.5331 17.0736C15.0427 16.6299 15.4716 16.2565 15.8568 15.9905C16.2653 15.7083 16.6838 15.5036 17.1831 15.4516C17.6825 15.3995 18.1342 15.5134 18.5922 15.7052C19.0239 15.886 19.5206 16.1629 20.1107 16.4918L21.7133 17.3851C22.2163 17.6655 22.5971 18.1168 22.7142 18.6835C22.8325 19.2561 22.658 19.8316 22.2724 20.3047C20.8735 22.021 18.6322 23.1139 16.281 22.6396C14.8358 22.348 13.4098 21.8623 11.6851 20.8732C8.2197 18.8858 5.11263 15.777 3.12755 12.3157C2.13843 10.591 1.65272 9.165 1.36118 7.71974C0.88688 5.36852 1.97971 3.12724 3.69608 1.72833C4.16911 1.34279 4.74466 1.16822 5.31726 1.28657Z"
-                                    fill="#D8C6FF" />
-                            </svg>
-                            <h4 class="mb-[4px] text-white text-[22px] leading-[100%] font-bold">Call Us</h4>
-                            <p class="text-[15px] font-medium leading-[100%] opacity-70 text-white mb-[16px]">Mon-Fri,
-                                from
-                                8AM to 5PM.</p>
-                            <a href="#"
-                                class="text-[#D8C6FF] text-[18px] leading-[100%] font-semi-bold">+8801781490105</a>
+            <section class="corner-gradiant-one pt-[136px] sm:pt-[178px] pb-[64px]">
+                <div class="container">
+
+                    <div class="flex justify-between flex-col xl:flex-row gap-[114px] sm:gap-[82px]">
+                        <div class="mx-auto xl:mx-0 sm:w-[440px] w-full">
+                            <h2
+                                class="reveal-type text-[36px] sm:text-[54px] xl:text-[64px] leading-[110%] font-bricolage tracking-[-0.03px] font-bold text-white mb-[16px] text-left sm:text-center xl:text-left">
+                                Get in Touch</h2>
+                            <p
+                                class="reveal-type font-normal text-[#FFFFFFB2] xl:text-[#D8C6FFB2] text-[22px] leading-[100%] mb-[40px] sm:mb-[64px] font-uncutsans text-left sm:text-center xl:text-left">
+                                We’ll help you find the perfect plan, no matter business size.
+                            </p>
+                            <div class="reveal-grid flex flex-col sm:flex-row xl:flex-col gap-[64px]">
+                                <div class="reveal-card sm:mb-[64px] text-left sm:text-center xl:text-left">
+                                    <svg class="mb-[16px] sm:mx-auto xl:mx-0" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.31726 1.28657C5.88395 1.40369 6.33524 1.78443 6.61564 2.28746L7.50885 3.88991C7.83786 4.48011 8.11473 4.9768 8.29554 5.40857C8.48735 5.86658 8.60126 6.31824 8.54919 6.8176C8.49711 7.31696 8.29246 7.7354 8.01029 8.14399C7.74428 8.52917 7.37088 8.95804 6.92718 9.46767L5.61417 10.9759C5.37889 11.2461 5.26124 11.3812 5.25049 11.5501C5.23974 11.719 5.33616 11.8633 5.529 12.1518C7.17259 14.6109 9.38773 16.8268 11.8488 18.4718C12.1374 18.6647 12.2816 18.7611 12.4505 18.7503C12.6194 18.7396 12.7546 18.6219 13.0248 18.3866L14.5331 17.0736C15.0427 16.6299 15.4716 16.2565 15.8568 15.9905C16.2653 15.7083 16.6838 15.5036 17.1831 15.4516C17.6825 15.3995 18.1342 15.5134 18.5922 15.7052C19.0239 15.886 19.5206 16.1629 20.1107 16.4918L21.7133 17.3851C22.2163 17.6655 22.5971 18.1168 22.7142 18.6835C22.8325 19.2561 22.658 19.8316 22.2724 20.3047C20.8735 22.021 18.6322 23.1139 16.281 22.6396C14.8358 22.348 13.4098 21.8623 11.6851 20.8732C8.2197 18.8858 5.11263 15.777 3.12755 12.3157C2.13843 10.591 1.65272 9.165 1.36118 7.71974C0.88688 5.36852 1.97971 3.12724 3.69608 1.72833C4.16911 1.34279 4.74466 1.16822 5.31726 1.28657Z"
+                                            fill="#D8C6FF" />
+                                    </svg>
+                                    <h4 class="mb-[4px] text-white text-[22px] leading-[100%] font-bold">Call Us</h4>
+                                    <p class="text-[15px] font-medium leading-[100%] opacity-70 text-white mb-[16px]">
+                                        Mon-Fri,
+                                        from
+                                        8AM to 5PM.</p>
+                                    <a href="#"
+                                        class="text-[#D8C6FF] text-[18px] leading-[100%] font-semi-bold">+8801781490105</a>
+                                </div>
+                                <div class="reveal-card sm:mb-[64px] text-left sm:text-center xl:text-left">
+                                    <svg class="mb-[16px] sm:mx-auto xl:mx-0" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12.0015 1.25C8.17538 1.25 4.52505 3.51303 2.99714 7.08468C1.57518 10.4086 2.34496 13.2373 3.94771 15.6595C5.26177 17.6454 7.17835 19.4178 8.90742 21.0168L8.90758 21.0169L8.90824 21.0175C9.23768 21.3222 9.56031 21.6206 9.87066 21.9129L9.87231 21.9145C10.4473 22.4528 11.2112 22.75 12.0015 22.75C12.7919 22.75 13.5558 22.4528 14.1308 21.9144C14.4243 21.6396 14.7286 21.3592 15.039 21.0732L15.0391 21.0732L15.0391 21.0732C16.787 19.4627 18.7304 17.672 20.0582 15.6609C21.6591 13.2362 22.4261 10.4045 21.0059 7.08468C19.478 3.51303 15.8277 1.25 12.0015 1.25ZM12 7C9.79086 7 8 8.79086 8 11C8 13.2091 9.79086 15 12 15C14.2091 15 16 13.2091 16 11C16 8.79086 14.2091 7 12 7Z"
+                                            fill="#D8C6FF" />
+                                    </svg>
+                                    <h4 class="mb-[4px] text-white text-[22px] leading-[100%] font-bold">Visit Us</h4>
+                                    <p class="text-[15px] font-medium leading-[100%] opacity-70 text-white mb-[16px]">
+                                        Visit our
+                                        office HQ.</p>
+                                    <a href="#" class="text-[#D8C6FF] text-[18px] leading-[100%] font-semi-bold">Visit
+                                        on Google
+                                        Maps</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="sm:mb-[64px] text-left sm:text-center xl:text-left">
-                            <svg class="mb-[16px] sm:mx-auto xl:mx-0" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M12.0015 1.25C8.17538 1.25 4.52505 3.51303 2.99714 7.08468C1.57518 10.4086 2.34496 13.2373 3.94771 15.6595C5.26177 17.6454 7.17835 19.4178 8.90742 21.0168L8.90758 21.0169L8.90824 21.0175C9.23768 21.3222 9.56031 21.6206 9.87066 21.9129L9.87231 21.9145C10.4473 22.4528 11.2112 22.75 12.0015 22.75C12.7919 22.75 13.5558 22.4528 14.1308 21.9144C14.4243 21.6396 14.7286 21.3592 15.039 21.0732L15.0391 21.0732L15.0391 21.0732C16.787 19.4627 18.7304 17.672 20.0582 15.6609C21.6591 13.2362 22.4261 10.4045 21.0059 7.08468C19.478 3.51303 15.8277 1.25 12.0015 1.25ZM12 7C9.79086 7 8 8.79086 8 11C8 13.2091 9.79086 15 12 15C14.2091 15 16 13.2091 16 11C16 8.79086 14.2091 7 12 7Z"
-                                    fill="#D8C6FF" />
-                            </svg>
-                            <h4 class="mb-[4px] text-white text-[22px] leading-[100%] font-bold">Visit Us</h4>
-                            <p class="text-[15px] font-medium leading-[100%] opacity-70 text-white mb-[16px]">Visit our
-                                office HQ.</p>
-                            <a href="#" class="text-[#D8C6FF] text-[18px] leading-[100%] font-semi-bold">Visit on Google
-                                Maps</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full xl:w-[611px] bg-white sm:p-[32px] p-[24px] rounded-[8px]">
-                    <h2
-                        class="font-bold text-[32px] sm:text-[40px] leading-[100%] text-[#240F52] font-bricolage mb-[32px]">
-                        Write us an
-                        email</h2>
-                    <div class="flex flex-col sm:flex-row gap-[16px] mb-[24px]">
-                        <div class="w-full sm:w-[50%]">
-                            <label for="fname"
-                                class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">First
-                                Name</label>
-                            <input type="text" placeholder="e.g. John"
-                                class="bg-[#E6E5E6] p-[16px] rounded-[8px] outline-[0] w-full placeholder-[#4F4D53] text-[15px] leading-[100%] font-medium"
-                                id="fname" />
-                        </div>
-                        <div class="w-full sm:w-[50%]">
-                            <label for="lname"
-                                class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">Last
-                                Name</label>
-                            <input type="text" placeholder="e.g. John"
-                                class="bg-[#E6E5E6] p-[16px] rounded-[8px] outline-[0] w-full placeholder-[#4F4D53] text-[15px] leading-[100%] font-medium"
-                                id="lname" />
-                        </div>
-                    </div>
-                    <div class="w-full mb-[24px]">
-                        <label for="email"
-                            class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">Email</label>
-                        <input type="email" placeholder="yourname@domain.com"
-                            class="bg-[#E6E5E6] p-[16px] rounded-[8px] outline-[0] w-full placeholder-[#4F4D53] text-[15px] leading-[100%] font-medium"
-                            id="email" />
-                    </div>
-                    <div class="w-full mb-[24px] pb-[24px] border-b-[1px] border-[#E6E5E6]">
-                        <label for="phonenumber"
-                            class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">Phone
-                            Number</label>
-                        <input type="text" placeholder="Enter your phone"
-                            class="bg-[#E6E5E6] p-[16px] rounded-[8px] outline-[0] w-full placeholder-[#4F4D53] text-[15px] leading-[100%] font-medium"
-                            id="phonenumber" />
-                    </div>
-                    <h3 class="font-bold text-[22px] leading-[100%] text-[#240F52] mb-[24px]">How we can help?</h3>
-                    <div class="w-full mb-[24px]">
-                        <label for="reseson-contact"
-                            class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">Reason for
-                            contact*</label>
-                        <select
-                            class="w-full border-[1px] border-[#D8C6FF] p-[16px] rounded-[8px] outline-0 text-[15px] text-[#4F4D53] font-medium appearance-none"
-                            name="" id="reseson-contact">
-                            <option value="">Select</option>
-                            <option value="">Option 1</option>
-                            <option value="">Option 2</option>
-                            <option value="">Option 3</option>
-                        </select>
-                    </div>
-                    <div class="w-full mb-[24px]">
-                        <label for="moredetails"
-                            class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">Provide
-                            more details*</label>
-                        <textarea placeholder="How are you looking to use it..."
-                            class="w-full border-[1px] border-[#D8C6FF] p-[16px] rounded-[8px] outline-0 text-[15px] placeholder-[#4F4D53] text-[#4F4D53] font-medium appearance-none px-[16px] py-[20px]"
-                            id="moredetails"></textarea>
-                    </div>
-                    <button type="button"
-                        class="w-full p-[16px] font-uncutsans font-medium text-[18px] text-white font-medium leading-[100%] bg-[#5A147F] rounded-[12px]">Send
-                        Mail</button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <section class="knowledge-base pt-[128px]">
-        <div class="container">
-            <h2
-                class="text-[32px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[32px] text-center">
-                Welcome
-                to Knowledge Base</h2>
-            <form method="post" action="" class="flex flex-col sm:block mx-auto sm:w-[462px] w-full">
-                <input
-                    class="border-[1px] sm:w-[344px] w-full placeholder-[#4F4D53] text-[15px] leading-[100%] font-medium outline-[0] sm:mb-[0] mb-[16px] sm:mr-[8px] mr-[0] border-[#D8C6FFB2] rounded-[8px] py-[16px] px-[20px]"
-                    type="text" placeholder="What you’re looking for?" />
-                <button
-                    class="px-[20px] py-[16px] bg-[#5A147F] text-white rounded-[8px] text-[#D8C6FF] text-[18px] font-semi-bold leading-[100%]"
-                    type="submit">Search</button>
-            </form>
-            <div
-                class="flex flex-wrap lg:flex-nowrap gap-[16px] mt-[64px] border-b-[1px] border-[#D8C6FF] pb-[80px] sm:pb-[128px] -mr-[8px]">
-                <div
-                    class="w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] bg-[#F9F7FE] px-[16px] py-[24px] rounded-[16px]">
-                    <img class="w-[80px] h-[80px] mb-[128px]" src="./src/images/help-center/04.png"
-                        alt="Knowledge Base" />
-                    <h3 class="font-bold text-[18px] leading-[100%] mb-[8px] text-[#240F52]">Getting Started</h3>
-                    <p class="text-[15px] leading-[100%] font-uncutsans opacity-70">Instantly find tasks, notes, or
-                        people — <br /> even from past projects.</p>
-                </div>
-                <div
-                    class="w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] bg-[#F9F7FE] px-[16px] py-[24px] rounded-[16px]">
-                    <img class="w-[80px] h-[80px] mb-[128px]" src="./src/images/help-center/05.png"
-                        alt="Knowledge Base" />
-                    <h3 class="font-bold text-[18px] leading-[100%] mb-[8px] text-[#240F52]">Features</h3>
-                    <p class="text-[15px] leading-[100%] font-uncutsans opacity-70">Collaborate live on documents that
-                        stay organized automatically.</p>
-                </div>
-                <div
-                    class="w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] bg-[#F9F7FE] px-[16px] py-[24px] rounded-[16px]">
-                    <img class="w-[80px] h-[80px] mb-[128px]" src="./src/images/help-center/06.png"
-                        alt="Knowledge Base" />
-                    <h3 class="font-bold text-[18px] leading-[100%] mb-[8px] text-[#240F52]">Sales</h3>
-                    <p class="text-[15px] leading-[100%] font-uncutsans opacity-70">Turn chaos into clarity with
-                        auto-generated recaps of meetings.</p>
-                </div>
-                <div
-                    class="w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] bg-[#F9F7FE] px-[16px] py-[24px] rounded-[16px]">
-                    <img class="w-[80px] h-[80px] mb-[128px]" src="./src/images/help-center/07.png"
-                        alt="Knowledge Base" />
-                    <h3 class="font-bold text-[18px] leading-[100%] mb-[8px] text-[#240F52]">Billing</h3>
-                    <p class="text-[15px] leading-[100%] font-uncutsans opacity-70">Create structures that match your
-                        business — not the other way around.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pt-[80px] sm:pt-[128px] pb-[128px]">
-        <div class="container">
-            <div class="flex items-center mb-[64px] justify-between">
-                <h3 class="text-[24px] sm:text-[32px] leading-[100%] font-bold font-bricolage">Popular Articles</h3>
-                <a href="#"
-                    class="text-[16px] sm:text-[18px] leading-[100%] font-semi-bold border-[1px] border-[#D8C6FF66] text-[#5A147F] px-[20px] py-[12px] rounded-[8px]">Read
-                    All Articles</a>
-            </div>
-            <div class="flex flex-wrap lg:gap-x-[32px] sm:gap-x-[16px] gap-y-[32px] sm:gap-y-[64px]">
-                <div
-                    class="border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
-                    <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in the free
-                        plan?</h3>
-                    <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to core
-                        features, up to 3 projects, and AI-assisted notes.</p>
-                    <a class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full Article</a>
-                </div>
-                <div
-                    class="border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
-                    <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in the free
-                        plan?</h3>
-                    <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to core
-                        features, up to 3 projects, and AI-assisted notes.</p>
-                    <a class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full Article</a>
-                </div>
-                <div
-                    class="border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
-                    <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in the free
-                        plan?</h3>
-                    <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to core
-                        features, up to 3 projects, and AI-assisted notes.</p>
-                    <a class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full Article</a>
-                </div>
-                <div
-                    class="border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
-                    <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in the free
-                        plan?</h3>
-                    <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to core
-                        features, up to 3 projects, and AI-assisted notes.</p>
-                    <a class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full Article</a>
-                </div>
-                <div
-                    class="border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
-                    <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in the free
-                        plan?</h3>
-                    <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to core
-                        features, up to 3 projects, and AI-assisted notes.</p>
-                    <a class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full Article</a>
-                </div>
-                <div
-                    class="border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
-                    <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in the free
-                        plan?</h3>
-                    <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to core
-                        features, up to 3 projects, and AI-assisted notes.</p>
-                    <a class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full Article</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- FAQ Section Starts  -->
-    <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="{
-      activeId: 1,
-
-      items: [
-        {
-          id: 1,
-          title: 'What is your refund policy?',
-          content: 'We offer a 14-day money-back guarantee on all plans.'
-        },
-        {
-          id: 2,
-          title: 'How long does development take?',
-          content: 'Typical delivery time is 7–10 business days.'
-        },
-        {
-          id: 3,
-          title: 'Do you support WordPress plugins?',
-          content: 'Yes, we specialize in custom WordPress plugin development.'
-        },
-        {
-          id: 4,
-          title: 'Is support included?',
-          content: 'Email and ticket support is included for all paid plans.'
-        },
-        {
-          id: 5,
-          title: 'Can I request custom features?',
-          content: 'Absolutely. Custom features can be scoped and quoted.'
-        }
-      ],
-
-      toggle(id) {
-        this.activeId = this.activeId === id ? null : id
-      },
-
-      isOpen(id) {
-        return this.activeId === id
-      }
-    }">
-        <div class="container mx-auto max-w-3xl flex flex-col md:flex-row space-y-4">
-            <div
-                class="w-full md:w-[32.6%] flex flex-col md:flex-row lg:flex-col sm:gap-[30px] gap-[48px] justify-between">
-                <div class="md:w-[60%] w-full w-full">
-                    <div
-                        class="text-[32px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px] sm:text-left text-center">
-                        Frequently Asked
-                        Questions
-                    </div>
-                    <p
-                        class="text-[18px] sm:text-left text-center font-uncutsans leading-[100%] font-normal text-[#000] opacity-70">
-                        Curious?
-                        Let’s Clear
-                        Things Up</p>
-                </div>
-                <div class="md:w-[40%] w-full w-full flex flex-col sm:text-left text-center">
-                    <h4 class="font-bold text-[18px] leading-[100%] font-bricolage text-[#240F52] mb-[4px]">Still
-                        have
-                        questions?</h4>
-                    <p class="text-[15px] leading-[100%] font-normal text-[#000] opacity-70 sm:mb-[0] mb-[16px]">
-                        We’ve got your back</p>
-                    <a href="#"
-                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] inline-flex items-center gap-[10px] text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[16px] sm:mb-[8px] mt-[16px] mx-auto sm:mx-0 lg:w-[220px]">
-                        <span class="text-[18px] leading-[100%] font-medium text-[#5A147F] font-uncutsans">Request
-                            Support</span>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
-                                stroke-miterlimit="16" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="w-full md:w-[58%]">
-                <template x-for="item in items" :key="item.id">
-                    <div class="rounded-xl mb-2 bg-white overflow-hidden transition-colors duration-300"
-                        :class="isOpen(item.id) ? 'border-[#D8C6FF]' : 'border-[#E5E7EB]'">
-
-                        <button type="button"
-                            class="flex w-full items-center justify-between px-6 py-5 text-left hover:bg-gray-50/40 transition-colors"
-                            @click="toggle(item.id)">
-
-                            <h3 class="text-[18px] font-semibold text-[#240F52] font-bricolage">
-                                <span x-text="item.title"></span>
+                        <div data-lag="0.2" class="w-full xl:w-[611px] bg-white sm:p-[32px] p-[24px] rounded-[8px]">
+                            <h2
+                                class="reveal-type font-bold text-[32px] sm:text-[40px] leading-[100%] text-[#240F52] font-bricolage mb-[32px]">
+                                Write us an
+                                email</h2>
+                            <div class="flex flex-col sm:flex-row gap-[16px] mb-[24px]">
+                                <div class="w-full sm:w-[50%]">
+                                    <label for="fname"
+                                        class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">First
+                                        Name</label>
+                                    <input type="text" placeholder="e.g. John"
+                                        class="bg-[#E6E5E6] p-[16px] rounded-[8px] outline-[0] w-full placeholder-[#4F4D53] text-[15px] leading-[100%] font-medium"
+                                        id="fname" />
+                                </div>
+                                <div class="w-full sm:w-[50%]">
+                                    <label for="lname"
+                                        class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">Last
+                                        Name</label>
+                                    <input type="text" placeholder="e.g. John"
+                                        class="bg-[#E6E5E6] p-[16px] rounded-[8px] outline-[0] w-full placeholder-[#4F4D53] text-[15px] leading-[100%] font-medium"
+                                        id="lname" />
+                                </div>
+                            </div>
+                            <div class="w-full mb-[24px]">
+                                <label for="email"
+                                    class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">Email</label>
+                                <input type="email" placeholder="yourname@domain.com"
+                                    class="bg-[#E6E5E6] p-[16px] rounded-[8px] outline-[0] w-full placeholder-[#4F4D53] text-[15px] leading-[100%] font-medium"
+                                    id="email" />
+                            </div>
+                            <div class="w-full mb-[24px] pb-[24px] border-b-[1px] border-[#E6E5E6]">
+                                <label for="phonenumber"
+                                    class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">Phone
+                                    Number</label>
+                                <input type="text" placeholder="Enter your phone"
+                                    class="bg-[#E6E5E6] p-[16px] rounded-[8px] outline-[0] w-full placeholder-[#4F4D53] text-[15px] leading-[100%] font-medium"
+                                    id="phonenumber" />
+                            </div>
+                            <h3 class="font-bold text-[22px] leading-[100%] text-[#240F52] mb-[24px]">How we can help?
                             </h3>
+                            <div class="w-full mb-[24px]">
+                                <label for="reseson-contact"
+                                    class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">Reason
+                                    for
+                                    contact*</label>
+                                <select
+                                    class="w-full border-[1px] border-[#D8C6FF] p-[16px] rounded-[8px] outline-0 text-[15px] text-[#4F4D53] font-medium appearance-none"
+                                    name="" id="reseson-contact">
+                                    <option value="">Select</option>
+                                    <option value="">Option 1</option>
+                                    <option value="">Option 2</option>
+                                    <option value="">Option 3</option>
+                                </select>
+                            </div>
+                            <div class="w-full mb-[24px]">
+                                <label for="moredetails"
+                                    class="text-[#240F52] text-[16px] leading-[100%] font-semi-bold mb-[4px] d-block">Provide
+                                    more details*</label>
+                                <textarea placeholder="How are you looking to use it..."
+                                    class="w-full border-[1px] border-[#D8C6FF] p-[16px] rounded-[8px] outline-0 text-[15px] placeholder-[#4F4D53] text-[#4F4D53] font-medium appearance-none px-[16px] py-[20px]"
+                                    id="moredetails"></textarea>
+                            </div>
+                            <button type="button"
+                                class="w-full p-[16px] font-uncutsans font-medium text-[18px] text-white font-medium leading-[100%] bg-[#5A147F] rounded-[12px]">Send
+                                Mail</button>
+                        </div>
+                    </div>
 
-                            <span class="ml-4 flex h-6 w-6 shrink-0 items-center justify-center relative">
-                                <svg :class="isOpen(item.id) ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'"
-                                    class="absolute transition-all duration-300 transform" width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none">
-                                    <path
-                                        d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
-                                        fill="#4B125E" />
-                                </svg>
+                </div>
+            </section>
 
-                                <svg :class="isOpen(item.id) ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'"
-                                    class="absolute transition-all duration-300 transform" width="16" height="16"
-                                    viewBox="0 0 16 16" fill="none">
-                                    <path d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
-                                        fill="#4B125E" />
-                                </svg>
+
+            <section class="knowledge-base pt-[128px]">
+                <div class="container">
+                    <h2
+                        class="reveal-type text-[32px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[32px] text-center">
+                        Welcome
+                        to Knowledge Base</h2>
+                    <form method="post" action="" class="flex flex-col sm:block mx-auto sm:w-[462px] w-full">
+                        <input
+                            class="border-[1px] sm:w-[344px] w-full placeholder-[#4F4D53] text-[15px] leading-[100%] font-medium outline-[0] sm:mb-[0] mb-[16px] sm:mr-[8px] mr-[0] border-[#D8C6FFB2] rounded-[8px] py-[16px] px-[20px]"
+                            type="text" placeholder="What you’re looking for?" />
+                        <button
+                            class="px-[20px] py-[16px] bg-[#5A147F] text-white rounded-[8px] text-[#D8C6FF] text-[18px] font-semi-bold leading-[100%]"
+                            type="submit">Search</button>
+                    </form>
+                    <div
+                        class="reveal-grid flex flex-wrap lg:flex-nowrap gap-[16px] mt-[64px] border-b-[1px] border-[#D8C6FF] pb-[80px] sm:pb-[128px] -mr-[8px]">
+                        <div
+                            class="reveal-card w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] bg-[#F9F7FE] px-[16px] py-[24px] rounded-[16px]">
+                            <img class="w-[80px] h-[80px] mb-[128px]" src="./src/images/help-center/04.png"
+                                alt="Knowledge Base" />
+                            <h3 class="font-bold text-[18px] leading-[100%] mb-[8px] text-[#240F52]">Getting Started
+                            </h3>
+                            <p class="text-[15px] leading-[100%] font-uncutsans opacity-70">Instantly find tasks, notes,
+                                or
+                                people — <br /> even from past projects.</p>
+                        </div>
+                        <div
+                            class="reveal-card w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] bg-[#F9F7FE] px-[16px] py-[24px] rounded-[16px]">
+                            <img class="w-[80px] h-[80px] mb-[128px]" src="./src/images/help-center/05.png"
+                                alt="Knowledge Base" />
+                            <h3 class="font-bold text-[18px] leading-[100%] mb-[8px] text-[#240F52]">Features</h3>
+                            <p class="text-[15px] leading-[100%] font-uncutsans opacity-70">Collaborate live on
+                                documents that
+                                stay organized automatically.</p>
+                        </div>
+                        <div
+                            class="reveal-card w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] bg-[#F9F7FE] px-[16px] py-[24px] rounded-[16px]">
+                            <img class="w-[80px] h-[80px] mb-[128px]" src="./src/images/help-center/06.png"
+                                alt="Knowledge Base" />
+                            <h3 class="font-bold text-[18px] leading-[100%] mb-[8px] text-[#240F52]">Sales</h3>
+                            <p class="text-[15px] leading-[100%] font-uncutsans opacity-70">Turn chaos into clarity with
+                                auto-generated recaps of meetings.</p>
+                        </div>
+                        <div
+                            class="reveal-card w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] bg-[#F9F7FE] px-[16px] py-[24px] rounded-[16px]">
+                            <img class="w-[80px] h-[80px] mb-[128px]" src="./src/images/help-center/07.png"
+                                alt="Knowledge Base" />
+                            <h3 class="font-bold text-[18px] leading-[100%] mb-[8px] text-[#240F52]">Billing</h3>
+                            <p class="text-[15px] leading-[100%] font-uncutsans opacity-70">Create structures that match
+                                your
+                                business — not the other way around.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pt-[80px] sm:pt-[128px] pb-[128px]">
+                <div class="container">
+                    <div class="flex items-center mb-[64px] justify-between">
+                        <h3 class="reveal-type text-[24px] sm:text-[32px] leading-[100%] font-bold font-bricolage">
+                            Popular Articles</h3>
+                        <a href="#"
+                            class="corner-blob-btn btn-light-fill text-[16px] sm:text-[18px] leading-[100%] font-semi-bold border-[1px] border-[#D8C6FF66] text-[#5A147F] px-[20px] py-[12px] rounded-[8px]">
+
+                            <span class="relative z-10">Read All Article</span>
+                            <span class="blob-container">
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
                             </span>
-                        </button>
+                        </a>
+                    </div>
+                    <div
+                        class="reveal-grid flex flex-wrap lg:gap-x-[32px] sm:gap-x-[16px] gap-y-[32px] sm:gap-y-[64px]">
+                        <div
+                            class="reveal-card border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
+                            <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in
+                                the free
+                                plan?</h3>
+                            <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to
+                                core
+                                features, up to 3 projects, and AI-assisted notes.</p>
+                            <a href="#" class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full
+                                Article</a>
+                        </div>
+                        <div
+                            class="reveal-card border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
+                            <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in
+                                the free
+                                plan?</h3>
+                            <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to
+                                core
+                                features, up to 3 projects, and AI-assisted notes.</p>
+                            <a href="#" class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full
+                                Article</a>
+                        </div>
+                        <div
+                            class="reveal-card border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
+                            <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in
+                                the free
+                                plan?</h3>
+                            <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to
+                                core
+                                features, up to 3 projects, and AI-assisted notes.</p>
+                            <a href="#" class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full
+                                Article</a>
+                        </div>
+                        <div
+                            class="reveal-card border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
+                            <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in
+                                the free
+                                plan?</h3>
+                            <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to
+                                core
+                                features, up to 3 projects, and AI-assisted notes.</p>
+                            <a href="#" class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full
+                                Article</a>
+                        </div>
+                        <div
+                            class="reveal-card border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
+                            <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in
+                                the free
+                                plan?</h3>
+                            <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to
+                                core
+                                features, up to 3 projects, and AI-assisted notes.</p>
+                            <a href="#" class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full
+                                Article</a>
+                        </div>
+                        <div
+                            class="reveal-card border-b-[1px] w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.33%-32px)] border-[#B3B2B5] pb-[32px]">
+                            <h3 class="text-[18px] leading-[100%] font-bold text-[#240F52] mb-[8px]">What’s included in
+                                the free
+                                plan?</h3>
+                            <p class="text-[15px] leading-[100%] text-[000] opacity-70 mb-[24px]">Get full access to
+                                core
+                                features, up to 3 projects, and AI-assisted notes.</p>
+                            <a class="text-[18px] leading-[100%] font-semi-bold text-[#5A147F]">Full Article</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                        <div x-show="isOpen(item.id)" x-collapse>
-                            <div x-show="isOpen(item.id)" x-transition:enter="transition opacity ease-out duration-300"
-                                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                                class="px-6 pb-6 text-[#4F4D53] leading-relaxed font-uncutsans">
-                                <p x-text="item.content"></p>
+
+            <!-- FAQ Section Starts  -->
+            <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="{
+      activeId: 1,
+      items: [
+        { id: 1, title: 'What is your refund policy?', content: 'We offer a 14-day money-back guarantee on all plans.' },
+        { id: 2, title: 'How long does development take?', content: 'Typical delivery time is 7–10 business days.' },
+        { id: 3, title: 'Do you support WordPress plugins?', content: 'Yes, we specialize in custom WordPress plugin development.' },
+        { id: 4, title: 'Is support included?', content: 'Email and ticket support is included for all paid plans.' },
+        { id: 5, title: 'Can I request custom features?', content: 'Absolutely. Custom features can be scoped and quoted.' }
+      ],
+      toggle(id) { this.activeId = this.activeId === id ? null : id },
+      isOpen(id) { return this.activeId === id }
+    }">
+
+                <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+
+                    <div class="md:col-span-4 flex flex-col gap-10 text-center md:text-left">
+                        <div>
+                            <h2
+                                class="reveal-type text-[32px] sm:text-[36px] lg:text-[40px] leading-tight font-bricolage font-bold text-[#240F52] mb-3">
+                                Frequently Asked Questions
+                            </h2>
+                            <p class="text-lg font-uncutsans text-black/70">
+                                Curious? Let’s Clear Things Up
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="reveal-type font-bold text-lg font-bricolage text-[#240F52] mb-1">
+                                Still have questions?
+                            </h4>
+                            <p class="text-[15px] text-black/70 mb-6">
+                                We’ve got your back
+                            </p>
+
+                            <a href="#" class="corner-blob-btn btn-purple-fill px-6 py-3 font-medium w-full md:w-fit">
+                                <span class="relative z-10 flex items-center justify-center gap-2">
+                                    Request Support
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                <span class="blob-container">
+                                    <span class="blob-drop"></span>
+                                    <span class="blob-drop"></span>
+                                    <span class="blob-drop"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-8 reveal-faq-list">
+                        <template x-for="item in items" :key="item.id">
+                            <div class="faq-item rounded-xl mb-2 bg-white overflow-hidden transition-colors duration-300"
+                                :class="isOpen(item.id) ? 'border-[#D8C6FF]' : 'border-[#E5E7EB]'">
+
+                                <button type="button"
+                                    class="flex w-full items-center justify-between px-6 py-5 text-left hover:bg-gray-50/40 transition-colors"
+                                    @click="toggle(item.id)">
+
+                                    <h3 class="text-[18px] font-semibold text-[#240F52] font-bricolage">
+                                        <span x-text="item.title"></span>
+                                    </h3>
+
+                                    <span class="ml-4 flex h-6 w-6 shrink-0 items-center justify-center relative">
+                                        <svg :class="isOpen(item.id) ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'"
+                                            class="absolute transition-all duration-300 transform" width="16"
+                                            height="16" viewBox="0 0 16 16" fill="none">
+                                            <path
+                                                d="M7.16669 8.83317V13.3332H8.83335V8.83317H13.3334V7.1665H8.83335V2.6665H7.16669V7.1665H2.66669V8.83317H7.16669Z"
+                                                fill="#4B125E" />
+                                        </svg>
+
+                                        <svg :class="isOpen(item.id) ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'"
+                                            class="absolute transition-all duration-300 transform" width="16"
+                                            height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M2.66665 7.1665L13.3333 7.1665V8.83317L2.66665 8.83317V7.1665Z"
+                                                fill="#4B125E" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                                <div x-show="isOpen(item.id)" x-collapse>
+                                    <div x-show="isOpen(item.id)"
+                                        x-transition:enter="transition opacity ease-out duration-300"
+                                        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                        class="px-6 pb-6 text-[#4F4D53] leading-relaxed font-uncutsans">
+                                        <p x-text="item.content"></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </template>
+                    </div>
+
+                </div>
+            </section>
+            <!-- FAQ Section Ends -->
+
+            <!-- Footer Starts Here -->
+            <footer class="w-full pt-[60px] md:pt-[128px]"
+                style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
+                x-data="{ subscribed: false, email: '' }">
+
+                <div data-lag=".5" class="container mx-auto px-4">
+
+                    <div
+                        class="flex flex-col lg:flex-row justify-between pb-[60px] lg:pb-[128px] gap-[40px] lg:gap-[64px] items-center">
+
+                        <div class="flex flex-col w-full lg:max-w-[38.8%] text-center lg:text-left">
+                            <h2
+                                class="reveal-type text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
+                                Ready to Launch Faster and Smarter?
+                            </h2>
+                            <p class="text-[15px] leading-[1.4] font-normal text-white opacity-70 mb-[30px]">
+                                Try it free. Cancel anytime. No credit card required.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-[16px] justify-center lg:justify-start">
+
+                                <a href="#"
+                                    class="corner-blob-btn btn-light-fill px-8 py-[10px] font-medium font-bricolage">
+                                    <span class="relative z-10">Purchase Full Template</span>
+                                    <span class="blob-container">
+                                        <span class="blob-drop"></span>
+                                        <span class="blob-drop"></span>
+                                        <span class="blob-drop"></span>
+                                    </span>
+                                </a>
+
+                                <a href="#"
+                                    class="bg-white text-[#5A147F] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium hover:bg-[#D8C6FF] transition-all text-center">
+                                    Try for Free
+                                </a>
                             </div>
                         </div>
 
-                    </div>
-                </template>
-            </div>
+                        <div
+                            class="w-full lg:w-[calc(61.2%-64px)] bg-white rounded-[24px] p-[24px] md:p-[32px] flex flex-col md:flex-row gap-[24px] items-start">
+                            <img src="./src/images/icons/icon-letter.png" alt="Ready to Launch"
+                                class="md:w-[200px] md:h-auto object-contain mx-auto" />
 
-        </div>
-    </section>
-    <!-- FAQ Section Ends -->
+                            <div class="flex flex-col w-full">
+                                <h3 class="text-[18px] leading-[110%] font-bricolage font-bold text-[#000] mb-[16px]">
+                                    Subscribe to Our Newsletter
+                                </h3>
 
-    <footer class="w-full pt-[60px] md:pt-[128px]"
-        style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
-        x-data="{ subscribed: false, email: '' }">
+                                <template x-if="!subscribed">
+                                    <form @submit.prevent="subscribed = true">
+                                        <div class="flex flex-col sm:flex-row mb-[20px] gap-[8px]">
+                                            <input x-model="email"
+                                                class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[16px] font-uncutsans text-[#240F52] w-full sm:w-[70%]"
+                                                type="email" required placeholder="Your email here..." />
+                                            <button
+                                                class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans !font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
+                                                type="submit">
+                                                <span class="relative z-10">Subscribe</span>
+                                                <span class="blob-container">
+                                                    <span class="blob-drop"></span>
+                                                    <span class="blob-drop"></span>
+                                                    <span class="blob-drop"></span>
+                                                </span>
+                                            </button>
 
-        <div class="container mx-auto px-4">
+                                        </div>
+                                        <div class="checkbox">
+                                            <label for="policy-checkbox"
+                                                class="flex gap-[10px] items-start cursor-pointer">
+                                                <input class="w-[18px] h-[18px] mt-1 accent-[#5A147F]" type="checkbox"
+                                                    id="policy-checkbox" required />
+                                                <span
+                                                    class="text-[13px] leading-[1.4] font-normal text-[#000] opacity-70 font-uncutsans">
+                                                    By checking the box, you agree to receive our weekly newsletter and
+                                                    updates.
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </form>
+                                </template>
 
-            <div
-                class="flex flex-col lg:flex-row justify-between pb-[60px] lg:pb-[128px] gap-[40px] lg:gap-[64px] items-center">
-
-                <div class="flex flex-col w-full lg:max-w-[38.8%] text-center lg:text-left">
-                    <h2 class="text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
-                        Ready to Launch Faster and Smarter?
-                    </h2>
-                    <p class="text-[15px] leading-[1.4] font-normal text-white opacity-70 mb-[30px]">
-                        Try it free. Cancel anytime. No credit card required.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-[16px] justify-center lg:justify-start">
-                        <a href="#"
-                            class="border-[1px] border-[#D8C6FF66] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium text-[#D8C6FF] hover:bg-[#D8C6FF66] transition-all text-center">
-                            Purchase Full Template
-                        </a>
-                        <a href="#"
-                            class="bg-white text-[#5A147F] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium hover:bg-[#D8C6FF] transition-all text-center">
-                            Try for Free
-                        </a>
-                    </div>
-                </div>
-
-                <div
-                    class="w-full lg:w-[calc(61.2%-64px)] bg-white rounded-[24px] p-[24px] md:p-[32px] flex flex-col md:flex-row gap-[24px] items-start">
-                    <img src="./src/images/icons/Icon.webp" alt="Ready to Launch"
-                        class="md:w-[200px] md:h-auto object-contain mx-auto" />
-
-                    <div class="flex flex-col w-full">
-                        <h3 class="text-[18px] leading-[110%] font-bricolage font-bold text-[#000] mb-[16px]">
-                            Subscribe to Our Newsletter
-                        </h3>
-
-                        <template x-if="!subscribed">
-                            <form @submit.prevent="subscribed = true">
-                                <div class="flex flex-col sm:flex-row mb-[20px] gap-[8px]">
-                                    <input x-model="email"
-                                        class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[16px] font-uncutsans text-[#240F52] w-full sm:w-[70%]"
-                                        type="email" required placeholder="Your email here..." />
-                                    <button
-                                        class="bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
-                                        type="submit">Subscribe</button>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="policy-checkbox" class="flex gap-[10px] items-start cursor-pointer">
-                                        <input class="w-[18px] h-[18px] mt-1 accent-[#5A147F]" type="checkbox"
-                                            id="policy-checkbox" required />
-                                        <span
-                                            class="text-[13px] leading-[1.4] font-normal text-[#000] opacity-70 font-uncutsans">
-                                            By checking the box, you agree to receive our weekly newsletter and updates.
-                                        </span>
-                                    </label>
-                                </div>
-                            </form>
-                        </template>
-
-                        <template x-if="subscribed">
-                            <div class="bg-green-50 text-green-700 p-4 rounded-lg font-medium animate-pulse">
-                                Thanks for subscribing! Check your inbox soon.
+                                <template x-if="subscribed">
+                                    <div class="bg-green-50 text-green-700 p-4 rounded-lg font-medium animate-pulse">
+                                        Thanks for subscribing! Check your inbox soon.
+                                    </div>
+                                </template>
                             </div>
-                        </template>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex flex-col md:flex-row justify-between gap-[40px] pb-[40px] border-b-[1px] border-[#D8C6FF66]">
+                        <nav>
+                            <ul
+                                class="reveal-grid grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
+                                <li class="reveal-card"><a
+                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                        href="#">Features</a></li>
+                                <li class="reveal-card"><a
+                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                        href="#">About Us</a></li>
+                                <li class="reveal-card"><a
+                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                        href="#">Pricing</a></li>
+                                <li class="reveal-card"><a
+                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                        href="#">Blog</a></li>
+                                <li class="reveal-card"><a
+                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                        href="#">Help Centre</a></li>
+                                <li class="reveal-card"><a
+                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                        href="#">Request Demo</a></li>
+                            </ul>
+                        </nav>
+
+                        <ul class="flex gap-[20px] justify-center md:justify-end">
+                            <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                        fill="white"></svg></a></li>
+                            <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                        fill="white"></svg></a></li>
+                            <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                        fill="white"></svg></a></li>
+                            <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                        fill="white"></svg></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="py-[40px] lg:py-[64px]">
+                        <div
+                            class="flex flex-col md:flex-row justify-between items-center gap-[20px] text-center md:text-left">
+                            <ul class="reveal-grid flex gap-[32px] lg:gap-[56px]">
+                                <li class="reveal-card"><a
+                                        class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
+                                        href="#">Website Terms</a></li>
+                                <li class="reveal-card"><a
+                                        class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
+                                        href="#">Privacy Policy</a></li>
+                            </ul>
+                            <p class="reveal-type text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
+                                ©2025 Framer Lab — All Rights Reserved
+                            </p>
+                        </div>
+                    </div>
+
+                    <div data-lag=".5" class="footer-logo relative mt-[50px] overflow-hidden">
+                        <img src="./src/images/big-logo.png" alt="Footer Logo" class="w-full h-auto object-cover" />
+
+                        <div class="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none backdrop-blur-sm"
+                            style="mask-image: linear-gradient(to bottom, transparent, black 40%); -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%);">
+                        </div>
                     </div>
                 </div>
-            </div>
+            </footer>
+            <!-- Footer Ends Here -->
 
-            <div
-                class="flex flex-col md:flex-row justify-between gap-[40px] pb-[40px] border-b-[1px] border-[#D8C6FF66]">
-                <nav>
-                    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                href="#">Features</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                href="#">About Us</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                href="#">Pricing</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                href="#">Blog</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                href="#">Help Centre</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                href="#">Request Demo</a></li>
-                    </ul>
-                </nav>
-
-                <ul class="flex gap-[20px] justify-center md:justify-end">
-                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                                fill="white"></svg></a></li>
-                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                                fill="white"></svg></a></li>
-                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                                fill="white"></svg></a></li>
-                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                                fill="white"></svg></a></li>
-                </ul>
-            </div>
-
-            <div class="py-[40px] lg:py-[64px]">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-[20px] text-center md:text-left">
-                    <ul class="flex gap-[32px] lg:gap-[56px]">
-                        <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
-                                href="#">Website Terms</a></li>
-                        <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
-                                href="#">Privacy Policy</a></li>
-                    </ul>
-                    <p class="text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
-                        ©2025 Framer Lab — All Rights Reserved
-                    </p>
-                </div>
-            </div>
-
-            <div class="footer-logo relative mt-[50px] overflow-hidden">
-                <img src="./src/images/big-logo.png" alt="Footer Logo" class="w-full h-auto object-cover" />
-
-                <div class="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none backdrop-blur-sm"
-                    style="mask-image: linear-gradient(to bottom, transparent, black 40%); -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%);">
-                </div>
-            </div>
         </div>
-    </footer>
-
-    <!-- GSAP CDN -->
-    <script src="src/js/gsap.min.js"></script>
+    </div>
     <script type="module" src="src/main.js"></script>
 </body>
 
