@@ -303,4 +303,29 @@ export const initGSAPAnimations = () => {
             }
         }
     );
+
+    // Stack Card Anim 
+    // 3. Find all stacking wrappers on the page
+        const wrappers = document.querySelectorAll('.gsap-pin-wrapper');
+
+        wrappers.forEach((wrapper) => {
+            const panels = wrapper.querySelectorAll('.gsap-pin-panel');
+            
+            ScrollTrigger.matchMedia({
+                "(min-width: 1024px)": function() {
+                    panels.forEach((panel) => {
+                        ScrollTrigger.create({
+                            trigger: panel,
+                            start: "top 22%", // Adjust based on your header height
+                            endTrigger: wrapper,
+                            end: "bottom 85%",
+                            pin: true,
+                            pinSpacing: false,
+                            scrub: true,
+                            invalidateOnRefresh: true
+                        });
+                    });
+                }
+            });
+        });
 }
