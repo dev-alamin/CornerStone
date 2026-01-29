@@ -8,13 +8,13 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 export const initGSAPAnimations = () => {
 
     ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 1.5,               // How long it takes to "catch up" to your scroll
-    effects: true,             // Allows data-speed="1.2" on HTML elements
-    smoothTouch: 0.1,           // Adds a tiny bit of smoothing to mobile touch
-    normalizeScroll: false,
-    ignoreMobileResize: true,
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 1.5,               // How long it takes to "catch up" to your scroll
+        effects: true,             // Allows data-speed="1.2" on HTML elements
+        smoothTouch: 0.1,           // Adds a tiny bit of smoothing to mobile touch
+        normalizeScroll: false,
+        ignoreMobileResize: true,
     });
 
     // 1. Hero Content Entrance with ScrollTrigger
@@ -250,4 +250,20 @@ export const initGSAPAnimations = () => {
             });
         });
     });
+
+    gsap.fromTo(".footer-logo img",
+        { clipPath: "inset(100% 0% 0% 0%)", scale: 1.2 },
+        {
+            clipPath: "inset(0% 0% 0% 0%)",
+            scale: 1,
+            duration: 1.5,
+            ease: "power4.out",
+            scrollTrigger: {
+                trigger: ".footer-logo",
+                start: "top 90%",
+                end: "bottom bottom",
+                scrub: 1
+            }
+        }
+    );
 }
