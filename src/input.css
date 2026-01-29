@@ -60,12 +60,12 @@
 }
 
 /* Prevents a flash of unstyled content */
-.reveal-type {
+/* .reveal-type {
     visibility: hidden;
 }
 .reveal-type.active {
     visibility: visible;
-}
+} */
 
 /* --- 1. Base Mechanics (Hidden Filter) --- */
 .goo-filter {

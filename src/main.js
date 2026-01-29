@@ -1,13 +1,10 @@
 import Alpine from 'alpinejs'
 import { collapse } from '@alpinejs/collapse';
+import {initGSAPAnimations} from './js/animation.js';
 
 // import Swiper from 'swiper';
 // import 'swiper/css';
 // import 'swiper/css/navigation';
-
-
-// import gsap from "gsap";
-// import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { initAccordion } from "./scripts/accordion.js";
 import { initLogoSlider } from "./scripts/infiniteslider.js";
@@ -20,10 +17,11 @@ Alpine.plugin(collapse);
 Alpine.start();
 
 document.addEventListener("DOMContentLoaded", () => {
-    initLogoSlider();
-    initTabs();
+    initGSAPAnimations();
+    // initLogoSlider();
+    // initTabs();
     initLogoTabs();
-    initAccordion();
+    // initAccordion();
 
     new Swiper('.tools-swiper', {
         loop: true,
@@ -62,3 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 'auto',
     });
 });
+
+window.onload = function () {
+    // Hide the preloader when the page has fully loaded
+    const preloader = document.getElementById('preloader');
+    if (!preloader) return;
+    preloader.style.display = 'none';
+};
+
+
