@@ -350,4 +350,14 @@ export const initGSAPAnimations = () => {
             }
         });
     });
+
+    // Target the SVG rect or a wrapper
+    gsap.to(".play-ripple", {
+        scale: 1.5,
+        opacity: 0,
+        duration: 2,
+        repeat: -1,
+        stagger: 0.5,
+        ease: "power2.out"
+    });
 }
