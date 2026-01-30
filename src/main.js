@@ -1,16 +1,9 @@
 import Alpine from 'alpinejs'
 import { collapse } from '@alpinejs/collapse';
-import {initGSAPAnimations} from './js/animation.js';
+import { initGSAPAnimations } from './scripts/animation';
 
-import Swiper from 'swiper';
-import 'swiper/css';
-// import 'swiper/css/navigation';
-
-import { initAccordion } from "./scripts/accordion.js";
-import { initLogoSlider } from "./scripts/infiniteslider.js";
-import { initTabs, initLogoTabs } from "./scripts/tab.js";
-// import CornerAnimation from './scripts/animation.js';
-
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
 window.Alpine = Alpine;
 Alpine.plugin(collapse);
@@ -18,46 +11,48 @@ Alpine.start();
 
 document.addEventListener("DOMContentLoaded", () => {
     initGSAPAnimations();
-    // initLogoSlider();
-    // initTabs();
-    initLogoTabs();
-    // initAccordion();
 
     new Swiper('.tools-swiper', {
-        loop: true,
-        spaceBetween: 30,
-        speed: 6000,
-        freeMode: true,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-        },
         slidesPerView: 'auto',
+        spaceBetween: 20,
+        freemode: true,
+        centeredSlides: true,
+        loop: true,
+        speed: 6000,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 1,
+            disableOnInteraction: true,
+        },
     });
 
     new Swiper('.corner-logo-slider', {
-        loop: true,
-        spaceBetween: 30,
-        speed: 8000,
-        freeMode: true,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-        },
         slidesPerView: 'auto',
+        spaceBetween: 30,
+        freemode: true,
+        centeredSlides: true,
+        loop: true,
+        speed: 6000,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 1,
+            disableOnInteraction: true,
+        },
     });
 
 
     new Swiper('.tools-swiper-reverse', {
-        loop: true,
-        spaceBetween: 30,
-        speed: 6000,
-        freeMode: true,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-        },
         slidesPerView: 'auto',
+        spaceBetween: 20,
+        freemode: true,
+        centeredSlides: true,
+        loop: true,
+        speed: 6000,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 1,
+            disableOnInteraction: true,
+        },
     });
 });
 
