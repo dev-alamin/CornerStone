@@ -13,16 +13,17 @@ gsap.config({
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 // Initialize Lenis
-const lenis = new Lenis({
-  autoRaf: true,
-  lerp: 0.08,
-  anchors: true,
-    anchors: {
-    offset: -100,
-  }
-});
 
 export const initGSAPAnimations = () => {
+
+    const lenis = new Lenis({
+        autoRaf: true,
+        lerp: 0.07,
+        anchors: true,
+        anchors: {
+            offset: -100,
+        }
+    });
 
     // ScrollSmoother.create({
     //     wrapper: "#smooth-wrapper",
@@ -41,7 +42,7 @@ export const initGSAPAnimations = () => {
             start: "top 80%",               // Start when the top of hero is 80% from the top
             toggleActions: "restart none restart reset", // Restarts when coming back from the top
         },
-        opacity:0,
+        opacity: 0,
         filter: "blur(10px)",
         defaults: { ease: "power3.out", duration: 1 }
     });

@@ -503,9 +503,11 @@
                         <a href="ai-application-career.html"
                             class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Career</a>
                         <a href="ai-application-why-choose-us.html"
-                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Why Choose Us</a>
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Why Choose
+                            Us</a>
                         <a href="ai-application-our-manifesto.html"
-                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Our Manifesto</a>
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Our
+                            Manifesto</a>
                         <a href="ai-application-testimonial.html"
                             class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Testimonials</a>
                         <a href="ai-application-services.html"
@@ -530,7 +532,8 @@
                         <a href="help-knowledge-based.html"
                             class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Knowledgebase</a>
                         <a href="help-center.html"
-                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Help Center</a>
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Help
+                            Center</a>
                     </div>
                 </div>
 
@@ -548,13 +551,16 @@
                         <a href="blog.html"
                             class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Blog</a>
                         <a href="blog-details.html"
-                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Blog Details</a>
+                            class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Blog
+                            Details</a>
                         <a href="changelog.html"
                             class="flex items-center gap-3 p-3 bg-white/5 rounded-lg text-neutral-strong">Changelog</a>
                     </div>
                 </div>
-                <a href="request-demo.html" class="block text-white font-bricolage text-xl text-neutral-strong">Request a demo</a>
-                <a href="help-contact.html" class="block text-white font-bricolage text-xl text-neutral-strong">Contact</a>
+                <a href="request-demo.html" class="block text-white font-bricolage text-xl text-neutral-strong">Request
+                    a demo</a>
+                <a href="help-contact.html"
+                    class="block text-white font-bricolage text-xl text-neutral-strong">Contact</a>
 
 
                 <div class="flex text-neutral-strong gap-[8px]">
@@ -568,488 +574,482 @@
     </header>
     <!-- Header Section End -->
 
-    <main class="py-20 font-uncutsans text-slate-700"
-        x-data="{ activeTab: 'terms', activeSection: '1' }">
-    <div class="container mx-auto px-4">
-        <header class="flex flex-col md:flex-row justify-between items-center md:items-end border-b-2 border-primary mb-16">
-            <div class="pb-10">
-                <h1
-                    class="text-4xl md:text-page-title font-bold text-[#240F52] leading-[1.1] tracking-tight font-bricolage">
-                    Legal Conditions <br> & Policies
-                </h1>
+    <main class="py-20 font-uncutsans text-slate-700" x-data="{ activeTab: 'terms', activeSection: '1' }">
+        <div class="container mx-auto px-4">
+            <header
+                class="flex flex-col md:flex-row justify-between items-center md:items-end border-b-2 border-primary mb-16">
+                <div class="pb-10">
+                    <h1
+                        class="reveal-type text-4xl md:text-page-title font-bold text-[#240F52] leading-[1.1] tracking-tight font-bricolage">
+                        Legal Conditions <br> & Policies
+                    </h1>
+                </div>
+
+                <nav class="flex gap-10 mt-10 md:mt-0 -mb-[1px]">
+                    <button @click="activeTab = 'terms'"
+                        class="flex flex-col items-center gap-3 group transition-all relative pb-10">
+                        <div class="w-14 h-14 flex items-center justify-center text-3xl shadow-sm">
+                            <img src="./src/images/icons/legal-hammer.png" alt="Terms Icon">
+                        </div>
+                        <span class="text-sm font-bold text-[#2D1B54] uppercase tracking-wider">Terms</span>
+
+                        <div x-show="activeTab === 'terms'"
+                            class="absolute bottom-[0px] w-full h-1 bg-primary-base z-10">
+                        </div>
+                    </button>
+
+                    <button @click="activeTab = 'privacy'"
+                        class="flex flex-col items-center gap-3 group transition-all relative pb-10">
+                        <div class="w-14 h-14 flex items-center justify-center text-3xl shadow-sm">
+                            <img src="./src/images/icons/legal-lcok.png" alt="Privacy Icon">
+                        </div>
+                        <span class="text-sm font-bold text-[#2D1B54] uppercase tracking-wider">Privacy</span>
+                        <div x-show="activeTab === 'privacy'" class="absolute bottom-0 w-full h-1 bg-primary-base z-10">
+                        </div>
+                    </button>
+
+                    <button @click="activeTab = 'cookies'"
+                        class="flex flex-col items-center gap-3 group transition-all relative pb-10">
+                        <div class="w-14 h-14 flex items-center justify-center text-3xl shadow-sm">
+                            <img src="./src/images/icons/cookies.png" alt="Cookies Icon">
+                        </div>
+                        <span class="text-sm font-bold text-[#2D1B54] uppercase tracking-wider">Cookies</span>
+                        <div x-show="activeTab === 'cookies'"
+                            class="absolute bottom-[0px] w-full h-1 bg-primary-base z-10">
+                        </div>
+                    </button>
+                </nav>
+            </header>
+
+            <div class="reveal-text space-y-6 mb-8 md:mb-16">
+                <h4 class="text-[32px] font-bold text-[#2D1B54] font-bricolage tracking-tight">Terms of Use</h4>
+                <p class="text-page-subtitle">Last updated: June 27, 2025</p>
+                <p class="text-page-subtitle">
+                    Welcome to CornerStone. By accessing or using our website, product, or services (collectively,
+                    the "Service"), you agree to be bound by the following Terms of Use. Please read them carefully.
+                </p>
             </div>
 
-            <nav class="flex gap-10 mt-10 md:mt-0 -mb-[1px]">
-                <button @click="activeTab = 'terms'"
-                    class="flex flex-col items-center gap-3 group transition-all relative pb-10">
-                    <div class="w-14 h-14 flex items-center justify-center text-3xl shadow-sm">
-                        <img src="./src/images/icons/legal-hammer.png" alt="Terms Icon">
-                    </div>
-                    <span class="text-sm font-bold text-[#2D1B54] uppercase tracking-wider">Terms</span>
+            <div x-show="activeTab === 'terms'" class="grid grid-cols-1 lg:grid-cols-12 gap-16"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform translate-y-4">
 
-                    <div x-show="activeTab === 'terms'" class="absolute bottom-[0px] w-full h-1 bg-primary-base z-10">
-                    </div>
-                </button>
-
-                <button @click="activeTab = 'privacy'"
-                    class="flex flex-col items-center gap-3 group transition-all relative pb-10">
-                    <div class="w-14 h-14 flex items-center justify-center text-3xl shadow-sm">
-                        <img src="./src/images/icons/legal-lcok.png" alt="Privacy Icon">
-                    </div>
-                    <span class="text-sm font-bold text-[#2D1B54] uppercase tracking-wider">Privacy</span>
-                    <div x-show="activeTab === 'privacy'" class="absolute bottom-0 w-full h-1 bg-primary-base z-10">
-                    </div>
-                </button>
-
-                <button @click="activeTab = 'cookies'"
-                    class="flex flex-col items-center gap-3 group transition-all relative pb-10">
-                    <div class="w-14 h-14 flex items-center justify-center text-3xl shadow-sm">
-                        <img src="./src/images/icons/cookies.png" alt="Cookies Icon">
-                    </div>
-                    <span class="text-sm font-bold text-[#2D1B54] uppercase tracking-wider">Cookies</span>
-                    <div x-show="activeTab === 'cookies'" class="absolute bottom-[0px] w-full h-1 bg-primary-base z-10">
-                    </div>
-                </button>
-            </nav>
-        </header>
-
-        <div class="space-y-6 mb-8 md:mb-16">
-            <h4 class="text-[32px] font-bold text-[#2D1B54] font-bricolage tracking-tight">Terms of Use</h4>
-            <p class="text-page-subtitle">Last updated: June 27, 2025</p>
-            <p class="text-page-subtitle">
-                Welcome to CornerStone. By accessing or using our website, product, or services (collectively,
-                the "Service"), you agree to be bound by the following Terms of Use. Please read them carefully.
-            </p>
-        </div>
-
-                <div x-show="activeTab === 'terms'" class="grid grid-cols-1 lg:grid-cols-12 gap-16"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 transform translate-y-4">
-
-            <aside class="md:col-span-4">
-                <nav
-                    class="flex flex-row overflow-x-auto lg:flex-col lg:overflow-x-visible sticky top-12 gap-2 pb-4 lg:pb-0 no-scrollbar whitespace-nowrap lg:whitespace-normal">
-                    <template x-for="(name, index) in [
+                <aside class="md:col-span-4">
+                    <nav
+                        class="flex flex-row overflow-x-auto lg:flex-col lg:overflow-x-visible sticky top-12 gap-2 pb-4 lg:pb-0 no-scrollbar whitespace-nowrap lg:whitespace-normal">
+                        <template x-for="(name, index) in [
             'Acceptance of Terms', 'Use of Our Service', 'Account Registration', 
             'Intellectual Property', 'User Content', 'Termination', 
             'Limitation of Liability', 'Changes to These Terms', 'Contact Us'
         ]">
-                        <a :href="'#section-' + (index + 1)" @click="activeSection = (index + 1).toString()"
-                            class="px-5 py-3 rounded-xl max-w-full md:max-w-[250px] text-sm text-neutral-strong font-medium transition-all duration-200 font-bricolage shrink-0"
-                            :class="activeSection === (index + 1).toString() ? 'bg-primary' : 'hover:bg-primary'"
-                            x-text="(index + 1) + '. ' + name">
-                        </a>
-                    </template>
-                </nav>
-            </aside>
+                            <a :href="'#section-' + (index + 1)" @click="activeSection = (index + 1).toString()"
+                                class="px-5 py-3 rounded-xl max-w-full md:max-w-[250px] text-sm text-neutral-strong font-medium transition-all duration-200 font-bricolage shrink-0"
+                                :class="activeSection === (index + 1).toString() ? 'bg-primary' : 'hover:bg-primary'"
+                                x-text="(index + 1) + '. ' + name">
+                            </a>
+                        </template>
+                    </nav>
+                </aside>
 
-            <section class="md:col-span-8 space-y-20">
+                <section class="md:col-span-8 space-y-20">
 
-                <div id="section-1" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">1. Acceptance of Terms</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        By accessing or using the Service, you agree to these Terms of Use and our <a href="#"
-                            class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">Privacy
-                            Policy</a>. If you do not agree, please do not use the Service.
-                    </p>
-                </div>
-
-                <div id="section-2" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">2. Use of Our Service</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        You may use the Service only if you are 13 years or older and capable of forming a binding
-                        contract. You agree to use the Service in compliance with all applicable laws, and not to misuse
-                        or attempt to disrupt its functionality.
-                    </p>
-                </div>
-
-                <div id="section-3" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">3. Account Registration</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        To access certain features, you may need to create an account. You agree to provide accurate
-                        information and keep it up to date. You are responsible for maintaining the confidentiality of
-                        your login credentials.
-                    </p>
-                </div>
-
-                <div id="section-4" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">4. Intellectual Property</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        All content, branding, and functionality within the Service are the property of CornerStone or
-                        its licensors. You may not copy, modify, distribute, or use our assets without permission.
-                    </p>
-                </div>
-
-                <div id="section-5" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">5. User Content</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        If you submit content through the Service (e.g., comments, uploads), you retain ownership but
-                        grant CornerStone a non-exclusive, royalty-free license to use, modify, and display that content
-                        as part of operating the Service.
-                    </p>
-                </div>
-
-                <div id="section-6" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">6. Termination</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        We reserve the right to suspend or terminate your account if you violate these Terms or abuse
-                        the Service in any way.
-                    </p>
-                </div>
-
-                <div id="section-7" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">7. Disclaimer</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        The Service is provided "as is" without warranties of any kind. We do not guarantee that it will
-                        be secure, error-free, or always available.
-                    </p>
-                </div>
-
-                <div id="section-8" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">8. Limitation of Liability</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        To the fullest extent permitted by law, CornerStone shall not be liable for any indirect,
-                        incidental, or consequential damages resulting from your use of the Service.
-                    </p>
-                </div>
-
-                <div id="section-9" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">9. Changes to These Terms</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        We may update these Terms from time to time. If we do, we'll notify you by updating the "Last
-                        updated" date above. Your continued use of the Service after changes means you accept the
-                        updated Terms.
-                    </p>
-                </div>
-
-                <div id="section-10" class="space-y-4 pt-4 pb-20">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">10. Contact Us</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        If you have any questions about these Terms, feel free to reach out:
-                    </p>
-                    <div class="flex items-center gap-2 mt-2">
-                        <span>📧</span>
-                        <a href="mailto:support@framerlab.co"
-                            class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">
-                            support@framerlab.co
-                        </a>
+                    <div id="section-1" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">1. Acceptance of Terms</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            By accessing or using the Service, you agree to these Terms of Use and our <a href="#"
+                                class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">Privacy
+                                Policy</a>. If you do not agree, please do not use the Service.
+                        </p>
                     </div>
-                </div>
-            </section>
-        </div>
 
-        <div x-show="activeTab === 'privacy'" class="grid grid-cols-1 lg:grid-cols-12 gap-16"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 transform translate-y-4">
+                    <div id="section-2" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">2. Use of Our Service</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            You may use the Service only if you are 13 years or older and capable of forming a binding
+                            contract. You agree to use the Service in compliance with all applicable laws, and not to
+                            misuse
+                            or attempt to disrupt its functionality.
+                        </p>
+                    </div>
 
-            <aside class="md:col-span-4">
-                <nav
-                    class="flex flex-row overflow-x-auto lg:flex-col lg:overflow-x-visible sticky top-12 gap-2 pb-4 lg:pb-0 no-scrollbar whitespace-nowrap lg:whitespace-normal">
-                    <template x-for="(name, index) in [
+                    <div id="section-3" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">3. Account Registration</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            To access certain features, you may need to create an account. You agree to provide accurate
+                            information and keep it up to date. You are responsible for maintaining the confidentiality
+                            of
+                            your login credentials.
+                        </p>
+                    </div>
+
+                    <div id="section-4" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">4. Intellectual Property</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            All content, branding, and functionality within the Service are the property of CornerStone
+                            or
+                            its licensors. You may not copy, modify, distribute, or use our assets without permission.
+                        </p>
+                    </div>
+
+                    <div id="section-5" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">5. User Content</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            If you submit content through the Service (e.g., comments, uploads), you retain ownership
+                            but
+                            grant CornerStone a non-exclusive, royalty-free license to use, modify, and display that
+                            content
+                            as part of operating the Service.
+                        </p>
+                    </div>
+
+                    <div id="section-6" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">6. Termination</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            We reserve the right to suspend or terminate your account if you violate these Terms or
+                            abuse
+                            the Service in any way.
+                        </p>
+                    </div>
+
+                    <div id="section-7" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">7. Disclaimer</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            The Service is provided "as is" without warranties of any kind. We do not guarantee that it
+                            will
+                            be secure, error-free, or always available.
+                        </p>
+                    </div>
+
+                    <div id="section-8" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">8. Limitation of Liability</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            To the fullest extent permitted by law, CornerStone shall not be liable for any indirect,
+                            incidental, or consequential damages resulting from your use of the Service.
+                        </p>
+                    </div>
+
+                    <div id="section-9" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">9. Changes to These Terms</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            We may update these Terms from time to time. If we do, we'll notify you by updating the
+                            "Last
+                            updated" date above. Your continued use of the Service after changes means you accept the
+                            updated Terms.
+                        </p>
+                    </div>
+
+                    <div id="section-10" class="space-y-4 pt-4 pb-20">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">10. Contact Us</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            If you have any questions about these Terms, feel free to reach out:
+                        </p>
+                        <div class="flex items-center gap-2 mt-2">
+                            <span>📧</span>
+                            <a href="mailto:support@framerlab.co"
+                                class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">
+                                support@framerlab.co
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div x-show="activeTab === 'privacy'" class="grid grid-cols-1 lg:grid-cols-12 gap-16"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform translate-y-4">
+
+                <aside class="md:col-span-4">
+                    <nav
+                        class="flex flex-row overflow-x-auto lg:flex-col lg:overflow-x-visible sticky top-12 gap-2 pb-4 lg:pb-0 no-scrollbar whitespace-nowrap lg:whitespace-normal">
+                        <template x-for="(name, index) in [
             'Acceptance of Privacy', 'Use of Our Service', 'Account Registration', 
             'Intellectual Property', 'User Content', 'Termination', 
             'Limitation of Liability', 'Changes to These Terms', 'Contact Us'
         ]">
-                        <a :href="'#section-' + (index + 1)" @click="activeSection = (index + 1).toString()"
-                            class="px-5 py-3 rounded-xl max-w-full md:max-w-[250px] text-sm text-neutral-strong font-medium transition-all duration-200 font-bricolage shrink-0"
-                            :class="activeSection === (index + 1).toString() ? 'bg-primary' : 'hover:bg-primary'"
-                            x-text="(index + 1) + '. ' + name">
-                        </a>
-                    </template>
-                </nav>
-            </aside>
+                            <a :href="'#section-' + (index + 1)" @click="activeSection = (index + 1).toString()"
+                                class="px-5 py-3 rounded-xl max-w-full md:max-w-[250px] text-sm text-neutral-strong font-medium transition-all duration-200 font-bricolage shrink-0"
+                                :class="activeSection === (index + 1).toString() ? 'bg-primary' : 'hover:bg-primary'"
+                                x-text="(index + 1) + '. ' + name">
+                            </a>
+                        </template>
+                    </nav>
+                </aside>
 
-            <section class="md:col-span-8 space-y-20">
+                <section class="md:col-span-8 space-y-20">
 
-                <div id="section-1" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">1. Acceptance of Privacy</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        By accessing or using the Service, you agree to these Terms of Use and our <a href="#"
-                            class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">Privacy
-                            Policy</a>. If you do not agree, please do not use the Service.
-                    </p>
-                </div>
-
-                <div id="section-2" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">2. Use of Our Service</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        You may use the Service only if you are 13 years or older and capable of forming a binding
-                        contract. You agree to use the Service in compliance with all applicable laws, and not to misuse
-                        or attempt to disrupt its functionality.
-                    </p>
-                </div>
-
-                <div id="section-3" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">3. Account Registration</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        To access certain features, you may need to create an account. You agree to provide accurate
-                        information and keep it up to date. You are responsible for maintaining the confidentiality of
-                        your login credentials.
-                    </p>
-                </div>
-
-                <div id="section-4" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">4. Intellectual Property</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        All content, branding, and functionality within the Service are the property of CornerStone or
-                        its licensors. You may not copy, modify, distribute, or use our assets without permission.
-                    </p>
-                </div>
-
-                <div id="section-5" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">5. User Content</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        If you submit content through the Service (e.g., comments, uploads), you retain ownership but
-                        grant CornerStone a non-exclusive, royalty-free license to use, modify, and display that content
-                        as part of operating the Service.
-                    </p>
-                </div>
-
-                <div id="section-6" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">6. Termination</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        We reserve the right to suspend or terminate your account if you violate these Terms or abuse
-                        the Service in any way.
-                    </p>
-                </div>
-
-                <div id="section-7" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">7. Disclaimer</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        The Service is provided "as is" without warranties of any kind. We do not guarantee that it will
-                        be secure, error-free, or always available.
-                    </p>
-                </div>
-
-                <div id="section-8" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">8. Limitation of Liability</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        To the fullest extent permitted by law, CornerStone shall not be liable for any indirect,
-                        incidental, or consequential damages resulting from your use of the Service.
-                    </p>
-                </div>
-
-                <div id="section-9" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">9. Changes to These Terms</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        We may update these Terms from time to time. If we do, we'll notify you by updating the "Last
-                        updated" date above. Your continued use of the Service after changes means you accept the
-                        updated Terms.
-                    </p>
-                </div>
-
-                <div id="section-10" class="space-y-4 pt-4 pb-20">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">10. Contact Us</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        If you have any questions about these Terms, feel free to reach out:
-                    </p>
-                    <div class="flex items-center gap-2 mt-2">
-                        <span>📧</span>
-                        <a href="mailto:support@framerlab.co"
-                            class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">
-                            support@framerlab.co
-                        </a>
+                    <div id="section-1" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">1. Acceptance of Privacy</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            By accessing or using the Service, you agree to these Terms of Use and our <a href="#"
+                                class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">Privacy
+                                Policy</a>. If you do not agree, please do not use the Service.
+                        </p>
                     </div>
-                </div>
-            </section>
-        </div>
 
-        <div x-show="activeTab === 'cookies'" class="grid grid-cols-1 lg:grid-cols-12 gap-16"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 transform translate-y-4">
+                    <div id="section-2" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">2. Use of Our Service</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            You may use the Service only if you are 13 years or older and capable of forming a binding
+                            contract. You agree to use the Service in compliance with all applicable laws, and not to
+                            misuse
+                            or attempt to disrupt its functionality.
+                        </p>
+                    </div>
 
-            <aside class="md:col-span-4">
-                <nav
-                    class="flex flex-row overflow-x-auto lg:flex-col lg:overflow-x-visible sticky top-12 gap-2 pb-4 lg:pb-0 no-scrollbar whitespace-nowrap lg:whitespace-normal">
-                    <template x-for="(name, index) in [
+                    <div id="section-3" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">3. Account Registration</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            To access certain features, you may need to create an account. You agree to provide accurate
+                            information and keep it up to date. You are responsible for maintaining the confidentiality
+                            of
+                            your login credentials.
+                        </p>
+                    </div>
+
+                    <div id="section-4" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">4. Intellectual Property</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            All content, branding, and functionality within the Service are the property of CornerStone
+                            or
+                            its licensors. You may not copy, modify, distribute, or use our assets without permission.
+                        </p>
+                    </div>
+
+                    <div id="section-5" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">5. User Content</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            If you submit content through the Service (e.g., comments, uploads), you retain ownership
+                            but
+                            grant CornerStone a non-exclusive, royalty-free license to use, modify, and display that
+                            content
+                            as part of operating the Service.
+                        </p>
+                    </div>
+
+                    <div id="section-6" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">6. Termination</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            We reserve the right to suspend or terminate your account if you violate these Terms or
+                            abuse
+                            the Service in any way.
+                        </p>
+                    </div>
+
+                    <div id="section-7" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">7. Disclaimer</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            The Service is provided "as is" without warranties of any kind. We do not guarantee that it
+                            will
+                            be secure, error-free, or always available.
+                        </p>
+                    </div>
+
+                    <div id="section-8" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">8. Limitation of Liability</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            To the fullest extent permitted by law, CornerStone shall not be liable for any indirect,
+                            incidental, or consequential damages resulting from your use of the Service.
+                        </p>
+                    </div>
+
+                    <div id="section-9" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">9. Changes to These Terms</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            We may update these Terms from time to time. If we do, we'll notify you by updating the
+                            "Last
+                            updated" date above. Your continued use of the Service after changes means you accept the
+                            updated Terms.
+                        </p>
+                    </div>
+
+                    <div id="section-10" class="space-y-4 pt-4 pb-20">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">10. Contact Us</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            If you have any questions about these Terms, feel free to reach out:
+                        </p>
+                        <div class="flex items-center gap-2 mt-2">
+                            <span>📧</span>
+                            <a href="mailto:support@framerlab.co"
+                                class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">
+                                support@framerlab.co
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div x-show="activeTab === 'cookies'" class="grid grid-cols-1 lg:grid-cols-12 gap-16"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 transform translate-y-4">
+
+                <aside class="md:col-span-4">
+                    <nav
+                        class="flex flex-row overflow-x-auto lg:flex-col lg:overflow-x-visible sticky top-12 gap-2 pb-4 lg:pb-0 no-scrollbar whitespace-nowrap lg:whitespace-normal">
+                        <template x-for="(name, index) in [
             'Acceptance of Cookies', 'Use of Our Service', 'Account Registration', 
             'Intellectual Property', 'User Content', 'Termination', 
             'Limitation of Liability', 'Changes to These Terms', 'Contact Us'
         ]">
-                        <a :href="'#section-' + (index + 1)" @click="activeSection = (index + 1).toString()"
-                            class="px-5 py-3 rounded-xl max-w-full md:max-w-[250px] text-sm text-neutral-strong font-medium transition-all duration-200 font-bricolage shrink-0"
-                            :class="activeSection === (index + 1).toString() ? 'bg-primary' : 'hover:bg-primary'"
-                            x-text="(index + 1) + '. ' + name">
-                        </a>
-                    </template>
-                </nav>
-            </aside>
+                            <a :href="'#section-' + (index + 1)" @click="activeSection = (index + 1).toString()"
+                                class="px-5 py-3 rounded-xl max-w-full md:max-w-[250px] text-sm text-neutral-strong font-medium transition-all duration-200 font-bricolage shrink-0"
+                                :class="activeSection === (index + 1).toString() ? 'bg-primary' : 'hover:bg-primary'"
+                                x-text="(index + 1) + '. ' + name">
+                            </a>
+                        </template>
+                    </nav>
+                </aside>
 
-            <section class="md:col-span-8 space-y-20">
+                <section class="md:col-span-8 space-y-20">
 
-                <div id="section-1" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">1. Acceptance of Cookies</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        By accessing or using the Service, you agree to these Terms of Use and our <a href="#"
-                            class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">Privacy
-                            Policy</a>. If you do not agree, please do not use the Service.
-                    </p>
-                </div>
-
-                <div id="section-2" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">2. Use of Our Service</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        You may use the Service only if you are 13 years or older and capable of forming a binding
-                        contract. You agree to use the Service in compliance with all applicable laws, and not to misuse
-                        or attempt to disrupt its functionality.
-                    </p>
-                </div>
-
-                <div id="section-3" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">3. Account Registration</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        To access certain features, you may need to create an account. You agree to provide accurate
-                        information and keep it up to date. You are responsible for maintaining the confidentiality of
-                        your login credentials.
-                    </p>
-                </div>
-
-                <div id="section-4" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">4. Intellectual Property</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        All content, branding, and functionality within the Service are the property of CornerStone or
-                        its licensors. You may not copy, modify, distribute, or use our assets without permission.
-                    </p>
-                </div>
-
-                <div id="section-5" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">5. User Content</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        If you submit content through the Service (e.g., comments, uploads), you retain ownership but
-                        grant CornerStone a non-exclusive, royalty-free license to use, modify, and display that content
-                        as part of operating the Service.
-                    </p>
-                </div>
-
-                <div id="section-6" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">6. Termination</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        We reserve the right to suspend or terminate your account if you violate these Terms or abuse
-                        the Service in any way.
-                    </p>
-                </div>
-
-                <div id="section-7" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">7. Disclaimer</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        The Service is provided "as is" without warranties of any kind. We do not guarantee that it will
-                        be secure, error-free, or always available.
-                    </p>
-                </div>
-
-                <div id="section-8" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">8. Limitation of Liability</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        To the fullest extent permitted by law, CornerStone shall not be liable for any indirect,
-                        incidental, or consequential damages resulting from your use of the Service.
-                    </p>
-                </div>
-
-                <div id="section-9" class="space-y-4 pt-4">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">9. Changes to These Terms</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        We may update these Terms from time to time. If we do, we'll notify you by updating the "Last
-                        updated" date above. Your continued use of the Service after changes means you accept the
-                        updated Terms.
-                    </p>
-                </div>
-
-                <div id="section-10" class="space-y-4 pt-4 pb-20">
-                    <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">10. Contact Us</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        If you have any questions about these Terms, feel free to reach out:
-                    </p>
-                    <div class="flex items-center gap-2 mt-2">
-                        <span>📧</span>
-                        <a href="mailto:support@framerlab.co"
-                            class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">
-                            support@framerlab.co
-                        </a>
+                    <div id="section-1" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">1. Acceptance of Cookies</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            By accessing or using the Service, you agree to these Terms of Use and our <a href="#"
+                                class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">Privacy
+                                Policy</a>. If you do not agree, please do not use the Service.
+                        </p>
                     </div>
-                </div>
-            </section>
-        </div>
 
-    </div>
+                    <div id="section-2" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">2. Use of Our Service</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            You may use the Service only if you are 13 years or older and capable of forming a binding
+                            contract. You agree to use the Service in compliance with all applicable laws, and not to
+                            misuse
+                            or attempt to disrupt its functionality.
+                        </p>
+                    </div>
+
+                    <div id="section-3" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">3. Account Registration</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            To access certain features, you may need to create an account. You agree to provide accurate
+                            information and keep it up to date. You are responsible for maintaining the confidentiality
+                            of
+                            your login credentials.
+                        </p>
+                    </div>
+
+                    <div id="section-4" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">4. Intellectual Property</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            All content, branding, and functionality within the Service are the property of CornerStone
+                            or
+                            its licensors. You may not copy, modify, distribute, or use our assets without permission.
+                        </p>
+                    </div>
+
+                    <div id="section-5" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">5. User Content</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            If you submit content through the Service (e.g., comments, uploads), you retain ownership
+                            but
+                            grant CornerStone a non-exclusive, royalty-free license to use, modify, and display that
+                            content
+                            as part of operating the Service.
+                        </p>
+                    </div>
+
+                    <div id="section-6" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">6. Termination</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            We reserve the right to suspend or terminate your account if you violate these Terms or
+                            abuse
+                            the Service in any way.
+                        </p>
+                    </div>
+
+                    <div id="section-7" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">7. Disclaimer</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            The Service is provided "as is" without warranties of any kind. We do not guarantee that it
+                            will
+                            be secure, error-free, or always available.
+                        </p>
+                    </div>
+
+                    <div id="section-8" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">8. Limitation of Liability</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            To the fullest extent permitted by law, CornerStone shall not be liable for any indirect,
+                            incidental, or consequential damages resulting from your use of the Service.
+                        </p>
+                    </div>
+
+                    <div id="section-9" class="space-y-4 pt-4">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">9. Changes to These Terms</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            We may update these Terms from time to time. If we do, we'll notify you by updating the
+                            "Last
+                            updated" date above. Your continued use of the Service after changes means you accept the
+                            updated Terms.
+                        </p>
+                    </div>
+
+                    <div id="section-10" class="space-y-4 pt-4 pb-20">
+                        <h3 class="text-2xl font-bold text-[#2D1B54] font-bricolage">10. Contact Us</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            If you have any questions about these Terms, feel free to reach out:
+                        </p>
+                        <div class="flex items-center gap-2 mt-2">
+                            <span>📧</span>
+                            <a href="mailto:support@framerlab.co"
+                                class="text-purple-600 font-bold border-b border-purple-200 hover:border-purple-600 transition-all">
+                                support@framerlab.co
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
     </main>
 
 
- <!-- FAQ Section Starts  -->
-    <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="{
-      activeId: 1,
+    <!-- FAQ Section Starts  -->
+    <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="cornerStoneFaq">
 
-      items: [
-        {
-          id: 1,
-          title: 'What is your refund policy?',
-          content: 'We offer a 14-day money-back guarantee on all plans.'
-        },
-        {
-          id: 2,
-          title: 'How long does development take?',
-          content: 'Typical delivery time is 7–10 business days.'
-        },
-        {
-          id: 3,
-          title: 'Do you support WordPress plugins?',
-          content: 'Yes, we specialize in custom WordPress plugin development.'
-        },
-        {
-          id: 4,
-          title: 'Is support included?',
-          content: 'Email and ticket support is included for all paid plans.'
-        },
-        {
-          id: 5,
-          title: 'Can I request custom features?',
-          content: 'Absolutely. Custom features can be scoped and quoted.'
-        }
-      ],
+        <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
 
-      toggle(id) {
-        this.activeId = this.activeId === id ? null : id
-      },
-
-      isOpen(id) {
-        return this.activeId === id
-      }
-    }">
-        <div class="container mx-auto max-w-3xl flex flex-col md:flex-row space-y-4">
-            <div
-                class="w-full md:w-[32.6%] flex flex-col md:flex-row lg:flex-col sm:gap-[30px] gap-[48px] justify-between">
-                <div class="md:w-[60%] w-full w-full">
-                    <div
-                        class="text-[32px] sm:text-[36px] lg:text-[40px] leading-[100%] font-bricolage font-bold text-[#240F52] mb-[8px] sm:text-left text-center">
-                        Frequently Asked
-                        Questions
-                    </div>
-                    <p
-                        class="text-[18px] sm:text-left text-center font-uncutsans leading-[100%] font-normal text-[#000] opacity-70">
-                        Curious?
-                        Let’s Clear
-                        Things Up</p>
+            <div class="md:col-span-4 flex flex-col justify-between h-full gap-10 text-center md:text-left">
+                <div>
+                    <h2
+                        class="reveal-type text-[32px] sm:text-[36px] lg:text-[40px] leading-tight font-bricolage font-bold text-[#240F52] mb-3">
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="text-lg font-uncutsans text-black/70">
+                        Curious? Let’s Clear Things Up
+                    </p>
                 </div>
-                <div class="md:w-[40%] w-full w-full flex flex-col sm:text-left text-center">
-                    <h4 class="font-bold text-[18px] leading-[100%] font-bricolage text-[#240F52] mb-[4px]">Still
-                        have
-                        questions?</h4>
-                    <p class="text-[15px] leading-[100%] font-normal text-[#000] opacity-70 sm:mb-[0] mb-[16px]">
-                        We’ve got your back</p>
-                    <a href="#"
-                        class="btn border-[1px] border-[#D8C6FF] mt-[12px] inline-flex items-center gap-[10px] text-center rounded-[16px] py-[16px] px-[24px] hover:bg-primary bg-white transition-all mb-[16px] sm:mb-[8px] mt-[16px] mx-auto sm:mx-0 lg:w-[220px]">
-                        <span class="text-[18px] leading-[100%] font-medium text-[#5A147F] font-uncutsans">Request
-                            Support</span>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.00005 6L15 12L9 18" stroke="#5A147F" stroke-width="1.5"
-                                stroke-miterlimit="16" />
-                        </svg>
+
+                <div>
+                    <h4 class="reveal-type font-bold text-lg font-bricolage text-[#240F52] mb-1">
+                        Still have questions?
+                    </h4>
+                    <p class="text-[15px] text-black/70 mb-6">
+                        We’ve got your back
+                    </p>
+
+                    <a href="#" class="corner-blob-btn btn-purple-fill px-6 py-3 font-medium w-full md:w-fit">
+                        <span class="relative z-10 flex items-center justify-center gap-2">
+                            Request Support
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="blob-container">
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                        </span>
                     </a>
                 </div>
             </div>
 
-            <div class="w-full md:w-[58%]">
+            <div class="md:col-span-8 reveal-faq-list">
                 <template x-for="item in items" :key="item.id">
-                    <div class="rounded-xl mb-2 bg-white overflow-hidden transition-colors duration-300"
+                    <div class="faq-item rounded-xl mb-2 bg-white overflow-hidden transition-colors duration-300"
                         :class="isOpen(item.id) ? 'border-[#D8C6FF]' : 'border-[#E5E7EB]'">
 
                         <button type="button"
@@ -1094,27 +1094,35 @@
     </section>
     <!-- FAQ Section Ends -->
 
+    <!-- Footer Starts Here -->
     <footer class="w-full pt-[60px] md:pt-[128px]"
         style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
         x-data="{ subscribed: false, email: '' }">
 
-        <div class="container mx-auto px-4">
+        <div data-lag=".5" class="container mx-auto px-4">
 
             <div
                 class="flex flex-col lg:flex-row justify-between pb-[60px] lg:pb-[128px] gap-[40px] lg:gap-[64px] items-center">
 
                 <div class="flex flex-col w-full lg:max-w-[38.8%] text-center lg:text-left">
-                    <h2 class="text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
+                    <h2
+                        class="reveal-type text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
                         Ready to Launch Faster and Smarter?
                     </h2>
                     <p class="text-[15px] leading-[1.4] font-normal text-white opacity-70 mb-[30px]">
                         Try it free. Cancel anytime. No credit card required.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-[16px] justify-center lg:justify-start">
-                        <a href="#"
-                            class="border-[1px] border-[#D8C6FF66] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium text-[#D8C6FF] hover:bg-[#D8C6FF66] transition-all text-center">
-                            Purchase Full Template
+
+                        <a href="#" class="corner-blob-btn btn-light-fill px-8 py-[10px] font-medium font-bricolage">
+                            <span class="relative z-10">Purchase Full Template</span>
+                            <span class="blob-container">
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                            </span>
                         </a>
+
                         <a href="#"
                             class="bg-white text-[#5A147F] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium hover:bg-[#D8C6FF] transition-all text-center">
                             Try for Free
@@ -1124,7 +1132,7 @@
 
                 <div
                     class="w-full lg:w-[calc(61.2%-64px)] bg-white rounded-[24px] p-[24px] md:p-[32px] flex flex-col md:flex-row gap-[24px] items-start">
-                    <img src="./src/images/icons/Icon.webp" alt="Ready to Launch"
+                    <img src="./src/images/icons/icon-letter.png" alt="Ready to Launch"
                         class="md:w-[200px] md:h-auto object-contain mx-auto" />
 
                     <div class="flex flex-col w-full">
@@ -1139,8 +1147,16 @@
                                         class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[16px] font-uncutsans text-[#240F52] w-full sm:w-[70%]"
                                         type="email" required placeholder="Your email here..." />
                                     <button
-                                        class="bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
-                                        type="submit">Subscribe</button>
+                                        class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans !font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
+                                        type="submit">
+                                        <span class="relative z-10">Subscribe</span>
+                                        <span class="blob-container">
+                                            <span class="blob-drop"></span>
+                                            <span class="blob-drop"></span>
+                                            <span class="blob-drop"></span>
+                                        </span>
+                                    </button>
+
                                 </div>
                                 <div class="checkbox">
                                     <label for="policy-checkbox" class="flex gap-[10px] items-start cursor-pointer">
@@ -1148,7 +1164,8 @@
                                             id="policy-checkbox" required />
                                         <span
                                             class="text-[13px] leading-[1.4] font-normal text-[#000] opacity-70 font-uncutsans">
-                                            By checking the box, you agree to receive our weekly newsletter and updates.
+                                            By checking the box, you agree to receive our weekly newsletter and
+                                            updates.
                                         </span>
                                     </label>
                                 </div>
@@ -1167,18 +1184,25 @@
             <div
                 class="flex flex-col md:flex-row justify-between gap-[40px] pb-[40px] border-b-[1px] border-[#D8C6FF66]">
                 <nav>
-                    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                    <ul
+                        class="reveal-grid grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">Features</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">About Us</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">Pricing</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">Blog</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">Help Centre</a></li>
-                        <li><a class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
                                 href="#">Request Demo</a></li>
                     </ul>
                 </nav>
@@ -1197,19 +1221,21 @@
 
             <div class="py-[40px] lg:py-[64px]">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-[20px] text-center md:text-left">
-                    <ul class="flex gap-[32px] lg:gap-[56px]">
-                        <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
+                    <ul class="reveal-grid flex gap-[32px] lg:gap-[56px]">
+                        <li class="reveal-card"><a
+                                class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
                                 href="#">Website Terms</a></li>
-                        <li><a class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
+                        <li class="reveal-card"><a
+                                class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
                                 href="#">Privacy Policy</a></li>
                     </ul>
-                    <p class="text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
+                    <p class="reveal-type text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
                         ©2025 Framer Lab — All Rights Reserved
                     </p>
                 </div>
             </div>
 
-            <div class="footer-logo relative mt-[50px] overflow-hidden">
+            <div data-lag=".5" class="footer-logo relative mt-[50px] overflow-hidden">
                 <img src="./src/images/big-logo.png" alt="Footer Logo" class="w-full h-auto object-cover" />
 
                 <div class="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none backdrop-blur-sm"
@@ -1218,6 +1244,7 @@
             </div>
         </div>
     </footer>
+    <!-- Footer Ends Here -->
 
     <script type="module" src="src/main.js"></script>
 </body>

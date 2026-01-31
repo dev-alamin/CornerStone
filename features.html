@@ -302,38 +302,35 @@
     </header>
     <!-- Header Section End -->
 
-    <div id="smooth-wrapper">
-        <div id="smooth-content">
+    <section class="px-6 pt-32 pb-20 border-b-2 border-[#D8C6FF]">
+        <div class="container mx-auto">
+            <div class="max-w-4xl space-y-8">
+                <h1
+                    class="reveal-type text-4xl md:text-page-title font-bold text-[#240F52] leading-[1.1] tracking-tight font-bricolage mb-4">
+                    Turn Complex Workflows Into Simple System
+                </h1>
 
-            <section class="px-6 pt-32 pb-20 border-b-2 border-[#D8C6FF]">
-                <div class="container mx-auto">
-                    <div class="max-w-4xl space-y-8">
-                        <h1
-                            class="reveal-type text-4xl md:text-page-title font-bold text-[#240F52] leading-[1.1] tracking-tight font-bricolage mb-4">
-                            Turn Complex Workflows Into Simple System
-                        </h1>
+                <p class="reveal-type text-xl md:text-[22px] text-gray-600 max-w-2xl leading-relaxed">
+                    Build to save your time, grow MRR, and Keep customers. happy.
+                </p>
 
-                        <p class="reveal-type text-xl md:text-[22px] text-gray-600 max-w-2xl leading-relaxed">
-                            Build to save your time, grow MRR, and Keep customers. happy.
-                        </p>
-
-                        <div class="pt-4">
-                            <button
-                                class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#2D1B54] px-8 py-4 rounded-xl text-lg transition-all transform active:scale-95 shadow-sm">
-                                <span class="relative z-10">Get Started</span>
-                                <span class="blob-container">
-                                    <span class="blob-drop"></span>
-                                    <span class="blob-drop"></span>
-                                    <span class="blob-drop"></span>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
+                <div class="pt-4">
+                    <button
+                        class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#2D1B54] px-8 py-4 rounded-xl text-lg transition-all transform active:scale-95 shadow-sm">
+                        <span class="relative z-10">Get Started</span>
+                        <span class="blob-container">
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                        </span>
+                    </button>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- Why choose us  -->
-            <section data-lag="0.5" class="px-6 py-24" x-data="{
+    <!-- Why choose us  -->
+    <section data-lag="0.5" class="px-6 py-24" x-data="{
     activeTab: 'ai',
     content: {
         ai: {
@@ -383,127 +380,122 @@
     }
 }">
 
-                <div class="container mx-auto mb-16">
-                    <div class="max-w-3xl">
-                        <h2 class="text-xs font-[400] uppercase tracking-widest text-purple-600 mb-4">Why Choose Us</h2>
-                        <h3 class="reveal-type text-4xl md:text-6xl font-bold font-bricolage text-[#2D1B54]">Smarter
-                            Tools. <br /> Built Around You.
-                        </h3>
-                        <p class="mb-12 text-xl font-light mt-4 text-neutral-base">Smarter Tools. Built Around You.</p>
-                    </div>
+        <div class="container mx-auto mb-16">
+            <div class="max-w-3xl">
+                <h2 class="text-xs font-[400] uppercase tracking-widest text-purple-600 mb-4">Why Choose Us</h2>
+                <h3 class="reveal-type text-4xl md:text-6xl font-bold font-bricolage text-[#2D1B54]">Smarter
+                    Tools. <br /> Built Around You.
+                </h3>
+                <p class="mb-12 text-xl font-light mt-4 text-neutral-base">Smarter Tools. Built Around You.</p>
+            </div>
 
-                    <div class="flex flex-wrap gap-3">
-                        <template x-for="(label, key) in {
+            <div class="flex flex-wrap gap-3">
+                <template x-for="(label, key) in {
                 ai: 'AI That Understands You', 
                 automation: 'Effortless Automation', 
                 teamwork: 'Teamwork That Clicks', 
                 search: 'Search, Simplified'
             }">
-                            <button @click="activeTab = key"
-                                :class="activeTab === key ? 'bg-[#D8C6FF] border-[#D8C6FF] shadow-sm' : 'bg-white border-[#D8C6FF] hover:bg-gray-50'"
-                                class="px-6 py-2 rounded-xl font-medium text-[#03000A] font-bricolage text-sm border transition-all duration-300"
-                                x-text="label">
-                            </button>
-                        </template>
+                    <button @click="activeTab = key"
+                        :class="activeTab === key ? 'bg-[#D8C6FF] border-[#D8C6FF] shadow-sm' : 'bg-white border-[#D8C6FF] hover:bg-gray-50'"
+                        class="px-6 py-2 rounded-xl font-medium text-[#03000A] font-bricolage text-sm border transition-all duration-300"
+                        x-text="label">
+                    </button>
+                </template>
+            </div>
+        </div>
+
+        <div class="container reveal-grid grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="reveal-card md:col-span-2 bg-[#F4EFFE80] rounded-[1.8rem] p-3 md:p-12 overflow-hidden border border-[#D8C6FF] flex flex-col md:flex-row items-center gap-12"
+                x-transition:enter="transition ease-out duration-500 delay-75"
+                x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
+                <div class="p-4 md:p-6 flex-1 space-y-6">
+                    <h4 class="text-3xl font-bold text-[#2D1B54] font-bricolage" x-text="content[activeTab].heroTitle">
+                    </h4>
+                    <p class="text-gray-500 text-[18px] leading-relaxed font-uncutsans"
+                        x-text="content[activeTab].heroDesc"></p>
+                    <button
+                        class="px-6 py-3 rounded-xl border border-[#D8C6FF] shadow-sm font-semibold text-[#5A147F] flex items-center gap-2 hover:shadow-md transition-shadow">
+                        Request a Demo <span class="text-purple-500"><img src="./src/images/icons/right-arrow.svg"
+                                alt=""></span>
+                    </button>
+                </div>
+                <div
+                    class="flex-1 w-full translate-x-4 md:translate-x-12 translate-y-4 shadow-2xl rounded-tl-2xl overflow-hidden">
+                    <img :src="content[activeTab].heroImg" class="w-full object-cover aspect-video md:aspect-auto"
+                        alt="Feature Image">
+                </div>
+            </div>
+
+            <div class="reveal-card bg-[#F4EFFE80] rounded-[1.8rem] p-3 space-y-6 flex flex-col justify-between border border-[#D8C6FF]"
+                x-transition:enter="transition ease-out duration-500 delay-150"
+                x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
+                <div class="p-4 md:p-8 space-y-4">
+                    <h4 class="text-[32px] font-bold text-[#240F52] font-bricolage"
+                        x-text="content[activeTab].card1Title"></h4>
+                    <p class="text-gray-500 text-[18px] leading-relaxed font-uncutsans"
+                        x-text="content[activeTab].card1Desc"></p>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden h-48 group">
+                    <img :src="content[activeTab].card1Img" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
+                        <img src="./src/images/icons/right-arrow.svg" alt="">
                     </div>
                 </div>
+            </div>
 
-                <div class="container reveal-grid grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="reveal-card md:col-span-2 bg-[#F4EFFE80] rounded-[1.8rem] p-3 md:p-12 overflow-hidden border border-[#D8C6FF] flex flex-col md:flex-row items-center gap-12"
-                        x-transition:enter="transition ease-out duration-500 delay-75"
-                        x-transition:enter-start="opacity-0 translate-y-8"
-                        x-transition:enter-end="opacity-100 translate-y-0">
-                        <div class="p-4 md:p-6 flex-1 space-y-6">
-                            <h4 class="text-3xl font-bold text-[#2D1B54] font-bricolage"
-                                x-text="content[activeTab].heroTitle">
-                            </h4>
-                            <p class="text-gray-500 text-[18px] leading-relaxed font-uncutsans"
-                                x-text="content[activeTab].heroDesc"></p>
-                            <button
-                                class="px-6 py-3 rounded-xl border border-[#D8C6FF] shadow-sm font-semibold text-[#5A147F] flex items-center gap-2 hover:shadow-md transition-shadow">
-                                Request a Demo <span class="text-purple-500"><img
-                                        src="./src/images/icons/right-arrow.svg" alt=""></span>
-                            </button>
-                        </div>
-                        <div
-                            class="flex-1 w-full translate-x-4 md:translate-x-12 translate-y-4 shadow-2xl rounded-tl-2xl overflow-hidden">
-                            <img :src="content[activeTab].heroImg"
-                                class="w-full object-cover aspect-video md:aspect-auto" alt="Feature Image">
-                        </div>
-                    </div>
-
-                    <div class="reveal-card bg-[#F4EFFE80] rounded-[1.8rem] p-3 space-y-6 flex flex-col justify-between border border-[#D8C6FF]"
-                        x-transition:enter="transition ease-out duration-500 delay-150"
-                        x-transition:enter-start="opacity-0 translate-y-8"
-                        x-transition:enter-end="opacity-100 translate-y-0">
-                        <div class="p-4 md:p-8 space-y-4">
-                            <h4 class="text-[32px] font-bold text-[#240F52] font-bricolage"
-                                x-text="content[activeTab].card1Title"></h4>
-                            <p class="text-gray-500 text-[18px] leading-relaxed font-uncutsans"
-                                x-text="content[activeTab].card1Desc"></p>
-                        </div>
-                        <div class="relative rounded-2xl overflow-hidden h-48 group">
-                            <img :src="content[activeTab].card1Img" class="w-full h-full object-cover">
-                            <div
-                                class="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
-                                <img src="./src/images/icons/right-arrow.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reveal-card bg-[#F4EFFE80] rounded-[1.8rem] p-3 space-y-6 flex flex-col justify-between border border-[#D8C6FF]"
-                        x-transition:enter="transition ease-out duration-500 delay-300"
-                        x-transition:enter-start="opacity-0 translate-y-8"
-                        x-transition:enter-end="opacity-100 translate-y-0">
-                        <div class="p-4 md:p-8 space-y-4">
-                            <h4 class="text-[32px] font-bold text-[#240F52] font-bricolage"
-                                x-text="content[activeTab].card2Title"></h4>
-                            <p class="text-gray-500 text-[18px] leading-relaxed font-uncutsans"
-                                x-text="content[activeTab].card2Desc"></p>
-                        </div>
-                        <div class="relative rounded-2xl overflow-hidden h-48 group">
-                            <img :src="content[activeTab].card2Img" class="w-full h-full object-cover">
-                            <div
-                                class="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
-                                <img src="./src/images/icons/right-arrow.svg" alt="">
-                            </div>
-                        </div>
+            <div class="reveal-card bg-[#F4EFFE80] rounded-[1.8rem] p-3 space-y-6 flex flex-col justify-between border border-[#D8C6FF]"
+                x-transition:enter="transition ease-out duration-500 delay-300"
+                x-transition:enter-start="opacity-0 translate-y-8" x-transition:enter-end="opacity-100 translate-y-0">
+                <div class="p-4 md:p-8 space-y-4">
+                    <h4 class="text-[32px] font-bold text-[#240F52] font-bricolage"
+                        x-text="content[activeTab].card2Title"></h4>
+                    <p class="text-gray-500 text-[18px] leading-relaxed font-uncutsans"
+                        x-text="content[activeTab].card2Desc"></p>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden h-48 group">
+                    <img :src="content[activeTab].card2Img" class="w-full h-full object-cover">
+                    <div
+                        class="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform cursor-pointer">
+                        <img src="./src/images/icons/right-arrow.svg" alt="">
                     </div>
                 </div>
-            </section>
-            <!-- why choose us ends  -->
+            </div>
+        </div>
+    </section>
+    <!-- why choose us ends  -->
 
-            <!-- Compliance ready by section -->
-            <section class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-100">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+    <!-- Compliance ready by section -->
+    <section class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-100">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
 
-                    <div class="max-w-sm">
-                        <h4 class="reveal-type text-[32px] font-bold text-[#2D1B54] font-bricolage">Compliance ready by
-                        </h4>
-                    </div>
+            <div class="max-w-sm">
+                <h4 class="reveal-type text-[32px] font-bold text-[#2D1B54] font-bricolage">Compliance ready by
+                </h4>
+            </div>
 
-                    <div class="flex flex-wrap items-center justify-center gap-6">
+            <div class="flex flex-wrap items-center justify-center gap-6">
 
-                        <div class="group flex flex-col items-center">
-                            <img src="./src/images/features/compliance-ready.png" class="h-32 w-auto" alt="GFAML Ready">
-                        </div>
-
-                        <div class="group flex flex-col items-center">
-                            <img src="./src/images/features/compliance-ready-2.png" class="h-32 w-auto" alt="GDPR">
-                        </div>
-
-                        <div class="group flex flex-col items-center">
-                            <img src="./src/images/features/compliance-ready-3.png" class="h-32 w-auto"
-                                alt="SOC 2 Type II">
-                        </div>
-
-                    </div>
+                <div class="group flex flex-col items-center">
+                    <img src="./src/images/features/compliance-ready.png" class="h-32 w-auto" alt="GFAML Ready">
                 </div>
-            </section>
-            <!-- Compliance ready by section ends -->
 
-            <!-- Compare Secton  -->
-            <section class="px-6 py-24 bg-[#F9F7FE]" x-data="{ 
+                <div class="group flex flex-col items-center">
+                    <img src="./src/images/features/compliance-ready-2.png" class="h-32 w-auto" alt="GDPR">
+                </div>
+
+                <div class="group flex flex-col items-center">
+                    <img src="./src/images/features/compliance-ready-3.png" class="h-32 w-auto" alt="SOC 2 Type II">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Compliance ready by section ends -->
+
+    <!-- Compare Secton  -->
+    <section class="px-6 py-24 bg-[#F9F7FE]" x-data="{ 
     activeTab: 'ai',
     breakdown: {
         ai: {
@@ -528,153 +520,151 @@
         }
     }
 }">
-                <div class="container mx-auto">
-                    <div class="space-y-8 mb-16">
+        <div class="container mx-auto">
+            <div class="space-y-8 mb-16">
+                <div>
+                    <span class="text-purple-600 text-sm font-semibold mb-2 block">Compare</span>
+                    <h2 class="reveal-type md:text-6xl md:text-6xl font-bold font-bricolage text-[#2D1B54]">
+                        Features Breakdown</h2>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <template
+                        x-for="(label, key) in {ai: 'AI That Understands You', automation: 'Effortless Automation', teamwork: 'Teamwork That Clicks', search: 'Search, Simplified'}">
+                        <button @click="activeTab = key"
+                            :class="activeTab === key ? 'bg-[#D8C6FF] border-[#D8C6FF] shadow-sm' : 'bg-white border-[#D8C6FF] hover:bg-gray-50'"
+                            class="px-6 py-2 rounded-xl font-medium text-[#03000A] font-bricolage text-sm border transition-all duration-300"
+                            x-text="label">
+                        </button>
+                    </template>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 mb-32">
+                <div class="w-full lg:w-1/3 space-y-8">
+                    <h3 class="reveal-type text-4xl font-bold font-bricolage text-[#2D1B54]"
+                        x-text="breakdown[activeTab].title">
+                    </h3>
+                    <p class="text-gray-500 leading-relaxed">
+                        Our key features that offers exclusive services help us to distinguish ourself!
+                    </p>
+
+                    <ul class="space-y-4 reveal-list">
+                        <template x-for="bullet in breakdown[activeTab].bullets">
+                            <li class="flex items-start gap-3">
+                                <span class="mt-2 w-1.5 h-1.5 bg-purple-500 rounded-full shrink-0"></span>
+                                <span class="text-gray-600 font-medium" x-text="bullet"></span>
+                            </li>
+                        </template>
+                    </ul>
+
+                    <button
+                        class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#2D1B54] px-8 py-4 rounded-xl text-lg transition-all transform active:scale-95 shadow-sm">
+                        <span class="relative z-10">Get Started</span>
+                        <span class="blob-container">
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                        </span>
+                    </button>
+                </div>
+
+                <div data-lag="0.2" class="w-full lg:w-2/3">
+                    <div class="corner__image-reveal shadow-2xl overflow-hidden border border-gray-100/50"
+                        x-transition:enter="transition ease-out duration-500"
+                        x-transition:enter-start="opacity-0 translate-x-12"
+                        x-transition:enter-end="opacity-100 translate-x-0">
+                        <img :src="breakdown[activeTab].img" class="w-full h-auto rounded-lg" alt="Platform Interface">
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <h3 class="reveal-type text-4xl md:text-6xl font-bold text-[#2D1B54] font-bricolage">More
+                        Features to Power Your Day</h3>
+                    <a href="#" class="corner-blob-btn btn-purple-fill px-6 py-3 font-medium text-lg w-full md:w-fit">
+                        <span class="relative z-10 flex items-center gap-2">
+                            Request a Demo
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="blob-container">
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                            <span class="blob-drop"></span>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="reveal-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="reveal-card bg-white min-h-[322px] p-6 flex justify-between flex-col rounded-2xl border border-gray-100/50 space-y-6 hover:shadow-xl hover:shadow-purple-500/5">
+                        <div
+                            class="w-14 h-14 bg-[#F8F7FF] rounded-2xl flex items-center justify-center text-purple-600">
+                            <img src="./src/images/icons/audit-02.svg" alt="">
+                        </div>
                         <div>
-                            <span class="text-purple-600 text-sm font-semibold mb-2 block">Compare</span>
-                            <h2 class="reveal-type md:text-6xl md:text-6xl font-bold font-bricolage text-[#2D1B54]">
-                                Features Breakdown</h2>
-                        </div>
-
-                        <div class="flex flex-wrap gap-3">
-                            <template
-                                x-for="(label, key) in {ai: 'AI That Understands You', automation: 'Effortless Automation', teamwork: 'Teamwork That Clicks', search: 'Search, Simplified'}">
-                                <button @click="activeTab = key"
-                                    :class="activeTab === key ? 'bg-[#D8C6FF] border-[#D8C6FF] shadow-sm' : 'bg-white border-[#D8C6FF] hover:bg-gray-50'"
-                                    class="px-6 py-2 rounded-xl font-medium text-[#03000A] font-bricolage text-sm border transition-all duration-300"
-                                    x-text="label">
-                                </button>
-                            </template>
+                            <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">Smart Search</h5>
+                            <p class="text-gray-500 text-sm leading-relaxed">Instantly find tasks, notes, or
+                                people —
+                                even
+                                from past projects.</p>
                         </div>
                     </div>
 
-                    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 mb-32">
-                        <div class="w-full lg:w-1/3 space-y-8">
-                            <h3 class="reveal-type text-4xl font-bold font-bricolage text-[#2D1B54]"
-                                x-text="breakdown[activeTab].title">
-                            </h3>
-                            <p class="text-gray-500 leading-relaxed">
-                                Our key features that offers exclusive services help us to distinguish ourself!
-                            </p>
-
-                            <ul class="space-y-4 reveal-list">
-                                <template x-for="bullet in breakdown[activeTab].bullets">
-                                    <li class="flex items-start gap-3">
-                                        <span class="mt-2 w-1.5 h-1.5 bg-purple-500 rounded-full shrink-0"></span>
-                                        <span class="text-gray-600 font-medium" x-text="bullet"></span>
-                                    </li>
-                                </template>
-                            </ul>
-
-                            <button
-                                class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#2D1B54] px-8 py-4 rounded-xl text-lg transition-all transform active:scale-95 shadow-sm">
-                                <span class="relative z-10">Get Started</span>
-                                <span class="blob-container">
-                                    <span class="blob-drop"></span>
-                                    <span class="blob-drop"></span>
-                                    <span class="blob-drop"></span>
-                                </span>
-                            </button>
+                    <div
+                        class="reveal-card bg-white p-6 flex justify-between flex-col rounded-2xl border border-gray-100/50 space-y-6 hover:shadow-xl hover:shadow-purple-500/5">
+                        <div
+                            class="w-14 h-14 bg-[#F8F7FF] rounded-2xl flex items-center justify-center text-purple-600">
+                            <img src="./src/images/icons/ai-idea.svg" alt="">
                         </div>
-
-                        <div data-lag="0.2" class="w-full lg:w-2/3">
-                            <div class="corner__image-reveal shadow-2xl overflow-hidden border border-gray-100/50"
-                                x-transition:enter="transition ease-out duration-500"
-                                x-transition:enter-start="opacity-0 translate-x-12"
-                                x-transition:enter-end="opacity-100 translate-x-0">
-                                <img :src="breakdown[activeTab].img" class="w-full h-auto rounded-lg"
-                                    alt="Platform Interface">
-                            </div>
+                        <div>
+                            <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">AI Summaries</h5>
+                            <p class="text-gray-500 text-sm leading-relaxed">Turn chaos into clarity with
+                                auto-generated
+                                recaps of meetings.</p>
                         </div>
                     </div>
 
-                    <div class="space-y-12">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                            <h3 class="reveal-type text-4xl md:text-6xl font-bold text-[#2D1B54] font-bricolage">More
-                                Features to Power Your Day</h3>
-                            <a href="#"
-                                class="corner-blob-btn btn-purple-fill px-6 py-3 font-medium text-lg w-full md:w-fit">
-                                <span class="relative z-10 flex items-center gap-2">
-                                    Request a Demo
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                        <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <span class="blob-container">
-                                    <span class="blob-drop"></span>
-                                    <span class="blob-drop"></span>
-                                    <span class="blob-drop"></span>
-                                </span>
-                            </a>
+                    <div
+                        class="reveal-card bg-white p-6 flex justify-between flex-col rounded-2xl border border-gray-100/50 space-y-6 hover:shadow-xl hover:shadow-purple-500/5">
+                        <div
+                            class="w-14 h-14 bg-[#F8F7FF] rounded-2xl flex items-center justify-center text-purple-600">
+                            <img src="./src/images/icons/file-cloud.svg" alt="">
                         </div>
+                        <div>
+                            <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">Shared Docs</h5>
+                            <p class="text-gray-500 text-sm leading-relaxed">Collaborate live on documents that
+                                stay
+                                organized automatically.</p>
+                        </div>
+                    </div>
 
-                        <div class="reveal-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <div
-                                class="reveal-card bg-white min-h-[322px] p-6 flex justify-between flex-col rounded-2xl border border-gray-100/50 space-y-6 hover:shadow-xl hover:shadow-purple-500/5">
-                                <div
-                                    class="w-14 h-14 bg-[#F8F7FF] rounded-2xl flex items-center justify-center text-purple-600">
-                                    <img src="./src/images/icons/audit-02.svg" alt="">
-                                </div>
-                                <div>
-                                    <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">Smart Search</h5>
-                                    <p class="text-gray-500 text-sm leading-relaxed">Instantly find tasks, notes, or
-                                        people —
-                                        even
-                                        from past projects.</p>
-                                </div>
-                            </div>
-
-                            <div
-                                class="reveal-card bg-white p-6 flex justify-between flex-col rounded-2xl border border-gray-100/50 space-y-6 hover:shadow-xl hover:shadow-purple-500/5">
-                                <div
-                                    class="w-14 h-14 bg-[#F8F7FF] rounded-2xl flex items-center justify-center text-purple-600">
-                                    <img src="./src/images/icons/ai-idea.svg" alt="">
-                                </div>
-                                <div>
-                                    <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">AI Summaries</h5>
-                                    <p class="text-gray-500 text-sm leading-relaxed">Turn chaos into clarity with
-                                        auto-generated
-                                        recaps of meetings.</p>
-                                </div>
-                            </div>
-
-                            <div
-                                class="reveal-card bg-white p-6 flex justify-between flex-col rounded-2xl border border-gray-100/50 space-y-6 hover:shadow-xl hover:shadow-purple-500/5">
-                                <div
-                                    class="w-14 h-14 bg-[#F8F7FF] rounded-2xl flex items-center justify-center text-purple-600">
-                                    <img src="./src/images/icons/file-cloud.svg" alt="">
-                                </div>
-                                <div>
-                                    <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">Shared Docs</h5>
-                                    <p class="text-gray-500 text-sm leading-relaxed">Collaborate live on documents that
-                                        stay
-                                        organized automatically.</p>
-                                </div>
-                            </div>
-
-                            <div
-                                class="reveal-card bg-white p-6 flex justify-between flex-col rounded-2xl border border-gray-100/50 space-y-6 hover:shadow-xl hover:shadow-purple-500/5">
-                                <div
-                                    class="w-14 h-14 bg-[#F8F7FF] rounded-2xl flex items-center justify-center text-purple-600 space-x-4">
-                                    <img src="./src/images/icons/dashboard-circle-add.svg" alt="">
-                                </div>
-                                <div class="">
-                                    <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">Custom Fields</h5>
-                                    <p class="text-gray-500 text-sm leading-relaxed">Create structures that match your
-                                        business
-                                        —
-                                        not the other way around.</p>
-                                </div>
-                            </div>
+                    <div
+                        class="reveal-card bg-white p-6 flex justify-between flex-col rounded-2xl border border-gray-100/50 space-y-6 hover:shadow-xl hover:shadow-purple-500/5">
+                        <div
+                            class="w-14 h-14 bg-[#F8F7FF] rounded-2xl flex items-center justify-center text-purple-600 space-x-4">
+                            <img src="./src/images/icons/dashboard-circle-add.svg" alt="">
+                        </div>
+                        <div class="">
+                            <h5 class="font-bold text-xl font-bricolage text-[#2D1B54] mb-2">Custom Fields</h5>
+                            <p class="text-gray-500 text-sm leading-relaxed">Create structures that match your
+                                business
+                                —
+                                not the other way around.</p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- Compare section ends  -->
+            </div>
+        </div>
+    </section>
+    <!-- Compare section ends  -->
 
-            <!-- Usecases Section  -->
-            <section class="mx-auto px-6 py-24" x-data="{ 
+    <!-- Usecases Section  -->
+    <section class="mx-auto px-6 py-24" x-data="{ 
     activeTeam: 'product',
     activeFeature: 'ai',
     useCases: {
@@ -711,249 +701,243 @@
         hr: { label: 'For HR Teams', icon: './src/images/icons/features-usecases/hr.png', features: { ai: { title: 'People Logic', desc: 'Streamline onboarding and team directories.', img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200' } } }
     }
 }">
-                <div class="container mx-auto">
-                    <div class="mb-20">
-                        <span class="text-purple-600 text-sm font-[400] mb-4 block">Use Cases</span>
-                        <h2 class="reveal-type text-4xl md:text-6xl font-bold font-bricolage text-[#2D1B54]">See Our Use
-                            Cases<br>in Different Teams
-                        </h2>
-                        <p class="mb-12 text-xl font-[400] mt-4 text-neutral-base">Made for everyone!</p>
+        <div class="container mx-auto">
+            <div class="mb-20">
+                <span class="text-purple-600 text-sm font-[400] mb-4 block">Use Cases</span>
+                <h2 class="reveal-type text-4xl md:text-6xl font-bold font-bricolage text-[#2D1B54]">See Our Use
+                    Cases<br>in Different Teams
+                </h2>
+                <p class="mb-12 text-xl font-[400] mt-4 text-neutral-base">Made for everyone!</p>
 
-                        <div
-                            class="flex md:flex-wrap items-end gap-8 md:gap-14 border-b border-gray-100 pb-0 overflow-x-auto no-scrollbar snap-x snap-proximity">
-                            <template x-for="(team, id) in useCases">
-                                <button @click="activeTeam = id; activeFeature = Object.keys(team.features)[0]"
-                                    class="flex flex-col items-center text-[22px] md:text-[16px] font-bricolage gap-4 pb-6 transition-all relative group shrink-0 snap-center">
+                <div
+                    class="flex md:flex-wrap items-end gap-8 md:gap-14 border-b border-gray-100 pb-0 overflow-x-auto no-scrollbar snap-x snap-proximity">
+                    <template x-for="(team, id) in useCases">
+                        <button @click="activeTeam = id; activeFeature = Object.keys(team.features)[0]"
+                            class="flex flex-col items-center text-[22px] md:text-[16px] font-bricolage gap-4 pb-6 transition-all relative group shrink-0 snap-center">
 
-                                    <img :src="team.icon"
-                                        class="w-14 h-14 object-contain transition-transform duration-300 group-hover:-translate-y-2 group-active:scale-90"
-                                        :alt="team.label">
+                            <img :src="team.icon"
+                                class="w-14 h-14 object-contain transition-transform duration-300 group-hover:-translate-y-2 group-active:scale-90"
+                                :alt="team.label">
 
-                                    <span class="text-[22px] md:text-[16px] font-bold font-bricolage uppercase"
-                                        x-text="id"></span>
+                            <span class="text-[22px] md:text-[16px] font-bold font-bricolage uppercase"
+                                x-text="id"></span>
 
-                                    <div x-show="activeTeam === id"
-                                        class="absolute bottom-0 left-0 w-full h-1 bg-purple-500 rounded-t-full"
-                                        x-transition:enter="transition ease-out duration-300"></div>
+                            <div x-show="activeTeam === id"
+                                class="absolute bottom-0 left-0 w-full h-1 bg-purple-500 rounded-t-full"
+                                x-transition:enter="transition ease-out duration-300"></div>
+                        </button>
+                    </template>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-16 min-h-[600px]">
+
+                <div class="w-full lg:w-1/3 flex flex-col min-h-full">
+                    <h3 class="reveal-type text-4xl font-bold text-[#2D1B54] mb-8" x-text="useCases[activeTeam].label">
+                    </h3>
+
+                    <div class="space-y-4">
+                        <template x-for="(fData, fKey) in useCases[activeTeam].features">
+                            <div class="space-y-3">
+                                <button @click="activeFeature = fKey"
+                                    :class="activeFeature === fKey ? 'bg-[#D9D1FF] text-[#2D1B54] border-purple-200' : 'bg-white text-gray-500 hover:bg-gray-50 border-[#D8C6FF]'"
+                                    class="w-full text-left px-8 py-3 rounded-2xl border transition-all duration-300 shadow-sm flex items-center justify-between group">
+                                    <span class="font-bold text-lg" x-text="fData.title"></span>
+                                    <span
+                                        class="text-purple-600 font-bold transition-transform group-hover:translate-x-1"
+                                        x-show="activeFeature === fKey">→</span>
                                 </button>
-                            </template>
-                        </div>
+
+                                <div x-show="activeFeature === fKey"
+                                    x-transition:enter="transition ease-out duration-300"
+                                    x-transition:enter-start="opacity-0 -translate-y-2"
+                                    x-transition:enter-end="opacity-100 translate-y-0" class="pb-4">
+                                    <p class="text-gray-500 text-base leading-relaxed" x-text="fData.desc"></p>
+                                </div>
+                            </div>
+                        </template>
                     </div>
 
-                    <div class="flex flex-col lg:flex-row gap-16 min-h-[600px]">
-
-                        <div class="w-full lg:w-1/3 flex flex-col min-h-full">
-                            <h3 class="reveal-type text-4xl font-bold text-[#2D1B54] mb-8"
-                                x-text="useCases[activeTeam].label"></h3>
-
-                            <div class="space-y-4">
-                                <template x-for="(fData, fKey) in useCases[activeTeam].features">
-                                    <div class="space-y-3">
-                                        <button @click="activeFeature = fKey"
-                                            :class="activeFeature === fKey ? 'bg-[#D9D1FF] text-[#2D1B54] border-purple-200' : 'bg-white text-gray-500 hover:bg-gray-50 border-[#D8C6FF]'"
-                                            class="w-full text-left px-8 py-3 rounded-2xl border transition-all duration-300 shadow-sm flex items-center justify-between group">
-                                            <span class="font-bold text-lg" x-text="fData.title"></span>
-                                            <span
-                                                class="text-purple-600 font-bold transition-transform group-hover:translate-x-1"
-                                                x-show="activeFeature === fKey">→</span>
-                                        </button>
-
-                                        <div x-show="activeFeature === fKey"
-                                            x-transition:enter="transition ease-out duration-300"
-                                            x-transition:enter-start="opacity-0 -translate-y-2"
-                                            x-transition:enter-end="opacity-100 translate-y-0" class="pb-4">
-                                            <p class="text-gray-500 text-base leading-relaxed" x-text="fData.desc"></p>
-                                        </div>
-                                    </div>
-                                </template>
-                            </div>
-
-                            <div class="mt-auto pt-12">
-                                <button
-                                    class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#2D1B54] px-8 py-4 rounded-xl text-lg transition-all transform active:scale-95 shadow-sm">
-                                    <span class="relative z-10">Get Started</span>
-                                    <span class="blob-container">
-                                        <span class="blob-drop"></span>
-                                        <span class="blob-drop"></span>
-                                        <span class="blob-drop"></span>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div data-lag="0.2" class="w-full lg:w-2/3">
-                            <div
-                                class="corner__image-reveal relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100">
-                                <img :src="useCases[activeTeam].features[activeFeature].img"
-                                    class="w-full h-auto rounded-lg"
-                                    x-transition:enter="transition ease-out duration-500"
-                                    x-transition:enter-start="opacity-0 translate-y-4"
-                                    x-transition:enter-end="opacity-100 translate-y-0"
-                                    :key="activeTeam + activeFeature">
-                            </div>
-                        </div>
-
+                    <div class="mt-auto pt-12">
+                        <button
+                            class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#2D1B54] px-8 py-4 rounded-xl text-lg transition-all transform active:scale-95 shadow-sm">
+                            <span class="relative z-10">Get Started</span>
+                            <span class="blob-container">
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                            </span>
+                        </button>
                     </div>
                 </div>
-            </section>
-            <!-- Usecase Section ends  -->
 
-            <!-- Footer Starts Here -->
-            <footer class="w-full pt-[60px] md:pt-[128px]"
-                style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
-                x-data="{ subscribed: false, email: '' }">
-
-                <div data-lag=".5" class="container mx-auto px-4">
-
+                <div data-lag="0.2" class="w-full lg:w-2/3">
                     <div
-                        class="flex flex-col lg:flex-row justify-between pb-[60px] lg:pb-[128px] gap-[40px] lg:gap-[64px] items-center">
-
-                        <div class="flex flex-col w-full lg:max-w-[38.8%] text-center lg:text-left">
-                            <h2
-                                class="reveal-type text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
-                                Ready to Launch Faster and Smarter?
-                            </h2>
-                            <p class="text-[15px] leading-[1.4] font-normal text-white opacity-70 mb-[30px]">
-                                Try it free. Cancel anytime. No credit card required.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-[16px] justify-center lg:justify-start">
-
-                                <a href="#"
-                                    class="corner-blob-btn btn-light-fill px-8 py-[10px] font-medium font-bricolage">
-                                    <span class="relative z-10">Purchase Full Template</span>
-                                    <span class="blob-container">
-                                        <span class="blob-drop"></span>
-                                        <span class="blob-drop"></span>
-                                        <span class="blob-drop"></span>
-                                    </span>
-                                </a>
-
-                                <a href="#"
-                                    class="bg-white text-[#5A147F] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium hover:bg-[#D8C6FF] transition-all text-center">
-                                    Try for Free
-                                </a>
-                            </div>
-                        </div>
-
-                        <div
-                            class="w-full lg:w-[calc(61.2%-64px)] bg-white rounded-[24px] p-[24px] md:p-[32px] flex flex-col md:flex-row gap-[24px] items-start">
-                            <img src="./src/images/icons/icon-letter.png" alt="Ready to Launch"
-                                class="md:w-[200px] md:h-auto object-contain mx-auto" />
-
-                            <div class="flex flex-col w-full">
-                                <h3 class="text-[18px] leading-[110%] font-bricolage font-bold text-[#000] mb-[16px]">
-                                    Subscribe to Our Newsletter
-                                </h3>
-
-                                <template x-if="!subscribed">
-                                    <form @submit.prevent="subscribed = true">
-                                        <div class="flex flex-col sm:flex-row mb-[20px] gap-[8px]">
-                                            <input x-model="email"
-                                                class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[16px] font-uncutsans text-[#240F52] w-full sm:w-[70%]"
-                                                type="email" required placeholder="Your email here..." />
-                                            <button
-                                                class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans !font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
-                                                type="submit">
-                                                <span class="relative z-10">Subscribe</span>
-                                                <span class="blob-container">
-                                                    <span class="blob-drop"></span>
-                                                    <span class="blob-drop"></span>
-                                                    <span class="blob-drop"></span>
-                                                </span>
-                                            </button>
-
-                                        </div>
-                                        <div class="checkbox">
-                                            <label for="policy-checkbox"
-                                                class="flex gap-[10px] items-start cursor-pointer">
-                                                <input class="w-[18px] h-[18px] mt-1 accent-[#5A147F]" type="checkbox"
-                                                    id="policy-checkbox" required />
-                                                <span
-                                                    class="text-[13px] leading-[1.4] font-normal text-[#000] opacity-70 font-uncutsans">
-                                                    By checking the box, you agree to receive our weekly newsletter and
-                                                    updates.
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </form>
-                                </template>
-
-                                <template x-if="subscribed">
-                                    <div class="bg-green-50 text-green-700 p-4 rounded-lg font-medium animate-pulse">
-                                        Thanks for subscribing! Check your inbox soon.
-                                    </div>
-                                </template>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="flex flex-col md:flex-row justify-between gap-[40px] pb-[40px] border-b-[1px] border-[#D8C6FF66]">
-                        <nav>
-                            <ul
-                                class="reveal-grid grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
-                                <li class="reveal-card"><a
-                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                        href="#">Features</a></li>
-                                <li class="reveal-card"><a
-                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                        href="#">About Us</a></li>
-                                <li class="reveal-card"><a
-                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                        href="#">Pricing</a></li>
-                                <li class="reveal-card"><a
-                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                        href="#">Blog</a></li>
-                                <li class="reveal-card"><a
-                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                        href="#">Help Centre</a></li>
-                                <li class="reveal-card"><a
-                                        class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
-                                        href="#">Request Demo</a></li>
-                            </ul>
-                        </nav>
-
-                        <ul class="flex gap-[20px] justify-center md:justify-end">
-                            <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                                        fill="white"></svg></a></li>
-                            <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                                        fill="white"></svg></a></li>
-                            <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                                        fill="white"></svg></a></li>
-                            <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
-                                        fill="white"></svg></a></li>
-                        </ul>
-                    </div>
-
-                    <div class="py-[40px] lg:py-[64px]">
-                        <div
-                            class="flex flex-col md:flex-row justify-between items-center gap-[20px] text-center md:text-left">
-                            <ul class="reveal-grid flex gap-[32px] lg:gap-[56px]">
-                                <li class="reveal-card"><a
-                                        class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
-                                        href="#">Website Terms</a></li>
-                                <li class="reveal-card"><a
-                                        class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
-                                        href="#">Privacy Policy</a></li>
-                            </ul>
-                            <p class="reveal-type text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
-                                ©2025 Framer Lab — All Rights Reserved
-                            </p>
-                        </div>
-                    </div>
-
-                    <div data-lag=".5" class="footer-logo relative mt-[50px] overflow-hidden">
-                        <img src="./src/images/big-logo.png" alt="Footer Logo" class="w-full h-auto object-cover" />
-
-                        <div class="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none backdrop-blur-sm"
-                            style="mask-image: linear-gradient(to bottom, transparent, black 40%); -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%);">
-                        </div>
+                        class="corner__image-reveal relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100">
+                        <img :src="useCases[activeTeam].features[activeFeature].img" class="w-full h-auto rounded-lg"
+                            x-transition:enter="transition ease-out duration-500"
+                            x-transition:enter-start="opacity-0 translate-y-4"
+                            x-transition:enter-end="opacity-100 translate-y-0" :key="activeTeam + activeFeature">
                     </div>
                 </div>
-            </footer>
-            <!-- Footer Ends Here -->
+
+            </div>
         </div>
-    </div>
+    </section>
+    <!-- Usecase Section ends  -->
+
+    <!-- Footer Starts Here -->
+    <footer class="w-full pt-[60px] md:pt-[128px]"
+        style="background: linear-gradient(180deg, #FFA41A 0%, #5A147F 29.15%, #03000A 58.31%);"
+        x-data="{ subscribed: false, email: '' }">
+
+        <div data-lag=".5" class="container mx-auto px-4">
+
+            <div
+                class="flex flex-col lg:flex-row justify-between pb-[60px] lg:pb-[128px] gap-[40px] lg:gap-[64px] items-center">
+
+                <div class="flex flex-col w-full lg:max-w-[38.8%] text-center lg:text-left">
+                    <h2
+                        class="reveal-type text-[36px] md:text-[47px] leading-[110%] font-bricolage font-bold text-white mb-[16px]">
+                        Ready to Launch Faster and Smarter?
+                    </h2>
+                    <p class="text-[15px] leading-[1.4] font-normal text-white opacity-70 mb-[30px]">
+                        Try it free. Cancel anytime. No credit card required.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-[16px] justify-center lg:justify-start">
+
+                        <a href="#" class="corner-blob-btn btn-light-fill px-8 py-[10px] font-medium font-bricolage">
+                            <span class="relative z-10">Purchase Full Template</span>
+                            <span class="blob-container">
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                                <span class="blob-drop"></span>
+                            </span>
+                        </a>
+
+                        <a href="#"
+                            class="bg-white text-[#5A147F] rounded-[12px] px-[24px] py-[16px] text-[18px] font-uncutsans font-medium hover:bg-[#D8C6FF] transition-all text-center">
+                            Try for Free
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full lg:w-[calc(61.2%-64px)] bg-white rounded-[24px] p-[24px] md:p-[32px] flex flex-col md:flex-row gap-[24px] items-start">
+                    <img src="./src/images/icons/icon-letter.png" alt="Ready to Launch"
+                        class="md:w-[200px] md:h-auto object-contain mx-auto" />
+
+                    <div class="flex flex-col w-full">
+                        <h3 class="text-[18px] leading-[110%] font-bricolage font-bold text-[#000] mb-[16px]">
+                            Subscribe to Our Newsletter
+                        </h3>
+
+                        <template x-if="!subscribed">
+                            <form @submit.prevent="subscribed = true">
+                                <div class="flex flex-col sm:flex-row mb-[20px] gap-[8px]">
+                                    <input x-model="email"
+                                        class="border-[1px] border-[#00000029] rounded-[12px] px-[16px] py-[16px] text-[16px] font-uncutsans text-[#240F52] w-full sm:w-[70%]"
+                                        type="email" required placeholder="Your email here..." />
+                                    <button
+                                        class="corner-blob-btn btn-purple-fill bg-[#D8C6FF] text-[#240F52] px-[24px] py-[16px] rounded-[12px] text-[18px] font-uncutsans !font-medium hover:bg-[#5A147F] hover:text-white transition-all w-full sm:w-auto"
+                                        type="submit">
+                                        <span class="relative z-10">Subscribe</span>
+                                        <span class="blob-container">
+                                            <span class="blob-drop"></span>
+                                            <span class="blob-drop"></span>
+                                            <span class="blob-drop"></span>
+                                        </span>
+                                    </button>
+
+                                </div>
+                                <div class="checkbox">
+                                    <label for="policy-checkbox" class="flex gap-[10px] items-start cursor-pointer">
+                                        <input class="w-[18px] h-[18px] mt-1 accent-[#5A147F]" type="checkbox"
+                                            id="policy-checkbox" required />
+                                        <span
+                                            class="text-[13px] leading-[1.4] font-normal text-[#000] opacity-70 font-uncutsans">
+                                            By checking the box, you agree to receive our weekly newsletter and
+                                            updates.
+                                        </span>
+                                    </label>
+                                </div>
+                            </form>
+                        </template>
+
+                        <template x-if="subscribed">
+                            <div class="bg-green-50 text-green-700 p-4 rounded-lg font-medium animate-pulse">
+                                Thanks for subscribing! Check your inbox soon.
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between gap-[40px] pb-[40px] border-b-[1px] border-[#D8C6FF66]">
+                <nav>
+                    <ul
+                        class="reveal-grid grid grid-cols-2 sm:grid-cols-3 lg:flex gap-x-[32px] gap-y-[16px] lg:gap-[56px]">
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Features</a></li>
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">About Us</a></li>
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Pricing</a></li>
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Blog</a></li>
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Help Centre</a></li>
+                        <li class="reveal-card"><a
+                                class="text-[16px] text-white hover:text-[#D8C6FF] transition-colors font-bricolage"
+                                href="#">Request Demo</a></li>
+                    </ul>
+                </nav>
+
+                <ul class="flex gap-[20px] justify-center md:justify-end">
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                    <li><a href="#" class="hover:opacity-70 transition-opacity"><svg width="24" height="24"
+                                fill="white"></svg></a></li>
+                </ul>
+            </div>
+
+            <div class="py-[40px] lg:py-[64px]">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-[20px] text-center md:text-left">
+                    <ul class="reveal-grid flex gap-[32px] lg:gap-[56px]">
+                        <li class="reveal-card"><a
+                                class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
+                                href="#">Website Terms</a></li>
+                        <li class="reveal-card"><a
+                                class="text-[14px] lg:text-[16px] text-white opacity-80 hover:opacity-100 font-bricolage"
+                                href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="reveal-type text-[14px] lg:text-[16px] text-white opacity-60 font-bricolage">
+                        ©2025 Framer Lab — All Rights Reserved
+                    </p>
+                </div>
+            </div>
+
+            <div data-lag=".5" class="footer-logo relative mt-[50px] overflow-hidden">
+                <img src="./src/images/big-logo.png" alt="Footer Logo" class="w-full h-auto object-cover" />
+
+                <div class="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none backdrop-blur-sm"
+                    style="mask-image: linear-gradient(to bottom, transparent, black 40%); -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%);">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Ends Here -->
+
     <script type="module" src="src/main.js"></script>
 </body>
 
