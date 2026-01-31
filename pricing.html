@@ -517,7 +517,7 @@
 }">
             <div class="container relative">
 
-                <div class="sticky top-[80px] md:top-[82px] z-20 bg-white">
+                <div class="sticky top-[80px] md:top-[82px] z-40 bg-white">
                     <div class="overflow-x-auto no-scrollbar">
                         <div
                             class="flex gap-2 sm:gap-4 rounded-xl bg-primary min-w-[600px] sm:min-w-0 overflow-hidden">
@@ -549,7 +549,7 @@
                             </h4>
                         </div>
 
-                        <div class="overflow-x-auto">
+                        <div class="overflow-x-auto z-10">
                             <div class="min-w-[600px] sm:min-w-0">
                                 <template x-for="f in cat.features" :key="f.name">
                                     <div
@@ -677,7 +677,7 @@
                     </div>
 
                     <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
-                        <div class="w-full lg:w-[30%] lg:sticky lg:top-[280px] z-10">
+                        <div class="w-full lg:w-[30%] lg:sticky lg:top-[280px] z-50 bg-white">
                             <h2
                                 class="reveal-type text-[#240F52] text-3xl lg:text-[40px] font-bricolage font-bold mb-4 leading-tight">
                                 What makes us Different?</h2>
@@ -751,7 +751,7 @@
                     <template x-for="(cat, index) in featureGroups" :key="cat.title">
                         <div class="relative mb-12 sm:mb-20">
                             <div
-                                class="sticky top-[80px] md:top-[82px] z-20 bg-white/95 backdrop-blur-md border-b border-[#D8C6FF]">
+                                class="sticky top-[80px] md:top-[82px] z-40 bg-white/95 backdrop-blur-md border-b border-[#D8C6FF]">
                                 <div class="flex flex-col text-center justify-between md:flex-row items-center">
                                     <div class="w-full md:w-[30%]">
                                         <h4 class="reveal-type md:text-left py-4 sm:py-6 px-4 text-2xl sm:text-3xl font-bold font-bricolage text-[#5A147F]"

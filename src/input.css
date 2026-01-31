@@ -58,6 +58,39 @@
         opacity: 0;
     }
 }
+
+/* 1. Subtitle entrance */
+.corner__hero-top-title {
+    animation: fadeInUp 0.8s ease backwards;
+}
+
+/* 2. Infinite SVG pulse */
+.corner__hero-top-title svg {
+    animation: pulseIcon 3s infinite ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseIcon {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0px rgba(216, 198, 255, 0));
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 8px rgba(216, 198, 255, 0.6));
+    }
+}
+
 /* Add this to your main CSS file */
 .ease-expo {
     transition-timing-function: cubic-bezier(0.85, 0, 0.15, 1);

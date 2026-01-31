@@ -9,6 +9,8 @@ window.Alpine = Alpine;
 Alpine.plugin(collapse);
 Alpine.start();
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
     initGSAPAnimations();
 

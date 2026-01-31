@@ -3,23 +3,36 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from 'gsap/SplitText';
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
+
 gsap.config({
     nullTargetWarn: false,
 });
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+// Initialize Lenis
+const lenis = new Lenis({
+  autoRaf: true,
+  lerp: 0.08,
+  anchors: true,
+    anchors: {
+    offset: -100,
+  }
+});
+
 export const initGSAPAnimations = () => {
 
-    ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 1.5,               // How long it takes to "catch up" to your scroll
-        effects: true,             // Allows data-speed="1.2" on HTML elements
-        smoothTouch: 0.1,           // Adds a tiny bit of smoothing to mobile touch
-        normalizeScroll: false,
-        ignoreMobileResize: true,
-    });
+    // ScrollSmoother.create({
+    //     wrapper: "#smooth-wrapper",
+    //     content: "#smooth-content",
+    //     smooth: 1.5,               // How long it takes to "catch up" to your scroll
+    //     effects: true,             // Allows data-speed="1.2" on HTML elements
+    //     smoothTouch: 0.1,           // Adds a tiny bit of smoothing to mobile touch
+    //     normalizeScroll: false,
+    //     ignoreMobileResize: true,
+    // });
 
     // 1. Hero Content Entrance with ScrollTrigger
     const tl = gsap.timeline({
@@ -28,6 +41,8 @@ export const initGSAPAnimations = () => {
             start: "top 80%",               // Start when the top of hero is 80% from the top
             toggleActions: "restart none restart reset", // Restarts when coming back from the top
         },
+        opacity:0,
+        filter: "blur(10px)",
         defaults: { ease: "power3.out", duration: 1 }
     });
 
@@ -112,11 +127,12 @@ export const initGSAPAnimations = () => {
             scrollTrigger: {
                 trigger: heading,
                 start: 'top 90%', // Starts when heading is 85% from top of viewport
-                end: 'bottom center',
+                end: 'bottom 10%',
                 toggleActions: 'restart none restart none',
             },
             y: 100,              // Slide up from 100px
             opacity: 0,          // Fade in
+            filter: "blur(10px)",
             rotateX: -45,        // Subtle 3D tilt for a premium feel
             stagger: 0.01,       // Speed between letters
             duration: 1.2,       // Total time for each letter
@@ -134,6 +150,7 @@ export const initGSAPAnimations = () => {
         gsap.from(grid.querySelectorAll('.reveal-card'), {
             y: 60,
             opacity: 0,
+            filter: "blur(10px)",
             duration: 1.2,
             stagger: 0.25,
             ease: "power3.out",
@@ -192,6 +209,7 @@ export const initGSAPAnimations = () => {
     gsap.from(".reveal-faq-list .faq-item", {
         y: 30,
         opacity: 0,
+        filter: "blur(10px)",
         stagger: 0.1,
         duration: 0.8,
         ease: "power2.out",
@@ -213,6 +231,7 @@ export const initGSAPAnimations = () => {
         gsap.from(img, {
             scale: 1.3,
             duration: 2,
+            filter: "blur(10px)",
             ease: "power2.out",
             scrollTrigger: {
                 trigger: reveal,
@@ -269,6 +288,7 @@ export const initGSAPAnimations = () => {
             },
             y: 30,
             opacity: 0,
+            filter: "blur(10px)",
             blur: 10,
             stagger: 0.25, // Delay between each item
             duration: 1,
@@ -316,7 +336,7 @@ export const initGSAPAnimations = () => {
                 panels.forEach((panel) => {
                     ScrollTrigger.create({
                         trigger: panel,
-                        start: "top 82px", // Adjust based on your header height
+                        start: "top 361px", // Adjust based on your header height
                         endTrigger: wrapper,
                         end: "bottom 85%",
                         pin: true,
@@ -340,6 +360,7 @@ export const initGSAPAnimations = () => {
         gsap.from(split.lines, {
             y: 40,
             opacity: 0,
+            filter: "blur(10px)",
             duration: 1.2,
             ease: "power4.out",
             stagger: 0.1, // Creates the 'wave' effect between lines
