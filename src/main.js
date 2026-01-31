@@ -37,28 +37,28 @@ Alpine.data('cornerStoneHomepageAboutProduct', () => (
                 label: 'AI That Understands You',
                 title: 'AI That Gets It Right',
                 desc: 'Tap into AI-powered suggestions tailored to your team’s habits. Whether it’s writing, organizing, or prioritizing — it just knows what to do next.',
-                img: '/images/tabs/tab01.webp'
+                img: './images/tabs/tab01.webp'
             },
             {
                 id: 'tab2',
                 label: 'Effortless Automation',
                 title: 'Effortless Automation',
                 desc: 'Automate your workflows with zero effort. Let AI handle the repetitive tasks while you focus on creativity.',
-                img: '/images/tabs/tab01.webp'
+                img: './images/tabs/tab01.webp'
             },
             {
                 id: 'tab3',
                 label: 'Teamwork That Clicks',
                 title: 'Teamwork That Clicks',
                 desc: 'Collaborate in real-time with tools designed for speed and clarity.',
-                img: '/images/tabs/tab01.webp'
+                img: './images/tabs/tab01.webp'
             },
             {
                 id: 'tab4',
                 label: 'Search, Simplified',
                 title: 'Search, Simplified',
                 desc: 'Find anything across your entire workspace in seconds with semantic search.',
-                img: '/images/tabs/tab01.webp'
+                img: './images/tabs/tab01.webp'
             }
         ]
     }
@@ -275,12 +275,12 @@ Alpine.data('cornerPricingCompareTabs', () => (
     {
         activeTab: 0,
         tabs: [
-            { name: 'Notion', icon: '/images/price/01.png', altLogo: './images/price/notionh.png' },
-            { name: 'Asana', icon: '/images/price/icon-02.png', altLogo: '/images/price/icon-02.png' },
-            { name: 'ClickUp', icon: '/images/price/clickup.png', altLogo: '/images/price/clickup.png' },
-            { name: 'Caution', icon: '/images/price/01.png', altLogo: './images/price/notionh.png' },
-            { name: 'Jira', icon: '/images/price/icon-02.png', altLogo: '/images/price/icon-02.png' },
-            { name: 'ClickUpp', icon: '/images/price/clickup.png', altLogo: '/images/price/clickup.png' }
+            { name: 'Notion', icon: './images/price/01.png', altLogo: '../images/price/notionh.png' },
+            { name: 'Asana', icon: './images/price/icon-02.png', altLogo: './images/price/icon-02.png' },
+            { name: 'ClickUp', icon: './images/price/clickup.png', altLogo: './images/price/clickup.png' },
+            { name: 'Caution', icon: './images/price/01.png', altLogo: '../images/price/notionh.png' },
+            { name: 'Jira', icon: './images/price/icon-02.png', altLogo: './images/price/icon-02.png' },
+            { name: 'ClickUpp', icon: './images/price/clickup.png', altLogo: './images/price/clickup.png' }
         ],
         points: [
             { title: 'Dedicated solution, built for SaaS', desc: 'Not for every use case, just yours: Feature flagging for SaaS' },
