@@ -568,45 +568,7 @@
     <!-- Header Section End -->
 
     <!-- FAQ Section Starts  -->
-    <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="{
-      activeId: 1,
-
-      items: [
-        {
-          id: 1,
-          title: 'What is your refund policy?',
-          content: 'We offer a 14-day money-back guarantee on all plans.'
-        },
-        {
-          id: 2,
-          title: 'How long does development take?',
-          content: 'Typical delivery time is 7–10 business days.'
-        },
-        {
-          id: 3,
-          title: 'Do you support WordPress plugins?',
-          content: 'Yes, we specialize in custom WordPress plugin development.'
-        },
-        {
-          id: 4,
-          title: 'Is support included?',
-          content: 'Email and ticket support is included for all paid plans.'
-        },
-        {
-          id: 5,
-          title: 'Can I request custom features?',
-          content: 'Absolutely. Custom features can be scoped and quoted.'
-        }
-      ],
-
-      toggle(id) {
-        this.activeId = this.activeId === id ? null : id
-      },
-
-      isOpen(id) {
-        return this.activeId === id
-      }
-    }">
+    <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="cornerStoneFaq">
         <div class="container mx-auto max-w-3xl flex flex-col md:flex-row space-y-4">
             <div
                 class="w-full md:w-[32.6%] flex flex-col md:flex-row lg:flex-col sm:gap-[30px] gap-[48px] justify-between">
@@ -688,43 +650,7 @@
     <!-- FAQ Section Ends -->
 
         <!-- Usecases Section  -->
-    <section class="px-6 py-24" x-data="{ 
-    activeTeam: 'product',
-    activeFeature: 'ai',
-    useCases: {
-        product: {
-            label: 'For Product Teams',
-            icon: './src/images/icons/features-usecases/product.png',
-            features: {
-                ai: {
-                    title: 'AI That Understands You',
-                    desc: 'Instantly find tasks, notes, or people — even from past projects.',
-                    img: './src/images/features/dashboard.png'
-                },
-                automation: {
-                    title: 'Effortless Automation',
-                    desc: 'Automate roadmap updates and sprint handoffs without lifting a finger.',
-                    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200'
-                },
-                teamwork: {
-                    title: 'Teamwork That Clicks',
-                    desc: 'Keep every stakeholder aligned with live canvases and shared goals.',
-                    img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200'
-                },
-                search: {
-                    title: 'Search, Simplified',
-                    desc: 'Deep indexing for PRDs, specs, and historical decisions.',
-                    img: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200'
-                }
-            }
-        },
-        sales: { label: 'For Sales Teams', icon: './src/images/icons/features-usecases/sales.png', features: { ai: { title: 'Lead Intelligence', desc: 'Predictive lead scoring to focus on high-intent deals.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200' } } },
-        engineering: { label: 'For Engineering', icon: './src/images/icons/features-usecases/engineering.png', features: { ai: { title: 'Code Intelligence', desc: 'AI-driven task prioritization for dev cycles.', img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200' } } },
-        design: { label: 'For Designers', icon: './src/images/icons/features-usecases/design.png', features: { ai: { title: 'Asset Management', desc: 'Find any component or draft with visual search.', img: 'https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&q=80&w=1200' } } },
-        marketing: { label: 'For Marketing', icon: './src/images/icons/features-usecases/marketing.png', features: { ai: { title: 'Content Sorting', desc: 'Keep campaigns organized across every channel.', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200' } } },
-        hr: { label: 'For HR Teams', icon: './src/images/icons/features-usecases/hr.png', features: { ai: { title: 'People Logic', desc: 'Streamline onboarding and team directories.', img: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200' } } }
-    }
-}">
+    <section class="px-6 py-24" x-data="cornerFeatureUseCases">
     <div class="container mx-auto">
         <div class="mb-20">
             <h2 class="text-6xl font-bold font-bricolage text-[#2D1B54] mb-8">Accordion inside tab</h2>

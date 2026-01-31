@@ -933,18 +933,7 @@
 
 
     <!-- FAQ Section Starts  -->
-    <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="{
-      activeId: 1,
-      items: [
-        { id: 1, title: 'What is your refund policy?', content: 'We offer a 14-day money-back guarantee on all plans.' },
-        { id: 2, title: 'How long does development take?', content: 'Typical delivery time is 7–10 business days.' },
-        { id: 3, title: 'Do you support WordPress plugins?', content: 'Yes, we specialize in custom WordPress plugin development.' },
-        { id: 4, title: 'Is support included?', content: 'Email and ticket support is included for all paid plans.' },
-        { id: 5, title: 'Can I request custom features?', content: 'Absolutely. Custom features can be scoped and quoted.' }
-      ],
-      toggle(id) { this.activeId = this.activeId === id ? null : id },
-      isOpen(id) { return this.activeId === id }
-    }">
+    <section class="bg-[#F9F7FE] py-20 lg:py-[100px]" x-data="cornerStoneFaq">
 
         <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
 

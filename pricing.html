@@ -464,56 +464,7 @@
         </div>
     </section>
 
-    <section class="bg-white py-[32px] sm:py-[64px]" x-data="{
-    categories: [
-        {
-            title: 'Feature flags',
-            features: [
-                { name: 'Type-safety', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Toolbar', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'CLI', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Company page', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Company segments', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Advanced targeting rules', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Environments', free: '3 environments', pro: 'Unlimited', ent: 'Unlimited' },
-                { name: 'Gradual rollout', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Remote config', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Kill switch', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Stored attributes', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Flag history', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Local evaluation', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'OpenFeature', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Global network', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Add in bulk', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'AI flag cleanup', free: 'Coming soon', pro: 'Coming soon', ent: 'Coming soon' },
-                { name: 'User permissions', free: 'Coming soon', pro: 'Coming soon', ent: 'Coming soon' }
-            ]
-        },
-        {
-            title: 'Beta release workflow',
-            features: [
-                { name: 'Release stages', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Feedback volume', free: '50/mo feedback', pro: 'Unlimited', ent: 'Unlimited' },
-                { name: 'Static feedback button', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'In-app surveys', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Customizable styling', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Adoption metrics', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Adoption strategies', free: 'tick', pro: 'tick', ent: 'tick' }
-            ]
-        },
-        {
-            title: 'Integrations',
-            features: [
-                { name: 'Slack', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Microsoft Teams', free: 'tick', pro: 'tick', ent: 'tick' },
-                { name: 'Discord', free: 'Coming soon', pro: 'tick', ent: 'tick' },
-                { name: 'Jira', free: 'Coming soon', pro: 'tick', ent: 'tick' },
-                { name: 'GitHub Actions', free: 'Coming soon', pro: 'tick', ent: 'tick' },
-                { name: 'Webhooks', free: 'Coming soon', pro: 'Coming soon', ent: 'tick' }
-            ]
-        }
-    ]
-}">
+    <section class="bg-white py-[32px] sm:py-[64px]" x-data="cornerPricingFeatureFlags">
         <div class="container relative">
 
             <div class="sticky top-[80px] md:top-[82px] z-40 bg-white">
@@ -601,46 +552,7 @@
         </div>
     </section>
 
-    <div x-data="{ 
-    activeTab: 0,
-    tabs: [
-        { name: 'Notion', icon: '/src/images/price/01.png', altLogo: './src/images/price/notionh.png' },
-        { name: 'Asana', icon: '/src/images/price/icon-02.png', altLogo: '/src/images/price/icon-02.png' },
-        { name: 'ClickUp', icon: '/src/images/price/clickup.png', altLogo: '/src/images/price/clickup.png' },
-        { name: 'Caution', icon: '/src/images/price/01.png', altLogo: './src/images/price/notionh.png' },
-        { name: 'Jira', icon: '/src/images/price/icon-02.png', altLogo: '/src/images/price/icon-02.png' },
-        { name: 'ClickUpp', icon: '/src/images/price/clickup.png', altLogo: '/src/images/price/clickup.png' }
-    ],
-    points: [
-        { title: 'Dedicated solution, built for SaaS', desc: 'Not for every use case, just yours: Feature flagging for SaaS' },
-        { title: 'Advanced Targeting', desc: 'Detailed rule-based segments for precise rollouts' },
-        { title: 'Enterprise Security', desc: 'RBAC and audit logs built into the core platform' },
-        { title: 'Scalable Performance', desc: '99.99% uptime SLA with global CDN and redundancy' },
-        { title: 'Seamless Integrations', desc: 'Connect with popular tools like Slack, Jira, and more' },
-        { title: 'Outstanding Support', desc: '24/7 dedicated support and customer success management'}
-    ],
-    featureGroups: [
-        {
-            title: 'Usage Limitation',
-            features: [
-                { name: 'MTUs/User', col1: 'tick', col2: 'tick' },
-                { name: 'Accounts', col1: 'minus', col2: 'tick' },
-                { name: 'Devices', col1: 'minus', col2: 'tick' },
-                { name: 'Other identifiers', col1: 'minus', col2: 'tick' }
-            ]
-        },
-        {
-            title: 'Flagging Essentials',
-            features: [
-                { name: 'Targeting Rules', col1: 'tick', col2: 'tick' },
-                { name: 'Segments', col1: 'minus', col2: 'tick' },
-                { name: 'Environments', col1: 'minus', col2: 'tick' },
-                { name: 'Percentage Rollouts', col1: 'tick', col2: 'tick' },
-                { name: 'Release Kill Switch', col1: 'tick', col2: 'tick' }
-            ]
-        }
-    ]
-}">
+    <div x-data="cornerPricingCompareTabs">
 
         <section class="bg-white py-8 sm:py-16 overflow-visible gsap-pin-wrapper" id="comparison-section">
             <div class="container relative">

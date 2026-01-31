@@ -410,35 +410,7 @@
         </div>
     </section>
 
-    <section class="py-12 md:py-20" x-data="{ 
-        activeCat: 'Getting Started',
-        currentPage: 1,
-        perPage: 2,
-        posts: [
-            { id: 1, cat: 'Getting Started', date: 'MAY 26, 2025', title: 'What\'s included in the free plan?', desc: 'Get full access to core features, up to 3 projects, and AI-assisted notes.', img: './src/images/blog/blog-1.png' },
-            { id: 2, cat: 'Getting Started', date: 'JUNE 02, 2025', title: 'How to invite your team', desc: 'Collaboration is key. Learn how to set up your workspace for success.', img: './src/images/blog/blog-2.png' },
-            { id: 3, cat: 'Features', date: 'JUNE 10, 2025', title: 'Deep dive into AI Notes', desc: 'Our AI doesn\'t just transcribe; it understands context and action items.', img: './src/images/blog/blog-1.png' },
-            { id: 4, cat: 'Sales', date: 'JULY 15, 2025', title: 'Scaling your revenue with CornerStone', desc: 'How top-tier sales teams use our CRM to close deals 40% faster.', img: './src/images/blog/blog-2.png' },
-            { id: 5, cat: 'Getting Started', date: 'AUG 01, 2025', title: 'Setting up your first Dashboard', desc: 'Visualize your data in minutes with our drag-and-drop builder.', img: './src/images/blog/blog-1.png' },
-            { id: 6, cat: 'Billing', date: 'AUG 20, 2025', title: 'Understanding your invoice', desc: 'A breakdown of charges and how to manage your subscription effectively.', img: './src/images/blog/blog-2.png'},
-            { id: 7, cat: 'Features', date: 'SEP 05, 2025', title: 'New Feature: Neural Search', desc: 'Find anything in your workspace instantly with our new deep indexing feature.', img: './src/images/blog/blog-1.png' },
-            { id: 8, cat: 'Sales', date: 'SEP 18, 2025', title: 'Integrating CornerStone with your sales stack', desc: 'Seamlessly connect with popular tools like Salesforce, HubSpot, and more.', img: './src/images/blog/blog-2.png' },
-            {id: 9, cat: 'Billing', date: 'OCT 02, 2025', title: 'How to apply discounts and promo codes', desc: 'Maximize savings with our flexible billing options.', img: './src/images/blog/blog-1.png' },
-            { id: 10, cat: 'Getting Started', date: 'OCT 15, 2025', title: 'Customizing your user profile', desc: 'Make CornerStone truly yours with personalized settings and preferences.', img: './src/images/blog/blog-2.png' },
-            { id: 11, cat: 'Getting Started', date: 'NOV 01, 2025', title: 'Tips for onboarding new team members', desc: 'Ensure a smooth transition with our step-by-step onboarding guide.', img: './src/images/blog/blog-1.png' },
-            { id: 12, cat: 'Getting Started', date: 'NOV 20, 2025', title: 'Maximizing productivity with AI-powered tasks', desc: 'Let our AI handle your to-do list and reminders.', img: './src/images/blog/blog-2.png' }
-        ],
-        get filteredPosts() {
-            return this.posts.filter(p => p.cat === this.activeCat);
-        },
-        get paginatedPosts() {
-            let start = (this.currentPage - 1) * this.perPage;
-            return this.filteredPosts.slice(start, start + this.perPage);
-        },
-        get totalPages() {
-            return Math.ceil(this.filteredPosts.length / this.perPage);
-        }
-    }">
+    <section class="py-12 md:py-20" x-data="cornerBlogPageListPosts">
 
         <div class="container mx-auto">
             <h2 class="reveal-type font-bold text-[36px] md:text-[64px] font-bricolage mb-8 md:mb-16 tracking-tight">
