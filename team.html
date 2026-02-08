@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 
-<body class="relative">
+<body>
 
     <!-- global button svg  -->
     <svg class="absolute invisible w-0 h-0" xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +94,7 @@
         <div class="mx-auto flex justify-between items-center">
             <div class="logo max-w-[145px] shrink-0">
                 <a href="index.html">
-                    <img src="./src/images/logo.svg" alt="Corner Stone Logo" />
+                    <img src="./images/logo.svg" alt="Corner Stone Logo" />
                 </a>
             </div>
 
@@ -720,7 +720,9 @@
                     <template x-for="member in team" :key="member.img">
                         <div class="reveal-card group cursor-pointer">
                             <div class="relative overflow-hidden rounded-2xl aspect-[4/5] mb-4 bg-gray-100">
-                                <img :src="member.img" :alt="member.name"
+                                <img
+                                @click="$store.lightbox.show(member.img)"
+                                :src="member.img" :alt="member.name"
                                     class="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-in-out">
                             </div>
                             <h3 class="reveal-type font-bold text-[22px] text-slate-900" x-text="member.name"></h3>
@@ -756,76 +758,86 @@
         </div>
     </div>
 
-<section class="px-6 py-24" x-data="cornerTeamPageGalleryAndJobs">
-    <div class="container space-y-32">
-        
-        <div class="space-y-12">
-            <div class="max-w-2xl">
-                <h2 class="reveal-type text-5xl font-bold text-[#2D1B54] mb-4">We're distributed.</h2>
-                <p class="reveal-type text-gray-500 leading-relaxed">
-                    CornerStone is highly distributed with our international team based out of Denmark, Sweden, Germany, UK, France, Portugal, and the Netherlands.
-                </p>
-            </div>
+    <section class="px-6 py-24">
+        <div class="container space-y-32">
 
-            <div class="reveal-grid grid grid-cols-1 sm:grid-cols-12 gap-4 h-auto md:h-[600px]">
-                <template x-for="(img, index) in gallery" :key="index">
-                    <div :class="`reveal-card corner__image-reveal corner__image-magnetic-animation overflow-hidden rounded-2xl ${img.span} ${img.height}`">
-                        <img :src="img.src" class="w-full h-full object-cover" />
-                    </div>
-                </template>
-            </div>
-        </div>
+            <div class="space-y-12" x-data="cornerTeamPageGallery">
+                <div class="max-w-2xl">
+                    <h2 class="reveal-type text-5xl font-bold text-[#2D1B54] mb-4">We're distributed.</h2>
+                    <p class="reveal-type text-gray-500 leading-relaxed">
+                        CornerStone is highly distributed with our international team based out of Denmark, Sweden,
+                        Germany, UK, France, Portugal, and the Netherlands.
+                    </p>
+                </div>
 
-        <div class="space-y-16">
-            <div class="max-w-2xl">
-                <h2 class="reveal-type text-4xl font-bold text-[#2D1B54] mb-4">Join Our Team</h2>
-                <p class="reveal-type text-gray-500">You'll work with an experienced, passionate and distributed team building an innovative product.</p>
-            </div>
-
-            <div class="space-y-4">
-                <h3 class="text-[22px] font-semibold tracking-wider font-bricolage">Open Positions</h3>
-
-                <div class="reveal-grid grid grid-cols-1 md:grid-cols-2 gap-x-12">
-                    <template x-for="(job, index) in jobs" :key="index">
-                        <div class="reveal-card group border-b-2 border-neutral-multed py-8 cursor-pointer hover:bg-slate-50 transition-colors duration-300 px-4 -mx-4">
-                            <span class="text-xs font-medium text-gray-400" x-text="job.location"></span>
-                            <h4 class="text-xl font-bold text-[#2D1B54] mt-1 group-hover:text-purple-700 transition-colors" x-text="job.title"></h4>
-                            <p class="text-gray-400 text-sm mt-1" x-text="job.salary"></p>
-                            <div class="mt-4 flex items-center text-purple-600 font-semibold text-sm">
-                                Apply 
-                                <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                </svg>
-                            </div>
+                <div class="reveal-grid grid grid-cols-1 sm:grid-cols-12 gap-4 h-auto md:h-[600px]">
+                    <template x-for="(item, index) in items" :key="index">
+                        <div
+                            :class="`reveal-card corner__image-reveal  overflow-hidden rounded-2xl ${item.span} ${item.height}`">
+                            <img @click="$store.lightbox.show(item.src)" :src="item.src"
+                                class="w-full h-full object-cover cursor-pointer corner__image-magnetic-animation" />
                         </div>
                     </template>
                 </div>
             </div>
-        </div>
 
-    </div>
-</section>
+            <div class="space-y-16">
+                <div class="max-w-2xl">
+                    <h2 class="reveal-type text-4xl font-bold text-[#2D1B54] mb-4">Join Our Team</h2>
+                    <p class="reveal-type text-gray-500">You'll work with an experienced, passionate and distributed
+                        team building an innovative product.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-[22px] font-semibold tracking-wider font-bricolage">Open Positions</h3>
+
+                    <div class="reveal-grid grid grid-cols-1 md:grid-cols-2 gap-x-12" x-data="cornerTeamPageJobs">
+                        <template x-for="(job, index) in jobs" :key="index">
+                            <div
+                                class="reveal-card group border-b-2 border-neutral-multed py-8 cursor-pointer hover:bg-slate-50 transition-colors duration-300 px-4 -mx-4">
+                                <span class="text-xs font-medium text-gray-400" x-text="job.location"></span>
+                                <h4 class="text-xl font-bold text-[#2D1B54] mt-1 group-hover:text-purple-700 transition-colors"
+                                    x-text="job.title"></h4>
+                                <p class="text-gray-400 text-sm mt-1" x-text="job.salary"></p>
+                                <div class="mt-4 flex items-center text-purple-600 font-semibold text-sm">
+                                    Apply
+                                    <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-2 transition-transform duration-300"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- Investor section -->
-<section class="w-full px-6 py-24 bg-[#F9F7FE]" x-data="cornerInvestors">
-    <div class="container">
-        <div class="mb-16">
-            <h2 class="reveal-type text-4xl md:text-5xl font-bold text-[#2D1B54] mb-4">Our Investors</h2>
-            <p class="reveal-type text-gray-500 max-w-3xl leading-relaxed">
-                We've raised $5.7 million from a combination of top investors and product & engineering leaders at the world's leading tech companies.
-            </p>
-        </div>
+    <section class="w-full px-6 py-24 bg-[#F9F7FE]" x-data="cornerInvestors">
+        <div class="container">
+            <div class="mb-16">
+                <h2 class="reveal-type text-4xl md:text-5xl font-bold text-[#2D1B54] mb-4">Our Investors</h2>
+                <p class="reveal-type text-gray-500 max-w-3xl leading-relaxed">
+                    We've raised $5.7 million from a combination of top investors and product & engineering leaders at
+                    the world's leading tech companies.
+                </p>
+            </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8">
-            <template x-for="investor in investors" :key="investor.name">
-                <div class="group transition-all duration-300">
-                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-purple-700 transition-colors" x-text="investor.name"></h3>
-                    <p class="text-gray-400 text-sm" x-text="investor.company"></p>
-                </div>
-            </template>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8">
+                <template x-for="investor in investors" :key="investor.name">
+                    <div class="group transition-all duration-300">
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-purple-700 transition-colors"
+                            x-text="investor.name"></h3>
+                        <p class="text-gray-400 text-sm" x-text="investor.company"></p>
+                    </div>
+                </template>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
     <!-- Investor section ends here -->
 
     <!-- Footer Starts Here -->
@@ -866,7 +878,7 @@
 
                 <div
                     class="w-full lg:w-[calc(61.2%-64px)] bg-white rounded-[24px] p-[24px] md:p-[32px] flex flex-col md:flex-row gap-[24px] items-start">
-                    <img src="./src/images/icons/icon-letter.png" alt="Ready to Launch"
+                    <img src="./images/icons/icon-letter.png" alt="Ready to Launch"
                         class="md:w-[200px] md:h-auto object-contain mx-auto" />
 
                     <div class="flex flex-col w-full">
@@ -970,7 +982,7 @@
             </div>
 
             <div data-lag=".5" class="footer-logo relative mt-[50px] overflow-hidden">
-                <img src="./src/images/big-logo.png" alt="Footer Logo" class="w-full h-auto object-cover" />
+                <img src="./images/big-logo.png" alt="Footer Logo" class="w-full h-auto object-cover" />
 
                 <div class="absolute bottom-0 left-0 w-full h-1/3 pointer-events-none backdrop-blur-sm"
                     style="mask-image: linear-gradient(to bottom, transparent, black 40%); -webkit-mask-image: linear-gradient(to bottom, transparent, black 40%);">

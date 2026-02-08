@@ -26,6 +26,8 @@
     }
 }
 
+[x-cloak] { display: none !important; }
+
 /* Utility to hide scrollbar but keep functionality */
 .no-scrollbar::-webkit-scrollbar {
     display: none;

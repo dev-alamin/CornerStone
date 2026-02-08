@@ -327,9 +327,9 @@ Alpine.data('cornerTeamMembers', () => (
     }
 ));
 
-Alpine.data('cornerTeamPageGalleryAndJobs', () => (
+Alpine.data('cornerTeamPageGallery', () => (
     {
-        gallery: [
+        items: [
             { src: './images/team/gallery-1.png', span: 'sm:col-span-4', height: 'h-64 md:h-full' },
             { src: './images/team/gallery-2.png', span: 'sm:col-span-4', height: 'h-64 md:h-full' },
             { src: './images/team/gallery-3.png', span: 'sm:col-span-4', height: 'h-64 md:h-full' },
@@ -337,7 +337,12 @@ Alpine.data('cornerTeamPageGalleryAndJobs', () => (
             { src: './images/team/gallery-5.png', span: 'sm:col-span-3', height: 'h-48 md:h-64' },
             { src: './images/team/gallery-6.png', span: 'sm:col-span-3', height: 'h-48 md:h-64' },
             { src: './images/team/gallery-7.png', span: 'sm:col-span-3', height: 'h-48 md:h-64' }
-        ],
+        ]
+    }
+));
+
+Alpine.data('cornerTeamPageJobs', () => (
+    {
         jobs: [
             { title: 'Customer Success Manager', location: 'Remote', salary: '$65k–$75k' },
             { title: 'SaaS Growth Marketer', location: 'Remote', salary: '$75k–$85k' },
@@ -361,6 +366,65 @@ Alpine.data('cornerInvestors', () => (
         ]
     }
 ));
+
+document.addEventListener('alpine:init', () => {
+    Alpine.store('lightbox', {
+        open: false,
+        source: '',
+        show(src) {
+            this.source = src;
+            this.open = true;
+            document.body.style.overflow = 'hidden'; // Stop scrolling
+        },
+        hide() {
+            this.open = false;
+            document.body.style.overflow = 'auto'; // Start scrolling
+        }
+
+
+    });
+
+    // 2. Inject the Lightbox HTML into the Bottom of the Body
+    const lightboxHTML = `
+        <div x-data x-cloak>
+            <div x-show="$store.lightbox.open" 
+                 class="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
+                 style="display: none;"
+                 @keydown.escape.window="$store.lightbox.hide()">
+                
+                <div x-show="$store.lightbox.open"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0"
+                     x-transition:enter-end="opacity-100"
+                     x-transition:leave="transition ease-in duration-200"
+                     class="absolute inset-0 bg-slate-950/60 backdrop-blur-xl"></div>
+
+                <button @click="$store.lightbox.hide()" 
+                        class="absolute top-6 right-6 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all z-[10000] group">
+                    <svg class="w-6 h-6 transform group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <div x-show="$store.lightbox.open"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 scale-95 translate-y-4"
+                     x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                     x-transition:leave="transition ease-in duration-200"
+                     @click.away="$store.lightbox.hide()"
+                     class="relative max-w-[95vw] max-h-[90vh] z-10 p-2">
+                    <img :src="$store.lightbox.source" 
+                         class="rounded-2xl shadow-2xl border border-white/10 object-contain max-h-[85vh] mx-auto">
+                    <div class="mt-4 text-center">
+                        <span class="text-white/40 text-[10px] font-bold tracking-[0.2em] uppercase">Esc to close</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+});
 
 Alpine.start();
 
