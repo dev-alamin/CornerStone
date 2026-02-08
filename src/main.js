@@ -275,10 +275,10 @@ Alpine.data('cornerPricingCompareTabs', () => (
     {
         activeTab: 0,
         tabs: [
-            { name: 'Notion', icon: './images/price/01.png', altLogo: '../images/price/notionh.png' },
+            { name: 'Notion', icon: './images/price/01.png', altLogo: './images/price/notionh.png' },
             { name: 'Asana', icon: './images/price/icon-02.png', altLogo: './images/price/icon-02.png' },
             { name: 'ClickUp', icon: './images/price/clickup.png', altLogo: './images/price/clickup.png' },
-            { name: 'Caution', icon: './images/price/01.png', altLogo: '../images/price/notionh.png' },
+            { name: 'Caution', icon: './images/price/01.png', altLogo: './images/price/notionh.png' },
             { name: 'Jira', icon: './images/price/icon-02.png', altLogo: './images/price/icon-02.png' },
             { name: 'ClickUpp', icon: './images/price/clickup.png', altLogo: './images/price/clickup.png' }
         ],
