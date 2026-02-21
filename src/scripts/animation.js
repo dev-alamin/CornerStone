@@ -40,7 +40,7 @@ export const initGSAPAnimations = () => {
         scrollTrigger: {
             trigger: ".corner-hero-content", // The main container for your hero
             start: "top 80%",               // Start when the top of hero is 80% from the top
-            toggleActions: "restart none restart reset", // Restarts when coming back from the top
+            toggleActions: "restart none none reset", // Restarts when coming back from the top
         },
         opacity: 0,
         filter: "blur(10px)",
@@ -129,7 +129,7 @@ export const initGSAPAnimations = () => {
                 trigger: heading,
                 start: 'top 90%', // Starts when heading is 85% from top of viewport
                 end: 'bottom 10%',
-                toggleActions: 'restart none restart none',
+                toggleActions: 'restart none none none',
             },
             y: 100,              // Slide up from 100px
             opacity: 0,          // Fade in
@@ -158,7 +158,7 @@ export const initGSAPAnimations = () => {
             scrollTrigger: {
                 trigger: grid,
                 start: "top 80%",
-                toggleActions: "restart none restart none"
+                toggleActions: "restart none none none"
             }
         });
     });
@@ -180,7 +180,7 @@ export const initGSAPAnimations = () => {
             scrollTrigger: {
                 trigger: counter,
                 start: "top 90%",
-                toggleActions: "restart none restart none",
+                toggleActions: "restart none none none",
             },
             onUpdate: function () {
                 // Keep the suffix (%, M, +) during the count
@@ -201,7 +201,7 @@ export const initGSAPAnimations = () => {
             scrollTrigger: {
                 trigger: btn,
                 start: "top 95%", // Trigger as soon as it nears the screen
-                toggleActions: "restart none restart none"
+                toggleActions: "restart none none none"
             }
         });
     });
@@ -217,7 +217,7 @@ export const initGSAPAnimations = () => {
         scrollTrigger: {
             trigger: ".reveal-faq-list",
             start: "top 85%",
-            toggleActions: "restart none restart none"
+            toggleActions: "restart none none none"
         }
     });
 
@@ -237,7 +237,7 @@ export const initGSAPAnimations = () => {
             scrollTrigger: {
                 trigger: reveal,
                 start: "top 90%",
-                toggleActions: "restart none restart none"
+                toggleActions: "restart none none none"
             }
         });
     });
@@ -285,7 +285,7 @@ export const initGSAPAnimations = () => {
             scrollTrigger: {
                 trigger: list,
                 start: "top 85%", // Starts when the list is 85% from the top
-                toggleActions: "restart none restart none"
+                toggleActions: "restart none none none"
             },
             y: 30,
             opacity: 0,
@@ -368,7 +368,7 @@ export const initGSAPAnimations = () => {
             scrollTrigger: {
                 trigger: p,
                 start: "top 85%", // Starts when the paragraph enters the bottom 15% of screen
-                toggleActions: "restart none restart none", // Plays once
+                toggleActions: "restart none none none", // Plays once
             }
         });
     });
